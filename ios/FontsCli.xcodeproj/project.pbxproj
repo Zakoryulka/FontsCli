@@ -1,0 +1,1988 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E356F31AD99517003FC87E /* FontsCliTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FontsCliTests.m */; };
+		0C80B921A6F3F58F76C31292 /* libPods-FontsCli.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-FontsCli.a */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		7699B88040F8A987B510C191 /* libPods-FontsCli-FontsCliTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-FontsCli-FontsCliTests.a */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		EDF994E129018DBB00CF2502 /* KaushanScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9940C29018DB800CF2502 /* KaushanScript.ttf */; };
+		EDF994E229018DBB00CF2502 /* KaushanScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9940C29018DB800CF2502 /* KaushanScript.ttf */; };
+		EDF994E329018DBB00CF2502 /* Modak.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9940D29018DB800CF2502 /* Modak.ttf */; };
+		EDF994E429018DBB00CF2502 /* Modak.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9940D29018DB800CF2502 /* Modak.ttf */; };
+		EDF994E529018DBB00CF2502 /* PICOWA.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EDF9940E29018DB800CF2502 /* PICOWA.TTF */; };
+		EDF994E629018DBB00CF2502 /* PICOWA.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EDF9940E29018DB800CF2502 /* PICOWA.TTF */; };
+		EDF994E729018DBB00CF2502 /* RibeyeMarrow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9940F29018DB800CF2502 /* RibeyeMarrow.ttf */; };
+		EDF994E829018DBB00CF2502 /* RibeyeMarrow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9940F29018DB800CF2502 /* RibeyeMarrow.ttf */; };
+		EDF994E929018DBB00CF2502 /* Calama.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941029018DB800CF2502 /* Calama.ttf */; };
+		EDF994EA29018DBB00CF2502 /* Calama.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941029018DB800CF2502 /* Calama.ttf */; };
+		EDF994EB29018DBB00CF2502 /* Pecita.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941129018DB800CF2502 /* Pecita.otf */; };
+		EDF994EC29018DBB00CF2502 /* Pecita.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941129018DB800CF2502 /* Pecita.otf */; };
+		EDF994ED29018DBB00CF2502 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941229018DB800CF2502 /* BebasNeue.otf */; };
+		EDF994EE29018DBB00CF2502 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941229018DB800CF2502 /* BebasNeue.otf */; };
+		EDF994EF29018DBB00CF2502 /* Ultra.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941329018DB800CF2502 /* Ultra.ttf */; };
+		EDF994F029018DBB00CF2502 /* Ultra.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941329018DB800CF2502 /* Ultra.ttf */; };
+		EDF994F129018DBB00CF2502 /* Alegreya.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941429018DB800CF2502 /* Alegreya.ttf */; };
+		EDF994F229018DBB00CF2502 /* Alegreya.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941429018DB800CF2502 /* Alegreya.ttf */; };
+		EDF994F329018DBB00CF2502 /* MetroColor.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941529018DB800CF2502 /* MetroColor.otf */; };
+		EDF994F429018DBB00CF2502 /* MetroColor.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941529018DB800CF2502 /* MetroColor.otf */; };
+		EDF994F529018DBB00CF2502 /* Calypso.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941629018DB800CF2502 /* Calypso.ttf */; };
+		EDF994F629018DBB00CF2502 /* Calypso.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941629018DB800CF2502 /* Calypso.ttf */; };
+		EDF994F729018DBB00CF2502 /* Cinzel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941729018DB800CF2502 /* Cinzel.ttf */; };
+		EDF994F829018DBB00CF2502 /* Cinzel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941729018DB800CF2502 /* Cinzel.ttf */; };
+		EDF994F929018DBB00CF2502 /* Felora.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941829018DB800CF2502 /* Felora.otf */; };
+		EDF994FA29018DBB00CF2502 /* Felora.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941829018DB800CF2502 /* Felora.otf */; };
+		EDF994FB29018DBB00CF2502 /* PicoBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941929018DB800CF2502 /* PicoBlack.ttf */; };
+		EDF994FC29018DBB00CF2502 /* PicoBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941929018DB800CF2502 /* PicoBlack.ttf */; };
+		EDF994FD29018DBB00CF2502 /* Gilbert.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941A29018DB800CF2502 /* Gilbert.otf */; };
+		EDF994FE29018DBB00CF2502 /* Gilbert.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941A29018DB800CF2502 /* Gilbert.otf */; };
+		EDF994FF29018DBB00CF2502 /* Libra.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941B29018DB800CF2502 /* Libra.otf */; };
+		EDF9950029018DBB00CF2502 /* Libra.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941B29018DB800CF2502 /* Libra.otf */; };
+		EDF9950129018DBB00CF2502 /* Sail.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941C29018DB800CF2502 /* Sail.ttf */; };
+		EDF9950229018DBB00CF2502 /* Sail.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941C29018DB800CF2502 /* Sail.ttf */; };
+		EDF9950329018DBB00CF2502 /* Pehlevi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941D29018DB800CF2502 /* Pehlevi.ttf */; };
+		EDF9950429018DBB00CF2502 /* Pehlevi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941D29018DB800CF2502 /* Pehlevi.ttf */; };
+		EDF9950529018DBB00CF2502 /* Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941E29018DB800CF2502 /* Heavy.ttf */; };
+		EDF9950629018DBB00CF2502 /* Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941E29018DB800CF2502 /* Heavy.ttf */; };
+		EDF9950729018DBB00CF2502 /* Courier.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941F29018DB800CF2502 /* Courier.otf */; };
+		EDF9950829018DBB00CF2502 /* Courier.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9941F29018DB800CF2502 /* Courier.otf */; };
+		EDF9950929018DBB00CF2502 /* UncialAntiqua.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942029018DB800CF2502 /* UncialAntiqua.ttf */; };
+		EDF9950A29018DBB00CF2502 /* UncialAntiqua.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942029018DB800CF2502 /* UncialAntiqua.ttf */; };
+		EDF9950B29018DBB00CF2502 /* MexicanTequila.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942129018DB800CF2502 /* MexicanTequila.ttf */; };
+		EDF9950C29018DBB00CF2502 /* MexicanTequila.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942129018DB800CF2502 /* MexicanTequila.ttf */; };
+		EDF9950D29018DBB00CF2502 /* Digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942229018DB800CF2502 /* Digital.ttf */; };
+		EDF9950E29018DBB00CF2502 /* Digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942229018DB800CF2502 /* Digital.ttf */; };
+		EDF9950F29018DBB00CF2502 /* Neoneon.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942329018DB800CF2502 /* Neoneon.otf */; };
+		EDF9951029018DBB00CF2502 /* Neoneon.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942329018DB800CF2502 /* Neoneon.otf */; };
+		EDF9951129018DBB00CF2502 /* Marske.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942429018DB800CF2502 /* Marske.ttf */; };
+		EDF9951229018DBB00CF2502 /* Marske.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942429018DB800CF2502 /* Marske.ttf */; };
+		EDF9951329018DBB00CF2502 /* Ruslan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942529018DB800CF2502 /* Ruslan.ttf */; };
+		EDF9951429018DBB00CF2502 /* Ruslan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942529018DB800CF2502 /* Ruslan.ttf */; };
+		EDF9951529018DBB00CF2502 /* GhiyaStrokes.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942629018DB800CF2502 /* GhiyaStrokes.ttf */; };
+		EDF9951629018DBB00CF2502 /* GhiyaStrokes.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942629018DB800CF2502 /* GhiyaStrokes.ttf */; };
+		EDF9951729018DBB00CF2502 /* Pompiere.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942729018DB800CF2502 /* Pompiere.ttf */; };
+		EDF9951829018DBB00CF2502 /* Pompiere.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942729018DB800CF2502 /* Pompiere.ttf */; };
+		EDF9951929018DBB00CF2502 /* MoyQelem.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942829018DB800CF2502 /* MoyQelem.ttf */; };
+		EDF9951A29018DBB00CF2502 /* MoyQelem.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942829018DB800CF2502 /* MoyQelem.ttf */; };
+		EDF9951B29018DBB00CF2502 /* Caveat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942929018DB800CF2502 /* Caveat.ttf */; };
+		EDF9951C29018DBB00CF2502 /* Caveat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942929018DB800CF2502 /* Caveat.ttf */; };
+		EDF9951D29018DBB00CF2502 /* CarlaSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942A29018DB800CF2502 /* CarlaSans.ttf */; };
+		EDF9951E29018DBB00CF2502 /* CarlaSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942A29018DB800CF2502 /* CarlaSans.ttf */; };
+		EDF9951F29018DBB00CF2502 /* Moiamova.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942B29018DB800CF2502 /* Moiamova.otf */; };
+		EDF9952029018DBB00CF2502 /* Moiamova.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942B29018DB800CF2502 /* Moiamova.otf */; };
+		EDF9952129018DBB00CF2502 /* Airfool.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942C29018DB800CF2502 /* Airfool.otf */; };
+		EDF9952229018DBB00CF2502 /* Airfool.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942C29018DB800CF2502 /* Airfool.otf */; };
+		EDF9952329018DBB00CF2502 /* Gravtrac.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942D29018DB800CF2502 /* Gravtrac.otf */; };
+		EDF9952429018DBB00CF2502 /* Gravtrac.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942D29018DB800CF2502 /* Gravtrac.otf */; };
+		EDF9952529018DBB00CF2502 /* Lumberjack.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942E29018DB800CF2502 /* Lumberjack.otf */; };
+		EDF9952629018DBB00CF2502 /* Lumberjack.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942E29018DB800CF2502 /* Lumberjack.otf */; };
+		EDF9952729018DBB00CF2502 /* Typographer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942F29018DB800CF2502 /* Typographer.ttf */; };
+		EDF9952829018DBB00CF2502 /* Typographer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9942F29018DB800CF2502 /* Typographer.ttf */; };
+		EDF9952929018DBB00CF2502 /* MajorMono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943029018DB800CF2502 /* MajorMono.ttf */; };
+		EDF9952A29018DBB00CF2502 /* MajorMono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943029018DB800CF2502 /* MajorMono.ttf */; };
+		EDF9952B29018DBB00CF2502 /* ShohlFold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943129018DB800CF2502 /* ShohlFold.ttf */; };
+		EDF9952C29018DBB00CF2502 /* ShohlFold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943129018DB800CF2502 /* ShohlFold.ttf */; };
+		EDF9952D29018DBB00CF2502 /* Neonblitz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943229018DB800CF2502 /* Neonblitz.ttf */; };
+		EDF9952E29018DBB00CF2502 /* Neonblitz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943229018DB800CF2502 /* Neonblitz.ttf */; };
+		EDF9952F29018DBB00CF2502 /* FasterOne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943329018DB800CF2502 /* FasterOne.ttf */; };
+		EDF9953029018DBB00CF2502 /* FasterOne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943329018DB800CF2502 /* FasterOne.ttf */; };
+		EDF9953129018DBB00CF2502 /* BadScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943429018DB800CF2502 /* BadScript.ttf */; };
+		EDF9953229018DBB00CF2502 /* BadScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943429018DB800CF2502 /* BadScript.ttf */; };
+		EDF9953329018DBB00CF2502 /* Kaelia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943529018DB800CF2502 /* Kaelia.ttf */; };
+		EDF9953429018DBB00CF2502 /* Kaelia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943529018DB800CF2502 /* Kaelia.ttf */; };
+		EDF9953529018DBB00CF2502 /* Mexcellent.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943629018DB800CF2502 /* Mexcellent.otf */; };
+		EDF9953629018DBB00CF2502 /* Mexcellent.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943629018DB800CF2502 /* Mexcellent.otf */; };
+		EDF9953729018DBB00CF2502 /* Creepster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943729018DB800CF2502 /* Creepster.ttf */; };
+		EDF9953829018DBB00CF2502 /* Creepster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943729018DB800CF2502 /* Creepster.ttf */; };
+		EDF9953929018DBB00CF2502 /* FonartoXT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943829018DB800CF2502 /* FonartoXT.ttf */; };
+		EDF9953A29018DBB00CF2502 /* FonartoXT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943829018DB800CF2502 /* FonartoXT.ttf */; };
+		EDF9953B29018DBB00CF2502 /* Shojumaru.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943929018DB800CF2502 /* Shojumaru.ttf */; };
+		EDF9953C29018DBB00CF2502 /* Shojumaru.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943929018DB800CF2502 /* Shojumaru.ttf */; };
+		EDF9953D29018DBB00CF2502 /* Bukhari.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943A29018DB800CF2502 /* Bukhari.ttf */; };
+		EDF9953E29018DBB00CF2502 /* Bukhari.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943A29018DB800CF2502 /* Bukhari.ttf */; };
+		EDF9953F29018DBB00CF2502 /* MulticolorePro.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943B29018DB800CF2502 /* MulticolorePro.otf */; };
+		EDF9954029018DBB00CF2502 /* MulticolorePro.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943B29018DB800CF2502 /* MulticolorePro.otf */; };
+		EDF9954129018DBB00CF2502 /* DancingScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943C29018DB800CF2502 /* DancingScript.ttf */; };
+		EDF9954229018DBB00CF2502 /* DancingScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943C29018DB800CF2502 /* DancingScript.ttf */; };
+		EDF9954329018DBB00CF2502 /* Lobster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943D29018DB800CF2502 /* Lobster.ttf */; };
+		EDF9954429018DBB00CF2502 /* Lobster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943D29018DB800CF2502 /* Lobster.ttf */; };
+		EDF9954529018DBB00CF2502 /* Eater.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943E29018DB800CF2502 /* Eater.ttf */; };
+		EDF9954629018DBB00CF2502 /* Eater.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943E29018DB800CF2502 /* Eater.ttf */; };
+		EDF9954729018DBB00CF2502 /* Merkin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943F29018DB800CF2502 /* Merkin.ttf */; };
+		EDF9954829018DBB00CF2502 /* Merkin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9943F29018DB800CF2502 /* Merkin.ttf */; };
+		EDF9954929018DBB00CF2502 /* GhiyaItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944029018DB800CF2502 /* GhiyaItalic.ttf */; };
+		EDF9954A29018DBB00CF2502 /* GhiyaItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944029018DB800CF2502 /* GhiyaItalic.ttf */; };
+		EDF9954B29018DBB00CF2502 /* Fonarto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944129018DB800CF2502 /* Fonarto.ttf */; };
+		EDF9954C29018DBB00CF2502 /* Fonarto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944129018DB800CF2502 /* Fonarto.ttf */; };
+		EDF9954D29018DBB00CF2502 /* Fascinate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944229018DB800CF2502 /* Fascinate.ttf */; };
+		EDF9954E29018DBB00CF2502 /* Fascinate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944229018DB800CF2502 /* Fascinate.ttf */; };
+		EDF9954F29018DBB00CF2502 /* Jura.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944329018DB900CF2502 /* Jura.ttf */; };
+		EDF9955029018DBB00CF2502 /* Jura.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944329018DB900CF2502 /* Jura.ttf */; };
+		EDF9955129018DBB00CF2502 /* HeyOctober.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944429018DB900CF2502 /* HeyOctober.otf */; };
+		EDF9955229018DBB00CF2502 /* HeyOctober.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944429018DB900CF2502 /* HeyOctober.otf */; };
+		EDF9955329018DBB00CF2502 /* KingthingsPoppalok.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944529018DB900CF2502 /* KingthingsPoppalok.ttf */; };
+		EDF9955429018DBB00CF2502 /* KingthingsPoppalok.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944529018DB900CF2502 /* KingthingsPoppalok.ttf */; };
+		EDF9955529018DBB00CF2502 /* KellySlab.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944629018DB900CF2502 /* KellySlab.ttf */; };
+		EDF9955629018DBB00CF2502 /* KellySlab.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944629018DB900CF2502 /* KellySlab.ttf */; };
+		EDF9955729018DBB00CF2502 /* InterHewn.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944729018DB900CF2502 /* InterHewn.otf */; };
+		EDF9955829018DBB00CF2502 /* InterHewn.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944729018DB900CF2502 /* InterHewn.otf */; };
+		EDF9955929018DBB00CF2502 /* Exodar.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944829018DB900CF2502 /* Exodar.ttf */; };
+		EDF9955A29018DBB00CF2502 /* Exodar.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944829018DB900CF2502 /* Exodar.ttf */; };
+		EDF9955B29018DBB00CF2502 /* Klaxons.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944929018DB900CF2502 /* Klaxons.otf */; };
+		EDF9955C29018DBB00CF2502 /* Klaxons.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944929018DB900CF2502 /* Klaxons.otf */; };
+		EDF9955D29018DBB00CF2502 /* AstroSpace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944A29018DB900CF2502 /* AstroSpace.ttf */; };
+		EDF9955E29018DBB00CF2502 /* AstroSpace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944A29018DB900CF2502 /* AstroSpace.ttf */; };
+		EDF9955F29018DBB00CF2502 /* Skranji.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944B29018DB900CF2502 /* Skranji.ttf */; };
+		EDF9956029018DBB00CF2502 /* Skranji.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944B29018DB900CF2502 /* Skranji.ttf */; };
+		EDF9956129018DBB00CF2502 /* SnowburstOne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944C29018DB900CF2502 /* SnowburstOne.ttf */; };
+		EDF9956229018DBB00CF2502 /* SnowburstOne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944C29018DB900CF2502 /* SnowburstOne.ttf */; };
+		EDF9956329018DBB00CF2502 /* GlyphsSapperlot.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944D29018DB900CF2502 /* GlyphsSapperlot.otf */; };
+		EDF9956429018DBB00CF2502 /* GlyphsSapperlot.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944D29018DB900CF2502 /* GlyphsSapperlot.otf */; };
+		EDF9956529018DBB00CF2502 /* Philosopher.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944E29018DB900CF2502 /* Philosopher.ttf */; };
+		EDF9956629018DBB00CF2502 /* Philosopher.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944E29018DB900CF2502 /* Philosopher.ttf */; };
+		EDF9956729018DBB00CF2502 /* SpaceTime.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944F29018DB900CF2502 /* SpaceTime.ttf */; };
+		EDF9956829018DBB00CF2502 /* SpaceTime.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9944F29018DB900CF2502 /* SpaceTime.ttf */; };
+		EDF9956929018DBB00CF2502 /* ChunkFivePrint.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945029018DB900CF2502 /* ChunkFivePrint.ttf */; };
+		EDF9956A29018DBB00CF2502 /* ChunkFivePrint.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945029018DB900CF2502 /* ChunkFivePrint.ttf */; };
+		EDF9956B29018DBB00CF2502 /* Lemon.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945129018DB900CF2502 /* Lemon.otf */; };
+		EDF9956C29018DBB00CF2502 /* Lemon.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945129018DB900CF2502 /* Lemon.otf */; };
+		EDF9956D29018DBB00CF2502 /* KazmannSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945229018DB900CF2502 /* KazmannSans.ttf */; };
+		EDF9956E29018DBB00CF2502 /* KazmannSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945229018DB900CF2502 /* KazmannSans.ttf */; };
+		EDF9956F29018DBB00CF2502 /* Aperture.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945329018DB900CF2502 /* Aperture.ttf */; };
+		EDF9957029018DBB00CF2502 /* Aperture.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945329018DB900CF2502 /* Aperture.ttf */; };
+		EDF9957129018DBB00CF2502 /* Akronim.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945429018DB900CF2502 /* Akronim.ttf */; };
+		EDF9957229018DBB00CF2502 /* Akronim.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945429018DB900CF2502 /* Akronim.ttf */; };
+		EDF9957329018DBB00CF2502 /* MountainsOfChristmas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945529018DB900CF2502 /* MountainsOfChristmas.ttf */; };
+		EDF9957429018DBB00CF2502 /* MountainsOfChristmas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945529018DB900CF2502 /* MountainsOfChristmas.ttf */; };
+		EDF9957529018DBB00CF2502 /* Kalam.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945629018DB900CF2502 /* Kalam.ttf */; };
+		EDF9957629018DBB00CF2502 /* Kalam.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945629018DB900CF2502 /* Kalam.ttf */; };
+		EDF9957729018DBB00CF2502 /* DNPixel.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945729018DB900CF2502 /* DNPixel.otf */; };
+		EDF9957829018DBB00CF2502 /* DNPixel.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945729018DB900CF2502 /* DNPixel.otf */; };
+		EDF9957929018DBB00CF2502 /* Clip.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945829018DB900CF2502 /* Clip.ttf */; };
+		EDF9957A29018DBB00CF2502 /* Clip.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945829018DB900CF2502 /* Clip.ttf */; };
+		EDF9957B29018DBB00CF2502 /* Hillock.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945929018DB900CF2502 /* Hillock.ttf */; };
+		EDF9957C29018DBB00CF2502 /* Hillock.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945929018DB900CF2502 /* Hillock.ttf */; };
+		EDF9957D29018DBB00CF2502 /* Borough.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945A29018DB900CF2502 /* Borough.otf */; };
+		EDF9957E29018DBB00CF2502 /* Borough.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945A29018DB900CF2502 /* Borough.otf */; };
+		EDF9957F29018DBB00CF2502 /* Blox.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945B29018DB900CF2502 /* Blox.ttf */; };
+		EDF9958029018DBB00CF2502 /* Blox.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945B29018DB900CF2502 /* Blox.ttf */; };
+		EDF9958129018DBB00CF2502 /* BungeeShade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945C29018DB900CF2502 /* BungeeShade.ttf */; };
+		EDF9958229018DBB00CF2502 /* BungeeShade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945C29018DB900CF2502 /* BungeeShade.ttf */; };
+		EDF9958329018DBB00CF2502 /* Brusnika.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945D29018DB900CF2502 /* Brusnika.otf */; };
+		EDF9958429018DBB00CF2502 /* Brusnika.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945D29018DB900CF2502 /* Brusnika.otf */; };
+		EDF9958529018DBB00CF2502 /* Zantroke.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945E29018DB900CF2502 /* Zantroke.otf */; };
+		EDF9958629018DBB00CF2502 /* Zantroke.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945E29018DB900CF2502 /* Zantroke.otf */; };
+		EDF9958729018DBB00CF2502 /* Monoton.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945F29018DB900CF2502 /* Monoton.ttf */; };
+		EDF9958829018DBB00CF2502 /* Monoton.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9945F29018DB900CF2502 /* Monoton.ttf */; };
+		EDF9958929018DBB00CF2502 /* NEOND.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946029018DB900CF2502 /* NEOND.otf */; };
+		EDF9958A29018DBB00CF2502 /* NEOND.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946029018DB900CF2502 /* NEOND.otf */; };
+		EDF9958B29018DBB00CF2502 /* Unround.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946129018DB900CF2502 /* Unround.otf */; };
+		EDF9958C29018DBB00CF2502 /* Unround.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946129018DB900CF2502 /* Unround.otf */; };
+		EDF9958D29018DBB00CF2502 /* Oranienbaum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946229018DB900CF2502 /* Oranienbaum.ttf */; };
+		EDF9958E29018DBB00CF2502 /* Oranienbaum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946229018DB900CF2502 /* Oranienbaum.ttf */; };
+		EDF9958F29018DBB00CF2502 /* GrandHotel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946329018DB900CF2502 /* GrandHotel.ttf */; };
+		EDF9959029018DBB00CF2502 /* GrandHotel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946329018DB900CF2502 /* GrandHotel.ttf */; };
+		EDF9959129018DBB00CF2502 /* Bondi.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946429018DB900CF2502 /* Bondi.otf */; };
+		EDF9959229018DBB00CF2502 /* Bondi.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946429018DB900CF2502 /* Bondi.otf */; };
+		EDF9959329018DBB00CF2502 /* Beon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946529018DB900CF2502 /* Beon.ttf */; };
+		EDF9959429018DBB00CF2502 /* Beon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946529018DB900CF2502 /* Beon.ttf */; };
+		EDF9959529018DBB00CF2502 /* Stick.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946629018DB900CF2502 /* Stick.ttf */; };
+		EDF9959629018DBB00CF2502 /* Stick.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946629018DB900CF2502 /* Stick.ttf */; };
+		EDF9959729018DBB00CF2502 /* Coiny.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946729018DB900CF2502 /* Coiny.ttf */; };
+		EDF9959829018DBB00CF2502 /* Coiny.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946729018DB900CF2502 /* Coiny.ttf */; };
+		EDF9959929018DBB00CF2502 /* NEON1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946829018DB900CF2502 /* NEON1.ttf */; };
+		EDF9959A29018DBB00CF2502 /* NEON1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946829018DB900CF2502 /* NEON1.ttf */; };
+		EDF9959B29018DBB00CF2502 /* Celestina.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946929018DB900CF2502 /* Celestina.otf */; };
+		EDF9959C29018DBB00CF2502 /* Celestina.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946929018DB900CF2502 /* Celestina.otf */; };
+		EDF9959D29018DBB00CF2502 /* Bosk.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946A29018DB900CF2502 /* Bosk.otf */; };
+		EDF9959E29018DBB00CF2502 /* Bosk.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946A29018DB900CF2502 /* Bosk.otf */; };
+		EDF9959F29018DBB00CF2502 /* Broker.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946B29018DB900CF2502 /* Broker.ttf */; };
+		EDF995A029018DBB00CF2502 /* Broker.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946B29018DB900CF2502 /* Broker.ttf */; };
+		EDF995A129018DBB00CF2502 /* Forum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946C29018DB900CF2502 /* Forum.ttf */; };
+		EDF995A229018DBB00CF2502 /* Forum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946C29018DB900CF2502 /* Forum.ttf */; };
+		EDF995A329018DBB00CF2502 /* Brosh.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946D29018DB900CF2502 /* Brosh.otf */; };
+		EDF995A429018DBB00CF2502 /* Brosh.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946D29018DB900CF2502 /* Brosh.otf */; };
+		EDF995A529018DBB00CF2502 /* Pencil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946E29018DB900CF2502 /* Pencil.ttf */; };
+		EDF995A629018DBB00CF2502 /* Pencil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946E29018DB900CF2502 /* Pencil.ttf */; };
+		EDF995A729018DBB00CF2502 /* Chekharda.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946F29018DB900CF2502 /* Chekharda.ttf */; };
+		EDF995A829018DBB00CF2502 /* Chekharda.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9946F29018DB900CF2502 /* Chekharda.ttf */; };
+		EDF995A929018DBB00CF2502 /* Ewert.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947029018DB900CF2502 /* Ewert.ttf */; };
+		EDF995AA29018DBB00CF2502 /* Ewert.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947029018DB900CF2502 /* Ewert.ttf */; };
+		EDF995AB29018DBB00CF2502 /* Amydor.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947129018DB900CF2502 /* Amydor.ttf */; };
+		EDF995AC29018DBB00CF2502 /* Amydor.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947129018DB900CF2502 /* Amydor.ttf */; };
+		EDF995AD29018DBB00CF2502 /* SeasideResort.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947229018DB900CF2502 /* SeasideResort.ttf */; };
+		EDF995AE29018DBB00CF2502 /* SeasideResort.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947229018DB900CF2502 /* SeasideResort.ttf */; };
+		EDF995AF29018DBB00CF2502 /* Neoneox.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947329018DB900CF2502 /* Neoneox.otf */; };
+		EDF995B029018DBB00CF2502 /* Neoneox.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947329018DB900CF2502 /* Neoneox.otf */; };
+		EDF995B129018DBB00CF2502 /* Krabuler.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947429018DB900CF2502 /* Krabuler.otf */; };
+		EDF995B229018DBB00CF2502 /* Krabuler.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947429018DB900CF2502 /* Krabuler.otf */; };
+		EDF995B329018DBB00CF2502 /* RumRaisin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947529018DB900CF2502 /* RumRaisin.otf */; };
+		EDF995B429018DBB00CF2502 /* RumRaisin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947529018DB900CF2502 /* RumRaisin.otf */; };
+		EDF995B529018DBB00CF2502 /* Rookworst.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947629018DB900CF2502 /* Rookworst.ttf */; };
+		EDF995B629018DBB00CF2502 /* Rookworst.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947629018DB900CF2502 /* Rookworst.ttf */; };
+		EDF995B729018DBB00CF2502 /* Kurale.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947729018DB900CF2502 /* Kurale.ttf */; };
+		EDF995B829018DBB00CF2502 /* Kurale.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947729018DB900CF2502 /* Kurale.ttf */; };
+		EDF995B929018DBB00CF2502 /* Gaoel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947829018DB900CF2502 /* Gaoel.ttf */; };
+		EDF995BA29018DBB00CF2502 /* Gaoel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947829018DB900CF2502 /* Gaoel.ttf */; };
+		EDF995BB29018DBB00CF2502 /* Sacramento.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947929018DB900CF2502 /* Sacramento.ttf */; };
+		EDF995BC29018DBB00CF2502 /* Sacramento.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947929018DB900CF2502 /* Sacramento.ttf */; };
+		EDF995BD29018DBB00CF2502 /* HiMelody.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947A29018DB900CF2502 /* HiMelody.otf */; };
+		EDF995BE29018DBB00CF2502 /* HiMelody.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947A29018DB900CF2502 /* HiMelody.otf */; };
+		EDF995BF29018DBB00CF2502 /* GaretHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947B29018DB900CF2502 /* GaretHeavy.otf */; };
+		EDF995C029018DBB00CF2502 /* GaretHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947B29018DB900CF2502 /* GaretHeavy.otf */; };
+		EDF995C129018DBB00CF2502 /* Molodo.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947C29018DB900CF2502 /* Molodo.otf */; };
+		EDF995C229018DBB00CF2502 /* Molodo.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947C29018DB900CF2502 /* Molodo.otf */; };
+		EDF995C329018DBB00CF2502 /* RetroPop.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947D29018DB900CF2502 /* RetroPop.ttf */; };
+		EDF995C429018DBB00CF2502 /* RetroPop.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947D29018DB900CF2502 /* RetroPop.ttf */; };
+		EDF995C529018DBB00CF2502 /* SpecialElite.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947E29018DB900CF2502 /* SpecialElite.ttf */; };
+		EDF995C629018DBB00CF2502 /* SpecialElite.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947E29018DB900CF2502 /* SpecialElite.ttf */; };
+		EDF995C729018DBB00CF2502 /* Joystix.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947F29018DB900CF2502 /* Joystix.ttf */; };
+		EDF995C829018DBB00CF2502 /* Joystix.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9947F29018DB900CF2502 /* Joystix.ttf */; };
+		EDF995C929018DBB00CF2502 /* Abrushow.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948029018DB900CF2502 /* Abrushow.otf */; };
+		EDF995CA29018DBB00CF2502 /* Abrushow.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948029018DB900CF2502 /* Abrushow.otf */; };
+		EDF995CB29018DBB00CF2502 /* SanFrancisco.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948129018DB900CF2502 /* SanFrancisco.ttf */; };
+		EDF995CC29018DBB00CF2502 /* SanFrancisco.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948129018DB900CF2502 /* SanFrancisco.ttf */; };
+		EDF995CD29018DBB00CF2502 /* Welcome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948229018DB900CF2502 /* Welcome.ttf */; };
+		EDF995CE29018DBB00CF2502 /* Welcome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948229018DB900CF2502 /* Welcome.ttf */; };
+		EDF995CF29018DBB00CF2502 /* AbrilFatface.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948329018DB900CF2502 /* AbrilFatface.ttf */; };
+		EDF995D029018DBB00CF2502 /* AbrilFatface.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948329018DB900CF2502 /* AbrilFatface.ttf */; };
+		EDF995D129018DBB00CF2502 /* BungeeInline.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948429018DB900CF2502 /* BungeeInline.otf */; };
+		EDF995D229018DBB00CF2502 /* BungeeInline.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948429018DB900CF2502 /* BungeeInline.otf */; };
+		EDF995D329018DBB00CF2502 /* Shrikhand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948529018DB900CF2502 /* Shrikhand.ttf */; };
+		EDF995D429018DBB00CF2502 /* Shrikhand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948529018DB900CF2502 /* Shrikhand.ttf */; };
+		EDF995D529018DBB00CF2502 /* Glitch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948629018DB900CF2502 /* Glitch.ttf */; };
+		EDF995D629018DBB00CF2502 /* Glitch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948629018DB900CF2502 /* Glitch.ttf */; };
+		EDF995D729018DBB00CF2502 /* Zhizn.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948729018DB900CF2502 /* Zhizn.otf */; };
+		EDF995D829018DBB00CF2502 /* Zhizn.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948729018DB900CF2502 /* Zhizn.otf */; };
+		EDF995D929018DBB00CF2502 /* CherrySwash.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948829018DB900CF2502 /* CherrySwash.ttf */; };
+		EDF995DA29018DBB00CF2502 /* CherrySwash.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948829018DB900CF2502 /* CherrySwash.ttf */; };
+		EDF995DB29018DBB00CF2502 /* Kranky.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948929018DB900CF2502 /* Kranky.ttf */; };
+		EDF995DC29018DBB00CF2502 /* Kranky.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948929018DB900CF2502 /* Kranky.ttf */; };
+		EDF995DD29018DBB00CF2502 /* Allura.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948A29018DB900CF2502 /* Allura.ttf */; };
+		EDF995DE29018DBB00CF2502 /* Allura.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948A29018DB900CF2502 /* Allura.ttf */; };
+		EDF995DF29018DBB00CF2502 /* Facon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948B29018DB900CF2502 /* Facon.ttf */; };
+		EDF995E029018DBB00CF2502 /* Facon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948B29018DB900CF2502 /* Facon.ttf */; };
+		EDF995E129018DBB00CF2502 /* Limelight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948C29018DB900CF2502 /* Limelight.ttf */; };
+		EDF995E229018DBB00CF2502 /* Limelight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948C29018DB900CF2502 /* Limelight.ttf */; };
+		EDF995E329018DBB00CF2502 /* IndieFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948D29018DB900CF2502 /* IndieFlower.ttf */; };
+		EDF995E429018DBB00CF2502 /* IndieFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948D29018DB900CF2502 /* IndieFlower.ttf */; };
+		EDF995E529018DBB00CF2502 /* OrelegaOne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948E29018DB900CF2502 /* OrelegaOne.ttf */; };
+		EDF995E629018DBB00CF2502 /* OrelegaOne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948E29018DB900CF2502 /* OrelegaOne.ttf */; };
+		EDF995E729018DBB00CF2502 /* DsGoose.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948F29018DB900CF2502 /* DsGoose.ttf */; };
+		EDF995E829018DBB00CF2502 /* DsGoose.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9948F29018DB900CF2502 /* DsGoose.ttf */; };
+		EDF995E929018DBB00CF2502 /* Yarin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949029018DB900CF2502 /* Yarin.otf */; };
+		EDF995EA29018DBB00CF2502 /* Yarin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949029018DB900CF2502 /* Yarin.otf */; };
+		EDF995EB29018DBB00CF2502 /* Broadway.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949129018DB900CF2502 /* Broadway.ttf */; };
+		EDF995EC29018DBB00CF2502 /* Broadway.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949129018DB900CF2502 /* Broadway.ttf */; };
+		EDF995ED29018DBB00CF2502 /* Yeseva.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949229018DBA00CF2502 /* Yeseva.otf */; };
+		EDF995EE29018DBB00CF2502 /* Yeseva.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949229018DBA00CF2502 /* Yeseva.otf */; };
+		EDF995EF29018DBB00CF2502 /* Wes.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949329018DBA00CF2502 /* Wes.otf */; };
+		EDF995F029018DBB00CF2502 /* Wes.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949329018DBA00CF2502 /* Wes.otf */; };
+		EDF995F129018DBB00CF2502 /* GilbertColor.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949429018DBA00CF2502 /* GilbertColor.otf */; };
+		EDF995F229018DBB00CF2502 /* GilbertColor.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949429018DBA00CF2502 /* GilbertColor.otf */; };
+		EDF995F329018DBB00CF2502 /* Barrio.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949529018DBA00CF2502 /* Barrio.ttf */; };
+		EDF995F429018DBB00CF2502 /* Barrio.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949529018DBA00CF2502 /* Barrio.ttf */; };
+		EDF995F529018DBB00CF2502 /* PinkBlue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949629018DBA00CF2502 /* PinkBlue.ttf */; };
+		EDF995F629018DBB00CF2502 /* PinkBlue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949629018DBA00CF2502 /* PinkBlue.ttf */; };
+		EDF995F729018DBB00CF2502 /* MrLonely.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949729018DBA00CF2502 /* MrLonely.otf */; };
+		EDF995F829018DBB00CF2502 /* MrLonely.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949729018DBA00CF2502 /* MrLonely.otf */; };
+		EDF995F929018DBB00CF2502 /* Supermercado.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949829018DBA00CF2502 /* Supermercado.ttf */; };
+		EDF995FA29018DBB00CF2502 /* Supermercado.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949829018DBA00CF2502 /* Supermercado.ttf */; };
+		EDF995FB29018DBB00CF2502 /* Balkara.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949929018DBA00CF2502 /* Balkara.ttf */; };
+		EDF995FC29018DBB00CF2502 /* Balkara.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949929018DBA00CF2502 /* Balkara.ttf */; };
+		EDF995FD29018DBB00CF2502 /* Lapsus.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949A29018DBA00CF2502 /* Lapsus.otf */; };
+		EDF995FE29018DBB00CF2502 /* Lapsus.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949A29018DBA00CF2502 /* Lapsus.otf */; };
+		EDF995FF29018DBB00CF2502 /* Smokum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949B29018DBA00CF2502 /* Smokum.ttf */; };
+		EDF9960029018DBB00CF2502 /* Smokum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949B29018DBA00CF2502 /* Smokum.ttf */; };
+		EDF9960129018DBB00CF2502 /* Caviar.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949C29018DBA00CF2502 /* Caviar.ttf */; };
+		EDF9960229018DBB00CF2502 /* Caviar.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949C29018DBA00CF2502 /* Caviar.ttf */; };
+		EDF9960329018DBB00CF2502 /* Moon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949D29018DBA00CF2502 /* Moon.ttf */; };
+		EDF9960429018DBB00CF2502 /* Moon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949D29018DBA00CF2502 /* Moon.ttf */; };
+		EDF9960529018DBB00CF2502 /* Marck Script.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949E29018DBA00CF2502 /* Marck Script.ttf */; };
+		EDF9960629018DBB00CF2502 /* Marck Script.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949E29018DBA00CF2502 /* Marck Script.ttf */; };
+		EDF9960729018DBB00CF2502 /* Zekton.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949F29018DBA00CF2502 /* Zekton.ttf */; };
+		EDF9960829018DBB00CF2502 /* Zekton.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF9949F29018DBA00CF2502 /* Zekton.ttf */; };
+		EDF9960929018DBB00CF2502 /* Zyablik.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A029018DBA00CF2502 /* Zyablik.ttf */; };
+		EDF9960A29018DBB00CF2502 /* Zyablik.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A029018DBA00CF2502 /* Zyablik.ttf */; };
+		EDF9960B29018DBB00CF2502 /* Automania.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A129018DBA00CF2502 /* Automania.ttf */; };
+		EDF9960C29018DBB00CF2502 /* Automania.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A129018DBA00CF2502 /* Automania.ttf */; };
+		EDF9960D29018DBB00CF2502 /* Centar.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A229018DBA00CF2502 /* Centar.otf */; };
+		EDF9960E29018DBB00CF2502 /* Centar.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A229018DBA00CF2502 /* Centar.otf */; };
+		EDF9960F29018DBB00CF2502 /* Magnolia.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A329018DBA00CF2502 /* Magnolia.otf */; };
+		EDF9961029018DBB00CF2502 /* Magnolia.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A329018DBA00CF2502 /* Magnolia.otf */; };
+		EDF9961129018DBB00CF2502 /* OwnHand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A429018DBA00CF2502 /* OwnHand.ttf */; };
+		EDF9961229018DBB00CF2502 /* OwnHand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A429018DBA00CF2502 /* OwnHand.ttf */; };
+		EDF9961329018DBB00CF2502 /* TimeBurner.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A529018DBA00CF2502 /* TimeBurner.ttf */; };
+		EDF9961429018DBB00CF2502 /* TimeBurner.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A529018DBA00CF2502 /* TimeBurner.ttf */; };
+		EDF9961529018DBB00CF2502 /* Peace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A629018DBA00CF2502 /* Peace.ttf */; };
+		EDF9961629018DBB00CF2502 /* Peace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A629018DBA00CF2502 /* Peace.ttf */; };
+		EDF9961729018DBB00CF2502 /* Blogger.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A729018DBA00CF2502 /* Blogger.otf */; };
+		EDF9961829018DBB00CF2502 /* Blogger.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A729018DBA00CF2502 /* Blogger.otf */; };
+		EDF9961929018DBB00CF2502 /* ShadowsIntoLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A829018DBA00CF2502 /* ShadowsIntoLight.ttf */; };
+		EDF9961A29018DBB00CF2502 /* ShadowsIntoLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A829018DBA00CF2502 /* ShadowsIntoLight.ttf */; };
+		EDF9961B29018DBB00CF2502 /* BungeeOutline.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A929018DBA00CF2502 /* BungeeOutline.otf */; };
+		EDF9961C29018DBB00CF2502 /* BungeeOutline.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994A929018DBA00CF2502 /* BungeeOutline.otf */; };
+		EDF9961D29018DBB00CF2502 /* GochiHand.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994AA29018DBA00CF2502 /* GochiHand.otf */; };
+		EDF9961E29018DBB00CF2502 /* GochiHand.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994AA29018DBA00CF2502 /* GochiHand.otf */; };
+		EDF9961F29018DBB00CF2502 /* Ribeye.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994AB29018DBA00CF2502 /* Ribeye.ttf */; };
+		EDF9962029018DBB00CF2502 /* Ribeye.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994AB29018DBA00CF2502 /* Ribeye.ttf */; };
+		EDF9962129018DBB00CF2502 /* TagType.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994AC29018DBA00CF2502 /* TagType.ttf */; };
+		EDF9962229018DBB00CF2502 /* TagType.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994AC29018DBA00CF2502 /* TagType.ttf */; };
+		EDF9962329018DBB00CF2502 /* TT2020Base.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994AD29018DBA00CF2502 /* TT2020Base.ttf */; };
+		EDF9962429018DBB00CF2502 /* TT2020Base.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994AD29018DBA00CF2502 /* TT2020Base.ttf */; };
+		EDF9962529018DBB00CF2502 /* PinkPoppy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994AE29018DBA00CF2502 /* PinkPoppy.ttf */; };
+		EDF9962629018DBB00CF2502 /* PinkPoppy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994AE29018DBA00CF2502 /* PinkPoppy.ttf */; };
+		EDF9962729018DBB00CF2502 /* Foregen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994AF29018DBA00CF2502 /* Foregen.ttf */; };
+		EDF9962829018DBB00CF2502 /* Foregen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994AF29018DBA00CF2502 /* Foregen.ttf */; };
+		EDF9962929018DBB00CF2502 /* Orbitron.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B029018DBA00CF2502 /* Orbitron.ttf */; };
+		EDF9962A29018DBB00CF2502 /* Orbitron.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B029018DBA00CF2502 /* Orbitron.ttf */; };
+		EDF9962B29018DBB00CF2502 /* Measure.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B129018DBA00CF2502 /* Measure.otf */; };
+		EDF9962C29018DBB00CF2502 /* Measure.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B129018DBA00CF2502 /* Measure.otf */; };
+		EDF9962D29018DBB00CF2502 /* MoscowMetro.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B229018DBA00CF2502 /* MoscowMetro.otf */; };
+		EDF9962E29018DBB00CF2502 /* MoscowMetro.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B229018DBA00CF2502 /* MoscowMetro.otf */; };
+		EDF9962F29018DBB00CF2502 /* AlexBrush.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B329018DBA00CF2502 /* AlexBrush.ttf */; };
+		EDF9963029018DBB00CF2502 /* AlexBrush.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B329018DBA00CF2502 /* AlexBrush.ttf */; };
+		EDF9963129018DBB00CF2502 /* Fattern.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B429018DBA00CF2502 /* Fattern.otf */; };
+		EDF9963229018DBB00CF2502 /* Fattern.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B429018DBA00CF2502 /* Fattern.otf */; };
+		EDF9963329018DBB00CF2502 /* Lighthaus.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B529018DBA00CF2502 /* Lighthaus.otf */; };
+		EDF9963429018DBB00CF2502 /* Lighthaus.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B529018DBA00CF2502 /* Lighthaus.otf */; };
+		EDF9963529018DBB00CF2502 /* Gagalin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B629018DBA00CF2502 /* Gagalin.otf */; };
+		EDF9963629018DBB00CF2502 /* Gagalin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B629018DBA00CF2502 /* Gagalin.otf */; };
+		EDF9963729018DBB00CF2502 /* Underdog.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B729018DBA00CF2502 /* Underdog.ttf */; };
+		EDF9963829018DBB00CF2502 /* Underdog.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B729018DBA00CF2502 /* Underdog.ttf */; };
+		EDF9963929018DBB00CF2502 /* Storytella.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B829018DBA00CF2502 /* Storytella.otf */; };
+		EDF9963A29018DBB00CF2502 /* Storytella.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B829018DBA00CF2502 /* Storytella.otf */; };
+		EDF9963B29018DBB00CF2502 /* Frijole.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B929018DBA00CF2502 /* Frijole.ttf */; };
+		EDF9963C29018DBB00CF2502 /* Frijole.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994B929018DBA00CF2502 /* Frijole.ttf */; };
+		EDF9963D29018DBB00CF2502 /* ColorTube.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994BA29018DBA00CF2502 /* ColorTube.otf */; };
+		EDF9963E29018DBB00CF2502 /* ColorTube.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994BA29018DBA00CF2502 /* ColorTube.otf */; };
+		EDF9963F29018DBB00CF2502 /* Frisky.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994BB29018DBA00CF2502 /* Frisky.otf */; };
+		EDF9964029018DBB00CF2502 /* Frisky.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994BB29018DBA00CF2502 /* Frisky.otf */; };
+		EDF9964129018DBB00CF2502 /* SomeTimeLater.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994BC29018DBA00CF2502 /* SomeTimeLater.otf */; };
+		EDF9964229018DBB00CF2502 /* SomeTimeLater.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994BC29018DBA00CF2502 /* SomeTimeLater.otf */; };
+		EDF9964329018DBB00CF2502 /* GreatVibes.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994BD29018DBA00CF2502 /* GreatVibes.ttf */; };
+		EDF9964429018DBB00CF2502 /* GreatVibes.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994BD29018DBA00CF2502 /* GreatVibes.ttf */; };
+		EDF9964529018DBB00CF2502 /* HitchHike.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994BE29018DBA00CF2502 /* HitchHike.otf */; };
+		EDF9964629018DBB00CF2502 /* HitchHike.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994BE29018DBA00CF2502 /* HitchHike.otf */; };
+		EDF9964729018DBB00CF2502 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994BF29018DBA00CF2502 /* Pacifico.ttf */; };
+		EDF9964829018DBB00CF2502 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994BF29018DBA00CF2502 /* Pacifico.ttf */; };
+		EDF9964929018DBB00CF2502 /* RussoOne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C029018DBA00CF2502 /* RussoOne.ttf */; };
+		EDF9964A29018DBB00CF2502 /* RussoOne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C029018DBA00CF2502 /* RussoOne.ttf */; };
+		EDF9964B29018DBB00CF2502 /* SweetMavka.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C129018DBA00CF2502 /* SweetMavka.ttf */; };
+		EDF9964C29018DBB00CF2502 /* SweetMavka.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C129018DBA00CF2502 /* SweetMavka.ttf */; };
+		EDF9964D29018DBB00CF2502 /* CabinSketch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C229018DBA00CF2502 /* CabinSketch.ttf */; };
+		EDF9964E29018DBB00CF2502 /* CabinSketch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C229018DBA00CF2502 /* CabinSketch.ttf */; };
+		EDF9964F29018DBB00CF2502 /* Dobrozrachniy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C329018DBA00CF2502 /* Dobrozrachniy.ttf */; };
+		EDF9965029018DBB00CF2502 /* Dobrozrachniy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C329018DBA00CF2502 /* Dobrozrachniy.ttf */; };
+		EDF9965129018DBB00CF2502 /* Evander.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C429018DBA00CF2502 /* Evander.otf */; };
+		EDF9965229018DBB00CF2502 /* Evander.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C429018DBA00CF2502 /* Evander.otf */; };
+		EDF9965329018DBB00CF2502 /* LeoHand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C529018DBA00CF2502 /* LeoHand.ttf */; };
+		EDF9965429018DBB00CF2502 /* LeoHand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C529018DBA00CF2502 /* LeoHand.ttf */; };
+		EDF9965529018DBB00CF2502 /* Nautilus.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C629018DBA00CF2502 /* Nautilus.otf */; };
+		EDF9965629018DBB00CF2502 /* Nautilus.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C629018DBA00CF2502 /* Nautilus.otf */; };
+		EDF9965729018DBB00CF2502 /* NeonPlanet.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C729018DBA00CF2502 /* NeonPlanet.ttf */; };
+		EDF9965829018DBB00CF2502 /* NeonPlanet.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C729018DBA00CF2502 /* NeonPlanet.ttf */; };
+		EDF9965929018DBB00CF2502 /* CaesarDressing.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C829018DBA00CF2502 /* CaesarDressing.ttf */; };
+		EDF9965A29018DBB00CF2502 /* CaesarDressing.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C829018DBA00CF2502 /* CaesarDressing.ttf */; };
+		EDF9965B29018DBB00CF2502 /* Lavanda.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C929018DBA00CF2502 /* Lavanda.otf */; };
+		EDF9965C29018DBB00CF2502 /* Lavanda.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994C929018DBA00CF2502 /* Lavanda.otf */; };
+		EDF9965D29018DBB00CF2502 /* Monofett.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994CA29018DBA00CF2502 /* Monofett.ttf */; };
+		EDF9965E29018DBB00CF2502 /* Monofett.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994CA29018DBA00CF2502 /* Monofett.ttf */; };
+		EDF9965F29018DBB00CF2502 /* Nosifer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994CB29018DBA00CF2502 /* Nosifer.ttf */; };
+		EDF9966029018DBB00CF2502 /* Nosifer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994CB29018DBA00CF2502 /* Nosifer.ttf */; };
+		EDF9966129018DBB00CF2502 /* Kelvinch.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994CC29018DBA00CF2502 /* Kelvinch.otf */; };
+		EDF9966229018DBB00CF2502 /* Kelvinch.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994CC29018DBA00CF2502 /* Kelvinch.otf */; };
+		EDF9966329018DBB00CF2502 /* MysteryQuest.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994CD29018DBA00CF2502 /* MysteryQuest.ttf */; };
+		EDF9966429018DBB00CF2502 /* MysteryQuest.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994CD29018DBA00CF2502 /* MysteryQuest.ttf */; };
+		EDF9966529018DBB00CF2502 /* MonlyLite.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994CE29018DBA00CF2502 /* MonlyLite.otf */; };
+		EDF9966629018DBB00CF2502 /* MonlyLite.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994CE29018DBA00CF2502 /* MonlyLite.otf */; };
+		EDF9966729018DBB00CF2502 /* NewYear.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994CF29018DBA00CF2502 /* NewYear.otf */; };
+		EDF9966829018DBB00CF2502 /* NewYear.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994CF29018DBA00CF2502 /* NewYear.otf */; };
+		EDF9966929018DBB00CF2502 /* Beloved.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D029018DBA00CF2502 /* Beloved.ttf */; };
+		EDF9966A29018DBB00CF2502 /* Beloved.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D029018DBA00CF2502 /* Beloved.ttf */; };
+		EDF9966B29018DBB00CF2502 /* Squealer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D129018DBA00CF2502 /* Squealer.ttf */; };
+		EDF9966C29018DBB00CF2502 /* Squealer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D129018DBA00CF2502 /* Squealer.ttf */; };
+		EDF9966D29018DBB00CF2502 /* Lletraferida.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D229018DBA00CF2502 /* Lletraferida.otf */; };
+		EDF9966E29018DBB00CF2502 /* Lletraferida.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D229018DBA00CF2502 /* Lletraferida.otf */; };
+		EDF9966F29018DBB00CF2502 /* Amatic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D329018DBA00CF2502 /* Amatic.ttf */; };
+		EDF9967029018DBB00CF2502 /* Amatic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D329018DBA00CF2502 /* Amatic.ttf */; };
+		EDF9967129018DBB00CF2502 /* Virus.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D429018DBA00CF2502 /* Virus.otf */; };
+		EDF9967229018DBB00CF2502 /* Virus.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D429018DBA00CF2502 /* Virus.otf */; };
+		EDF9967329018DBB00CF2502 /* FrederickaTheGreat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D529018DBA00CF2502 /* FrederickaTheGreat.ttf */; };
+		EDF9967429018DBB00CF2502 /* FrederickaTheGreat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D529018DBA00CF2502 /* FrederickaTheGreat.ttf */; };
+		EDF9967529018DBB00CF2502 /* Paperfiller.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D629018DBA00CF2502 /* Paperfiller.otf */; };
+		EDF9967629018DBB00CF2502 /* Paperfiller.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D629018DBA00CF2502 /* Paperfiller.otf */; };
+		EDF9967729018DBB00CF2502 /* PermanentMarker.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D729018DBA00CF2502 /* PermanentMarker.ttf */; };
+		EDF9967829018DBB00CF2502 /* PermanentMarker.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D729018DBA00CF2502 /* PermanentMarker.ttf */; };
+		EDF9967929018DBB00CF2502 /* Butcherman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D829018DBA00CF2502 /* Butcherman.ttf */; };
+		EDF9967A29018DBB00CF2502 /* Butcherman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D829018DBA00CF2502 /* Butcherman.ttf */; };
+		EDF9967B29018DBB00CF2502 /* Dacquoise.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D929018DBA00CF2502 /* Dacquoise.ttf */; };
+		EDF9967C29018DBB00CF2502 /* Dacquoise.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994D929018DBA00CF2502 /* Dacquoise.ttf */; };
+		EDF9967D29018DBB00CF2502 /* TrainOne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994DA29018DBA00CF2502 /* TrainOne.ttf */; };
+		EDF9967E29018DBB00CF2502 /* TrainOne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994DA29018DBA00CF2502 /* TrainOne.ttf */; };
+		EDF9967F29018DBB00CF2502 /* CinzelDecorative.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994DB29018DBA00CF2502 /* CinzelDecorative.ttf */; };
+		EDF9968029018DBB00CF2502 /* CinzelDecorative.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994DB29018DBA00CF2502 /* CinzelDecorative.ttf */; };
+		EDF9968129018DBB00CF2502 /* Engine.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994DC29018DBA00CF2502 /* Engine.otf */; };
+		EDF9968229018DBB00CF2502 /* Engine.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994DC29018DBA00CF2502 /* Engine.otf */; };
+		EDF9968329018DBB00CF2502 /* UpheavalPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994DD29018DBA00CF2502 /* UpheavalPro.otf */; };
+		EDF9968429018DBB00CF2502 /* UpheavalPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994DD29018DBA00CF2502 /* UpheavalPro.otf */; };
+		EDF9968529018DBB00CF2502 /* Literata.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994DE29018DBB00CF2502 /* Literata.ttf */; };
+		EDF9968629018DBB00CF2502 /* Literata.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994DE29018DBB00CF2502 /* Literata.ttf */; };
+		EDF9968729018DBB00CF2502 /* Tangerine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994DF29018DBB00CF2502 /* Tangerine.ttf */; };
+		EDF9968829018DBB00CF2502 /* Tangerine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994DF29018DBB00CF2502 /* Tangerine.ttf */; };
+		EDF9968929018DBB00CF2502 /* MontserratAlternates.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994E029018DBB00CF2502 /* MontserratAlternates.ttf */; };
+		EDF9968A29018DBB00CF2502 /* MontserratAlternates.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF994E029018DBB00CF2502 /* MontserratAlternates.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = FontsCli;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E356EE1AD99517003FC87E /* FontsCliTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontsCliTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* FontsCliTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontsCliTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* FontsCli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontsCli.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = FontsCli/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = FontsCli/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FontsCli/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FontsCli/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FontsCli/main.m; sourceTree = "<group>"; };
+		19F6CBCC0A4E27FBF8BF4A61 /* libPods-FontsCli-FontsCliTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FontsCli-FontsCliTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4392A12AC88292D35C810B /* Pods-FontsCli.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontsCli.debug.xcconfig"; path = "Target Support Files/Pods-FontsCli/Pods-FontsCli.debug.xcconfig"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-FontsCli.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontsCli.release.xcconfig"; path = "Target Support Files/Pods-FontsCli/Pods-FontsCli.release.xcconfig"; sourceTree = "<group>"; };
+		5B7EB9410499542E8C5724F5 /* Pods-FontsCli-FontsCliTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontsCli-FontsCliTests.debug.xcconfig"; path = "Target Support Files/Pods-FontsCli-FontsCliTests/Pods-FontsCli-FontsCliTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DCACB8F33CDC322A6C60F78 /* libPods-FontsCli.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FontsCli.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FontsCli/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89C6BE57DB24E9ADA2F236DE /* Pods-FontsCli-FontsCliTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontsCli-FontsCliTests.release.xcconfig"; path = "Target Support Files/Pods-FontsCli-FontsCliTests/Pods-FontsCli-FontsCliTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EDF9940C29018DB800CF2502 /* KaushanScript.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KaushanScript.ttf; sourceTree = "<group>"; };
+		EDF9940D29018DB800CF2502 /* Modak.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Modak.ttf; sourceTree = "<group>"; };
+		EDF9940E29018DB800CF2502 /* PICOWA.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = PICOWA.TTF; sourceTree = "<group>"; };
+		EDF9940F29018DB800CF2502 /* RibeyeMarrow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RibeyeMarrow.ttf; sourceTree = "<group>"; };
+		EDF9941029018DB800CF2502 /* Calama.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calama.ttf; sourceTree = "<group>"; };
+		EDF9941129018DB800CF2502 /* Pecita.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pecita.otf; sourceTree = "<group>"; };
+		EDF9941229018DB800CF2502 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
+		EDF9941329018DB800CF2502 /* Ultra.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ultra.ttf; sourceTree = "<group>"; };
+		EDF9941429018DB800CF2502 /* Alegreya.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Alegreya.ttf; sourceTree = "<group>"; };
+		EDF9941529018DB800CF2502 /* MetroColor.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MetroColor.otf; sourceTree = "<group>"; };
+		EDF9941629018DB800CF2502 /* Calypso.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calypso.ttf; sourceTree = "<group>"; };
+		EDF9941729018DB800CF2502 /* Cinzel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cinzel.ttf; sourceTree = "<group>"; };
+		EDF9941829018DB800CF2502 /* Felora.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Felora.otf; sourceTree = "<group>"; };
+		EDF9941929018DB800CF2502 /* PicoBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PicoBlack.ttf; sourceTree = "<group>"; };
+		EDF9941A29018DB800CF2502 /* Gilbert.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gilbert.otf; sourceTree = "<group>"; };
+		EDF9941B29018DB800CF2502 /* Libra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Libra.otf; sourceTree = "<group>"; };
+		EDF9941C29018DB800CF2502 /* Sail.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sail.ttf; sourceTree = "<group>"; };
+		EDF9941D29018DB800CF2502 /* Pehlevi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pehlevi.ttf; sourceTree = "<group>"; };
+		EDF9941E29018DB800CF2502 /* Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Heavy.ttf; sourceTree = "<group>"; };
+		EDF9941F29018DB800CF2502 /* Courier.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Courier.otf; sourceTree = "<group>"; };
+		EDF9942029018DB800CF2502 /* UncialAntiqua.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UncialAntiqua.ttf; sourceTree = "<group>"; };
+		EDF9942129018DB800CF2502 /* MexicanTequila.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MexicanTequila.ttf; sourceTree = "<group>"; };
+		EDF9942229018DB800CF2502 /* Digital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Digital.ttf; sourceTree = "<group>"; };
+		EDF9942329018DB800CF2502 /* Neoneon.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Neoneon.otf; sourceTree = "<group>"; };
+		EDF9942429018DB800CF2502 /* Marske.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Marske.ttf; sourceTree = "<group>"; };
+		EDF9942529018DB800CF2502 /* Ruslan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ruslan.ttf; sourceTree = "<group>"; };
+		EDF9942629018DB800CF2502 /* GhiyaStrokes.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GhiyaStrokes.ttf; sourceTree = "<group>"; };
+		EDF9942729018DB800CF2502 /* Pompiere.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pompiere.ttf; sourceTree = "<group>"; };
+		EDF9942829018DB800CF2502 /* MoyQelem.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MoyQelem.ttf; sourceTree = "<group>"; };
+		EDF9942929018DB800CF2502 /* Caveat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Caveat.ttf; sourceTree = "<group>"; };
+		EDF9942A29018DB800CF2502 /* CarlaSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CarlaSans.ttf; sourceTree = "<group>"; };
+		EDF9942B29018DB800CF2502 /* Moiamova.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Moiamova.otf; sourceTree = "<group>"; };
+		EDF9942C29018DB800CF2502 /* Airfool.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Airfool.otf; sourceTree = "<group>"; };
+		EDF9942D29018DB800CF2502 /* Gravtrac.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gravtrac.otf; sourceTree = "<group>"; };
+		EDF9942E29018DB800CF2502 /* Lumberjack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lumberjack.otf; sourceTree = "<group>"; };
+		EDF9942F29018DB800CF2502 /* Typographer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Typographer.ttf; sourceTree = "<group>"; };
+		EDF9943029018DB800CF2502 /* MajorMono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MajorMono.ttf; sourceTree = "<group>"; };
+		EDF9943129018DB800CF2502 /* ShohlFold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShohlFold.ttf; sourceTree = "<group>"; };
+		EDF9943229018DB800CF2502 /* Neonblitz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Neonblitz.ttf; sourceTree = "<group>"; };
+		EDF9943329018DB800CF2502 /* FasterOne.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FasterOne.ttf; sourceTree = "<group>"; };
+		EDF9943429018DB800CF2502 /* BadScript.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BadScript.ttf; sourceTree = "<group>"; };
+		EDF9943529018DB800CF2502 /* Kaelia.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kaelia.ttf; sourceTree = "<group>"; };
+		EDF9943629018DB800CF2502 /* Mexcellent.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mexcellent.otf; sourceTree = "<group>"; };
+		EDF9943729018DB800CF2502 /* Creepster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Creepster.ttf; sourceTree = "<group>"; };
+		EDF9943829018DB800CF2502 /* FonartoXT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FonartoXT.ttf; sourceTree = "<group>"; };
+		EDF9943929018DB800CF2502 /* Shojumaru.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shojumaru.ttf; sourceTree = "<group>"; };
+		EDF9943A29018DB800CF2502 /* Bukhari.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bukhari.ttf; sourceTree = "<group>"; };
+		EDF9943B29018DB800CF2502 /* MulticolorePro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MulticolorePro.otf; sourceTree = "<group>"; };
+		EDF9943C29018DB800CF2502 /* DancingScript.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DancingScript.ttf; sourceTree = "<group>"; };
+		EDF9943D29018DB800CF2502 /* Lobster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster.ttf; sourceTree = "<group>"; };
+		EDF9943E29018DB800CF2502 /* Eater.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Eater.ttf; sourceTree = "<group>"; };
+		EDF9943F29018DB800CF2502 /* Merkin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Merkin.ttf; sourceTree = "<group>"; };
+		EDF9944029018DB800CF2502 /* GhiyaItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GhiyaItalic.ttf; sourceTree = "<group>"; };
+		EDF9944129018DB800CF2502 /* Fonarto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fonarto.ttf; sourceTree = "<group>"; };
+		EDF9944229018DB800CF2502 /* Fascinate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fascinate.ttf; sourceTree = "<group>"; };
+		EDF9944329018DB900CF2502 /* Jura.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Jura.ttf; sourceTree = "<group>"; };
+		EDF9944429018DB900CF2502 /* HeyOctober.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HeyOctober.otf; sourceTree = "<group>"; };
+		EDF9944529018DB900CF2502 /* KingthingsPoppalok.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KingthingsPoppalok.ttf; sourceTree = "<group>"; };
+		EDF9944629018DB900CF2502 /* KellySlab.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KellySlab.ttf; sourceTree = "<group>"; };
+		EDF9944729018DB900CF2502 /* InterHewn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = InterHewn.otf; sourceTree = "<group>"; };
+		EDF9944829018DB900CF2502 /* Exodar.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Exodar.ttf; sourceTree = "<group>"; };
+		EDF9944929018DB900CF2502 /* Klaxons.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Klaxons.otf; sourceTree = "<group>"; };
+		EDF9944A29018DB900CF2502 /* AstroSpace.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AstroSpace.ttf; sourceTree = "<group>"; };
+		EDF9944B29018DB900CF2502 /* Skranji.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Skranji.ttf; sourceTree = "<group>"; };
+		EDF9944C29018DB900CF2502 /* SnowburstOne.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SnowburstOne.ttf; sourceTree = "<group>"; };
+		EDF9944D29018DB900CF2502 /* GlyphsSapperlot.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GlyphsSapperlot.otf; sourceTree = "<group>"; };
+		EDF9944E29018DB900CF2502 /* Philosopher.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Philosopher.ttf; sourceTree = "<group>"; };
+		EDF9944F29018DB900CF2502 /* SpaceTime.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpaceTime.ttf; sourceTree = "<group>"; };
+		EDF9945029018DB900CF2502 /* ChunkFivePrint.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ChunkFivePrint.ttf; sourceTree = "<group>"; };
+		EDF9945129018DB900CF2502 /* Lemon.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lemon.otf; sourceTree = "<group>"; };
+		EDF9945229018DB900CF2502 /* KazmannSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KazmannSans.ttf; sourceTree = "<group>"; };
+		EDF9945329018DB900CF2502 /* Aperture.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aperture.ttf; sourceTree = "<group>"; };
+		EDF9945429018DB900CF2502 /* Akronim.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Akronim.ttf; sourceTree = "<group>"; };
+		EDF9945529018DB900CF2502 /* MountainsOfChristmas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MountainsOfChristmas.ttf; sourceTree = "<group>"; };
+		EDF9945629018DB900CF2502 /* Kalam.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kalam.ttf; sourceTree = "<group>"; };
+		EDF9945729018DB900CF2502 /* DNPixel.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DNPixel.otf; sourceTree = "<group>"; };
+		EDF9945829018DB900CF2502 /* Clip.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Clip.ttf; sourceTree = "<group>"; };
+		EDF9945929018DB900CF2502 /* Hillock.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hillock.ttf; sourceTree = "<group>"; };
+		EDF9945A29018DB900CF2502 /* Borough.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Borough.otf; sourceTree = "<group>"; };
+		EDF9945B29018DB900CF2502 /* Blox.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Blox.ttf; sourceTree = "<group>"; };
+		EDF9945C29018DB900CF2502 /* BungeeShade.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BungeeShade.ttf; sourceTree = "<group>"; };
+		EDF9945D29018DB900CF2502 /* Brusnika.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brusnika.otf; sourceTree = "<group>"; };
+		EDF9945E29018DB900CF2502 /* Zantroke.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zantroke.otf; sourceTree = "<group>"; };
+		EDF9945F29018DB900CF2502 /* Monoton.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Monoton.ttf; sourceTree = "<group>"; };
+		EDF9946029018DB900CF2502 /* NEOND.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NEOND.otf; sourceTree = "<group>"; };
+		EDF9946129018DB900CF2502 /* Unround.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Unround.otf; sourceTree = "<group>"; };
+		EDF9946229018DB900CF2502 /* Oranienbaum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Oranienbaum.ttf; sourceTree = "<group>"; };
+		EDF9946329018DB900CF2502 /* GrandHotel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GrandHotel.ttf; sourceTree = "<group>"; };
+		EDF9946429018DB900CF2502 /* Bondi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bondi.otf; sourceTree = "<group>"; };
+		EDF9946529018DB900CF2502 /* Beon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Beon.ttf; sourceTree = "<group>"; };
+		EDF9946629018DB900CF2502 /* Stick.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Stick.ttf; sourceTree = "<group>"; };
+		EDF9946729018DB900CF2502 /* Coiny.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Coiny.ttf; sourceTree = "<group>"; };
+		EDF9946829018DB900CF2502 /* NEON1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NEON1.ttf; sourceTree = "<group>"; };
+		EDF9946929018DB900CF2502 /* Celestina.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Celestina.otf; sourceTree = "<group>"; };
+		EDF9946A29018DB900CF2502 /* Bosk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bosk.otf; sourceTree = "<group>"; };
+		EDF9946B29018DB900CF2502 /* Broker.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Broker.ttf; sourceTree = "<group>"; };
+		EDF9946C29018DB900CF2502 /* Forum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Forum.ttf; sourceTree = "<group>"; };
+		EDF9946D29018DB900CF2502 /* Brosh.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brosh.otf; sourceTree = "<group>"; };
+		EDF9946E29018DB900CF2502 /* Pencil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pencil.ttf; sourceTree = "<group>"; };
+		EDF9946F29018DB900CF2502 /* Chekharda.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chekharda.ttf; sourceTree = "<group>"; };
+		EDF9947029018DB900CF2502 /* Ewert.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ewert.ttf; sourceTree = "<group>"; };
+		EDF9947129018DB900CF2502 /* Amydor.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Amydor.ttf; sourceTree = "<group>"; };
+		EDF9947229018DB900CF2502 /* SeasideResort.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SeasideResort.ttf; sourceTree = "<group>"; };
+		EDF9947329018DB900CF2502 /* Neoneox.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Neoneox.otf; sourceTree = "<group>"; };
+		EDF9947429018DB900CF2502 /* Krabuler.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Krabuler.otf; sourceTree = "<group>"; };
+		EDF9947529018DB900CF2502 /* RumRaisin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RumRaisin.otf; sourceTree = "<group>"; };
+		EDF9947629018DB900CF2502 /* Rookworst.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rookworst.ttf; sourceTree = "<group>"; };
+		EDF9947729018DB900CF2502 /* Kurale.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kurale.ttf; sourceTree = "<group>"; };
+		EDF9947829018DB900CF2502 /* Gaoel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gaoel.ttf; sourceTree = "<group>"; };
+		EDF9947929018DB900CF2502 /* Sacramento.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sacramento.ttf; sourceTree = "<group>"; };
+		EDF9947A29018DB900CF2502 /* HiMelody.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HiMelody.otf; sourceTree = "<group>"; };
+		EDF9947B29018DB900CF2502 /* GaretHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GaretHeavy.otf; sourceTree = "<group>"; };
+		EDF9947C29018DB900CF2502 /* Molodo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Molodo.otf; sourceTree = "<group>"; };
+		EDF9947D29018DB900CF2502 /* RetroPop.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RetroPop.ttf; sourceTree = "<group>"; };
+		EDF9947E29018DB900CF2502 /* SpecialElite.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpecialElite.ttf; sourceTree = "<group>"; };
+		EDF9947F29018DB900CF2502 /* Joystix.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Joystix.ttf; sourceTree = "<group>"; };
+		EDF9948029018DB900CF2502 /* Abrushow.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Abrushow.otf; sourceTree = "<group>"; };
+		EDF9948129018DB900CF2502 /* SanFrancisco.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SanFrancisco.ttf; sourceTree = "<group>"; };
+		EDF9948229018DB900CF2502 /* Welcome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Welcome.ttf; sourceTree = "<group>"; };
+		EDF9948329018DB900CF2502 /* AbrilFatface.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AbrilFatface.ttf; sourceTree = "<group>"; };
+		EDF9948429018DB900CF2502 /* BungeeInline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BungeeInline.otf; sourceTree = "<group>"; };
+		EDF9948529018DB900CF2502 /* Shrikhand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shrikhand.ttf; sourceTree = "<group>"; };
+		EDF9948629018DB900CF2502 /* Glitch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Glitch.ttf; sourceTree = "<group>"; };
+		EDF9948729018DB900CF2502 /* Zhizn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zhizn.otf; sourceTree = "<group>"; };
+		EDF9948829018DB900CF2502 /* CherrySwash.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CherrySwash.ttf; sourceTree = "<group>"; };
+		EDF9948929018DB900CF2502 /* Kranky.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kranky.ttf; sourceTree = "<group>"; };
+		EDF9948A29018DB900CF2502 /* Allura.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Allura.ttf; sourceTree = "<group>"; };
+		EDF9948B29018DB900CF2502 /* Facon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Facon.ttf; sourceTree = "<group>"; };
+		EDF9948C29018DB900CF2502 /* Limelight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Limelight.ttf; sourceTree = "<group>"; };
+		EDF9948D29018DB900CF2502 /* IndieFlower.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IndieFlower.ttf; sourceTree = "<group>"; };
+		EDF9948E29018DB900CF2502 /* OrelegaOne.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OrelegaOne.ttf; sourceTree = "<group>"; };
+		EDF9948F29018DB900CF2502 /* DsGoose.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DsGoose.ttf; sourceTree = "<group>"; };
+		EDF9949029018DB900CF2502 /* Yarin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Yarin.otf; sourceTree = "<group>"; };
+		EDF9949129018DB900CF2502 /* Broadway.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Broadway.ttf; sourceTree = "<group>"; };
+		EDF9949229018DBA00CF2502 /* Yeseva.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Yeseva.otf; sourceTree = "<group>"; };
+		EDF9949329018DBA00CF2502 /* Wes.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wes.otf; sourceTree = "<group>"; };
+		EDF9949429018DBA00CF2502 /* GilbertColor.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GilbertColor.otf; sourceTree = "<group>"; };
+		EDF9949529018DBA00CF2502 /* Barrio.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Barrio.ttf; sourceTree = "<group>"; };
+		EDF9949629018DBA00CF2502 /* PinkBlue.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PinkBlue.ttf; sourceTree = "<group>"; };
+		EDF9949729018DBA00CF2502 /* MrLonely.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MrLonely.otf; sourceTree = "<group>"; };
+		EDF9949829018DBA00CF2502 /* Supermercado.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Supermercado.ttf; sourceTree = "<group>"; };
+		EDF9949929018DBA00CF2502 /* Balkara.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Balkara.ttf; sourceTree = "<group>"; };
+		EDF9949A29018DBA00CF2502 /* Lapsus.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lapsus.otf; sourceTree = "<group>"; };
+		EDF9949B29018DBA00CF2502 /* Smokum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Smokum.ttf; sourceTree = "<group>"; };
+		EDF9949C29018DBA00CF2502 /* Caviar.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Caviar.ttf; sourceTree = "<group>"; };
+		EDF9949D29018DBA00CF2502 /* Moon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Moon.ttf; sourceTree = "<group>"; };
+		EDF9949E29018DBA00CF2502 /* Marck Script.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marck Script.ttf"; sourceTree = "<group>"; };
+		EDF9949F29018DBA00CF2502 /* Zekton.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zekton.ttf; sourceTree = "<group>"; };
+		EDF994A029018DBA00CF2502 /* Zyablik.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zyablik.ttf; sourceTree = "<group>"; };
+		EDF994A129018DBA00CF2502 /* Automania.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Automania.ttf; sourceTree = "<group>"; };
+		EDF994A229018DBA00CF2502 /* Centar.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Centar.otf; sourceTree = "<group>"; };
+		EDF994A329018DBA00CF2502 /* Magnolia.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Magnolia.otf; sourceTree = "<group>"; };
+		EDF994A429018DBA00CF2502 /* OwnHand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OwnHand.ttf; sourceTree = "<group>"; };
+		EDF994A529018DBA00CF2502 /* TimeBurner.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TimeBurner.ttf; sourceTree = "<group>"; };
+		EDF994A629018DBA00CF2502 /* Peace.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Peace.ttf; sourceTree = "<group>"; };
+		EDF994A729018DBA00CF2502 /* Blogger.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Blogger.otf; sourceTree = "<group>"; };
+		EDF994A829018DBA00CF2502 /* ShadowsIntoLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShadowsIntoLight.ttf; sourceTree = "<group>"; };
+		EDF994A929018DBA00CF2502 /* BungeeOutline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BungeeOutline.otf; sourceTree = "<group>"; };
+		EDF994AA29018DBA00CF2502 /* GochiHand.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GochiHand.otf; sourceTree = "<group>"; };
+		EDF994AB29018DBA00CF2502 /* Ribeye.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ribeye.ttf; sourceTree = "<group>"; };
+		EDF994AC29018DBA00CF2502 /* TagType.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TagType.ttf; sourceTree = "<group>"; };
+		EDF994AD29018DBA00CF2502 /* TT2020Base.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TT2020Base.ttf; sourceTree = "<group>"; };
+		EDF994AE29018DBA00CF2502 /* PinkPoppy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PinkPoppy.ttf; sourceTree = "<group>"; };
+		EDF994AF29018DBA00CF2502 /* Foregen.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foregen.ttf; sourceTree = "<group>"; };
+		EDF994B029018DBA00CF2502 /* Orbitron.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Orbitron.ttf; sourceTree = "<group>"; };
+		EDF994B129018DBA00CF2502 /* Measure.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Measure.otf; sourceTree = "<group>"; };
+		EDF994B229018DBA00CF2502 /* MoscowMetro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MoscowMetro.otf; sourceTree = "<group>"; };
+		EDF994B329018DBA00CF2502 /* AlexBrush.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlexBrush.ttf; sourceTree = "<group>"; };
+		EDF994B429018DBA00CF2502 /* Fattern.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fattern.otf; sourceTree = "<group>"; };
+		EDF994B529018DBA00CF2502 /* Lighthaus.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lighthaus.otf; sourceTree = "<group>"; };
+		EDF994B629018DBA00CF2502 /* Gagalin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gagalin.otf; sourceTree = "<group>"; };
+		EDF994B729018DBA00CF2502 /* Underdog.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Underdog.ttf; sourceTree = "<group>"; };
+		EDF994B829018DBA00CF2502 /* Storytella.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Storytella.otf; sourceTree = "<group>"; };
+		EDF994B929018DBA00CF2502 /* Frijole.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Frijole.ttf; sourceTree = "<group>"; };
+		EDF994BA29018DBA00CF2502 /* ColorTube.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColorTube.otf; sourceTree = "<group>"; };
+		EDF994BB29018DBA00CF2502 /* Frisky.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Frisky.otf; sourceTree = "<group>"; };
+		EDF994BC29018DBA00CF2502 /* SomeTimeLater.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SomeTimeLater.otf; sourceTree = "<group>"; };
+		EDF994BD29018DBA00CF2502 /* GreatVibes.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GreatVibes.ttf; sourceTree = "<group>"; };
+		EDF994BE29018DBA00CF2502 /* HitchHike.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HitchHike.otf; sourceTree = "<group>"; };
+		EDF994BF29018DBA00CF2502 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
+		EDF994C029018DBA00CF2502 /* RussoOne.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RussoOne.ttf; sourceTree = "<group>"; };
+		EDF994C129018DBA00CF2502 /* SweetMavka.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SweetMavka.ttf; sourceTree = "<group>"; };
+		EDF994C229018DBA00CF2502 /* CabinSketch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CabinSketch.ttf; sourceTree = "<group>"; };
+		EDF994C329018DBA00CF2502 /* Dobrozrachniy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dobrozrachniy.ttf; sourceTree = "<group>"; };
+		EDF994C429018DBA00CF2502 /* Evander.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Evander.otf; sourceTree = "<group>"; };
+		EDF994C529018DBA00CF2502 /* LeoHand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeoHand.ttf; sourceTree = "<group>"; };
+		EDF994C629018DBA00CF2502 /* Nautilus.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nautilus.otf; sourceTree = "<group>"; };
+		EDF994C729018DBA00CF2502 /* NeonPlanet.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeonPlanet.ttf; sourceTree = "<group>"; };
+		EDF994C829018DBA00CF2502 /* CaesarDressing.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaesarDressing.ttf; sourceTree = "<group>"; };
+		EDF994C929018DBA00CF2502 /* Lavanda.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lavanda.otf; sourceTree = "<group>"; };
+		EDF994CA29018DBA00CF2502 /* Monofett.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Monofett.ttf; sourceTree = "<group>"; };
+		EDF994CB29018DBA00CF2502 /* Nosifer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nosifer.ttf; sourceTree = "<group>"; };
+		EDF994CC29018DBA00CF2502 /* Kelvinch.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kelvinch.otf; sourceTree = "<group>"; };
+		EDF994CD29018DBA00CF2502 /* MysteryQuest.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MysteryQuest.ttf; sourceTree = "<group>"; };
+		EDF994CE29018DBA00CF2502 /* MonlyLite.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MonlyLite.otf; sourceTree = "<group>"; };
+		EDF994CF29018DBA00CF2502 /* NewYear.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewYear.otf; sourceTree = "<group>"; };
+		EDF994D029018DBA00CF2502 /* Beloved.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Beloved.ttf; sourceTree = "<group>"; };
+		EDF994D129018DBA00CF2502 /* Squealer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Squealer.ttf; sourceTree = "<group>"; };
+		EDF994D229018DBA00CF2502 /* Lletraferida.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lletraferida.otf; sourceTree = "<group>"; };
+		EDF994D329018DBA00CF2502 /* Amatic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Amatic.ttf; sourceTree = "<group>"; };
+		EDF994D429018DBA00CF2502 /* Virus.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Virus.otf; sourceTree = "<group>"; };
+		EDF994D529018DBA00CF2502 /* FrederickaTheGreat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FrederickaTheGreat.ttf; sourceTree = "<group>"; };
+		EDF994D629018DBA00CF2502 /* Paperfiller.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Paperfiller.otf; sourceTree = "<group>"; };
+		EDF994D729018DBA00CF2502 /* PermanentMarker.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PermanentMarker.ttf; sourceTree = "<group>"; };
+		EDF994D829018DBA00CF2502 /* Butcherman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Butcherman.ttf; sourceTree = "<group>"; };
+		EDF994D929018DBA00CF2502 /* Dacquoise.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dacquoise.ttf; sourceTree = "<group>"; };
+		EDF994DA29018DBA00CF2502 /* TrainOne.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TrainOne.ttf; sourceTree = "<group>"; };
+		EDF994DB29018DBA00CF2502 /* CinzelDecorative.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CinzelDecorative.ttf; sourceTree = "<group>"; };
+		EDF994DC29018DBA00CF2502 /* Engine.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Engine.otf; sourceTree = "<group>"; };
+		EDF994DD29018DBA00CF2502 /* UpheavalPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UpheavalPro.otf; sourceTree = "<group>"; };
+		EDF994DE29018DBB00CF2502 /* Literata.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Literata.ttf; sourceTree = "<group>"; };
+		EDF994DF29018DBB00CF2502 /* Tangerine.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tangerine.ttf; sourceTree = "<group>"; };
+		EDF994E029018DBB00CF2502 /* MontserratAlternates.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratAlternates.ttf; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00E356EB1AD99517003FC87E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7699B88040F8A987B510C191 /* libPods-FontsCli-FontsCliTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C80B921A6F3F58F76C31292 /* libPods-FontsCli.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* FontsCliTests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* FontsCliTests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = FontsCliTests;
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* FontsCli */ = {
+			isa = PBXGroup;
+			children = (
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				13B07FB71A68108700A75B9A /* main.m */,
+			);
+			name = FontsCli;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				5DCACB8F33CDC322A6C60F78 /* libPods-FontsCli.a */,
+				19F6CBCC0A4E27FBF8BF4A61 /* libPods-FontsCli-FontsCliTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				EDF9940B29018D8E00CF2502 /* fonts */,
+				13B07FAE1A68108700A75B9A /* FontsCli */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* FontsCliTests */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				BBD78D7AC51CEA395F1C20DB /* Pods */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* FontsCli.app */,
+				00E356EE1AD99517003FC87E /* FontsCliTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B4392A12AC88292D35C810B /* Pods-FontsCli.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-FontsCli.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-FontsCli-FontsCliTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-FontsCli-FontsCliTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EDF9940B29018D8E00CF2502 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EDF9948329018DB900CF2502 /* AbrilFatface.ttf */,
+				EDF9948029018DB900CF2502 /* Abrushow.otf */,
+				EDF9942C29018DB800CF2502 /* Airfool.otf */,
+				EDF9945429018DB900CF2502 /* Akronim.ttf */,
+				EDF9941429018DB800CF2502 /* Alegreya.ttf */,
+				EDF994B329018DBA00CF2502 /* AlexBrush.ttf */,
+				EDF9948A29018DB900CF2502 /* Allura.ttf */,
+				EDF994D329018DBA00CF2502 /* Amatic.ttf */,
+				EDF9947129018DB900CF2502 /* Amydor.ttf */,
+				EDF9945329018DB900CF2502 /* Aperture.ttf */,
+				EDF9944A29018DB900CF2502 /* AstroSpace.ttf */,
+				EDF994A129018DBA00CF2502 /* Automania.ttf */,
+				EDF9943429018DB800CF2502 /* BadScript.ttf */,
+				EDF9949929018DBA00CF2502 /* Balkara.ttf */,
+				EDF9949529018DBA00CF2502 /* Barrio.ttf */,
+				EDF9941229018DB800CF2502 /* BebasNeue.otf */,
+				EDF994D029018DBA00CF2502 /* Beloved.ttf */,
+				EDF9946529018DB900CF2502 /* Beon.ttf */,
+				EDF994A729018DBA00CF2502 /* Blogger.otf */,
+				EDF9945B29018DB900CF2502 /* Blox.ttf */,
+				EDF9946429018DB900CF2502 /* Bondi.otf */,
+				EDF9945A29018DB900CF2502 /* Borough.otf */,
+				EDF9946A29018DB900CF2502 /* Bosk.otf */,
+				EDF9949129018DB900CF2502 /* Broadway.ttf */,
+				EDF9946B29018DB900CF2502 /* Broker.ttf */,
+				EDF9946D29018DB900CF2502 /* Brosh.otf */,
+				EDF9945D29018DB900CF2502 /* Brusnika.otf */,
+				EDF9943A29018DB800CF2502 /* Bukhari.ttf */,
+				EDF9948429018DB900CF2502 /* BungeeInline.otf */,
+				EDF994A929018DBA00CF2502 /* BungeeOutline.otf */,
+				EDF9945C29018DB900CF2502 /* BungeeShade.ttf */,
+				EDF994D829018DBA00CF2502 /* Butcherman.ttf */,
+				EDF994C229018DBA00CF2502 /* CabinSketch.ttf */,
+				EDF994C829018DBA00CF2502 /* CaesarDressing.ttf */,
+				EDF9941029018DB800CF2502 /* Calama.ttf */,
+				EDF9941629018DB800CF2502 /* Calypso.ttf */,
+				EDF9942A29018DB800CF2502 /* CarlaSans.ttf */,
+				EDF9942929018DB800CF2502 /* Caveat.ttf */,
+				EDF9949C29018DBA00CF2502 /* Caviar.ttf */,
+				EDF9946929018DB900CF2502 /* Celestina.otf */,
+				EDF994A229018DBA00CF2502 /* Centar.otf */,
+				EDF9946F29018DB900CF2502 /* Chekharda.ttf */,
+				EDF9948829018DB900CF2502 /* CherrySwash.ttf */,
+				EDF9945029018DB900CF2502 /* ChunkFivePrint.ttf */,
+				EDF9941729018DB800CF2502 /* Cinzel.ttf */,
+				EDF994DB29018DBA00CF2502 /* CinzelDecorative.ttf */,
+				EDF9945829018DB900CF2502 /* Clip.ttf */,
+				EDF9946729018DB900CF2502 /* Coiny.ttf */,
+				EDF994BA29018DBA00CF2502 /* ColorTube.otf */,
+				EDF9941F29018DB800CF2502 /* Courier.otf */,
+				EDF9943729018DB800CF2502 /* Creepster.ttf */,
+				EDF994D929018DBA00CF2502 /* Dacquoise.ttf */,
+				EDF9943C29018DB800CF2502 /* DancingScript.ttf */,
+				EDF9942229018DB800CF2502 /* Digital.ttf */,
+				EDF9945729018DB900CF2502 /* DNPixel.otf */,
+				EDF994C329018DBA00CF2502 /* Dobrozrachniy.ttf */,
+				EDF9948F29018DB900CF2502 /* DsGoose.ttf */,
+				EDF9943E29018DB800CF2502 /* Eater.ttf */,
+				EDF994DC29018DBA00CF2502 /* Engine.otf */,
+				EDF994C429018DBA00CF2502 /* Evander.otf */,
+				EDF9947029018DB900CF2502 /* Ewert.ttf */,
+				EDF9944829018DB900CF2502 /* Exodar.ttf */,
+				EDF9948B29018DB900CF2502 /* Facon.ttf */,
+				EDF9944229018DB800CF2502 /* Fascinate.ttf */,
+				EDF9943329018DB800CF2502 /* FasterOne.ttf */,
+				EDF994B429018DBA00CF2502 /* Fattern.otf */,
+				EDF9941829018DB800CF2502 /* Felora.otf */,
+				EDF9944129018DB800CF2502 /* Fonarto.ttf */,
+				EDF9943829018DB800CF2502 /* FonartoXT.ttf */,
+				EDF994AF29018DBA00CF2502 /* Foregen.ttf */,
+				EDF9946C29018DB900CF2502 /* Forum.ttf */,
+				EDF994D529018DBA00CF2502 /* FrederickaTheGreat.ttf */,
+				EDF994B929018DBA00CF2502 /* Frijole.ttf */,
+				EDF994BB29018DBA00CF2502 /* Frisky.otf */,
+				EDF994B629018DBA00CF2502 /* Gagalin.otf */,
+				EDF9947829018DB900CF2502 /* Gaoel.ttf */,
+				EDF9947B29018DB900CF2502 /* GaretHeavy.otf */,
+				EDF9944029018DB800CF2502 /* GhiyaItalic.ttf */,
+				EDF9942629018DB800CF2502 /* GhiyaStrokes.ttf */,
+				EDF9941A29018DB800CF2502 /* Gilbert.otf */,
+				EDF9949429018DBA00CF2502 /* GilbertColor.otf */,
+				EDF9948629018DB900CF2502 /* Glitch.ttf */,
+				EDF9944D29018DB900CF2502 /* GlyphsSapperlot.otf */,
+				EDF994AA29018DBA00CF2502 /* GochiHand.otf */,
+				EDF9946329018DB900CF2502 /* GrandHotel.ttf */,
+				EDF9942D29018DB800CF2502 /* Gravtrac.otf */,
+				EDF994BD29018DBA00CF2502 /* GreatVibes.ttf */,
+				EDF9941E29018DB800CF2502 /* Heavy.ttf */,
+				EDF9944429018DB900CF2502 /* HeyOctober.otf */,
+				EDF9945929018DB900CF2502 /* Hillock.ttf */,
+				EDF9947A29018DB900CF2502 /* HiMelody.otf */,
+				EDF994BE29018DBA00CF2502 /* HitchHike.otf */,
+				EDF9948D29018DB900CF2502 /* IndieFlower.ttf */,
+				EDF9944729018DB900CF2502 /* InterHewn.otf */,
+				EDF9947F29018DB900CF2502 /* Joystix.ttf */,
+				EDF9944329018DB900CF2502 /* Jura.ttf */,
+				EDF9943529018DB800CF2502 /* Kaelia.ttf */,
+				EDF9945629018DB900CF2502 /* Kalam.ttf */,
+				EDF9940C29018DB800CF2502 /* KaushanScript.ttf */,
+				EDF9945229018DB900CF2502 /* KazmannSans.ttf */,
+				EDF9944629018DB900CF2502 /* KellySlab.ttf */,
+				EDF994CC29018DBA00CF2502 /* Kelvinch.otf */,
+				EDF9944529018DB900CF2502 /* KingthingsPoppalok.ttf */,
+				EDF9944929018DB900CF2502 /* Klaxons.otf */,
+				EDF9947429018DB900CF2502 /* Krabuler.otf */,
+				EDF9948929018DB900CF2502 /* Kranky.ttf */,
+				EDF9947729018DB900CF2502 /* Kurale.ttf */,
+				EDF9949A29018DBA00CF2502 /* Lapsus.otf */,
+				EDF994C929018DBA00CF2502 /* Lavanda.otf */,
+				EDF9945129018DB900CF2502 /* Lemon.otf */,
+				EDF994C529018DBA00CF2502 /* LeoHand.ttf */,
+				EDF9941B29018DB800CF2502 /* Libra.otf */,
+				EDF994B529018DBA00CF2502 /* Lighthaus.otf */,
+				EDF9948C29018DB900CF2502 /* Limelight.ttf */,
+				EDF994DE29018DBB00CF2502 /* Literata.ttf */,
+				EDF994D229018DBA00CF2502 /* Lletraferida.otf */,
+				EDF9943D29018DB800CF2502 /* Lobster.ttf */,
+				EDF9942E29018DB800CF2502 /* Lumberjack.otf */,
+				EDF994A329018DBA00CF2502 /* Magnolia.otf */,
+				EDF9943029018DB800CF2502 /* MajorMono.ttf */,
+				EDF9949E29018DBA00CF2502 /* Marck Script.ttf */,
+				EDF9942429018DB800CF2502 /* Marske.ttf */,
+				EDF994B129018DBA00CF2502 /* Measure.otf */,
+				EDF9943F29018DB800CF2502 /* Merkin.ttf */,
+				EDF9941529018DB800CF2502 /* MetroColor.otf */,
+				EDF9943629018DB800CF2502 /* Mexcellent.otf */,
+				EDF9942129018DB800CF2502 /* MexicanTequila.ttf */,
+				EDF9940D29018DB800CF2502 /* Modak.ttf */,
+				EDF9942B29018DB800CF2502 /* Moiamova.otf */,
+				EDF9947C29018DB900CF2502 /* Molodo.otf */,
+				EDF994CE29018DBA00CF2502 /* MonlyLite.otf */,
+				EDF994CA29018DBA00CF2502 /* Monofett.ttf */,
+				EDF9945F29018DB900CF2502 /* Monoton.ttf */,
+				EDF994E029018DBB00CF2502 /* MontserratAlternates.ttf */,
+				EDF9949D29018DBA00CF2502 /* Moon.ttf */,
+				EDF994B229018DBA00CF2502 /* MoscowMetro.otf */,
+				EDF9945529018DB900CF2502 /* MountainsOfChristmas.ttf */,
+				EDF9942829018DB800CF2502 /* MoyQelem.ttf */,
+				EDF9949729018DBA00CF2502 /* MrLonely.otf */,
+				EDF9943B29018DB800CF2502 /* MulticolorePro.otf */,
+				EDF994CD29018DBA00CF2502 /* MysteryQuest.ttf */,
+				EDF994C629018DBA00CF2502 /* Nautilus.otf */,
+				EDF9946829018DB900CF2502 /* NEON1.ttf */,
+				EDF9943229018DB800CF2502 /* Neonblitz.ttf */,
+				EDF9946029018DB900CF2502 /* NEOND.otf */,
+				EDF9942329018DB800CF2502 /* Neoneon.otf */,
+				EDF9947329018DB900CF2502 /* Neoneox.otf */,
+				EDF994C729018DBA00CF2502 /* NeonPlanet.ttf */,
+				EDF994CF29018DBA00CF2502 /* NewYear.otf */,
+				EDF994CB29018DBA00CF2502 /* Nosifer.ttf */,
+				EDF9946229018DB900CF2502 /* Oranienbaum.ttf */,
+				EDF994B029018DBA00CF2502 /* Orbitron.ttf */,
+				EDF9948E29018DB900CF2502 /* OrelegaOne.ttf */,
+				EDF994A429018DBA00CF2502 /* OwnHand.ttf */,
+				EDF994BF29018DBA00CF2502 /* Pacifico.ttf */,
+				EDF994D629018DBA00CF2502 /* Paperfiller.otf */,
+				EDF994A629018DBA00CF2502 /* Peace.ttf */,
+				EDF9941129018DB800CF2502 /* Pecita.otf */,
+				EDF9941D29018DB800CF2502 /* Pehlevi.ttf */,
+				EDF9946E29018DB900CF2502 /* Pencil.ttf */,
+				EDF994D729018DBA00CF2502 /* PermanentMarker.ttf */,
+				EDF9944E29018DB900CF2502 /* Philosopher.ttf */,
+				EDF9941929018DB800CF2502 /* PicoBlack.ttf */,
+				EDF9940E29018DB800CF2502 /* PICOWA.TTF */,
+				EDF9949629018DBA00CF2502 /* PinkBlue.ttf */,
+				EDF994AE29018DBA00CF2502 /* PinkPoppy.ttf */,
+				EDF9942729018DB800CF2502 /* Pompiere.ttf */,
+				EDF9947D29018DB900CF2502 /* RetroPop.ttf */,
+				EDF994AB29018DBA00CF2502 /* Ribeye.ttf */,
+				EDF9940F29018DB800CF2502 /* RibeyeMarrow.ttf */,
+				EDF9947629018DB900CF2502 /* Rookworst.ttf */,
+				EDF9947529018DB900CF2502 /* RumRaisin.otf */,
+				EDF9942529018DB800CF2502 /* Ruslan.ttf */,
+				EDF994C029018DBA00CF2502 /* RussoOne.ttf */,
+				EDF9947929018DB900CF2502 /* Sacramento.ttf */,
+				EDF9941C29018DB800CF2502 /* Sail.ttf */,
+				EDF9948129018DB900CF2502 /* SanFrancisco.ttf */,
+				EDF9947229018DB900CF2502 /* SeasideResort.ttf */,
+				EDF994A829018DBA00CF2502 /* ShadowsIntoLight.ttf */,
+				EDF9943129018DB800CF2502 /* ShohlFold.ttf */,
+				EDF9943929018DB800CF2502 /* Shojumaru.ttf */,
+				EDF9948529018DB900CF2502 /* Shrikhand.ttf */,
+				EDF9944B29018DB900CF2502 /* Skranji.ttf */,
+				EDF9949B29018DBA00CF2502 /* Smokum.ttf */,
+				EDF9944C29018DB900CF2502 /* SnowburstOne.ttf */,
+				EDF994BC29018DBA00CF2502 /* SomeTimeLater.otf */,
+				EDF9944F29018DB900CF2502 /* SpaceTime.ttf */,
+				EDF9947E29018DB900CF2502 /* SpecialElite.ttf */,
+				EDF994D129018DBA00CF2502 /* Squealer.ttf */,
+				EDF9946629018DB900CF2502 /* Stick.ttf */,
+				EDF994B829018DBA00CF2502 /* Storytella.otf */,
+				EDF9949829018DBA00CF2502 /* Supermercado.ttf */,
+				EDF994C129018DBA00CF2502 /* SweetMavka.ttf */,
+				EDF994AC29018DBA00CF2502 /* TagType.ttf */,
+				EDF994DF29018DBB00CF2502 /* Tangerine.ttf */,
+				EDF994A529018DBA00CF2502 /* TimeBurner.ttf */,
+				EDF994DA29018DBA00CF2502 /* TrainOne.ttf */,
+				EDF994AD29018DBA00CF2502 /* TT2020Base.ttf */,
+				EDF9942F29018DB800CF2502 /* Typographer.ttf */,
+				EDF9941329018DB800CF2502 /* Ultra.ttf */,
+				EDF9942029018DB800CF2502 /* UncialAntiqua.ttf */,
+				EDF994B729018DBA00CF2502 /* Underdog.ttf */,
+				EDF9946129018DB900CF2502 /* Unround.otf */,
+				EDF994DD29018DBA00CF2502 /* UpheavalPro.otf */,
+				EDF994D429018DBA00CF2502 /* Virus.otf */,
+				EDF9948229018DB900CF2502 /* Welcome.ttf */,
+				EDF9949329018DBA00CF2502 /* Wes.otf */,
+				EDF9949029018DB900CF2502 /* Yarin.otf */,
+				EDF9949229018DBA00CF2502 /* Yeseva.otf */,
+				EDF9945E29018DB900CF2502 /* Zantroke.otf */,
+				EDF9949F29018DBA00CF2502 /* Zekton.ttf */,
+				EDF9948729018DB900CF2502 /* Zhizn.otf */,
+				EDF994A029018DBA00CF2502 /* Zyablik.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00E356ED1AD99517003FC87E /* FontsCliTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "FontsCliTests" */;
+			buildPhases = (
+				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				00E356EA1AD99517003FC87E /* Sources */,
+				00E356EB1AD99517003FC87E /* Frameworks */,
+				00E356EC1AD99517003FC87E /* Resources */,
+				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
+				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+			);
+			name = FontsCliTests;
+			productName = FontsCliTests;
+			productReference = 00E356EE1AD99517003FC87E /* FontsCliTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13B07F861A680F5B00A75B9A /* FontsCli */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FontsCli" */;
+			buildPhases = (
+				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
+				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FontsCli;
+			productName = FontsCli;
+			productReference = 13B07F961A680F5B00A75B9A /* FontsCli.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					00E356ED1AD99517003FC87E = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1120;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "FontsCli" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* FontsCli */,
+				00E356ED1AD99517003FC87E /* FontsCliTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00E356EC1AD99517003FC87E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF9968229018DBB00CF2502 /* Engine.otf in Resources */,
+				EDF9968A29018DBB00CF2502 /* MontserratAlternates.ttf in Resources */,
+				EDF9966A29018DBB00CF2502 /* Beloved.ttf in Resources */,
+				EDF9957029018DBB00CF2502 /* Aperture.ttf in Resources */,
+				EDF9952829018DBB00CF2502 /* Typographer.ttf in Resources */,
+				EDF9956E29018DBB00CF2502 /* KazmannSans.ttf in Resources */,
+				EDF994FE29018DBB00CF2502 /* Gilbert.otf in Resources */,
+				EDF9962229018DBB00CF2502 /* TagType.ttf in Resources */,
+				EDF9952C29018DBB00CF2502 /* ShohlFold.ttf in Resources */,
+				EDF9967A29018DBB00CF2502 /* Butcherman.ttf in Resources */,
+				EDF9954E29018DBB00CF2502 /* Fascinate.ttf in Resources */,
+				EDF9964229018DBB00CF2502 /* SomeTimeLater.otf in Resources */,
+				EDF995D629018DBB00CF2502 /* Glitch.ttf in Resources */,
+				EDF9959429018DBB00CF2502 /* Beon.ttf in Resources */,
+				EDF9955829018DBB00CF2502 /* InterHewn.otf in Resources */,
+				EDF9966229018DBB00CF2502 /* Kelvinch.otf in Resources */,
+				EDF994E829018DBB00CF2502 /* RibeyeMarrow.ttf in Resources */,
+				EDF994F629018DBB00CF2502 /* Calypso.ttf in Resources */,
+				EDF995AC29018DBB00CF2502 /* Amydor.ttf in Resources */,
+				EDF995AE29018DBB00CF2502 /* SeasideResort.ttf in Resources */,
+				EDF9963C29018DBB00CF2502 /* Frijole.ttf in Resources */,
+				EDF9950629018DBB00CF2502 /* Heavy.ttf in Resources */,
+				EDF9965E29018DBB00CF2502 /* Monofett.ttf in Resources */,
+				EDF995AA29018DBB00CF2502 /* Ewert.ttf in Resources */,
+				EDF9954C29018DBB00CF2502 /* Fonarto.ttf in Resources */,
+				EDF9951229018DBB00CF2502 /* Marske.ttf in Resources */,
+				EDF9964429018DBB00CF2502 /* GreatVibes.ttf in Resources */,
+				EDF9951829018DBB00CF2502 /* Pompiere.ttf in Resources */,
+				EDF9960A29018DBB00CF2502 /* Zyablik.ttf in Resources */,
+				EDF9968029018DBB00CF2502 /* CinzelDecorative.ttf in Resources */,
+				EDF9966629018DBB00CF2502 /* MonlyLite.otf in Resources */,
+				EDF995D429018DBB00CF2502 /* Shrikhand.ttf in Resources */,
+				EDF9960429018DBB00CF2502 /* Moon.ttf in Resources */,
+				EDF9951C29018DBB00CF2502 /* Caveat.ttf in Resources */,
+				EDF9965829018DBB00CF2502 /* NeonPlanet.ttf in Resources */,
+				EDF9956829018DBB00CF2502 /* SpaceTime.ttf in Resources */,
+				EDF9967229018DBB00CF2502 /* Virus.otf in Resources */,
+				EDF9966029018DBB00CF2502 /* Nosifer.ttf in Resources */,
+				EDF9964029018DBB00CF2502 /* Frisky.otf in Resources */,
+				EDF9954029018DBB00CF2502 /* MulticolorePro.otf in Resources */,
+				EDF995B229018DBB00CF2502 /* Krabuler.otf in Resources */,
+				EDF9952E29018DBB00CF2502 /* Neonblitz.ttf in Resources */,
+				EDF9958829018DBB00CF2502 /* Monoton.ttf in Resources */,
+				EDF9962A29018DBB00CF2502 /* Orbitron.ttf in Resources */,
+				EDF995E429018DBB00CF2502 /* IndieFlower.ttf in Resources */,
+				EDF9961C29018DBB00CF2502 /* BungeeOutline.otf in Resources */,
+				EDF995B029018DBB00CF2502 /* Neoneox.otf in Resources */,
+				EDF9956C29018DBB00CF2502 /* Lemon.otf in Resources */,
+				EDF9965229018DBB00CF2502 /* Evander.otf in Resources */,
+				EDF995C429018DBB00CF2502 /* RetroPop.ttf in Resources */,
+				EDF9953829018DBB00CF2502 /* Creepster.ttf in Resources */,
+				EDF9961829018DBB00CF2502 /* Blogger.otf in Resources */,
+				EDF9962C29018DBB00CF2502 /* Measure.otf in Resources */,
+				EDF995B429018DBB00CF2502 /* RumRaisin.otf in Resources */,
+				EDF9961429018DBB00CF2502 /* TimeBurner.ttf in Resources */,
+				EDF9951029018DBB00CF2502 /* Neoneon.otf in Resources */,
+				EDF995CA29018DBB00CF2502 /* Abrushow.otf in Resources */,
+				EDF9962029018DBB00CF2502 /* Ribeye.ttf in Resources */,
+				EDF9960E29018DBB00CF2502 /* Centar.otf in Resources */,
+				EDF9958429018DBB00CF2502 /* Brusnika.otf in Resources */,
+				EDF9950E29018DBB00CF2502 /* Digital.ttf in Resources */,
+				EDF9960629018DBB00CF2502 /* Marck Script.ttf in Resources */,
+				EDF995EE29018DBB00CF2502 /* Yeseva.otf in Resources */,
+				EDF9968829018DBB00CF2502 /* Tangerine.ttf in Resources */,
+				EDF995BA29018DBB00CF2502 /* Gaoel.ttf in Resources */,
+				EDF995EA29018DBB00CF2502 /* Yarin.otf in Resources */,
+				EDF994EC29018DBB00CF2502 /* Pecita.otf in Resources */,
+				EDF9962E29018DBB00CF2502 /* MoscowMetro.otf in Resources */,
+				EDF9963429018DBB00CF2502 /* Lighthaus.otf in Resources */,
+				EDF994E229018DBB00CF2502 /* KaushanScript.ttf in Resources */,
+				EDF9952629018DBB00CF2502 /* Lumberjack.otf in Resources */,
+				EDF9967429018DBB00CF2502 /* FrederickaTheGreat.ttf in Resources */,
+				EDF9967829018DBB00CF2502 /* PermanentMarker.ttf in Resources */,
+				EDF9951629018DBB00CF2502 /* GhiyaStrokes.ttf in Resources */,
+				EDF995FE29018DBB00CF2502 /* Lapsus.otf in Resources */,
+				EDF9953C29018DBB00CF2502 /* Shojumaru.ttf in Resources */,
+				EDF995C829018DBB00CF2502 /* Joystix.ttf in Resources */,
+				EDF9967C29018DBB00CF2502 /* Dacquoise.ttf in Resources */,
+				EDF9957E29018DBB00CF2502 /* Borough.otf in Resources */,
+				EDF995C029018DBB00CF2502 /* GaretHeavy.otf in Resources */,
+				EDF994EA29018DBB00CF2502 /* Calama.ttf in Resources */,
+				EDF9959829018DBB00CF2502 /* Coiny.ttf in Resources */,
+				EDF9963229018DBB00CF2502 /* Fattern.otf in Resources */,
+				EDF9965429018DBB00CF2502 /* LeoHand.ttf in Resources */,
+				EDF9965029018DBB00CF2502 /* Dobrozrachniy.ttf in Resources */,
+				EDF9950829018DBB00CF2502 /* Courier.otf in Resources */,
+				EDF995FA29018DBB00CF2502 /* Supermercado.ttf in Resources */,
+				EDF9953E29018DBB00CF2502 /* Bukhari.ttf in Resources */,
+				EDF9958229018DBB00CF2502 /* BungeeShade.ttf in Resources */,
+				EDF9963E29018DBB00CF2502 /* ColorTube.otf in Resources */,
+				EDF995DE29018DBB00CF2502 /* Allura.ttf in Resources */,
+				EDF9956029018DBB00CF2502 /* Skranji.ttf in Resources */,
+				EDF9965629018DBB00CF2502 /* Nautilus.otf in Resources */,
+				EDF9959C29018DBB00CF2502 /* Celestina.otf in Resources */,
+				EDF9952A29018DBB00CF2502 /* MajorMono.ttf in Resources */,
+				EDF995D829018DBB00CF2502 /* Zhizn.otf in Resources */,
+				EDF9953429018DBB00CF2502 /* Kaelia.ttf in Resources */,
+				EDF994EE29018DBB00CF2502 /* BebasNeue.otf in Resources */,
+				EDF9962829018DBB00CF2502 /* Foregen.ttf in Resources */,
+				EDF9951E29018DBB00CF2502 /* CarlaSans.ttf in Resources */,
+				EDF9955229018DBB00CF2502 /* HeyOctober.otf in Resources */,
+				EDF9962429018DBB00CF2502 /* TT2020Base.ttf in Resources */,
+				EDF9957C29018DBB00CF2502 /* Hillock.ttf in Resources */,
+				EDF9966829018DBB00CF2502 /* NewYear.otf in Resources */,
+				EDF995A029018DBB00CF2502 /* Broker.ttf in Resources */,
+				EDF995CE29018DBB00CF2502 /* Welcome.ttf in Resources */,
+				EDF9968629018DBB00CF2502 /* Literata.ttf in Resources */,
+				EDF9954429018DBB00CF2502 /* Lobster.ttf in Resources */,
+				EDF995B629018DBB00CF2502 /* Rookworst.ttf in Resources */,
+				EDF9965C29018DBB00CF2502 /* Lavanda.otf in Resources */,
+				EDF995E229018DBB00CF2502 /* Limelight.ttf in Resources */,
+				EDF994F429018DBB00CF2502 /* MetroColor.otf in Resources */,
+				EDF9959A29018DBB00CF2502 /* NEON1.ttf in Resources */,
+				EDF9967E29018DBB00CF2502 /* TrainOne.ttf in Resources */,
+				EDF9964629018DBB00CF2502 /* HitchHike.otf in Resources */,
+				EDF9966429018DBB00CF2502 /* MysteryQuest.ttf in Resources */,
+				EDF9961629018DBB00CF2502 /* Peace.ttf in Resources */,
+				EDF9967629018DBB00CF2502 /* Paperfiller.otf in Resources */,
+				EDF9959029018DBB00CF2502 /* GrandHotel.ttf in Resources */,
+				EDF995F029018DBB00CF2502 /* Wes.otf in Resources */,
+				EDF9963029018DBB00CF2502 /* AlexBrush.ttf in Resources */,
+				EDF9951A29018DBB00CF2502 /* MoyQelem.ttf in Resources */,
+				EDF995BC29018DBB00CF2502 /* Sacramento.ttf in Resources */,
+				EDF9953229018DBB00CF2502 /* BadScript.ttf in Resources */,
+				EDF9960829018DBB00CF2502 /* Zekton.ttf in Resources */,
+				EDF9958029018DBB00CF2502 /* Blox.ttf in Resources */,
+				EDF9960C29018DBB00CF2502 /* Automania.ttf in Resources */,
+				EDF994FA29018DBB00CF2502 /* Felora.otf in Resources */,
+				EDF9950229018DBB00CF2502 /* Sail.ttf in Resources */,
+				EDF9967029018DBB00CF2502 /* Amatic.ttf in Resources */,
+				EDF995D229018DBB00CF2502 /* BungeeInline.otf in Resources */,
+				EDF994F029018DBB00CF2502 /* Ultra.ttf in Resources */,
+				EDF9963829018DBB00CF2502 /* Underdog.ttf in Resources */,
+				EDF9953629018DBB00CF2502 /* Mexcellent.otf in Resources */,
+				EDF995DA29018DBB00CF2502 /* CherrySwash.ttf in Resources */,
+				EDF9950029018DBB00CF2502 /* Libra.otf in Resources */,
+				EDF9958E29018DBB00CF2502 /* Oranienbaum.ttf in Resources */,
+				EDF9959E29018DBB00CF2502 /* Bosk.otf in Resources */,
+				EDF9961029018DBB00CF2502 /* Magnolia.otf in Resources */,
+				EDF9951429018DBB00CF2502 /* Ruslan.ttf in Resources */,
+				EDF9956429018DBB00CF2502 /* GlyphsSapperlot.otf in Resources */,
+				EDF9956A29018DBB00CF2502 /* ChunkFivePrint.ttf in Resources */,
+				EDF9958C29018DBB00CF2502 /* Unround.otf in Resources */,
+				EDF9963629018DBB00CF2502 /* Gagalin.otf in Resources */,
+				EDF9958A29018DBB00CF2502 /* NEOND.otf in Resources */,
+				EDF9954629018DBB00CF2502 /* Eater.ttf in Resources */,
+				EDF995EC29018DBB00CF2502 /* Broadway.ttf in Resources */,
+				EDF9950C29018DBB00CF2502 /* MexicanTequila.ttf in Resources */,
+				EDF995E829018DBB00CF2502 /* DsGoose.ttf in Resources */,
+				EDF9959629018DBB00CF2502 /* Stick.ttf in Resources */,
+				EDF995A229018DBB00CF2502 /* Forum.ttf in Resources */,
+				EDF995E629018DBB00CF2502 /* OrelegaOne.ttf in Resources */,
+				EDF995DC29018DBB00CF2502 /* Kranky.ttf in Resources */,
+				EDF9963A29018DBB00CF2502 /* Storytella.otf in Resources */,
+				EDF9960029018DBB00CF2502 /* Smokum.ttf in Resources */,
+				EDF9950A29018DBB00CF2502 /* UncialAntiqua.ttf in Resources */,
+				EDF995F429018DBB00CF2502 /* Barrio.ttf in Resources */,
+				EDF9962629018DBB00CF2502 /* PinkPoppy.ttf in Resources */,
+				EDF9966E29018DBB00CF2502 /* Lletraferida.otf in Resources */,
+				EDF9960229018DBB00CF2502 /* Caviar.ttf in Resources */,
+				EDF995A429018DBB00CF2502 /* Brosh.otf in Resources */,
+				EDF9957829018DBB00CF2502 /* DNPixel.otf in Resources */,
+				EDF9957629018DBB00CF2502 /* Kalam.ttf in Resources */,
+				EDF995CC29018DBB00CF2502 /* SanFrancisco.ttf in Resources */,
+				EDF9961E29018DBB00CF2502 /* GochiHand.otf in Resources */,
+				EDF9961A29018DBB00CF2502 /* ShadowsIntoLight.ttf in Resources */,
+				EDF9956229018DBB00CF2502 /* SnowburstOne.ttf in Resources */,
+				EDF9952229018DBB00CF2502 /* Airfool.otf in Resources */,
+				EDF9965A29018DBB00CF2502 /* CaesarDressing.ttf in Resources */,
+				EDF995D029018DBB00CF2502 /* AbrilFatface.ttf in Resources */,
+				EDF9955629018DBB00CF2502 /* KellySlab.ttf in Resources */,
+				EDF9955A29018DBB00CF2502 /* Exodar.ttf in Resources */,
+				EDF995C229018DBB00CF2502 /* Molodo.otf in Resources */,
+				EDF995A629018DBB00CF2502 /* Pencil.ttf in Resources */,
+				EDF9964829018DBB00CF2502 /* Pacifico.ttf in Resources */,
+				EDF9954829018DBB00CF2502 /* Merkin.ttf in Resources */,
+				EDF9955429018DBB00CF2502 /* KingthingsPoppalok.ttf in Resources */,
+				EDF995F229018DBB00CF2502 /* GilbertColor.otf in Resources */,
+				EDF995FC29018DBB00CF2502 /* Balkara.ttf in Resources */,
+				EDF994E429018DBB00CF2502 /* Modak.ttf in Resources */,
+				EDF995F829018DBB00CF2502 /* MrLonely.otf in Resources */,
+				EDF995B829018DBB00CF2502 /* Kurale.ttf in Resources */,
+				EDF9953029018DBB00CF2502 /* FasterOne.ttf in Resources */,
+				EDF994E629018DBB00CF2502 /* PICOWA.TTF in Resources */,
+				EDF9955029018DBB00CF2502 /* Jura.ttf in Resources */,
+				EDF995BE29018DBB00CF2502 /* HiMelody.otf in Resources */,
+				EDF9968429018DBB00CF2502 /* UpheavalPro.otf in Resources */,
+				EDF9964E29018DBB00CF2502 /* CabinSketch.ttf in Resources */,
+				EDF995E029018DBB00CF2502 /* Facon.ttf in Resources */,
+				EDF9957A29018DBB00CF2502 /* Clip.ttf in Resources */,
+				EDF994FC29018DBB00CF2502 /* PicoBlack.ttf in Resources */,
+				EDF9964A29018DBB00CF2502 /* RussoOne.ttf in Resources */,
+				EDF9959229018DBB00CF2502 /* Bondi.otf in Resources */,
+				EDF9957429018DBB00CF2502 /* MountainsOfChristmas.ttf in Resources */,
+				EDF9964C29018DBB00CF2502 /* SweetMavka.ttf in Resources */,
+				EDF9952029018DBB00CF2502 /* Moiamova.otf in Resources */,
+				EDF9955C29018DBB00CF2502 /* Klaxons.otf in Resources */,
+				EDF995A829018DBB00CF2502 /* Chekharda.ttf in Resources */,
+				EDF9953A29018DBB00CF2502 /* FonartoXT.ttf in Resources */,
+				EDF9966C29018DBB00CF2502 /* Squealer.ttf in Resources */,
+				EDF9957229018DBB00CF2502 /* Akronim.ttf in Resources */,
+				EDF9956629018DBB00CF2502 /* Philosopher.ttf in Resources */,
+				EDF9958629018DBB00CF2502 /* Zantroke.otf in Resources */,
+				EDF9961229018DBB00CF2502 /* OwnHand.ttf in Resources */,
+				EDF994F229018DBB00CF2502 /* Alegreya.ttf in Resources */,
+				EDF995C629018DBB00CF2502 /* SpecialElite.ttf in Resources */,
+				EDF9952429018DBB00CF2502 /* Gravtrac.otf in Resources */,
+				EDF9954A29018DBB00CF2502 /* GhiyaItalic.ttf in Resources */,
+				EDF9955E29018DBB00CF2502 /* AstroSpace.ttf in Resources */,
+				EDF995F629018DBB00CF2502 /* PinkBlue.ttf in Resources */,
+				EDF9950429018DBB00CF2502 /* Pehlevi.ttf in Resources */,
+				EDF9954229018DBB00CF2502 /* DancingScript.ttf in Resources */,
+				EDF994F829018DBB00CF2502 /* Cinzel.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF994FF29018DBB00CF2502 /* Libra.otf in Resources */,
+				EDF995BF29018DBB00CF2502 /* GaretHeavy.otf in Resources */,
+				EDF9962129018DBB00CF2502 /* TagType.ttf in Resources */,
+				EDF9959D29018DBB00CF2502 /* Bosk.otf in Resources */,
+				EDF9961129018DBB00CF2502 /* OwnHand.ttf in Resources */,
+				EDF995B729018DBB00CF2502 /* Kurale.ttf in Resources */,
+				EDF994E729018DBB00CF2502 /* RibeyeMarrow.ttf in Resources */,
+				EDF9966329018DBB00CF2502 /* MysteryQuest.ttf in Resources */,
+				EDF9962F29018DBB00CF2502 /* AlexBrush.ttf in Resources */,
+				EDF9965729018DBB00CF2502 /* NeonPlanet.ttf in Resources */,
+				EDF995D729018DBB00CF2502 /* Zhizn.otf in Resources */,
+				EDF9951529018DBB00CF2502 /* GhiyaStrokes.ttf in Resources */,
+				EDF9964B29018DBB00CF2502 /* SweetMavka.ttf in Resources */,
+				EDF9957F29018DBB00CF2502 /* Blox.ttf in Resources */,
+				EDF9953529018DBB00CF2502 /* Mexcellent.otf in Resources */,
+				EDF995A729018DBB00CF2502 /* Chekharda.ttf in Resources */,
+				EDF995CD29018DBB00CF2502 /* Welcome.ttf in Resources */,
+				EDF9966F29018DBB00CF2502 /* Amatic.ttf in Resources */,
+				EDF9953129018DBB00CF2502 /* BadScript.ttf in Resources */,
+				EDF9966B29018DBB00CF2502 /* Squealer.ttf in Resources */,
+				EDF9959929018DBB00CF2502 /* NEON1.ttf in Resources */,
+				EDF9961729018DBB00CF2502 /* Blogger.otf in Resources */,
+				EDF9950129018DBB00CF2502 /* Sail.ttf in Resources */,
+				EDF995DF29018DBB00CF2502 /* Facon.ttf in Resources */,
+				EDF9954329018DBB00CF2502 /* Lobster.ttf in Resources */,
+				EDF9959529018DBB00CF2502 /* Stick.ttf in Resources */,
+				EDF9962B29018DBB00CF2502 /* Measure.otf in Resources */,
+				EDF9951D29018DBB00CF2502 /* CarlaSans.ttf in Resources */,
+				EDF9961F29018DBB00CF2502 /* Ribeye.ttf in Resources */,
+				EDF9963D29018DBB00CF2502 /* ColorTube.otf in Resources */,
+				EDF9957129018DBB00CF2502 /* Akronim.ttf in Resources */,
+				EDF994FB29018DBB00CF2502 /* PicoBlack.ttf in Resources */,
+				EDF9958729018DBB00CF2502 /* Monoton.ttf in Resources */,
+				EDF9967F29018DBB00CF2502 /* CinzelDecorative.ttf in Resources */,
+				EDF995FB29018DBB00CF2502 /* Balkara.ttf in Resources */,
+				EDF9957729018DBB00CF2502 /* DNPixel.otf in Resources */,
+				EDF9964329018DBB00CF2502 /* GreatVibes.ttf in Resources */,
+				EDF9962529018DBB00CF2502 /* PinkPoppy.ttf in Resources */,
+				EDF9951929018DBB00CF2502 /* MoyQelem.ttf in Resources */,
+				EDF9952129018DBB00CF2502 /* Airfool.otf in Resources */,
+				EDF9964F29018DBB00CF2502 /* Dobrozrachniy.ttf in Resources */,
+				EDF995A329018DBB00CF2502 /* Brosh.otf in Resources */,
+				EDF9968929018DBB00CF2502 /* MontserratAlternates.ttf in Resources */,
+				EDF9958329018DBB00CF2502 /* Brusnika.otf in Resources */,
+				EDF994F729018DBB00CF2502 /* Cinzel.ttf in Resources */,
+				EDF9952329018DBB00CF2502 /* Gravtrac.otf in Resources */,
+				EDF995DD29018DBB00CF2502 /* Allura.ttf in Resources */,
+				EDF995F529018DBB00CF2502 /* PinkBlue.ttf in Resources */,
+				EDF9958D29018DBB00CF2502 /* Oranienbaum.ttf in Resources */,
+				EDF9954529018DBB00CF2502 /* Eater.ttf in Resources */,
+				EDF995CF29018DBB00CF2502 /* AbrilFatface.ttf in Resources */,
+				EDF994E929018DBB00CF2502 /* Calama.ttf in Resources */,
+				EDF9951729018DBB00CF2502 /* Pompiere.ttf in Resources */,
+				EDF9955D29018DBB00CF2502 /* AstroSpace.ttf in Resources */,
+				EDF9953729018DBB00CF2502 /* Creepster.ttf in Resources */,
+				EDF9963929018DBB00CF2502 /* Storytella.otf in Resources */,
+				EDF9953929018DBB00CF2502 /* FonartoXT.ttf in Resources */,
+				EDF9967B29018DBB00CF2502 /* Dacquoise.ttf in Resources */,
+				EDF9952B29018DBB00CF2502 /* ShohlFold.ttf in Resources */,
+				EDF9968529018DBB00CF2502 /* Literata.ttf in Resources */,
+				EDF9959F29018DBB00CF2502 /* Broker.ttf in Resources */,
+				EDF995D529018DBB00CF2502 /* Glitch.ttf in Resources */,
+				EDF995FF29018DBB00CF2502 /* Smokum.ttf in Resources */,
+				EDF995B129018DBB00CF2502 /* Krabuler.otf in Resources */,
+				EDF9965B29018DBB00CF2502 /* Lavanda.otf in Resources */,
+				EDF9967D29018DBB00CF2502 /* TrainOne.ttf in Resources */,
+				EDF9959B29018DBB00CF2502 /* Celestina.otf in Resources */,
+				EDF9959729018DBB00CF2502 /* Coiny.ttf in Resources */,
+				EDF995AB29018DBB00CF2502 /* Amydor.ttf in Resources */,
+				EDF9953F29018DBB00CF2502 /* MulticolorePro.otf in Resources */,
+				EDF995EF29018DBB00CF2502 /* Wes.otf in Resources */,
+				EDF994ED29018DBB00CF2502 /* BebasNeue.otf in Resources */,
+				EDF995FD29018DBB00CF2502 /* Lapsus.otf in Resources */,
+				EDF9968729018DBB00CF2502 /* Tangerine.ttf in Resources */,
+				EDF9960729018DBB00CF2502 /* Zekton.ttf in Resources */,
+				EDF9951329018DBB00CF2502 /* Ruslan.ttf in Resources */,
+				EDF995AD29018DBB00CF2502 /* SeasideResort.ttf in Resources */,
+				EDF9962D29018DBB00CF2502 /* MoscowMetro.otf in Resources */,
+				EDF9966129018DBB00CF2502 /* Kelvinch.otf in Resources */,
+				EDF9950D29018DBB00CF2502 /* Digital.ttf in Resources */,
+				EDF9968129018DBB00CF2502 /* Engine.otf in Resources */,
+				EDF995C329018DBB00CF2502 /* RetroPop.ttf in Resources */,
+				EDF9960529018DBB00CF2502 /* Marck Script.ttf in Resources */,
+				EDF9964129018DBB00CF2502 /* SomeTimeLater.otf in Resources */,
+				EDF9954929018DBB00CF2502 /* GhiyaItalic.ttf in Resources */,
+				EDF9961D29018DBB00CF2502 /* GochiHand.otf in Resources */,
+				EDF9955729018DBB00CF2502 /* InterHewn.otf in Resources */,
+				EDF9956F29018DBB00CF2502 /* Aperture.ttf in Resources */,
+				EDF995F729018DBB00CF2502 /* MrLonely.otf in Resources */,
+				EDF9964729018DBB00CF2502 /* Pacifico.ttf in Resources */,
+				EDF9963729018DBB00CF2502 /* Underdog.ttf in Resources */,
+				EDF9950729018DBB00CF2502 /* Courier.otf in Resources */,
+				EDF9956B29018DBB00CF2502 /* Lemon.otf in Resources */,
+				EDF9960329018DBB00CF2502 /* Moon.ttf in Resources */,
+				EDF9952529018DBB00CF2502 /* Lumberjack.otf in Resources */,
+				EDF9960F29018DBB00CF2502 /* Magnolia.otf in Resources */,
+				EDF9954129018DBB00CF2502 /* DancingScript.ttf in Resources */,
+				EDF9951F29018DBB00CF2502 /* Moiamova.otf in Resources */,
+				EDF9958F29018DBB00CF2502 /* GrandHotel.ttf in Resources */,
+				EDF995C529018DBB00CF2502 /* SpecialElite.ttf in Resources */,
+				EDF9954F29018DBB00CF2502 /* Jura.ttf in Resources */,
+				EDF9953B29018DBB00CF2502 /* Shojumaru.ttf in Resources */,
+				EDF9951129018DBB00CF2502 /* Marske.ttf in Resources */,
+				EDF9965329018DBB00CF2502 /* LeoHand.ttf in Resources */,
+				EDF995C929018DBB00CF2502 /* Abrushow.otf in Resources */,
+				EDF9950B29018DBB00CF2502 /* MexicanTequila.ttf in Resources */,
+				EDF9965929018DBB00CF2502 /* CaesarDressing.ttf in Resources */,
+				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				EDF9968329018DBB00CF2502 /* UpheavalPro.otf in Resources */,
+				EDF9962329018DBB00CF2502 /* TT2020Base.ttf in Resources */,
+				EDF995B929018DBB00CF2502 /* Gaoel.ttf in Resources */,
+				EDF9955B29018DBB00CF2502 /* Klaxons.otf in Resources */,
+				EDF9964929018DBB00CF2502 /* RussoOne.ttf in Resources */,
+				EDF9957D29018DBB00CF2502 /* Borough.otf in Resources */,
+				EDF9954B29018DBB00CF2502 /* Fonarto.ttf in Resources */,
+				EDF9961529018DBB00CF2502 /* Peace.ttf in Resources */,
+				EDF9966929018DBB00CF2502 /* Beloved.ttf in Resources */,
+				EDF9958B29018DBB00CF2502 /* Unround.otf in Resources */,
+				EDF995F129018DBB00CF2502 /* GilbertColor.otf in Resources */,
+				EDF9967129018DBB00CF2502 /* Virus.otf in Resources */,
+				EDF995E329018DBB00CF2502 /* IndieFlower.ttf in Resources */,
+				EDF995E529018DBB00CF2502 /* OrelegaOne.ttf in Resources */,
+				EDF9955329018DBB00CF2502 /* KingthingsPoppalok.ttf in Resources */,
+				EDF9963F29018DBB00CF2502 /* Frisky.otf in Resources */,
+				EDF994E329018DBB00CF2502 /* Modak.ttf in Resources */,
+				EDF995D329018DBB00CF2502 /* Shrikhand.ttf in Resources */,
+				EDF994F929018DBB00CF2502 /* Felora.otf in Resources */,
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				EDF9957B29018DBB00CF2502 /* Hillock.ttf in Resources */,
+				EDF9966729018DBB00CF2502 /* NewYear.otf in Resources */,
+				EDF994F129018DBB00CF2502 /* Alegreya.ttf in Resources */,
+				EDF9961B29018DBB00CF2502 /* BungeeOutline.otf in Resources */,
+				EDF994E129018DBB00CF2502 /* KaushanScript.ttf in Resources */,
+				EDF9955F29018DBB00CF2502 /* Skranji.ttf in Resources */,
+				EDF9956729018DBB00CF2502 /* SpaceTime.ttf in Resources */,
+				EDF9954D29018DBB00CF2502 /* Fascinate.ttf in Resources */,
+				EDF995A129018DBB00CF2502 /* Forum.ttf in Resources */,
+				EDF9960129018DBB00CF2502 /* Caviar.ttf in Resources */,
+				EDF9950F29018DBB00CF2502 /* Neoneon.otf in Resources */,
+				EDF9955529018DBB00CF2502 /* KellySlab.ttf in Resources */,
+				EDF995BD29018DBB00CF2502 /* HiMelody.otf in Resources */,
+				EDF994F529018DBB00CF2502 /* Calypso.ttf in Resources */,
+				EDF9955929018DBB00CF2502 /* Exodar.ttf in Resources */,
+				EDF9957329018DBB00CF2502 /* MountainsOfChristmas.ttf in Resources */,
+				EDF9953D29018DBB00CF2502 /* Bukhari.ttf in Resources */,
+				EDF995C129018DBB00CF2502 /* Molodo.otf in Resources */,
+				EDF994EF29018DBB00CF2502 /* Ultra.ttf in Resources */,
+				EDF995AF29018DBB00CF2502 /* Neoneox.otf in Resources */,
+				EDF9966D29018DBB00CF2502 /* Lletraferida.otf in Resources */,
+				EDF995F329018DBB00CF2502 /* Barrio.ttf in Resources */,
+				EDF995CB29018DBB00CF2502 /* SanFrancisco.ttf in Resources */,
+				EDF994E529018DBB00CF2502 /* PICOWA.TTF in Resources */,
+				EDF995EB29018DBB00CF2502 /* Broadway.ttf in Resources */,
+				EDF9958529018DBB00CF2502 /* Zantroke.otf in Resources */,
+				EDF9967529018DBB00CF2502 /* Paperfiller.otf in Resources */,
+				EDF9966529018DBB00CF2502 /* MonlyLite.otf in Resources */,
+				EDF9952729018DBB00CF2502 /* Typographer.ttf in Resources */,
+				EDF995A929018DBB00CF2502 /* Ewert.ttf in Resources */,
+				EDF9963129018DBB00CF2502 /* Fattern.otf in Resources */,
+				EDF9960929018DBB00CF2502 /* Zyablik.ttf in Resources */,
+				EDF9965129018DBB00CF2502 /* Evander.otf in Resources */,
+				EDF9959129018DBB00CF2502 /* Bondi.otf in Resources */,
+				EDF9963329018DBB00CF2502 /* Lighthaus.otf in Resources */,
+				EDF995D929018DBB00CF2502 /* CherrySwash.ttf in Resources */,
+				EDF9950329018DBB00CF2502 /* Pehlevi.ttf in Resources */,
+				EDF9965529018DBB00CF2502 /* Nautilus.otf in Resources */,
+				EDF9952D29018DBB00CF2502 /* Neonblitz.ttf in Resources */,
+				EDF9954729018DBB00CF2502 /* Merkin.ttf in Resources */,
+				EDF995E729018DBB00CF2502 /* DsGoose.ttf in Resources */,
+				EDF9951B29018DBB00CF2502 /* Caveat.ttf in Resources */,
+				EDF994EB29018DBB00CF2502 /* Pecita.otf in Resources */,
+				EDF995B529018DBB00CF2502 /* Rookworst.ttf in Resources */,
+				EDF9952F29018DBB00CF2502 /* FasterOne.ttf in Resources */,
+				EDF9967729018DBB00CF2502 /* PermanentMarker.ttf in Resources */,
+				EDF9950529018DBB00CF2502 /* Heavy.ttf in Resources */,
+				EDF9956D29018DBB00CF2502 /* KazmannSans.ttf in Resources */,
+				EDF995D129018DBB00CF2502 /* BungeeInline.otf in Resources */,
+				EDF9958129018DBB00CF2502 /* BungeeShade.ttf in Resources */,
+				EDF994FD29018DBB00CF2502 /* Gilbert.otf in Resources */,
+				EDF9963B29018DBB00CF2502 /* Frijole.ttf in Resources */,
+				EDF994F329018DBB00CF2502 /* MetroColor.otf in Resources */,
+				EDF995ED29018DBB00CF2502 /* Yeseva.otf in Resources */,
+				EDF9955129018DBB00CF2502 /* HeyOctober.otf in Resources */,
+				EDF9964D29018DBB00CF2502 /* CabinSketch.ttf in Resources */,
+				EDF9960D29018DBB00CF2502 /* Centar.otf in Resources */,
+				EDF9956929018DBB00CF2502 /* ChunkFivePrint.ttf in Resources */,
+				EDF9956329018DBB00CF2502 /* GlyphsSapperlot.otf in Resources */,
+				EDF995F929018DBB00CF2502 /* Supermercado.ttf in Resources */,
+				EDF9956529018DBB00CF2502 /* Philosopher.ttf in Resources */,
+				EDF9961329018DBB00CF2502 /* TimeBurner.ttf in Resources */,
+				EDF9959329018DBB00CF2502 /* Beon.ttf in Resources */,
+				EDF9953329018DBB00CF2502 /* Kaelia.ttf in Resources */,
+				EDF995BB29018DBB00CF2502 /* Sacramento.ttf in Resources */,
+				EDF995DB29018DBB00CF2502 /* Kranky.ttf in Resources */,
+				EDF9950929018DBB00CF2502 /* UncialAntiqua.ttf in Resources */,
+				EDF9965D29018DBB00CF2502 /* Monofett.ttf in Resources */,
+				EDF9957929018DBB00CF2502 /* Clip.ttf in Resources */,
+				EDF995E129018DBB00CF2502 /* Limelight.ttf in Resources */,
+				EDF9962929018DBB00CF2502 /* Orbitron.ttf in Resources */,
+				EDF9963529018DBB00CF2502 /* Gagalin.otf in Resources */,
+				EDF9967929018DBB00CF2502 /* Butcherman.ttf in Resources */,
+				EDF9967329018DBB00CF2502 /* FrederickaTheGreat.ttf in Resources */,
+				EDF9952929018DBB00CF2502 /* MajorMono.ttf in Resources */,
+				EDF9960B29018DBB00CF2502 /* Automania.ttf in Resources */,
+				EDF9965F29018DBB00CF2502 /* Nosifer.ttf in Resources */,
+				EDF9964529018DBB00CF2502 /* HitchHike.otf in Resources */,
+				EDF9957529018DBB00CF2502 /* Kalam.ttf in Resources */,
+				EDF9956129018DBB00CF2502 /* SnowburstOne.ttf in Resources */,
+				EDF9962729018DBB00CF2502 /* Foregen.ttf in Resources */,
+				EDF9958929018DBB00CF2502 /* NEOND.otf in Resources */,
+				EDF995B329018DBB00CF2502 /* RumRaisin.otf in Resources */,
+				EDF995A529018DBB00CF2502 /* Pencil.ttf in Resources */,
+				EDF995E929018DBB00CF2502 /* Yarin.otf in Resources */,
+				EDF995C729018DBB00CF2502 /* Joystix.ttf in Resources */,
+				EDF9961929018DBB00CF2502 /* ShadowsIntoLight.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+		};
+		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontsCli/Pods-FontsCli-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontsCli/Pods-FontsCli-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FontsCli/Pods-FontsCli-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FontsCli-FontsCliTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FontsCli-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontsCli-FontsCliTests/Pods-FontsCli-FontsCliTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontsCli-FontsCliTests/Pods-FontsCli-FontsCliTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FontsCli-FontsCliTests/Pods-FontsCli-FontsCliTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontsCli/Pods-FontsCli-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontsCli/Pods-FontsCli-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FontsCli/Pods-FontsCli-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontsCli-FontsCliTests/Pods-FontsCli-FontsCliTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontsCli-FontsCliTests/Pods-FontsCli-FontsCliTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FontsCli-FontsCliTests/Pods-FontsCli-FontsCliTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00E356EA1AD99517003FC87E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E356F31AD99517003FC87E /* FontsCliTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* FontsCli */;
+			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00E356F61AD99517003FC87E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-FontsCli-FontsCliTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FontsCliTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FontsCli.app/FontsCli";
+			};
+			name = Debug;
+		};
+		00E356F71AD99517003FC87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-FontsCli-FontsCliTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = FontsCliTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FontsCli.app/FontsCli";
+			};
+			name = Release;
+		};
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-FontsCli.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = FontsCli/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = FontsCli;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-FontsCli.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = FontsCli/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = FontsCli;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DFOLLY_NO_CONFIG",
+					"-DFOLLY_MOBILE=1",
+					"-DFOLLY_USE_LIBCPP=1",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DFOLLY_NO_CONFIG",
+					"-DFOLLY_MOBILE=1",
+					"-DFOLLY_USE_LIBCPP=1",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "FontsCliTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E356F61AD99517003FC87E /* Debug */,
+				00E356F71AD99517003FC87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FontsCli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "FontsCli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}
