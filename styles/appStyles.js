@@ -43,17 +43,29 @@ export const appStyles = StyleSheet.create({
     paddingHorizontal: 8,
     backgroundColor: "1E1E1E"
   },
-  textInput: {
+  textInputWrapper: {
     marginHorizontal: 15,
+    paddingLeft: 5,
     flex: 1,
-    paddingHorizontal: 13,
-    height: 35,
+    flexDirection: 'row',
+    alignItems: 'center',
+    // height: 35,
+    backgroundColor: "#000000",
+    borderRadius: 15
+  },
+  textInput: {
+    paddingVertical: 3,
+    flex: 1,
+    // height: 35,
     color: "#ffffff",
     fontSize: 16,
     backgroundColor: "#000000",
     borderRadius: 15
   },
-
+  clearTextBtn: {
+    width: 16,
+    height: 16
+  },
   buttonString: {
     // backgroundColor: "red",
     width: 32,

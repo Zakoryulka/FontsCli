@@ -1,12 +1,11 @@
 import { useRef } from 'react';
 import { useSelector } from "react-redux";
 import { Text, View, Pressable, PermissionsAndroid, Platform } from 'react-native';
-// import CameraRoll from '@react-native-community/cameraroll';
 // import ViewShot, { captureScree, captureRef } from "react-native-view-shot";
 // import Share from 'react-native-share';
 import { captureRef } from 'react-native-view-shot';
 
-// import { CameraRoll } from "@react-native-camera-roll/camera-roll";
+import { CameraRoll } from "@react-native-camera-roll/camera-roll";
 
 import { appStyles } from '../styles/appStyles';
 
@@ -23,34 +22,34 @@ const FontItem = (props) => {
 
   const viewShotRef = useRef();
 
-//  // запрос разрешения на Android
-//   async function hasAndroidPermission() {
-//     const permission = PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE;
+ // запрос разрешения на Android
+  async function hasAndroidPermission() {
+    const permission = PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE;
 
-//     const hasPermission = await PermissionsAndroid.check(permission);
-//     if (hasPermission) {
-//       return true;
-//     }
+    const hasPermission = await PermissionsAndroid.check(permission);
+    if (hasPermission) {
+      return true;
+    }
 
-//     const status = await PermissionsAndroid.request(permission);
-//     return status === 'granted';
-//   }
+    const status = await PermissionsAndroid.request(permission);
+    return status === 'granted';
+  }
 
-//   async function savePicture() {
-//     try {
-//       // if (Platform.OS === "android" && !(await hasAndroidPermission())) {
-//       //   return;
-//       // }
+  async function savePicture() {
+    try {
+      if (Platform.OS === "android" && !(await hasAndroidPermission())) {
+        return;
+      }
 
-//       const imageURI = await captureRef(viewShotRef, {
-//         format: 'png',
-//         quality: 1
-//       });
-//       await CameraRoll.save(imageURI, 'photo');
-//     } catch(err) {
-//       console.log(err);
-//     }
-//   };
+      const imageURI = await captureRef(viewShotRef, {
+        format: 'png',
+        quality: 1
+      });
+      await CameraRoll.save(imageURI, 'photo');
+    } catch(err) {
+      console.log(err);
+    }
+  };
 
   // const captureViewShot = async () => {
   //   try {
@@ -83,9 +82,9 @@ const FontItem = (props) => {
 
   return (
     <Pressable
-      // onPress={async () => {
-      //   await savePicture();
-      // }}
+      onPress={async () => {
+        await savePicture();
+      }}
       style={{backgroundColor: 'transparent'}}
     >
       <View

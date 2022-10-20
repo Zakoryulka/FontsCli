@@ -17,7 +17,7 @@ import { openInfoModal,
  } from "../store/modal";
 import { changeBg, changeFontColor } from "../store/colorParametrs";
 import { changeAlignSelf } from "../store/ aligmentParametrs";
-import { inputText } from "../store/textInput";
+import { inputText, clearText } from "../store/textInput";
 
 import FontItem from "../components/FontItem";
 import ButtonIcon from "../components/ButtonIcon";
@@ -108,21 +108,30 @@ const FontScreen = (props) => {
             }}
           >aA</ButtonString>
 
-          <TextInput
-            style={appStyles.textInput}
-            placeholder="Enter your text"
-            onChangeText={(text) => {
-              dispatch(closeColorModal());
-              dispatch(closeFontSettingsModal());
-              dispatch(inputText({ newText: text }));
-            }}
-            onPressIn={() => {
-              dispatch(closeColorModal());
-              dispatch(closeFontSettingsModal());
-            }}
-            value={enteredText}
-            enablesReturnKeyAutomatically={true}
-          />
+          <View style={appStyles.textInputWrapper}>
+            <TextInput
+              style={appStyles.textInput}
+              placeholder="Enter your text"
+              onChangeText={(text) => {
+                dispatch(closeColorModal());
+                dispatch(closeFontSettingsModal());
+                dispatch(inputText({ newText: text }));
+              }}
+              onPressIn={() => {
+                dispatch(closeColorModal());
+                dispatch(closeFontSettingsModal());
+              }}
+              value={enteredText}
+              enablesReturnKeyAutomatically={true}
+              multiline={true}
+              // clearButtonMode='always'
+            />
+            <ButtonIcon
+              style={appStyles.clearTextBtn}
+              icon={"clearText"}
+              onPress={() => dispatch(clearText())}
+            />
+          </View>
 
           <ButtonIcon
             icon={"palette"}

@@ -24,9 +24,12 @@ const textInputSlice = createSlice({
   reducers: {
     inputText: (state, action) => {
       state.enteredText = action.payload.newText;
+    },
+    clearText: (state, action) => {
+      state.enteredText = '';
     }
   }
 });
 
-export const { inputText } = textInputSlice.actions;
+export const { inputText, clearText } = textInputSlice.actions;
 export default textInputSlice.reducer;
