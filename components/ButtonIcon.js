@@ -7,6 +7,7 @@ import FontCenterSVG from '../assets/icons/FontCenter';
 import FontRightSVG from '../assets/icons/FontRight';
 import CloseSVG from '../assets/icons/CancelRound';
 import ListSVG from '../assets/icons/List';
+import TextIcon from '../assets/icons/TextIcon';
 
 import { appStyles } from '../styles/appStyles';
 
@@ -18,10 +19,11 @@ const ButtonIcon = ({children, onPress, icon, marginRifgt}) => {
     const paletteSVG = icon === "palette" ? <PaletteSVG width={size} height={27} fill={mainBtnColor} /> : null;
     const fontLeftSVG = icon === "flex-start" ? <FontLeftSVG width={size} height={size} fill={mainBtnColor} /> : null;
     const fontCenterSVG = icon === "center" ? <FontCenterSVG width={size} height={size} fill={mainBtnColor} /> : null;
-    const fontRightSVG = icon === "flex-end" ? <FontRightSVG width={size} height={size} fill={mainBtnColor} /> : null;
-    const closeSVG = icon === "close" ? <CloseSVG width={size} height={size} fill={mainBtnColor} /> : null;
+    const fontRightSVG = icon === "flex-end" ? <FontRightSVG fill={mainBtnColor} /> : null;
+    const closeSVG = icon === "close" ? <CloseSVG width={32} height={32} fill={mainBtnColor} /> : null;
     const listSVG = icon === "list" ? <ListSVG width={size} height={size} fill={mainBtnColor} /> : null;
-    const clearTextSVG = icon === "clearText" ? <CloseSVG width={16} height={16} fill={'grey'} /> : null;
+    const clearTextSVG = icon === "clearText" ? <CloseSVG width={20} height={20} fill={'grey'} /> : null;
+    const textIcon = icon === "text" ? <TextIcon width={27} height={size} fill={mainBtnColor} /> : null;
 
     return (
     <Pressable
@@ -37,6 +39,7 @@ const ButtonIcon = ({children, onPress, icon, marginRifgt}) => {
         {closeSVG}
         {listSVG}
         {clearTextSVG}
+        {textIcon}
     </Pressable>
 )}
 

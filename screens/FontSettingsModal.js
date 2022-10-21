@@ -45,7 +45,7 @@ function ColorModal() {
             min={12}
             max={36}
             value={fontSize}
-            step={1}
+            step={1.5}
             changeValue={(value) => dispatch(changeFontSize({ fontSize: value }))}
           />
         </View>

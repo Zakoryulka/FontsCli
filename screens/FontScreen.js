@@ -26,6 +26,7 @@ import InfoModal from "./InfoModal";
 import ColorModal from "./ColorModal";
 import ColorPickerModal from "./ColorPickerModal";
 import FontSettingsModal from "./FontSettingsModal";
+import PastInStoryNotifivation from "../components/PastInStoryNotifivation";
 
 import { appStyles } from "../styles/appStyles";
 
@@ -41,13 +42,14 @@ const FontScreen = (props) => {
   const fontsList = useSelector(state => state.textInput.fontsList);
   const enteredText = useSelector(state => state.textInput.enteredText);
   const familyFonts = useSelector(state => state.fontsInfo.familyFonts);
+  const pastInStoryNotifVisible = useSelector(state => state.modals.pastInStoryNotifVisible);
 
   const defferEnteredText = useDeferredValue(enteredText);
   const dispatch = useDispatch();
 
   const colorModal = colorModalShow ? <ColorModal/> : null;
   const fontSettingsModal = fontSettingsModalShow ? <FontSettingsModal/> : null;
-
+  const pastInStoryNotification = pastInStoryNotifVisible ? <PastInStoryNotifivation/> : null;
 
   return (
     <>
@@ -56,7 +58,7 @@ const FontScreen = (props) => {
           icon={'info'}
            onPress={() => dispatch(openInfoModal())}
         />
-        <Text style={[appStyles.headerLabel, { backgroundColor: "red" }]}>
+        <Text style={appStyles.headerLabel}>
             Sticker Fonts
         </Text>
         <ButtonIcon
@@ -65,6 +67,7 @@ const FontScreen = (props) => {
       </View>
 
       <View style={appStyles.fontsContainer}>
+        {pastInStoryNotification}
         <SectionList
                 // style={{backgroundColor: 'transparent'}}
             sections={fontsList}
@@ -100,13 +103,14 @@ const FontScreen = (props) => {
             marginRifgt
           />
 
-          <ButtonString
+          <ButtonIcon
+            icon={"text"}
             onPress={() => {
               !fontSettingsModalShow ?
               dispatch(openFontSettingsModal()) :
               dispatch(closeFontSettingsModal())
             }}
-          >aA</ButtonString>
+          />
 
           <View style={appStyles.textInputWrapper}>
             <TextInput

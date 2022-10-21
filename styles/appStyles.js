@@ -17,6 +17,7 @@ export const appStyles = StyleSheet.create({
   },
 
   fontsContainer: {
+    position: 'relative',
     flex: 1,
     backgroundColor: "#000000"
   },
@@ -111,6 +112,7 @@ export const appStyles = StyleSheet.create({
     fontSize: 17,
   },
 
+
  // ------modal styles------ //
 
   modalWrapper: {
@@ -168,6 +170,7 @@ export const appStyles = StyleSheet.create({
     height: 25
   },
 
+
    // ------color Picker styles------ //
 
   colorPickerModal: {
@@ -182,6 +185,7 @@ export const appStyles = StyleSheet.create({
     flex: 1,
     zIndex: -1
   },
+
 
      // ------Info Modal styles------ //
 
@@ -202,5 +206,28 @@ export const appStyles = StyleSheet.create({
     width: 150,
     height: 150,
     backgroundColor: 'red',
+  },
+
+
+    // ------Img Saved Notifivation styles------ //
+
+  imgSavedNotWrapper: {
+    position: 'absolute',
+    alignSelf: 'center',
+    top: '25%',
+    zIndex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 200,
+    height: 200,
+    backgroundColor: '#D0CACA',
+    opacity: 0.9,
+    borderRadius: 12
+  },
+  imgSavedNotText: {
+    marginTop: 15,
+    marginBottom: 10,
+    fontSize: 24,
+    color: '#666666'
   }
 });

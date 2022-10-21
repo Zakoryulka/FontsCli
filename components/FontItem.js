@@ -1,11 +1,13 @@
 import { useRef } from 'react';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Text, View, Pressable, PermissionsAndroid, Platform } from 'react-native';
 // import ViewShot, { captureScree, captureRef } from "react-native-view-shot";
 // import Share from 'react-native-share';
 import { captureRef } from 'react-native-view-shot';
 
 import { CameraRoll } from "@react-native-camera-roll/camera-roll";
+
+import { pastInStoryNotifShow } from "../store/modal";
 
 import { appStyles } from '../styles/appStyles';
 
@@ -21,6 +23,7 @@ const FontItem = (props) => {
   const alignText = useSelector(state => state.aligmentParametrs.currentAlignText);
 
   const viewShotRef = useRef();
+  const dispatch = useDispatch();
 
  // запрос разрешения на Android
   async function hasAndroidPermission() {
@@ -84,6 +87,7 @@ const FontItem = (props) => {
     <Pressable
       onPress={async () => {
         await savePicture();
+        dispatch(pastInStoryNotifShow());
       }}
       style={{backgroundColor: 'transparent'}}
     >

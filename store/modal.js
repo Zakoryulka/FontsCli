@@ -8,6 +8,7 @@ const modalSlice = createSlice({
     fontSettingsModalShow: false,
     cPickerBGVisible: false,
     cPickerFontColorVisible: false,
+    pastInStoryNotifVisible: false
   },
   reducers: {
     openInfoModal: (state) => {
@@ -41,6 +42,13 @@ const modalSlice = createSlice({
     },
     cPickerFontColorHide: (state) => {
       state.cPickerFontColorVisible = false;
+    },
+    pastInStoryNotifShow: (state) => {
+      state.pastInStoryNotifVisible = true;
+
+    },
+    pastInStoryNotifHide: (state) => {
+      state.pastInStoryNotifVisible = false;
     }
   }
 });
@@ -55,6 +63,8 @@ export const {
   cPickerBGShow,
   cPickerBGHide,
   cPickerFontColorShow,
-  cPickerFontColorHide
+  cPickerFontColorHide,
+  pastInStoryNotifShow,
+  pastInStoryNotifHide
 } = modalSlice.actions;
 export default modalSlice.reducer;
