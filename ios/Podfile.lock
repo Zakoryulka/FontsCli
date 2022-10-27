@@ -304,6 +304,8 @@ PODS:
     - glog
   - react-native-cameraroll (5.0.4):
     - React-Core
+  - react-native-image-base64 (0.1.4):
+    - React
   - react-native-slider (4.3.2):
     - React-Core
   - react-native-view-shot (3.4.0):
@@ -374,6 +376,10 @@ PODS:
     - React-jsi (= 0.70.3)
     - React-logger (= 0.70.3)
     - React-perflogger (= 0.70.3)
+  - rn-fetch-blob (0.12.0):
+    - React-Core
+  - RNCClipboard (1.11.1):
+    - React-Core
   - RNShare (7.9.1):
     - React-Core
   - RNSVG (13.4.0):
@@ -431,6 +437,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - "react-native-cameraroll (from `../node_modules/@react-native-camera-roll/camera-roll`)"
+  - react-native-image-base64 (from `../node_modules/react-native-image-base64`)
   - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
   - react-native-view-shot (from `../node_modules/react-native-view-shot`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -445,6 +452,8 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
+  - "RNCClipboard (from `../node_modules/@react-native-clipboard/clipboard`)"
   - RNShare (from `../node_modules/react-native-share`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -512,6 +521,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   react-native-cameraroll:
     :path: "../node_modules/@react-native-camera-roll/camera-roll"
+  react-native-image-base64:
+    :path: "../node_modules/react-native-image-base64"
   react-native-slider:
     :path: "../node_modules/@react-native-community/slider"
   react-native-view-shot:
@@ -540,6 +551,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  rn-fetch-blob:
+    :path: "../node_modules/rn-fetch-blob"
+  RNCClipboard:
+    :path: "../node_modules/@react-native-clipboard/clipboard"
   RNShare:
     :path: "../node_modules/react-native-share"
   RNSVG:
@@ -583,6 +598,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 0553c9fe7218e1f127be070bd5a4d2fc19fb8190
   React-logger: cffcc09e8aba8a3014be8d18da7f922802e9f19e
   react-native-cameraroll: 38b40d9033e4077b6c603f92f95c6d05fa7907df
+  react-native-image-base64: 2ff9ac788639c87a91361ab6652cc95e871b1e54
   react-native-slider: e540525ea731783850802b7af457d8551edb0711
   react-native-view-shot: a60a98a18c72bcaaaf2138f9aab960ae9b0d96c7
   React-perflogger: 082b4293f0b3914ff41da35a6c06ac4490fcbcc8
@@ -597,6 +613,8 @@ SPEC CHECKSUMS:
   React-RCTVibration: b9a58ffdd18446f43d493a4b0ecd603ee86be847
   React-runtimeexecutor: e9b1f9310158a1e265bcdfdfd8c62d6174b947a2
   ReactCommon: 01064177e66d652192c661de899b1076da962fd9
+  rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
+  RNCClipboard: 2834e1c4af68697089cdd455ee4a4cdd198fa7dd
   RNShare: a5dc3b9c53ddc73e155b8cd9a94c70c91913c43c
   RNSVG: 07dbd870b0dcdecc99b3a202fa37c8ca163caec2
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
