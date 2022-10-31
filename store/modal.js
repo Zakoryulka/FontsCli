@@ -4,11 +4,13 @@ const modalSlice = createSlice({
   name: 'modal',
   initialState: {
     infoModalVisible: false,
+    showMoreModalVisible: false,
     colorModalShow: false,
     fontSettingsModalShow: false,
     cPickerBGVisible: false,
     cPickerFontColorVisible: false,
-    pastInStoryNotifVisible: false
+    pastInStoryNotifVisible: false,
+    altSharingItemModalVisible: false
   },
   reducers: {
     openInfoModal: (state) => {
@@ -16,6 +18,12 @@ const modalSlice = createSlice({
     },
     closeInfoModal: (state) => {
       state.infoModalVisible = false;
+    },
+    openShowMoreModal: (state) => {
+      state.showMoreModalVisible = true;
+    },
+    closeShowMoreModal: (state) => {
+      state.showMoreModalVisible = false;
     },
     openColorModal: (state) => {
       state.colorModalShow = true;
@@ -49,6 +57,13 @@ const modalSlice = createSlice({
     },
     pastInStoryNotifHide: (state) => {
       state.pastInStoryNotifVisible = false;
+    },
+    altSharingItemModalShow: (state) => {
+      state.altSharingItemModalVisible = true;
+
+    },
+    altSharingItemModalHide: (state) => {
+      state.altSharingItemModalVisible = false;
     }
   }
 });
@@ -56,6 +71,8 @@ const modalSlice = createSlice({
 export const {
   openInfoModal,
   closeInfoModal,
+  openShowMoreModal,
+  closeShowMoreModal,
   openColorModal,
   closeColorModal,
   openFontSettingsModal,
@@ -65,6 +82,8 @@ export const {
   cPickerFontColorShow,
   cPickerFontColorHide,
   pastInStoryNotifShow,
-  pastInStoryNotifHide
+  pastInStoryNotifHide,
+  altSharingItemModalShow,
+  altSharingItemModalHide
 } = modalSlice.actions;
 export default modalSlice.reducer;

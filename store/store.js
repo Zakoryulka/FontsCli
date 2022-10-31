@@ -4,7 +4,7 @@ import colorParametrsReducer from './colorParametrs';
 import fontParametrsReducer from './fontParametrs';
 import aligmentParametrsReducer from './ aligmentParametrs';
 import textInputReducer from './textInput';
-import fontsInfoReducer from './fontsInfo';
+import shareingSettingsReducer from './shareingSettings'; // test
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +13,6 @@ export const store = configureStore({
     fontParametrs: fontParametrsReducer,
     aligmentParametrs: aligmentParametrsReducer,
     textInput: textInputReducer,
-    fontsInfo: fontsInfoReducer
+    shareingSettings: shareingSettingsReducer // test
   }
 });

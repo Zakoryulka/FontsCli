@@ -1,32 +1,34 @@
-import { useDeferredValue } from "react";
+import { useDeferredValue, useRef, useState } from "react";
 
 import {
   Text,
   View,
   SectionList,
-  TextInput,
   KeyboardAvoidingView,
-  Platform
+  Platform,
+  Modal
 } from "react-native";
 
+
 import { useSelector, useDispatch } from "react-redux";
-import { openInfoModal,
+import { openInfoModal, openShowMoreModal,
          openColorModal, closeColorModal,
          openFontSettingsModal, closeFontSettingsModal,
          cPickerBGHide, cPickerFontColorHide
  } from "../store/modal";
 import { changeBg, changeFontColor } from "../store/colorParametrs";
 import { changeAlignSelf } from "../store/ aligmentParametrs";
-import { inputText, clearText } from "../store/textInput";
 
 import FontItem from "../components/FontItem";
 import ButtonIcon from "../components/ButtonIcon";
-import ButtonString from "../components/ButtonString";
 import InfoModal from "./InfoModal";
+import ShowMoreModal from "./ShowMoreModal";
 import ColorModal from "./ColorModal";
 import ColorPickerModal from "./ColorPickerModal";
 import FontSettingsModal from "./FontSettingsModal";
+import TextItemInput from "../components/TextItemInput";
 import PastInStoryNotifivation from "../components/PastInStoryNotifivation";
+import AltSharingItemModal from "./AltSharingItemModal";
 
 import { appStyles } from "../styles/appStyles";
 
@@ -41,7 +43,7 @@ const FontScreen = (props) => {
   const alignSelf = useSelector(state => state.aligmentParametrs.currentAlignSelf);
   const fontsList = useSelector(state => state.textInput.fontsList);
   const enteredText = useSelector(state => state.textInput.enteredText);
-  const familyFonts = useSelector(state => state.fontsInfo.familyFonts);
+  const familyFonts = useSelector(state => state.textInput.familyFonts);
   const pastInStoryNotifVisible = useSelector(state => state.modals.pastInStoryNotifVisible);
 
   const defferEnteredText = useDeferredValue(enteredText);
@@ -62,14 +64,14 @@ const FontScreen = (props) => {
             Sticker Fonts
         </Text>
         <ButtonIcon
-          icon={'list'}
+          icon={'showMore'}
+          onPress={() => dispatch(openShowMoreModal())}
         />
       </View>
 
       <View style={appStyles.fontsContainer}>
         {pastInStoryNotification}
         <SectionList
-                // style={{backgroundColor: 'transparent'}}
             sections={fontsList}
             keyExtractor={(item, index) => item + index}
             renderSectionHeader={({ section: { title } }) => (
@@ -112,30 +114,7 @@ const FontScreen = (props) => {
             }}
           />
 
-          <View style={appStyles.textInputWrapper}>
-            <TextInput
-              style={appStyles.textInput}
-              placeholder="Enter your text"
-              onChangeText={(text) => {
-                dispatch(closeColorModal());
-                dispatch(closeFontSettingsModal());
-                dispatch(inputText({ newText: text }));
-              }}
-              onPressIn={() => {
-                dispatch(closeColorModal());
-                dispatch(closeFontSettingsModal());
-              }}
-              value={enteredText}
-              enablesReturnKeyAutomatically={true}
-              multiline={true}
-              // clearButtonMode='always'
-            />
-            <ButtonIcon
-              style={appStyles.clearTextBtn}
-              icon={"clearText"}
-              onPress={() => dispatch(clearText())}
-            />
-          </View>
+          <TextItemInput/>
 
           <ButtonIcon
             icon={"palette"}
@@ -150,8 +129,6 @@ const FontScreen = (props) => {
         </View>
       </KeyboardAvoidingView>
 
-      <InfoModal/>
-
       <ColorPickerModal
         modalVisible={cPickerFontColorVisible}
         onCloseModal={() => dispatch(cPickerFontColorHide())}
@@ -165,6 +142,10 @@ const FontScreen = (props) => {
         onChangeColor={(color) => dispatch(changeBg({ newColor: color }))}
         currentColor={currentBg}
       />
+
+      <InfoModal />
+      <ShowMoreModal />
+      <AltSharingItemModal />
     </>
   )
 };

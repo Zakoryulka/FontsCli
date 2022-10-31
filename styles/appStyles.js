@@ -45,7 +45,7 @@ export const appStyles = StyleSheet.create({
     backgroundColor: "1E1E1E"
   },
   textInputWrapper: {
-    marginHorizontal: 15,
+    marginHorizontal: 10,
     paddingLeft: 5,
     flex: 1,
     flexDirection: 'row',
@@ -57,9 +57,7 @@ export const appStyles = StyleSheet.create({
   textInput: {
     paddingVertical: 3,
     flex: 1,
-    // height: 35,
     color: "#ffffff",
-    fontSize: 16,
     backgroundColor: "#000000",
     borderRadius: 15
   },
@@ -115,10 +113,22 @@ export const appStyles = StyleSheet.create({
 
  // ------modal styles------ //
 
+ view: {
+  backfaceVisibility: 'green',
+  flex: 1
+ },
   modalWrapper: {
     marginTop: 'auto',
     padding: 10,
     backgroundColor: '#1E1E1E',
+  },
+  modalCloseHandler: {
+    marginBottom: 20,
+    alignSelf: 'center',
+    width: 50,
+    height: 4,
+    backgroundColor: '#DADBDB',
+    borderRadius: 2
   },
   modalHeader: {
     flexDirection: 'row',
@@ -190,24 +200,65 @@ export const appStyles = StyleSheet.create({
      // ------Info Modal styles------ //
 
   infoModal: {
-    marginTop: 'auto',
-    padding: 20,
+    height: '60%',
+  },
 
-    height: '50%',
-    backgroundColor: '#1E1E1E',
+  infoModalWrapper: {
+    flex: 1,
+    marginTop: 'auto',
+    // alignItems: 'center'
+    // marginVertical: 'auto'
+    // alignSelf: 'center'
+    // justifyContent: 'space-around'
+    // justifyContent: 'center'
 
   },
-  infoModalWrapper: {
+  infoModalLineWrapper: {
     flexDirection: 'row',
     justifyContent: 'center'
   },
   infoModalItem: {
-    margin: 15,
+    margin: 12,
     width: 150,
     height: 150,
     backgroundColor: 'red',
   },
 
+
+    // ------Show More Modal styles------ //
+
+    showMoreModal: {
+      height: '60%'
+
+    },
+    showMoreModalBtn: {
+      marginBottom: 35,
+      // backgroundColor: '#000000',
+      backgroundColor: '#3D3939',
+      borderRadius: 10
+    },
+    showMoreModalBtnLabel: {
+      padding: 18,
+      fontSize: 16,
+      color: '#ffffff'
+    },
+    ModalBtnsContainer: {
+      backgroundColor: '#3D3939',
+      borderRadius: 10
+    },
+    showMoreModalBtndevider: {
+      alignSelf: 'center',
+      width: '100%',               // исправить
+      height: 1,
+      backgroundColor: '#1E1E1E',
+      borderRadius: 1
+    },
+
+    // ------AltSharingModal styles------ //
+
+    altSharingModal: {
+      height: '40%',
+    },
 
     // ------Img Saved Notifivation styles------ //
 

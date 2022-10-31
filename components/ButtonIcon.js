@@ -21,7 +21,7 @@ const ButtonIcon = ({children, onPress, icon, marginRifgt}) => {
     const fontCenterSVG = icon === "center" ? <FontCenterSVG width={size} height={size} fill={mainBtnColor} /> : null;
     const fontRightSVG = icon === "flex-end" ? <FontRightSVG fill={mainBtnColor} /> : null;
     const closeSVG = icon === "close" ? <CloseSVG width={32} height={32} fill={mainBtnColor} /> : null;
-    const listSVG = icon === "list" ? <ListSVG width={size} height={size} fill={mainBtnColor} /> : null;
+    const showMoreSVG = icon === "showMore" ? <ListSVG width={size} height={size} fill={mainBtnColor} /> : null;
     const clearTextSVG = icon === "clearText" ? <CloseSVG width={20} height={20} fill={'grey'} /> : null;
     const textIcon = icon === "text" ? <TextIcon width={27} height={size} fill={mainBtnColor} /> : null;
 
@@ -37,7 +37,7 @@ const ButtonIcon = ({children, onPress, icon, marginRifgt}) => {
         {fontCenterSVG}
         {fontRightSVG}
         {closeSVG}
-        {listSVG}
+        {showMoreSVG}
         {clearTextSVG}
         {textIcon}
     </Pressable>

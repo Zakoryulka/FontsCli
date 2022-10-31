@@ -7,12 +7,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeFontSettingsModal } from "../store/modal"
 import SliderItem from "../components/SliderItem";
 import ButtonIcon from "../components/ButtonIcon";
-import { appStyles } from "../styles/appStyles";
 import { resetFontsSettings,
          changeFontSize,
          changeLineSpacing,
          changeLetterSpacing
 } from "../store/fontParametrs";
+
+import { appStyles } from "../styles/appStyles";
 
 function ColorModal() {
   const fontSize = useSelector(state => state.fontParametrs.currentFontSize);
