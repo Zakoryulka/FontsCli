@@ -6,7 +6,8 @@ import { closeColorModal,
          cPickerBGShow,
  } from "../store/modal";
  import { changeBg, changeFontColor,
-          changeOpacity, resetColors
+          changeOpacity, resetColors,
+          changePadding, changeRadius
 } from "../store/colorParametrs";
 
 import serverState from '../serverState.json';
@@ -67,6 +68,39 @@ function ColorModal() {
             dataList={colorsList}
             onPressChangeColor={(color) => dispatch(changeBg({ newColor: color}))}
             transparent={true}
+          />
+        </View>
+      </View>
+
+      <View style={appStyles.settingsSectionContainer}>
+        <View style={[
+          appStyles.settingsSection,
+          {width: '46%',
+          // marginRight:
+          //  zIndex: 1
+          }
+        ]}>
+          <Text style={[appStyles.settingsSectioLabel, {marginBottom: 0}]}>
+            Padding
+          </Text>
+          <SliderItem
+            min={4}
+            max={20}
+            value={15}
+            step={1}
+            changeValue={(padding) => dispatch(changePadding({ padding: padding}))}
+          />
+        </View>
+        <View style={[appStyles.settingsSection, {width: '46%'}]}>
+          <Text style={[appStyles.settingsSectioLabel, {marginBottom: 0}]}>
+            Corner Radius
+          </Text>
+          <SliderItem
+            min={0}
+            max={40}
+            value={15}
+            step={1}
+            changeValue={(radius) => dispatch(changeRadius({ radius: radius}))}
           />
         </View>
       </View>

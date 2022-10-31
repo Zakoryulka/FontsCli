@@ -5,8 +5,7 @@ import {
   View,
   SectionList,
   KeyboardAvoidingView,
-  Platform,
-  Modal
+  Platform
 } from "react-native";
 
 
@@ -27,7 +26,7 @@ import ColorModal from "./ColorModal";
 import ColorPickerModal from "./ColorPickerModal";
 import FontSettingsModal from "./FontSettingsModal";
 import TextItemInput from "../components/TextItemInput";
-import PastInStoryNotifivation from "../components/PastInStoryNotifivation";
+import Notification from "../components/Notification";
 import AltSharingItemModal from "./AltSharingItemModal";
 
 import { appStyles } from "../styles/appStyles";
@@ -44,14 +43,19 @@ const FontScreen = (props) => {
   const fontsList = useSelector(state => state.textInput.fontsList);
   const enteredText = useSelector(state => state.textInput.enteredText);
   const familyFonts = useSelector(state => state.textInput.familyFonts);
-  const pastInStoryNotifVisible = useSelector(state => state.modals.pastInStoryNotifVisible);
+  const notifyVisible = useSelector(state => state.modals.notifyVisible);
+  const notifyMessage = useSelector(state => state.modals.notifyMessage);
 
   const defferEnteredText = useDeferredValue(enteredText);
   const dispatch = useDispatch();
 
   const colorModal = colorModalShow ? <ColorModal/> : null;
   const fontSettingsModal = fontSettingsModalShow ? <FontSettingsModal/> : null;
-  const pastInStoryNotification = pastInStoryNotifVisible ? <PastInStoryNotifivation/> : null;
+  const notification = notifyVisible
+  ? <Notification
+      notificationText={notifyMessage}
+    />
+  : null;
 
   return (
     <>
@@ -70,7 +74,7 @@ const FontScreen = (props) => {
       </View>
 
       <View style={appStyles.fontsContainer}>
-        {pastInStoryNotification}
+        {notification}
         <SectionList
             sections={fontsList}
             keyExtractor={(item, index) => item + index}

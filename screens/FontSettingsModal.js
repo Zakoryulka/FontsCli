@@ -41,7 +41,6 @@ function ColorModal() {
 
       <View style={appStyles.settingsSection}>
         <Text style={appStyles.settingsSectioLabel}>Font size:</Text>
-        <View style={appStyles.settingsWrapper}>
           <SliderItem
             min={12}
             max={36}
@@ -49,12 +48,10 @@ function ColorModal() {
             step={1.5}
             changeValue={(value) => dispatch(changeFontSize({ fontSize: value }))}
           />
-        </View>
       </View>
 
       <View style={appStyles.settingsSection}>
         <Text style={appStyles.settingsSectioLabel}>Letter spacing:</Text>
-        <View style={appStyles.settingsWrapper}>
         <SliderItem
             min={0}
             max={15}
@@ -62,7 +59,6 @@ function ColorModal() {
             step={1}
             changeValue={(value) => dispatch(changeLetterSpacing({ letterSpacing: value }))}
           />
-        </View>
       </View>
 
       <View style={appStyles.settingsSection}>

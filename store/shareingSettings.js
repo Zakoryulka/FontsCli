@@ -7,8 +7,6 @@ import { CameraRoll } from "@react-native-camera-roll/camera-roll";
 //test
 // import ImgToBase64 from 'react-native-image-base64';
 
-
-
 const shareingSettingsSlice = createSlice({
   name: 'shareingSettings',
   initialState: {
@@ -31,9 +29,7 @@ const shareingSettingsSlice = createSlice({
       CameraRoll.save(state.imageURI, 'photo');
       console.log('saveToPhoto')
     }
-    // convertToBase64: (state) => {
 
-    // }
     // shareToSocial: async (state) => {         // Исправить!!! сделать в PNG
     //   await ImgToBase64.getBase64String(state.imageURI)
     //     .then(base64String => {

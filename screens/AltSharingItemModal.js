@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Modal from "react-native-modal";
 
 import { altSharingItemModalHide,
-  pastInStoryNotifShow,
+  notifyShow,
 } from "../store/modal";
 import { copyToClipboard, saveToPhoto
 } from "../store/shareingSettings";
@@ -38,6 +38,7 @@ const AltSharingItemModal = () => {
         return;
       }
       dispatch(saveToPhoto());
+      dispatch(notifyShow({notifyText: 'save'}));
     } catch(err) {
       console.log(err);
     }
@@ -67,7 +68,7 @@ const AltSharingItemModal = () => {
             onPress={() => {
               dispatch(copyToClipboard());
               dispatch(altSharingItemModalHide());
-              dispatch(pastInStoryNotifShow());
+              dispatch(notifyShow({notifyText: 'copy'}));
             }}
           >
             <Text style={appStyles.showMoreModalBtnLabel}>

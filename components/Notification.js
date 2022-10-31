@@ -5,17 +5,17 @@ import {
   View
 } from "react-native";
 import DoneSVG from '../assets/icons/Done'
-import { pastInStoryNotifHide } from "../store/modal";
+import { notifyHide } from "../store/modal";
 
 import { appStyles } from '../styles/appStyles';
 
-const PastInStoryNotifivation =({}) => {
+const Notification =({notificationText}) => {
   const dispatch = useDispatch();
 
   // Интервальный показ уведомления о вставке в сторис:
   useEffect(() => {
     const id = setTimeout(() => {;
-      dispatch(pastInStoryNotifHide());
+      dispatch(notifyHide());
     }, 1000);
     return () => {
       clearInterval(id);
@@ -26,10 +26,10 @@ const PastInStoryNotifivation =({}) => {
     <View style={appStyles.imgSavedNotWrapper}>
       <DoneSVG width={100} height={100} fill={'#8C9091'} />
       <Text style={appStyles.imgSavedNotText}>
-        Past in Story
+        {notificationText}
       </Text>
     </View>
   )
 }
 
-export default PastInStoryNotifivation;
+export default Notification;

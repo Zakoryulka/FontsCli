@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const messageCopy = 'Past in Story';
+const messageSave = 'Saved in Photos'
+
+
 const modalSlice = createSlice({
   name: 'modal',
   initialState: {
@@ -9,8 +13,9 @@ const modalSlice = createSlice({
     fontSettingsModalShow: false,
     cPickerBGVisible: false,
     cPickerFontColorVisible: false,
-    pastInStoryNotifVisible: false,
-    altSharingItemModalVisible: false
+    notifyVisible: false,
+    altSharingItemModalVisible: false,
+    notifyMessage: ''
   },
   reducers: {
     openInfoModal: (state) => {
@@ -51,20 +56,25 @@ const modalSlice = createSlice({
     cPickerFontColorHide: (state) => {
       state.cPickerFontColorVisible = false;
     },
-    pastInStoryNotifShow: (state) => {
-      state.pastInStoryNotifVisible = true;
-
+    notifyShow: (state, action) => {
+      if (action.payload.notifyText === 'copy') {
+        state.notifyMessage = messageCopy;
+      } else if (action.payload.notifyText === 'save') {
+        state.notifyMessage = messageSave;
+      }
+      state.notifyVisible = true;
     },
-    pastInStoryNotifHide: (state) => {
-      state.pastInStoryNotifVisible = false;
+    notifyHide: (state) => {
+      state.notifyVisible = false;
+      state.notifyMessage = '';
     },
     altSharingItemModalShow: (state) => {
       state.altSharingItemModalVisible = true;
-
     },
     altSharingItemModalHide: (state) => {
       state.altSharingItemModalVisible = false;
     }
+
   }
 });
 
@@ -81,8 +91,8 @@ export const {
   cPickerBGHide,
   cPickerFontColorShow,
   cPickerFontColorHide,
-  pastInStoryNotifShow,
-  pastInStoryNotifHide,
+  notifyShow,
+  notifyHide,
   altSharingItemModalShow,
   altSharingItemModalHide
 } = modalSlice.actions;

@@ -33,8 +33,6 @@ export const appStyles = StyleSheet.create({
   fontWrapper: {
     marginHorizontal: 10,
     marginBottom: 10,
-    padding: 15,
-    borderRadius: 8
   },
   footerBar: {
     flexBasis: 'auto',
@@ -134,7 +132,10 @@ export const appStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
-
+  settingsSectionContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
   settingsSection: {
     marginTop: 15,
   },
@@ -175,9 +176,15 @@ export const appStyles = StyleSheet.create({
  // ------slider styles------ //
 
   slider: {
+    alignContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    justifyContent: 'center',
+    marginLeft: -16, // delete auto margin from lib
+    marginRight: -10,
     marginTop: 10,
-    width: '100%',
-    height: 25
+    height: 25,
+    // backgroundColor: 'red'
   },
 
 
