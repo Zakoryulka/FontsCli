@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Keyboard } from "react-native";
 
 const messageCopy = 'Past in Story';
 const messageSave = 'Saved in Photos'
-
 
 const modalSlice = createSlice({
   name: 'modal',
@@ -33,16 +33,21 @@ const modalSlice = createSlice({
     openColorModal: (state) => {
       state.colorModalShow = true;
       state.fontSettingsModalShow = false;
+      console.log('Press openColorModal: colorModalShow === ' + state.colorModalShow);
     },
     closeColorModal: (state) => {
       state.colorModalShow = false;
+      console.log('Press closeColorModal: colorModalShow === ' + state.colorModalShow);
     },
-    openFontSettingsModal: (state) => {
+    openFontSettingsModal:  (state) => {
       state.fontSettingsModalShow = true;
       state.colorModalShow = false;
+      console.log('Press openFontSettingsModal: fontSettingsModalShow === ' + state.fontSettingsModalShow);
+
     },
     closeFontSettingsModal: (state) => {
       state.fontSettingsModalShow = false;
+      console.log('Press closeFontSettingsModal: fontSettingsModalShow === ' + state.fontSettingsModalShow);
     },
     cPickerBGShow: (state) => {
       state.cPickerBGVisible = true;

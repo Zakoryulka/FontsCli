@@ -11,9 +11,12 @@ const colorParametrsSlice = createSlice({
   initialState: {
     currentBg: bgDefault,
     currentFontColor: fontColorDefault,
-    currentOpacity: opacityDefault,
     currentPadding: paddingDefault,
-    currentRadius: radiusDefault
+    currentRadius: radiusDefault,
+    currentOpacity: opacityDefault,
+    startValueForSliderPadding: paddingDefault,
+    startValueForSliderRadius: radiusDefault,
+    startValueForSliderOpacity: opacityDefault,
   },
   reducers: {
     changeBg: (state, action) => {
@@ -22,31 +25,38 @@ const colorParametrsSlice = createSlice({
     changeFontColor: (state, action) => {
       state.currentFontColor = action.payload.newColor;
     },
-    changeOpacity: (state, action) => {
-      state.currentOpacity = action.payload.opacity;
-    },
     changePadding: (state, action) => {
       state.currentPadding = action.payload.padding;
     },
     changeRadius: (state, action) => {
       state.currentRadius = action.payload.radius;
     },
+    changeOpacity: (state, action) => {
+      state.currentOpacity = action.payload.opacity;
+    },
+    setColorsValuesForSliders: (state) => {
+      state.startValueForSliderPadding = state.currentPadding;
+      state.startValueForSliderRadius = state.currentRadius;
+      state.startValueForSliderOpacity = state.currentOpacity;
+    },
     resetColors: (state) => {
       state.currentBg = bgDefault;
       state.currentFontColor = fontColorDefault;
-      state.currentOpacity = opacityDefault;
       state.currentPadding = paddingDefault;
       state.currentRadius = radiusDefault;
+      state.currentOpacity = opacityDefault;
     }
+
   }
 });
 
 export const {
   changeBg,
   changeFontColor,
-  changeOpacity,
   changePadding,
   changeRadius,
+  changeOpacity,
+  setColorsValuesForSliders,
   resetColors
 } = colorParametrsSlice.actions;
 export default colorParametrsSlice.reducer;

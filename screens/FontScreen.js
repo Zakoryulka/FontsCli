@@ -1,22 +1,26 @@
-import { useDeferredValue, useRef, useState } from "react";
+import { useDeferredValue, useEffect } from "react";
 
 import {
   Text,
   View,
   SectionList,
   KeyboardAvoidingView,
-  Platform
+  Platform,
+  Keyboard
 } from "react-native";
-
 
 import { useSelector, useDispatch } from "react-redux";
 import { openInfoModal, openShowMoreModal,
-         openColorModal, closeColorModal,
-         openFontSettingsModal, closeFontSettingsModal,
-         cPickerBGHide, cPickerFontColorHide
- } from "../store/modal";
-import { changeBg, changeFontColor } from "../store/colorParametrs";
+  openColorModal, closeColorModal,
+  openFontSettingsModal, closeFontSettingsModal,
+  cPickerBGHide, cPickerFontColorHide,
+} from "../store/modal";
+import { changeBg, changeFontColor,
+  setColorsValuesForSliders
+} from "../store/colorParametrs";
+import { setFontsValuesForSliders } from "../store/fontParametrs";
 import { changeAlignSelf } from "../store/ aligmentParametrs";
+import { setKeyboardVisible, setKeyboardNotVisible } from "../store/textInput";
 
 import FontItem from "../components/FontItem";
 import ButtonIcon from "../components/ButtonIcon";
@@ -34,7 +38,6 @@ import { appStyles } from "../styles/appStyles";
 const FontScreen = (props) => {
   const colorModalShow = useSelector(state => state.modals.colorModalShow);
   const fontSettingsModalShow = useSelector(state => state.modals.fontSettingsModalShow);
-  const infoModalVisible = useSelector(state => state.modals.infoModalVisible);
   const cPickerBGVisible = useSelector(state => state.modals.cPickerBGVisible);
   const cPickerFontColorVisible = useSelector(state => state.modals.cPickerFontColorVisible);
   const currentBg = useSelector(state => state.colorParametrs.currentBg);
@@ -45,12 +48,28 @@ const FontScreen = (props) => {
   const familyFonts = useSelector(state => state.textInput.familyFonts);
   const notifyVisible = useSelector(state => state.modals.notifyVisible);
   const notifyMessage = useSelector(state => state.modals.notifyMessage);
+  const keyboardVisible =useSelector(state => state.textInput.keyboardVisible);
 
-  const defferEnteredText = useDeferredValue(enteredText);
+  // const defferEnteredText = useDeferredValue(enteredText);
   const dispatch = useDispatch();
 
-  const colorModal = colorModalShow ? <ColorModal/> : null;
-  const fontSettingsModal = fontSettingsModalShow ? <FontSettingsModal/> : null;
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener("keyboardDidShow", () => {
+      dispatch(setKeyboardVisible());
+    });
+    const keyboardDidHideListener = Keyboard.addListener("keyboardDidHide", () => {
+      dispatch(setKeyboardNotVisible());
+    });
+
+    return () => {
+      keyboardDidShowListener.remove();
+      keyboardDidHideListener.remove();
+    };
+}, [keyboardVisible]);
+
+
+  const colorModal = colorModalShow && !keyboardVisible ? <ColorModal/> : null;
+  const fontSettingsModal = fontSettingsModalShow && !keyboardVisible ? <FontSettingsModal/> : null;
   const notification = notifyVisible
   ? <Notification
       notificationText={notifyMessage}
@@ -81,15 +100,18 @@ const FontScreen = (props) => {
             renderSectionHeader={({ section: { title } }) => (
               <Text style={appStyles.title}>{title}</Text>
             )}
-            renderItem={({item, index}) => (
+            renderItem={({item}) => (
               <FontItem
-                title={defferEnteredText === '' ? item : defferEnteredText}
+                title={enteredText === '' ? item : enteredText}
                 font={Platform.OS === 'android' ?
                   familyFonts.filter(font => font.displayName === item)[0].android
                   : familyFonts.filter(font => font.displayName === item)[0].ios}
               />
             )}
             initialNumToRender={15}
+            onScroll={() => {
+                Keyboard.dismiss();
+            }}
             showsVerticalScrollIndicator={false}
             stickySectionHeadersEnabled={true}
             bounces={false}
@@ -112,9 +134,13 @@ const FontScreen = (props) => {
           <ButtonIcon
             icon={"text"}
             onPress={() => {
-              !fontSettingsModalShow ?
-              dispatch(openFontSettingsModal()) :
-              dispatch(closeFontSettingsModal())
+              if (fontSettingsModalShow) {
+                dispatch(closeFontSettingsModal());
+                dispatch(setFontsValuesForSliders());
+              } else {
+                Keyboard.dismiss();
+                dispatch(openFontSettingsModal());
+              }
             }}
           />
 
@@ -123,9 +149,13 @@ const FontScreen = (props) => {
           <ButtonIcon
             icon={"palette"}
             onPress={() => {
-              !colorModalShow ?
-              dispatch(openColorModal()) :
-              dispatch(closeColorModal())
+              if (colorModalShow) {
+                dispatch(closeColorModal());
+                dispatch(setColorsValuesForSliders());
+              } else {
+                Keyboard.dismiss();
+                dispatch(openColorModal());
+              }
             }}
             last={true}
           />

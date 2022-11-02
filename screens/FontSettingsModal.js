@@ -1,24 +1,25 @@
-
+import { useDispatch, useSelector } from "react-redux";
 import { View,
-         Text,
-         Pressable
+  Text,
+  Pressable
 } from "react-native";
-import { useSelector, useDispatch } from "react-redux";
-import { closeFontSettingsModal } from "../store/modal"
+import { closeFontSettingsModal } from "../store/modal";
+import { resetFontsSettings,
+  changeFontSize,
+  changeLineSpacing,
+  changeLetterSpacing,
+  setFontsValuesForSliders
+} from "../store/fontParametrs";
+
 import SliderItem from "../components/SliderItem";
 import ButtonIcon from "../components/ButtonIcon";
-import { resetFontsSettings,
-         changeFontSize,
-         changeLineSpacing,
-         changeLetterSpacing
-} from "../store/fontParametrs";
 
 import { appStyles } from "../styles/appStyles";
 
 function ColorModal() {
-  const fontSize = useSelector(state => state.fontParametrs.currentFontSize);
-  const letterSpacing = useSelector(state => state.fontParametrs.currentLetterSpacing);
-  const lineSpacing = useSelector(state => state.fontParametrs.currentLineSpacing);
+  const startFontSize = useSelector(state => state.fontParametrs.startValueForSliderFontSize);
+  const startLineSpacing = useSelector(state => state.fontParametrs.startValueForSliderLineSpacing);
+  const startLetterSpacing = useSelector(state => state.fontParametrs.startValueForSliderLetterSpacing);
 
   const dispatch = useDispatch();
 
@@ -35,7 +36,10 @@ function ColorModal() {
         </Pressable>
         <ButtonIcon
           icon={'close'}
-          onPress={() => dispatch(closeFontSettingsModal())}
+          onPress={() => {
+            dispatch(closeFontSettingsModal())
+            dispatch(setFontsValuesForSliders())
+          }}
         />
       </View>
 
@@ -44,9 +48,11 @@ function ColorModal() {
           <SliderItem
             min={12}
             max={36}
-            value={fontSize}
-            step={1.5}
-            changeValue={(value) => dispatch(changeFontSize({ fontSize: value }))}
+            value={startFontSize}
+            step={1}
+            changeValue={(value) => {
+              dispatch(changeFontSize({ fontSize: value }));
+            }}
           />
       </View>
 
@@ -55,7 +61,7 @@ function ColorModal() {
         <SliderItem
             min={0}
             max={15}
-            value={letterSpacing}
+            value={startLetterSpacing}
             step={1}
             changeValue={(value) => dispatch(changeLetterSpacing({ letterSpacing: value }))}
           />
@@ -66,7 +72,7 @@ function ColorModal() {
         <SliderItem
           min={1.30}
           max={2.3}
-          value={lineSpacing}
+          value={startLineSpacing}
           step={0.1}
           changeValue={(value) => dispatch(changeLineSpacing({ lineSpacing: value }))}
         />

@@ -6,7 +6,6 @@ import { closeInfoModal } from "../store/modal";
 
 import { appStyles } from "../styles/appStyles";
 
-
 const InfoModal = () => {
   const infoModalVisible = useSelector(state => state.modals.infoModalVisible);
   const dispatch = useDispatch();

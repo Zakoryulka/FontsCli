@@ -7,7 +7,8 @@ import { closeColorModal,
  } from "../store/modal";
  import { changeBg, changeFontColor,
           changeOpacity, resetColors,
-          changePadding, changeRadius
+          changePadding, changeRadius,
+          setColorsValuesForSliders
 } from "../store/colorParametrs";
 
 import serverState from '../serverState.json';
@@ -23,6 +24,10 @@ function ColorModal() {
 
   const bg = useSelector(state => state.colorParametrs.currentBg);
   const fontColor = useSelector(state => state.colorParametrs.currentFontColor);
+  const startPadding = useSelector(state => state.colorParametrs.startValueForSliderPadding);
+  const startRadius = useSelector(state => state.colorParametrs.startValueForSliderRadius);
+  const startOpacity = useSelector(state => state.colorParametrs.startValueForSliderOpacity);
+
   const dispatch = useDispatch();
 
   return (
@@ -38,7 +43,10 @@ function ColorModal() {
         </Pressable>
         <ButtonIcon
           icon={'close'}
-          onPress={() => dispatch(closeColorModal())}
+          onPress={() => {
+            dispatch(closeColorModal())
+            dispatch(setColorsValuesForSliders())
+          }}
         />
       </View>
 
@@ -86,7 +94,7 @@ function ColorModal() {
           <SliderItem
             min={4}
             max={20}
-            value={15}
+            value={startPadding}
             step={1}
             changeValue={(padding) => dispatch(changePadding({ padding: padding}))}
           />
@@ -98,7 +106,7 @@ function ColorModal() {
           <SliderItem
             min={0}
             max={40}
-            value={15}
+            value={startRadius}
             step={1}
             changeValue={(radius) => dispatch(changeRadius({ radius: radius}))}
           />
@@ -110,7 +118,7 @@ function ColorModal() {
         <SliderItem
           min={0}
           max={1}
-          value={1}
+          value={startOpacity}
           step={0.05}
           changeValue={(opacity) => dispatch(changeOpacity({ opacity: opacity}))}
         />

@@ -1,9 +1,12 @@
 import { View, TextInput } from "react-native";
-
 import { useSelector, useDispatch } from "react-redux";
+
 import { closeColorModal, closeFontSettingsModal,
 } from "../store/modal";
-import { inputText, clearText, setNumberOfLines } from "../store/textInput";
+import { setFontsValuesForSliders } from "../store/fontParametrs";
+import { setColorsValuesForSliders } from "../store/colorParametrs";
+import { inputText, clearText, setNumberOfLines, setFonts,
+ } from "../store/textInput";
 
 import ButtonIcon from "../components/ButtonIcon";
 
@@ -20,14 +23,15 @@ const TextItemInput = () => {
       <TextInput
         style={[appStyles.textInput, {fontSize: textHeight}]}
         placeholder="Enter your text"
-        onChangeText={(text) => {
-          dispatch(closeColorModal());
-          dispatch(closeFontSettingsModal());
+        onChangeText={async(text) => {
           dispatch(inputText({ newText: text }));
+          dispatch(setFonts());
         }}
         onPressIn={() => {
           dispatch(closeColorModal());
           dispatch(closeFontSettingsModal());
+          dispatch(setFontsValuesForSliders());
+          dispatch(setColorsValuesForSliders());
         }}
         value={enteredText}
         enablesReturnKeyAutomatically={true}
@@ -39,7 +43,10 @@ const TextItemInput = () => {
       <ButtonIcon
         style={appStyles.clearTextBtn}
         icon={"clearText"}
-        onPress={() => dispatch(clearText())}
+        onPress={() => {
+          dispatch(clearText());
+          dispatch(setFonts());
+        }}
       />
     </View>
   )

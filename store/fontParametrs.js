@@ -9,7 +9,10 @@ const fontParametrsSlice = createSlice({
   initialState: {
     currentFontSize: fontSizeDefault,
     currentLineSpacing: lineSpacingDefault,
-    currentLetterSpacing: letterSpacingDefault
+    currentLetterSpacing: letterSpacingDefault,
+    startValueForSliderFontSize: fontSizeDefault,
+    startValueForSliderLineSpacing: lineSpacingDefault,
+    startValueForSliderLetterSpacing: letterSpacingDefault,
   },
   reducers: {
     changeFontSize: (state, action) => {
@@ -20,6 +23,11 @@ const fontParametrsSlice = createSlice({
     },
     changeLetterSpacing: (state, action) => {
       state.currentLetterSpacing = action.payload.letterSpacing;
+    },
+    setFontsValuesForSliders: (state) => {
+      state.startValueForSliderFontSize = state.currentFontSize;
+      state.startValueForSliderLineSpacing = state.currentLineSpacing;
+      state.startValueForSliderLetterSpacing = state.currentLetterSpacing;
     },
     resetFontsSettings: (state) => {
       state.currentFontSize = fontSizeDefault;
@@ -33,6 +41,7 @@ export const {
   changeFontSize,
   changeLineSpacing,
   changeLetterSpacing,
-  resetFontsSettings
+  resetFontsSettings,
+  setFontsValuesForSliders
 } = fontParametrsSlice.actions;
 export default fontParametrsSlice.reducer;

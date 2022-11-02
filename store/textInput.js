@@ -13,7 +13,8 @@ freeFonts.map((item) => {
   return {
     displayName: item.displayName,
     android: item.fontNameAndroid,
-    ios: item.fontNameIos
+    ios: item.fontNameIos,
+    cyrillicFont: item.cyrillicFont
   }
 });
 
@@ -22,20 +23,34 @@ premiumFonts.map((item) => {
   return {
     displayName: item.displayName,
     android: item.fontNameAndroid,
-    ios: item.fontNameIos
+    ios: item.fontNameIos,
+    cyrillicFont: item.cyrillicFont
   }
 });
 
+
 const familyFonts = [...familyFreeFonts, ...familyPremiumFonts];
+const familyFontsRU = familyFonts.filter((item) => (item.cyrillicFont === 'true'));
 
 const fonts = [
   {
     title: "Free Fonts",
-    data: freeFonts.map((item, i) => (item.displayName))
+    data: freeFonts.map((item) => (item.displayName))
   },
   {
     title: "Premium Fonts 💎",
     data: premiumFonts.map((item) => (item.displayName))
+  }
+];
+
+const fontsRU = [
+  {
+    title: "Free Fonts",
+    data: freeFonts.filter((item) => (item.cyrillicFont === 'true')).map((item) => (item.displayName))
+  },
+  {
+    title: "Premium Fonts 💎",
+    data: premiumFonts.filter((item) => (item.cyrillicFont === 'true')).map((item) => (item.displayName))
   }
 ];
 
@@ -46,13 +61,33 @@ const textInputSlice = createSlice({
     fontsList: fonts,
     enteredText: '',
     numberOfLines: null,
-    textHeight: Platform.OS === 'ios' ? iosTextHeight : androidTextHeight
+    textHeight: Platform.OS === 'ios' ? iosTextHeight : androidTextHeight,
+    cyrillicFont: false,
+    keyboardVisible: false
   },
   reducers: {
+    setFonts: (state) => {
+      if (state.enteredText === '') {
+        state.familyFonts = familyFonts;
+        state.fontsList = fonts;
+      } else {
+        if (/[А-яЁё]/.test(state.enteredText)) {
+          state.familyFonts = familyFontsRU;
+          state.fontsList = fontsRU;
+        } else {
+          state.familyFonts = familyFonts;
+          state.fontsList = fonts;
+        }
+      }
+    },
+    setFontsEng: (state) => {
+      state.familyFonts = familyFonts;
+      state.fontsList = fonts;
+    },
     inputText: (state, action) => {
       state.enteredText = action.payload.newText;
     },
-    clearText: (state, action) => {
+    clearText: (state) => {
       state.enteredText = '';
     },
     setNumberOfLines: (state, action) => {
@@ -64,9 +99,23 @@ const textInputSlice = createSlice({
       }
 
       console.log(action.payload);
-    }
+    },
+    setKeyboardVisible: (state) => {
+      state.keyboardVisible = true;
+      console.log('Press setKeyboardVisible: keyboardVisible === ' + state.keyboardVisible);
+    },
+    setKeyboardNotVisible: (state) => {
+      state.keyboardVisible = false;
+      console.log('Press setKeyboardNotVisible: keyboardVisible === ' + state.keyboardVisible);
+    },
   }
 });
 
-export const { inputText, clearText, setNumberOfLines } = textInputSlice.actions;
+export const { setFonts,
+  inputText,
+  clearText,
+  setNumberOfLines,
+  setKeyboardVisible,
+  setKeyboardNotVisible
+} = textInputSlice.actions;
 export default textInputSlice.reducer;

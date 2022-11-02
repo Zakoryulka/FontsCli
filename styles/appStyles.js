@@ -40,7 +40,8 @@ export const appStyles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: 12,
     paddingHorizontal: 8,
-    backgroundColor: "1E1E1E"
+    backgroundColor: "1E1E1E",
+    alignItems: 'center'
   },
   textInputWrapper: {
     marginHorizontal: 10,
@@ -196,6 +197,9 @@ export const appStyles = StyleSheet.create({
     paddingBottom: 20,
     height: '50%',
     backgroundColor: '#1E1E1E',
+  },
+  colorPickerCloseBtnContainer: {
+    marginLeft: 'auto',
   },
   colorPicker: {
     marginTop: -15,

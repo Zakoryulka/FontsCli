@@ -15,10 +15,12 @@ const ColorPickerModal = (props) => {
     >
 
       <View style={appStyles.colorPickerModal}>
-        <ButtonIcon
-          icon={'close'}
-          onPress={onCloseModal}
-        />
+        <View style={appStyles.colorPickerCloseBtnContainer}>
+          <ButtonIcon
+            icon={'close'}
+            onPress={onCloseModal}
+          />
+        </View>
         <TriangleColorPicker
           style={appStyles.colorPicker}
           onColorChange={newColor => {
