@@ -1,4 +1,4 @@
-import { useDeferredValue, useEffect } from "react";
+import { useEffect } from "react";
 
 import {
   Text,
@@ -15,7 +15,8 @@ import { openInfoModal, openShowMoreModal,
   openFontSettingsModal, closeFontSettingsModal,
   cPickerBGHide, cPickerFontColorHide,
 } from "../store/modal";
-import { changeBg, changeFontColor,
+import { changeBg,
+  changeFontColor,
   setColorsValuesForSliders
 } from "../store/colorParametrs";
 import { setFontsValuesForSliders } from "../store/fontParametrs";
@@ -32,6 +33,7 @@ import FontSettingsModal from "./FontSettingsModal";
 import TextItemInput from "../components/TextItemInput";
 import Notification from "../components/Notification";
 import AltSharingItemModal from "./AltSharingItemModal";
+import PremiumAlert from "./PremiumAlert";
 
 import { appStyles } from "../styles/appStyles";
 
@@ -44,13 +46,11 @@ const FontScreen = (props) => {
   const currentFontColor = useSelector(state => state.colorParametrs.currentFontColor);
   const alignSelf = useSelector(state => state.aligmentParametrs.currentAlignSelf);
   const fontsList = useSelector(state => state.textInput.fontsList);
-  const enteredText = useSelector(state => state.textInput.enteredText);
   const familyFonts = useSelector(state => state.textInput.familyFonts);
   const notifyVisible = useSelector(state => state.modals.notifyVisible);
   const notifyMessage = useSelector(state => state.modals.notifyMessage);
-  const keyboardVisible =useSelector(state => state.textInput.keyboardVisible);
+  const keyboardVisible = useSelector(state => state.textInput.keyboardVisible);
 
-  // const defferEnteredText = useDeferredValue(enteredText);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -102,7 +102,7 @@ const FontScreen = (props) => {
             )}
             renderItem={({item}) => (
               <FontItem
-                title={enteredText === '' ? item : enteredText}
+                fontDisplayName={item}
                 font={Platform.OS === 'android' ?
                   familyFonts.filter(font => font.displayName === item)[0].android
                   : familyFonts.filter(font => font.displayName === item)[0].ios}
@@ -180,6 +180,7 @@ const FontScreen = (props) => {
       <InfoModal />
       <ShowMoreModal />
       <AltSharingItemModal />
+      <PremiumAlert />
     </>
   )
 };

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { Colors, FontSizes } from '../constants/stylesConst';
 
 export const appStyles = StyleSheet.create({
   header: {
@@ -7,25 +8,24 @@ export const appStyles = StyleSheet.create({
     paddingHorizontal: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    // flexBasis: 'auto',
-    backgroundColor: "#1E1E1E",
+    backgroundColor: Colors.primaryBg,
   },
   headerLabel: {
     paddingTop: 7,
-    color: "#FFFFFF",
-    fontSize: 16,
+    color: Colors.text,
+    fontSize: FontSizes.main,
   },
 
   fontsContainer: {
     position: 'relative',
     flex: 1,
-    backgroundColor: "#000000"
+    backgroundColor: Colors.primaryBg1
   },
   title: {
     marginBottom: 10,
     paddingVertical: 13,
     paddingHorizontal: 10,
-    fontSize: 16,
+    fontSize: FontSizes.main,
     backgroundColor: "#262626",
     opacity: 0.8,
     color: "#FFFFFF",
@@ -40,7 +40,7 @@ export const appStyles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: 12,
     paddingHorizontal: 8,
-    backgroundColor: "1E1E1E",
+    backgroundColor: Colors.primaryBg,
     alignItems: 'center'
   },
   textInputWrapper: {
@@ -49,15 +49,14 @@ export const appStyles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    // height: 35,
-    backgroundColor: "#000000",
+    backgroundColor: Colors.primaryBg1,
     borderRadius: 15
   },
   textInput: {
     paddingVertical: 3,
     flex: 1,
-    color: "#ffffff",
-    backgroundColor: "#000000",
+    color: Colors.text,
+    backgroundColor: Colors.primaryBg1,
     borderRadius: 15
   },
   clearTextBtn: {
@@ -65,12 +64,11 @@ export const appStyles = StyleSheet.create({
     height: 16
   },
   buttonString: {
-    // backgroundColor: "red",
     width: 32,
     height: 32
   },
   buttonStringText: {
-    color: "#ffffff",
+    color: Colors.text,
     textAlign: 'center',
     width: 32,
     height: 32,
@@ -80,7 +78,6 @@ export const appStyles = StyleSheet.create({
     justifyContent: 'center',
     width: 32,
     height: 32,
-    // backgroundColor: "red",
   },
   buttonIconMR: {
     marginRight: 15
@@ -98,13 +95,13 @@ export const appStyles = StyleSheet.create({
     marginRight: 0
   },
   buttonItemText: {
-    color: "#ffffff",
+    color: Colors.text,
   },
   buttonTextWrapper: {
     height: 30
   },
   buttonText: {
-    color: "#027AF9",
+    color: Colors.btnResetText,
     marginTop: 'auto',
     fontSize: 17,
   },
@@ -119,7 +116,7 @@ export const appStyles = StyleSheet.create({
   modalWrapper: {
     marginTop: 'auto',
     padding: 10,
-    backgroundColor: '#1E1E1E',
+    backgroundColor: Colors.primaryBg,
   },
   modalCloseHandler: {
     marginBottom: 20,
@@ -142,8 +139,8 @@ export const appStyles = StyleSheet.create({
   },
   settingsSectioLabel: {
     marginBottom: 10,
-    color: "#ffffff",
-    fontSize: 16,
+    color: Colors.text,
+    fontSize: FontSizes.main,
   },
   settingsWrapper: {
     flexDirection: 'row',
@@ -185,7 +182,6 @@ export const appStyles = StyleSheet.create({
     marginRight: -10,
     marginTop: 10,
     height: 25,
-    // backgroundColor: 'red'
   },
 
 
@@ -196,7 +192,7 @@ export const appStyles = StyleSheet.create({
     padding: 10,
     paddingBottom: 20,
     height: '50%',
-    backgroundColor: '#1E1E1E',
+    backgroundColor: Colors.primaryBg,
   },
   colorPickerCloseBtnContainer: {
     marginLeft: 'auto',
@@ -213,16 +209,9 @@ export const appStyles = StyleSheet.create({
   infoModal: {
     height: '60%',
   },
-
   infoModalWrapper: {
     flex: 1,
     marginTop: 'auto',
-    // alignItems: 'center'
-    // marginVertical: 'auto'
-    // alignSelf: 'center'
-    // justifyContent: 'space-around'
-    // justifyContent: 'center'
-
   },
   infoModalLineWrapper: {
     flexDirection: 'row',
@@ -244,36 +233,104 @@ export const appStyles = StyleSheet.create({
     },
     showMoreModalBtn: {
       marginBottom: 35,
-      // backgroundColor: '#000000',
-      backgroundColor: '#3D3939',
+      backgroundColor: Colors.btn1,
       borderRadius: 10
     },
     showMoreModalBtnLabel: {
       padding: 18,
-      fontSize: 16,
-      color: '#ffffff'
+      fontSize: FontSizes.main,
+      color: Colors.text
     },
     ModalBtnsContainer: {
-      backgroundColor: '#3D3939',
-      borderRadius: 10
+      backgroundColor: Colors.btn1,
+      borderRadius: 10,
     },
     showMoreModalBtndevider: {
       alignSelf: 'center',
       width: '100%',               // исправить
       height: 1,
-      backgroundColor: '#1E1E1E',
+      backgroundColor: Colors.primaryBg,
       borderRadius: 1
     },
 
-    // ------AltSharingModal styles------ //
+
+    // ------AltSharingModal styles 1------ //
+
+    // altSharingModalContainer: {
+    //   height: '40%',
+    // },
+
+    // ------AltSharingModal styles 2------ //
 
     altSharingModal: {
-      height: '40%',
+      position: 'relative',
+      margin: 0,
+      flex: 1,
+      backgroundColor: 'rgba(0, 0, 0, .5)',
+      justifyContent: 'center'
+    },
+    altSharingModalContainer: {
+      position: 'absolute',
+      width: 270,
+      marginLeft: 30
     },
 
-    // ------Img Saved Notifivation styles------ //
 
-  imgSavedNotWrapper: {
+    // ------Alert styles 2------ //
+    alertScreen: {
+      margin: 0,
+      flex: 1,
+      backgroundColor: 'rgba(0, 0, 0, .5)',
+      justifyContent: 'center'
+    },
+    AlertContainer: {
+      textAlign: 'center',
+
+      width: 250,
+      backgroundColor: Colors.btn1,
+      borderRadius: 10,
+    },
+    AlertHeader: {
+      padding: 18,
+    },
+    AlertLabel: {
+      textAlign: 'center',
+      fontSize: FontSizes.main,
+      color: Colors.text,
+    },
+    AlertMessage: {
+      marginTop: 5,
+      textAlign: 'center',
+      fontSize: FontSizes.mainSmall,
+      color: Colors.text
+    },
+    AlertBtnContainer: {
+      flexDirection: 'row'
+    },
+    AlertButton: {
+      flex: 1
+    },
+    AlertButtonText: {
+      padding: 18,
+      textAlign: 'center',
+      fontSize: FontSizes.main,
+      color: Colors.text
+    },
+    AlertDivider: {
+      alignSelf: 'center',
+      width: 1,
+      height: '100%',
+      backgroundColor: Colors.primaryBg,
+      borderRadius: 1
+    },
+
+
+
+
+
+    // ------ Notifivation styles------ //
+
+    imgNotificationWrapper: {
     position: 'absolute',
     alignSelf: 'center',
     top: '25%',
@@ -282,14 +339,14 @@ export const appStyles = StyleSheet.create({
     justifyContent: 'center',
     width: 200,
     height: 200,
-    backgroundColor: '#D0CACA',
+    backgroundColor: Colors.notificationBg,
     opacity: 0.9,
     borderRadius: 12
   },
-  imgSavedNotText: {
+  imgNotificationText: {
     marginTop: 15,
     marginBottom: 10,
-    fontSize: 24,
-    color: '#666666'
+    fontSize: FontSizes.notification,
+    color: Colors.notificationText
   }
 });

@@ -15,7 +15,9 @@ const modalSlice = createSlice({
     cPickerFontColorVisible: false,
     notifyVisible: false,
     altSharingItemModalVisible: false,
-    notifyMessage: ''
+    notifyMessage: '',
+    fontPremiumItemPressed: false,
+    premiumAlertVisible: false
   },
   reducers: {
     openInfoModal: (state) => {
@@ -33,21 +35,16 @@ const modalSlice = createSlice({
     openColorModal: (state) => {
       state.colorModalShow = true;
       state.fontSettingsModalShow = false;
-      console.log('Press openColorModal: colorModalShow === ' + state.colorModalShow);
     },
     closeColorModal: (state) => {
       state.colorModalShow = false;
-      console.log('Press closeColorModal: colorModalShow === ' + state.colorModalShow);
     },
     openFontSettingsModal:  (state) => {
       state.fontSettingsModalShow = true;
       state.colorModalShow = false;
-      console.log('Press openFontSettingsModal: fontSettingsModalShow === ' + state.fontSettingsModalShow);
-
     },
     closeFontSettingsModal: (state) => {
       state.fontSettingsModalShow = false;
-      console.log('Press closeFontSettingsModal: fontSettingsModalShow === ' + state.fontSettingsModalShow);
     },
     cPickerBGShow: (state) => {
       state.cPickerBGVisible = true;
@@ -78,8 +75,19 @@ const modalSlice = createSlice({
     },
     altSharingItemModalHide: (state) => {
       state.altSharingItemModalVisible = false;
-    }
-
+    },
+    pressFreeFontItem: (state) => {
+      state.fontPremiumItemPressed = false;
+    },
+    pressPremiumFontItem: (state) => {
+      state.fontPremiumItemPressed = true;
+    },
+    premiumAlertShow: (state) => {
+      state.premiumAlertVisible = true;
+    },
+    premiumAlertHide: (state) => {
+      state.premiumAlertVisible = false;
+    },
   }
 });
 
@@ -99,6 +107,10 @@ export const {
   notifyShow,
   notifyHide,
   altSharingItemModalShow,
-  altSharingItemModalHide
+  altSharingItemModalHide,
+  pressFreeFontItem,
+  pressPremiumFontItem,
+  premiumAlertShow,
+  premiumAlertHide
 } = modalSlice.actions;
 export default modalSlice.reducer;

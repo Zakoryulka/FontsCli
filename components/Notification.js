@@ -23,9 +23,9 @@ const Notification =({notificationText}) => {
   }, []);
 
   return (
-    <View style={appStyles.imgSavedNotWrapper}>
+    <View style={appStyles.imgNotificationWrapper}>
       <DoneSVG width={100} height={100} fill={'#8C9091'} />
-      <Text style={appStyles.imgSavedNotText}>
+      <Text style={appStyles.imgNotificationText}>
         {notificationText}
       </Text>
     </View>

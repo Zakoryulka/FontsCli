@@ -97,8 +97,6 @@ const textInputSlice = createSlice({
       } else {
         state.numberOfLines = null;
       }
-
-      console.log(action.payload);
     },
     setKeyboardVisible: (state) => {
       state.keyboardVisible = true;
@@ -107,7 +105,7 @@ const textInputSlice = createSlice({
     setKeyboardNotVisible: (state) => {
       state.keyboardVisible = false;
       console.log('Press setKeyboardNotVisible: keyboardVisible === ' + state.keyboardVisible);
-    },
+    }
   }
 });
 

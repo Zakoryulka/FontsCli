@@ -5,6 +5,7 @@ import fontParametrsReducer from './fontParametrs';
 import aligmentParametrsReducer from './ aligmentParametrs';
 import textInputReducer from './textInput';
 import shareingSettingsReducer from './shareingSettings'; // test
+import alertSettingsReducer from './alertSettings';
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     fontParametrs: fontParametrsReducer,
     aligmentParametrs: aligmentParametrsReducer,
     textInput: textInputReducer,
-    shareingSettings: shareingSettingsReducer // test
+    shareingSettings: shareingSettingsReducer, // test
+    alertSettings: alertSettingsReducer
   }
 });
