@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { Colors, FontSizes } from '../constants/stylesConst';
+import { Colors, FontSizes, Sizes } from '../constants/stylesConst';
 
 export const appStyles = StyleSheet.create({
   header: {
@@ -254,13 +254,7 @@ export const appStyles = StyleSheet.create({
     },
 
 
-    // ------AltSharingModal styles 1------ //
-
-    // altSharingModalContainer: {
-    //   height: '40%',
-    // },
-
-    // ------AltSharingModal styles 2------ //
+    // ------ AltSharingModal styles ------ //
 
     altSharingModal: {
       position: 'relative',
@@ -271,12 +265,12 @@ export const appStyles = StyleSheet.create({
     },
     altSharingModalContainer: {
       position: 'absolute',
-      width: 270,
-      marginLeft: 30
+      width: Sizes.altSharingModalWidth,
+      // marginLeft: 30
     },
 
 
-    // ------Alert styles 2------ //
+    // ------Alert styles ------ //
     alertScreen: {
       margin: 0,
       flex: 1,
@@ -284,8 +278,8 @@ export const appStyles = StyleSheet.create({
       justifyContent: 'center'
     },
     AlertContainer: {
-      textAlign: 'center',
-
+      marginLeft: 'auto',
+      marginRight: 'auto',
       width: 250,
       backgroundColor: Colors.btn1,
       borderRadius: 10,

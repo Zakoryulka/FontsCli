@@ -1,9 +1,10 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { View,
   Pressable,
   Text,
   TouchableWithoutFeedback,
-  PermissionsAndroid
+  PermissionsAndroid,
+  Dimensions
 } from 'react-native';
 import { useSelector, useDispatch } from "react-redux";
 import Modal from "react-native-modal";
@@ -14,18 +15,22 @@ import { altSharingItemModalHide,
 } from "../store/modal";
 import { copyToClipboard, saveToPhoto
 } from "../store/shareingSettings";
+import { Sizes } from '../constants/stylesConst';
 
 
 import { appStyles } from "../styles/appStyles";
 
 const AltSharingItemModal = () => {
   const altSharingItemModalVisible = useSelector(state => state.modals.altSharingItemModalVisible);
+  const fontPremiumItemPressed = useSelector(state => state.modals.fontPremiumItemPressed)
+  const currentAlignText = useSelector(state => state.aligmentParametrs.currentAlignText);
   const y = useSelector(state => state.alertSettings.y);
   const dispatch = useDispatch();
   const modalContentRef = useRef();
-  const fontPremiumItemPressed = useSelector(state => state.modals.fontPremiumItemPressed);
 
-   async function hasAndroidPermission() {
+  const windowWidth = Dimensions.get('window').width;
+
+  async function hasAndroidPermission() {
 
     const permission = PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE;
 
@@ -48,14 +53,57 @@ const AltSharingItemModal = () => {
     } catch(err) {
       console.log(err);
     }
+  }
+
+  const setMarginLeft = () => {
+    switch (currentAlignText) {
+      case 'left':
+        return windowWidth/10;
+      case 'center':
+        return (windowWidth - Sizes.altSharingModalWidth)/2;
+      case 'right':
+        return 'auto';
+      default: 'auto';
+    }
+  }
+  const setMarginRight = () => {
+    switch (currentAlignText) {
+      case 'left':
+        return 'auto';
+      case 'center':
+        return (windowWidth - Sizes.altSharingModalWidth)/2;
+      case 'right':
+        return windowWidth/10;
+      default: 'auto';
+    }
+  }
+
+  const onPressSaveToPhotoHandler = () => {
+    dispatch(altSharingItemModalHide());
+    if (!fontPremiumItemPressed) {
+      saveToPhotoHandler();
+      dispatch(notifyShow({notifyText: 'save'}));
+    } else {
+      dispatch(premiumAlertShow());
+    }
+  };
+
+  const onPressCopyHandler = () => {
+    dispatch(altSharingItemModalHide());
+    if (!fontPremiumItemPressed) {
+      dispatch(copyToClipboard());
+      dispatch(notifyShow({notifyText: 'copy'}));
+    } else {
+      dispatch(premiumAlertShow());
+    }
   };
 
   return (
     <Modal
-      animationType="slide"
+      animationType="fade"
       transparent={true}
       visible={altSharingItemModalVisible}
-      swipeDirection={'down'}
+      // swipeDirection={'down'}
       onSwipeMove = {() => dispatch(altSharingItemModalHide())}
       style={appStyles.altSharingModal}
       customBackdrop = {
@@ -66,34 +114,30 @@ const AltSharingItemModal = () => {
           <View style={{flex: 1, backgroundColor: 'red'}} />
         </TouchableWithoutFeedback>
       }
-
-      //test like an Alert 2:
       backdropColor={'black'}
     >
       <View
         ref={modalContentRef}
         style={[
+          appStyles.altSharingModalContainer,
           {
-            top: y
-          },
-          appStyles.altSharingModalContainer
+            top: y,
+            // left: 'auto',
+            // right: 'auto',
+            // right: '100%'
+            left: setMarginLeft(),
+            right: setMarginRight()
+            // marginLeft: "auto",
+            // marginRight: "auto"
+          }
           ]}
       >
-        {/* <View style={appStyles.modalCloseHandler} /> */}
 
         <View
           style={appStyles.ModalBtnsContainer}
         >
           <Pressable
-            onPress={() => {
-              dispatch(altSharingItemModalHide());
-              if (!fontPremiumItemPressed) {
-                dispatch(copyToClipboard());
-                dispatch(notifyShow({notifyText: 'copy'}));
-              } else {
-                dispatch(premiumAlertShow());
-              }
-            }}
+            onPress={onPressCopyHandler}
           >
             <Text style={appStyles.showMoreModalBtnLabel}>
               Copy
@@ -102,41 +146,12 @@ const AltSharingItemModal = () => {
           <View style={appStyles.showMoreModalBtndevider} />
 
           <Pressable
-            onPress={() => {
-              dispatch(altSharingItemModalHide());
-              if (!fontPremiumItemPressed) {
-                saveToPhotoHandler();
-                dispatch(notifyShow({notifyText: 'save'}));
-              } else {
-                dispatch(premiumAlertShow());
-              }
-            }}
+            onPress={onPressSaveToPhotoHandler}
           >
             <Text style={appStyles.showMoreModalBtnLabel}>
               Save to Photo
             </Text>
           </Pressable>
-
-          {/* <View style={appStyles.showMoreModalBtndevider} /> */}
-
-          {/* <Pressable
-            onPress={async() => {
-              await ImgToBase64.getBase64String(imageURI)
-              .then(base64String => {
-                // Share.open({url: `data:image/png;base64,${base64Image}`});
-                dispatch(shareToSocial({base64Img: `data:image/png;base64,${base64String}`}));
-              })
-              .catch(err => console.log('ok'));
-            // Share.open({url: state.imageURI});
-
-              // dispatch(shareToSocial());
-              dispatch(altSharingItemModalHide());
-            }}
-          >
-            <Text style={appStyles.showMoreModalBtnLabel}>
-              Share
-            </Text>
-          </Pressable> */}
 
         </View>
       </View>

@@ -10,30 +10,31 @@ import Modal from "react-native-modal";
 import {
   premiumAlertHide
 } from "../store/modal";
+import { useLinks } from "../hooks/useLinks";
 
 import { appStyles } from "../styles/appStyles";
 
 const PremiumAlert = () => {
   const premiumAlertVisible = useSelector(state => state.modals.premiumAlertVisible);
-
+  const { upgrateToPro } = useLinks();
   const dispatch = useDispatch();
-
-  const fontPremiumItemPressed = useSelector(state => state.modals.fontPremiumItemPressed);
 
   const onPressCancel = () => {
     dispatch(premiumAlertHide());
   };
 
   const onPressDownload = () => {
+    upgrateToPro();
     dispatch(premiumAlertHide());
   };
 
    return (
     <Modal
+      animationType="fade"
       // animationType="slide"
       transparent={true}
       visible={premiumAlertVisible}
-      swipeDirection={'down'}
+      // swipeDirection={'down'}
       onSwipeMove = {() => dispatch(premiumAlertHide())}
       style={appStyles.alertScreen}
       customBackdrop = {
