@@ -15,7 +15,7 @@ import ButtonIcon from "../components/ButtonIcon";
 
 import { appStyles } from "../styles/appStyles";
 
-function ColorModal() {
+function FontSettingsModal() {
   const startFontSize = useSelector(state => state.fontParametrs.startValueForSliderFontSize);
   const startLineSpacing = useSelector(state => state.fontParametrs.startValueForSliderLineSpacing);
   const startLetterSpacing = useSelector(state => state.fontParametrs.startValueForSliderLetterSpacing);
@@ -79,4 +79,4 @@ function ColorModal() {
   )
 };
 
-export default ColorModal;
+export default FontSettingsModal;

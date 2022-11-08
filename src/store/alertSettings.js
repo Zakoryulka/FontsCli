@@ -55,7 +55,6 @@ const alertSettingsSlice = createSlice({
       } else {
         state.pressFontItemCounter = 1;
       }
-      console.log(state.pressFontItemCounter)
     },
     rateAlertShow: (state) => {
       state.rateAlertVisible = true;

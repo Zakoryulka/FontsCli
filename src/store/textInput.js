@@ -28,10 +28,12 @@ premiumFonts.map((item) => {
   }
 });
 
-
+const familyFonts0 = [...freeFonts, ...premiumFonts];
 const familyFonts = [...familyFreeFonts, ...familyPremiumFonts];
 const familyFontsRU = familyFonts.filter((item) => (item.cyrillicFont === 'true'));
 
+
+// const familyFonts = [...freeFonts, ...premiumFonts];
 const fonts = [
   {
     title: "Free Fonts",
@@ -53,6 +55,7 @@ const fontsRU = [
     data: premiumFonts.filter((item) => (item.cyrillicFont === 'true')).map((item) => (item.displayName))
   }
 ];
+// console.log(familyFreeFonts);
 
 const textInputSlice = createSlice({
   name: 'textInput',
@@ -100,11 +103,9 @@ const textInputSlice = createSlice({
     },
     setKeyboardVisible: (state) => {
       state.keyboardVisible = true;
-      console.log('Press setKeyboardVisible: keyboardVisible === ' + state.keyboardVisible);
     },
     setKeyboardNotVisible: (state) => {
       state.keyboardVisible = false;
-      console.log('Press setKeyboardNotVisible: keyboardVisible === ' + state.keyboardVisible);
     }
   }
 });

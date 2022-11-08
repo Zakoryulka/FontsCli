@@ -34,6 +34,8 @@ const colorParametrsSlice = createSlice({
     setColorsValuesForCPickers: (state) => {
       state.startValueForCPickerBg = state.currentBg;
       state.startValueForCPickerColor = state.currentFontColor;
+      // console.log(state.startValueForCPickerBg);
+      // console.log(state.startValueForCPickerColor);
     },
     setColorsValuesForSliders: (state) => {
       state.startValueForSliderPadding = state.currentPadding;

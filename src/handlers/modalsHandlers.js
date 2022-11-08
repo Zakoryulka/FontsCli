@@ -9,6 +9,7 @@ import { openInfoModal,
   openShowMoreModal, closeShowMoreModal,
   openColorModal, closeColorModal,
   openFontSettingsModal, closeFontSettingsModal,
+  cPickerBGShow, cPickerFontColorShow,
   cPickerBGHide, cPickerFontColorHide
 } from "../store/modal";
 import {  setColorsValuesForSliders,
@@ -17,7 +18,6 @@ import {  setColorsValuesForSliders,
 import { setFontsValuesForSliders } from "../store/fontParametrs";
 import { changeAlignSelf } from "../store/ aligmentParametrs";
 import { setKeyboardVisible, setKeyboardNotVisible } from "../store/textInput";
-
 
 export const modalsHandlers = () => {
   const fontSettingsModalShow = useSelector(state => state.modals.fontSettingsModalShow);
@@ -48,11 +48,10 @@ export const modalsHandlers = () => {
   const closeColorModalHandler = () => {
     dispatch(closeColorModal())
     dispatch(setColorsValuesForSliders())
-    dispatch(setColorsValuesForCPickers())
   };
 
   const pressInfoBtnHandler = () => {
-    dispatch(openInfoModal())
+    dispatch(openInfoModal());
   };
 
   const pressShowMoreBtnHandler = () => {
@@ -86,23 +85,23 @@ export const modalsHandlers = () => {
     }
   };
 
+  const pressOpenCPickerFontHandler = () => {
+    dispatch(cPickerFontColorShow());
+    dispatch(setColorsValuesForCPickers());
+  };
+
   const pressCloseCPickerFontHandler = () => {
     dispatch(cPickerFontColorHide());
+  };
+
+  const pressOpenCPickerBGHandler = () => {
+    dispatch(cPickerBGShow());
     dispatch(setColorsValuesForCPickers());
   };
 
   const pressCloseCPickerBGHandler = () => {
     dispatch(cPickerBGHide());
-    dispatch(setColorsValuesForCPickers());
   };
-
-  // const newFunc = () => {};
-  // const newFunc = () => {};
-  // const newFunc = () => {};
-  // const newFunc = () => {};
-  // const newFunc = () => {};
-  // const newFunc = () => {};
-
 
   return {
     pressInfoBtnHandler,
@@ -113,7 +112,9 @@ export const modalsHandlers = () => {
     closeFontSettingsHandler,
     pressColorSettingsHandler,
     closeColorModalHandler,
+    pressOpenCPickerFontHandler,
     pressCloseCPickerFontHandler,
+    pressOpenCPickerBGHandler,
     pressCloseCPickerBGHandler
   }
 }

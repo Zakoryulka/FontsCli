@@ -7,7 +7,8 @@ const ColorPickerModal = (props) => {
   const {modalVisible,
     onChangeColor,
     onCloseModal,
-    startColor} = props;
+    startColor
+  } = props;
 
   return (
     <Modal

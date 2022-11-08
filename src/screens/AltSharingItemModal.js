@@ -1,7 +1,4 @@
-import { useRef } from 'react';
-
 import { View,
-  Pressable,
   Text,
   TouchableWithoutFeedback,
   PermissionsAndroid,
@@ -28,7 +25,6 @@ const AltSharingItemModal = () => {
   const currentAlignText = useSelector(state => state.aligmentParametrs.currentAlignText);
   const y = useSelector(state => state.alertSettings.y);
   const dispatch = useDispatch();
-  const modalContentRef = useRef();
 
   const windowWidth = Dimensions.get('window').width;
 
@@ -120,7 +116,6 @@ const AltSharingItemModal = () => {
     >
       <FontItemActive />
       <View
-        ref={modalContentRef}
         style={[
           appStyles.altSharingModalContainer,
           { top: y,

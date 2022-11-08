@@ -1,5 +1,4 @@
 import { View,
-  Pressable,
   Text,
   TouchableWithoutFeedback
 } from 'react-native';

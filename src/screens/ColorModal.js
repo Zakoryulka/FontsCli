@@ -1,12 +1,14 @@
 
 import { useSelector, useDispatch } from "react-redux";
 import { View, Text, Pressable } from "react-native";
-import { cPickerFontColorShow, cPickerBGShow } from "../store/modal";
 import { Sizes } from "../constants/stylesConst";
 
- import { changeBg, changeFontColor,
-          changeOpacity, resetColors,
-          changePadding, changeRadius,
+ import { changeBg,
+  changeFontColor,
+  changeOpacity,
+  resetColors,
+  changePadding,
+  changeRadius
 } from "../store/colorParametrs";
 import { modalsHandlers } from "../handlers/modalsHandlers";
 
@@ -27,7 +29,10 @@ function ColorModal() {
   const startRadius = useSelector(state => state.colorParametrs.startValueForSliderRadius);
   const startOpacity = useSelector(state => state.colorParametrs.startValueForSliderOpacity);
 
-  const { closeColorModalHandler } = modalsHandlers();
+  const { closeColorModalHandler,
+    pressOpenCPickerFontHandler,
+    pressOpenCPickerBGHandler
+  } = modalsHandlers();
 
   const dispatch = useDispatch();
 
@@ -53,7 +58,7 @@ function ColorModal() {
         <View style={appStyles.settingsWrapper}>
           <ColorPickerButton
             buttonBgColor={fontColor}
-            onPressAction={() => dispatch(cPickerFontColorShow())}
+            onPressAction={pressOpenCPickerFontHandler}
           />
           <SettingColorSlider
             dataList={colorsList}
@@ -69,7 +74,7 @@ function ColorModal() {
         <View style={appStyles.settingsWrapper}>
           <ColorPickerButton
             buttonBgColor={bg}
-            onPressAction={() => dispatch(cPickerBGShow())}
+            onPressAction={pressOpenCPickerBGHandler}
           />
           <SettingColorSlider
             dataList={colorsList}

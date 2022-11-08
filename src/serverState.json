@@ -2,12 +2,12 @@
   "data": {
     "fonts": {
       "freeFonts": [
-        {"fontNameAndroid": "Lobster", "fontNameIos": "Lobster", "displayName": "Lobster", "isPayment": "false", "inFavorites": "true", "cyrillicFont": "false"},
-        {"fontNameAndroid": "KellySlab", "fontNameIos": "Kelly Slab", "displayName": "KellySlab", "isPayment": "false", "inFavorites": "false", "cyrillicFont": "true"},
-        {"fontNameAndroid": "TrainOne", "fontNameIos": "Train One", "displayName": "TrainOne", "isPayment": "false", "inFavorites": "true", "cyrillicFont": "true"},
-        {"fontNameAndroid": "Caveat", "fontNameIos": "Caveat", "displayName": "Caveat", "isPayment": "false", "inFavorites": "false", "cyrillicFont": "true"},
-        {"fontNameAndroid": "Amatic", "fontNameIos": "Amatic SC", "displayName": "Amatic", "isPayment": "true", "inFavorites": "false", "cyrillicFont": "true"},
-        {"fontNameAndroid": "OrelegaOne", "fontNameIos": "Orelega One", "displayName": "Orelega One", "isPayment": "true", "inFavorites": "false", "cyrillicFont": "true"}
+        {"id": 1, "fontNameAndroid": "Lobster", "fontNameIos": "Lobster", "displayName": "Lobster", "isPayment": "false", "inFavorites": "true", "cyrillicFont": "false"},
+        {"id": 2, "fontNameAndroid": "KellySlab", "fontNameIos": "Kelly Slab", "displayName": "KellySlab", "isPayment": "false", "inFavorites": "false", "cyrillicFont": "true"},
+        {"id": 3, "fontNameAndroid": "TrainOne", "fontNameIos": "Train One", "displayName": "TrainOne", "isPayment": "false", "inFavorites": "true", "cyrillicFont": "true"},
+        {"id": 4, "fontNameAndroid": "Caveat", "fontNameIos": "Caveat", "displayName": "Caveat", "isPayment": "false", "inFavorites": "false", "cyrillicFont": "true"},
+        {"id": 5, "fontNameAndroid": "Amatic", "fontNameIos": "Amatic SC", "displayName": "Amatic", "isPayment": "true", "inFavorites": "false", "cyrillicFont": "true"},
+        {"id": 6, "fontNameAndroid": "OrelegaOne", "fontNameIos": "Orelega One", "displayName": "Orelega One", "isPayment": "true", "inFavorites": "false", "cyrillicFont": "true"}
       ],
       "premiumFonts": [
         {"fontNameAndroid": "NeonPlanet", "fontNameIos": "Neon Planet", "displayName": "Neon Planet", "isPayment": "true", "inFavorites": "false", "cyrillicFont": "false"},

@@ -54,6 +54,7 @@ const Alert = (props) => {
           <MainButton
             onPress={onPressCancel}
             bottomLeftRadius
+            row
           >
             <Text style={appStyles.AlertButtonText}>
               {cancelBtnLabel}
@@ -65,6 +66,7 @@ const Alert = (props) => {
           <MainButton
             onPress={onPressAction}
             bottomRightRadius
+            row
           >
             <Text style={appStyles.AlertButtonText}>
               {actionBtnLabel}

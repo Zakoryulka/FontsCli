@@ -4,7 +4,6 @@ import { Sizes, Colors } from '../constants/stylesConst';
 
 import { appStyles } from "../styles/appStyles";
 
-
 const MainButton = (props) => {
   const {
     children,
@@ -12,18 +11,19 @@ const MainButton = (props) => {
     topLeftRadius,
     topRightRadius,
     bottomLeftRadius,
-    bottomRightRadius
+    bottomRightRadius,
+    row
   } = props;
 
   return (
     <Pressable
-      // style={appStyles.MainButton}
       style={({ pressed }) => [
         { borderTopLeftRadius: topLeftRadius ? Sizes.mainBtnRadius : 0,
           borderTopRightRadius: topRightRadius ? Sizes.mainBtnRadius : 0,
           borderBottomLeftRadius: bottomLeftRadius ? Sizes.mainBtnRadius : 0,
           borderBottomRightRadius: bottomRightRadius ? Sizes.mainBtnRadius : 0,
-          backgroundColor: !pressed ? Colors.btn1 : Colors.btnActive
+          backgroundColor: !pressed ? Colors.btn1 : Colors.btnActive,
+          flex: row ? 1 : null
         },
         // appStyles.MainButton
       ]}

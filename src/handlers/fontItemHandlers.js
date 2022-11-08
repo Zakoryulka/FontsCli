@@ -1,12 +1,13 @@
-import { useRef, memo } from 'react';
-import { useSelector, useDispatch } from "react-redux";
-import { Text,
-  View,
-  Pressable,
+import { useCallback } from "react";
+
+import {
   Platform,
   StatusBar,
   Dimensions
 } from 'react-native';
+
+import { useSelector, useDispatch } from "react-redux";
+
 import { captureRef } from 'react-native-view-shot';
 
 import { notifyShow,
@@ -23,54 +24,18 @@ import { setY, setXItem, setYItem,   setActiveFontDisplayName,
 
 import { appConts } from "../constants/appConst";
 
-import { appStyles } from '../styles/appStyles';
-
 const windowHeight = Dimensions.get('window').height;
 const statusBarHeight = StatusBar.currentHeight;
 const ScreenHeight = windowHeight - statusBarHeight;
 
-const FontItem = memo((props) => {
+export const fontItemHandlers = () => {
   const pressFontItemCounter = useSelector(state => state.alertSettings.pressFontItemCounter);
-  const { fontDisplayName, font,
-    fontColor,
-    bg,
-    opacity,
-    padding,
-    radius,
-    fontSize,
-    letterSpacing,
-    lineSpacing,
-    alignSelf,
-    alignText,
-    fontsList,
-    enteredText,
-  } = props;
 
-
-  const viewShotRef = useRef();
   const dispatch = useDispatch();
 
-  const statusFont = fontsList[0].data.includes(fontDisplayName) ? 'free' : 'premium';
-
-  const choseLineHeight = () => {
-    switch (font) {
-      case 'BadScript':
-        return (fontSize + 9) * lineSpacing;
-      case 'ColorTube':
-        return (fontSize + 9) * lineSpacing;
-      case 'Storytella':
-        return (fontSize + 1.4) * lineSpacing;
-      case 'TagType':
-        return (fontSize + 5) * lineSpacing;
-      default:
-        return fontSize * lineSpacing;
-    }
-
-  };
-
-  const setNewImageURI = async () => {
+  const setNewImageURI = async (ref) => {
     try {
-      const uri = await captureRef(viewShotRef, {
+      const uri = await captureRef(ref, {
         format: 'png',
         quality: 1
       })
@@ -80,15 +45,15 @@ const FontItem = memo((props) => {
     }
   };
 
-  const makeCopyToClipboard = async () => {
+  const makeCopyToClipboard = async (ref) => {
     if (Platform.OS = 'android') {
-      await setNewImageURI();
+      await setNewImageURI(ref);
       dispatch(copyToClipboard());
     }
     dispatch(notifyShow({notifyText: 'copy'}));
   };
 
-  const onItemPressHandler = () => {
+  const onItemPressHandler = useCallback((ref) => {
     if (pressFontItemCounter === appConts.countOfAddRate) {
       dispatch(changeItemCounter());
       dispatch(rateAlertShow());
@@ -96,18 +61,16 @@ const FontItem = memo((props) => {
       dispatch(changeItemCounter());
       if (statusFont === 'free') {
         dispatch(pressFreeFontItem());
-        makeCopyToClipboard();
+        makeCopyToClipboard(ref);
       } if (statusFont === 'premium') {
         dispatch(pressPremiumFontItem());
         dispatch(premiumAlertShow());
       }
     }
-  };
+  });
 
-  console.log('render Item ' + font);
-
-  const setCoorAlert = () => {
-    viewShotRef.current.measure( ( fx, fy, width, height, px, py) => {
+  const setCoorAlert = (ref) => {
+    ref.current.measure( ( fx, fy, width, height, px, py) => {
       const fontItemY = py;
       const fontItemHeight = height;
       let y = fontItemY - statusBarHeight;
@@ -127,10 +90,10 @@ const FontItem = memo((props) => {
       } else {
         dispatch(setY({ y: null }));
       }
-    });
-  }
+    })
+  };
 
-  const onLongItemPressHandler = async() => {
+  const onLongItemPressHandler = async(ref) => {
     dispatch(setActiveFontDisplayName({displayName: fontDisplayName}));
     dispatch(setActiveFont({font: font}));
     if (pressFontItemCounter === 10) {
@@ -138,7 +101,7 @@ const FontItem = memo((props) => {
       dispatch(rateAlertShow());
     } else {
       dispatch(changeItemCounter());
-      setCoorAlert();
+      setCoorAlert(ref);
       dispatch(altSharingItemModalShow());
       if (statusFont === 'free') {
         dispatch(pressFreeFontItem());
@@ -148,43 +111,15 @@ const FontItem = memo((props) => {
     }
   };
 
-  return (
-    <Pressable
-      style={{backgroundColor: 'transparent'}}
-      onPress={onItemPressHandler}
-      onLongPress={onLongItemPressHandler}
-    >
-      <View
-        ref={viewShotRef}
-        collapsable={false}
-        style={[
-          {
-            backgroundColor: bg,
-            opacity: opacity,
-            alignSelf: alignSelf,
-            padding: padding,
-            borderRadius: radius
-          },
-            appStyles.fontWrapper
-        ]}
-      >
-        <Text
-          style={[
-            {
-              fontFamily: font,
-              color: fontColor,
-              fontSize: fontSize,
-              letterSpacing: letterSpacing,
-              lineHeight: choseLineHeight(),
-              textAlign: alignText
-            }
-          ]}
-        >
-          {enteredText === '' ? fontDisplayName : enteredText}
-        </Text>
-      </View>
-    </Pressable>
-  )
-})
 
-export default FontItem;
+
+
+
+
+
+
+  return {
+    onItemPressHandler,
+    onLongItemPressHandler
+  }
+}

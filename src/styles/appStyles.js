@@ -19,6 +19,7 @@ export const appStyles = StyleSheet.create({
   fontsContainer: {
     position: 'relative',
     flex: 1,
+    alignItems: 'stretch',
     backgroundColor: Colors.primaryBg1
   },
   title: {
@@ -29,6 +30,13 @@ export const appStyles = StyleSheet.create({
     backgroundColor: "#262626",
     opacity: 0.8,
     color: Colors.text,
+  },
+  stickyTitle: {
+    position: 'absolute',
+    width: '100%',
+    top: 0,
+    left: 0,
+    zIndex: 3,
   },
   fontWrapper: {
     marginHorizontal: 10,
@@ -109,11 +117,12 @@ export const appStyles = StyleSheet.create({
 
  // ------modal styles------ //
 
- view: {
-  backfaceVisibility: 'green',
-  flex: 1
- },
+//  view: {
+//   backfaceVisibility: 'green',
+//   flex: 1
+//  },
   modalWrapper: {
+    zIndex: 2,
     marginTop: 'auto',
     padding: 10,
     backgroundColor: Colors.primaryBg,
@@ -340,7 +349,4 @@ export const appStyles = StyleSheet.create({
 
       // ------ Buttons styles------ //
 
-    MainButton: {
-      flex: 1
-    },
 });

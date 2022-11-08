@@ -7,7 +7,6 @@ import {
 } from "react-native";
 
 import { useSelector } from "react-redux";
-
 import FontItem from "../../components/FontItem";
 import Notification from "../../components/Notification";
 
@@ -18,6 +17,17 @@ const FontList = () => {
   const familyFonts = useSelector(state => state.textInput.familyFonts);
   const notifyVisible = useSelector(state => state.alertSettings.notifyVisible);
   const notifyMessage = useSelector(state => state.alertSettings.notifyMessage);
+  const fontColor = useSelector(state => state.colorParametrs.currentFontColor);
+  const bg = useSelector(state => state.colorParametrs.currentBg);
+  const opacity = useSelector(state => state.colorParametrs.currentOpacity);
+  const padding = useSelector(state => state.colorParametrs.currentPadding);
+  const radius = useSelector(state => state.colorParametrs.currentRadius);
+  const fontSize = useSelector(state => state.fontParametrs.currentFontSize);
+  const letterSpacing = useSelector(state => state.fontParametrs.currentLetterSpacing);
+  const lineSpacing = useSelector(state => state.fontParametrs.currentLineSpacing);
+  const alignSelf = useSelector(state => state.aligmentParametrs.currentAlignSelf);
+  const alignText = useSelector(state => state.aligmentParametrs.currentAlignText);
+  const enteredText = useSelector(state => state.textInput.enteredText);
 
   const notification = notifyVisible
   ? <Notification
@@ -25,12 +35,49 @@ const FontList = () => {
     />
   : null;
 
+  console.log('render FontList')
+
+
   return (
     <View style={appStyles.fontsContainer}>
       {notification}
+
+
+      {/* <FlatList
+        data={familyFonts}
+        renderItem={({item}) => (
+          <FontItem2
+            fontDisplayName={item.displayName}
+            font={item.fontNameAndroid}
+            fontColor={fontColor}
+            bg={bg}
+            opacity={opacity}
+            padding={padding}
+            radius={radius}
+            fontSize={fontSize}
+            letterSpacing={letterSpacing}
+            lineSpacing={lineSpacing}
+            alignSelf={alignSelf}
+            alignText={alignText}
+            fontsList={fontsList}
+            enteredText={enteredText}
+        />
+        )}
+        keyExtractor={(item) => item.fontNameAndroid}
+
+        onScroll={() => {
+          Keyboard.dismiss();
+        }}
+        initialNumToRender={10}
+        showsVerticalScrollIndicator={false}
+        stickySectionHeadersEnabled={true}
+        removeClippedSubviews={true} //
+      /> */}
+
+
+
       <SectionList
           sections={fontsList}
-          keyExtractor={(item, index) => item + index}
           renderSectionHeader={({ section: { title } }) => (
             <Text style={appStyles.title}>{title}</Text>
           )}
@@ -40,15 +87,37 @@ const FontList = () => {
               font={Platform.OS === 'android' ?
                 familyFonts.filter(font => font.displayName === item)[0].android
                 : familyFonts.filter(font => font.displayName === item)[0].ios}
+              fontColor={fontColor}
+              bg={bg}
+              opacity={opacity}
+              padding={padding}
+              radius={radius}
+              fontSize={fontSize}
+              letterSpacing={letterSpacing}
+              lineSpacing={lineSpacing}
+              alignSelf={alignSelf}
+              alignText={alignText}
+              fontsList={fontsList}
+              enteredText={enteredText}
             />
           )}
-          initialNumToRender={13}
           onScroll={() => {
               Keyboard.dismiss();
           }}
+          keyExtractor={(item, index) => item + index}
+          initialNumToRender={10}
           showsVerticalScrollIndicator={false}
           stickySectionHeadersEnabled={true}
-          bounces={false}
+          removeClippedSubviews={true} //
+
+        //   maintainVisibleContentPosition={{
+        //     minIndexForVisible: 1,
+        //  }}    // only for IOS
+          // bounces={false}
+          maxToRenderPerBatch={10}
+          // progressViewOffset={1000}
+          // onEndReachedThreshold={2}
+
         />
     </View>
   )
