@@ -1,6 +1,7 @@
 import {
   Text,
   View,
+  FlatList,
   SectionList,
   Platform,
   Keyboard
@@ -43,12 +44,15 @@ const FontList = () => {
       {notification}
 
 
-      {/* <FlatList
+      <FlatList
         data={familyFonts}
         renderItem={({item}) => (
-          <FontItem2
+          <FontItem
             fontDisplayName={item.displayName}
-            font={item.fontNameAndroid}
+            font={Platform.OS === 'android' ?
+              item.fontNameAndroid
+              : item.fontNameIos}
+            isPremium={item.isPremium}
             fontColor={fontColor}
             bg={bg}
             opacity={opacity}
@@ -59,7 +63,6 @@ const FontList = () => {
             lineSpacing={lineSpacing}
             alignSelf={alignSelf}
             alignText={alignText}
-            fontsList={fontsList}
             enteredText={enteredText}
         />
         )}
@@ -72,11 +75,11 @@ const FontList = () => {
         showsVerticalScrollIndicator={false}
         stickySectionHeadersEnabled={true}
         removeClippedSubviews={true} //
-      /> */}
+      />
 
 
 
-      <SectionList
+      {/* <SectionList
           sections={fontsList}
           renderSectionHeader={({ section: { title } }) => (
             <Text style={appStyles.title}>{title}</Text>
@@ -118,7 +121,7 @@ const FontList = () => {
           // progressViewOffset={1000}
           // onEndReachedThreshold={2}
 
-        />
+        /> */}
     </View>
   )
 };

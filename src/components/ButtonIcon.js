@@ -15,7 +15,7 @@ import TextIcon from '../assets/icons/TextIcon';
 
 import { appStyles } from '../styles/appStyles';
 
-const ButtonIcon = ({children, onPress, icon, marginRifgt, visible}) => {
+const ButtonIcon = ({onPress, icon, marginRifgt, visible}) => {
     const size = 32;
 
     const setIconBtnColor = useMemo(() => (!visible ? Colors.btnIcon : Colors.btnIconPressed), [visible]);
@@ -43,17 +43,7 @@ const ButtonIcon = ({children, onPress, icon, marginRifgt, visible}) => {
             default:
                 throw new Error();
         }
-    }, [icon]);
-
-    // // const infoSVG = icon === "info" ? <InfoRound fill={setIconBtnColor} width={size} height={size}/> : null;
-    // // const paletteSVG = icon === "palette" ? <PaletteSVG width={size} height={27} fill={setIconBtnColor} /> : null;
-    // // const fontLeftSVG = icon === "flex-start" ? <FontLeftSVG width={size} height={size} fill={Colors.btnIcon} /> : null;
-    // // const fontCenterSVG = icon === "center" ? <FontCenterSVG width={size} height={size} fill={Colors.btnIcon} /> : null;
-    // // const fontRightSVG = icon === "flex-end" ? <FontRightSVG fill={Colors.btnIcon} /> : null;
-    // // const closeSVG = icon === "close" ? <CloseSVG width={32} height={32} fill={Colors.btnIcon} /> : null;
-    // // const showMoreSVG = icon === "showMore" ? <ListSVG width={size} height={size} fill={setIconBtnColor} /> : null;
-    // const clearTextSVG = icon === "clearText" ? <CloseSVG width={20} height={20} fill={'grey'} /> : null;
-    // const textIcon = icon === "text" ? <TextIcon width={27} height={size} fill={setIconBtnColor} /> : null;
+    }, [visible]);
 
     return (
     <Pressable
@@ -62,16 +52,6 @@ const ButtonIcon = ({children, onPress, icon, marginRifgt, visible}) => {
         hitSlop = {Sizes.hitSlopPressable}
     >
         {renderIcon}
-        {/* {children}
-        {infoSVG}
-        {paletteSVG}
-        {fontLeftSVG}
-        {fontCenterSVG}
-        {fontRightSVG}
-        {closeSVG}
-        {showMoreSVG}
-        {clearTextSVG}
-        {textIcon} */}
     </Pressable>
 )}
 

@@ -5,7 +5,7 @@ export const appStyles = StyleSheet.create({
   header: {
     paddingTop: 8,
     paddingBottom: 10,
-    paddingHorizontal: 10,
+    paddingHorizontal: Sizes.mainPadding,
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: Colors.primaryBg,
@@ -22,15 +22,15 @@ export const appStyles = StyleSheet.create({
     alignItems: 'stretch',
     backgroundColor: Colors.primaryBg1
   },
-  title: {
-    marginBottom: 10,
-    paddingVertical: 13,
-    paddingHorizontal: 10,
-    fontSize: FontSizes.main,
-    backgroundColor: "#262626",
-    opacity: 0.8,
-    color: Colors.text,
-  },
+  // title: {
+  //   marginBottom: 10,
+  //   paddingVertical: 13,
+  //   paddingHorizontal: 10,
+  //   fontSize: FontSizes.main,
+  //   backgroundColor: "#262626",
+  //   opacity: 0.8,
+  //   color: Colors.text,
+  // },
   stickyTitle: {
     position: 'absolute',
     width: '100%',
@@ -38,16 +38,42 @@ export const appStyles = StyleSheet.create({
     left: 0,
     zIndex: 3,
   },
-  fontWrapper: {
-    marginHorizontal: 10,
-    marginBottom: 10,
+
+
+   // ------font item styles------ //
+
+  fontButton: {
+    paddingHorizontal: Sizes.mainPadding,
+    paddingVertical: 12,
+    // flexDirection: 'row',
+    backgroundColor: 'transparent'
   },
+  fontIconIcon: {
+    width: 18,
+    height: 18,
+    marginLeft: 'auto',
+    alignSelf: 'flex-end',
+    backgroundColor: 'orange'
+  },
+  fontWrapper: {
+    marginTop: 12
+  },
+  fontItemDivider: {
+    alignSelf: 'center',
+    width: '100%',               // исправить
+    height: 1,
+    backgroundColor: Colors.divider,
+    borderRadius: 1
+  },
+
+
+
   footerBar: {
     flexBasis: 'auto',
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 12,
-    paddingHorizontal: 8,
+    paddingHorizontal: Sizes.mainPadding,
     backgroundColor: Colors.primaryBg,
     alignItems: 'center'
   },
@@ -124,7 +150,7 @@ export const appStyles = StyleSheet.create({
   modalWrapper: {
     zIndex: 2,
     marginTop: 'auto',
-    padding: 10,
+    padding: Sizes.mainPadding,
     backgroundColor: Colors.primaryBg,
   },
   modalCloseHandler: {

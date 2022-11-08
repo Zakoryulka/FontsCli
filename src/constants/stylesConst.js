@@ -17,6 +17,7 @@ export const Colors = Object.freeze({
   btnIcon: "#FFFFFF",
   btnIconPressed: "#027AF9",
 
+  divider: "#2E2D2D"
 });
 
 export const FontItemStyles = Object.freeze({
@@ -37,6 +38,7 @@ export const FontSizes = Object.freeze({
 });
 
 export const Sizes = Object.freeze({
+  mainPadding: 15,
   altSharingModalWidth: 270,
   hitSlopPressable: 16,
   infoModalHeight: '60%',

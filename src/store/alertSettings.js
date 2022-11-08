@@ -50,7 +50,7 @@ const alertSettingsSlice = createSlice({
 
     },
     changeItemCounter: (state) => {
-      if (state.pressFontItemCounter = appConts.countOfAddRate) {
+      if (state.pressFontItemCounter <= appConts.countOfAddRate) {
         state.pressFontItemCounter = state.pressFontItemCounter + 1;
       } else {
         state.pressFontItemCounter = 1;

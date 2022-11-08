@@ -113,11 +113,6 @@ export const fontItemHandlers = () => {
 
 
 
-
-
-
-
-
   return {
     onItemPressHandler,
     onLongItemPressHandler

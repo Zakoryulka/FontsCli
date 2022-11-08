@@ -31,7 +31,9 @@ const ScreenHeight = windowHeight - statusBarHeight;
 
 const FontItem = memo((props) => {
   const pressFontItemCounter = useSelector(state => state.alertSettings.pressFontItemCounter);
-  const { fontDisplayName, font,
+  const { fontDisplayName,
+    font,
+    isPremium,
     fontColor,
     bg,
     opacity,
@@ -42,15 +44,12 @@ const FontItem = memo((props) => {
     lineSpacing,
     alignSelf,
     alignText,
-    fontsList,
     enteredText,
   } = props;
 
 
   const viewShotRef = useRef();
   const dispatch = useDispatch();
-
-  const statusFont = fontsList[0].data.includes(fontDisplayName) ? 'free' : 'premium';
 
   const choseLineHeight = () => {
     switch (font) {
@@ -89,22 +88,23 @@ const FontItem = memo((props) => {
   };
 
   const onItemPressHandler = () => {
+    console.log(pressFontItemCounter);
     if (pressFontItemCounter === appConts.countOfAddRate) {
       dispatch(changeItemCounter());
       dispatch(rateAlertShow());
     } else {
       dispatch(changeItemCounter());
-      if (statusFont === 'free') {
+      if (isPremium === 'free') {
         dispatch(pressFreeFontItem());
         makeCopyToClipboard();
-      } if (statusFont === 'premium') {
+      } if (isPremium === 'premium') {
         dispatch(pressPremiumFontItem());
         dispatch(premiumAlertShow());
       }
     }
   };
 
-  console.log('render Item ' + font);
+  // console.log('render Item ' + font);
 
   const setCoorAlert = () => {
     viewShotRef.current.measure( ( fx, fy, width, height, px, py) => {
@@ -140,50 +140,66 @@ const FontItem = memo((props) => {
       dispatch(changeItemCounter());
       setCoorAlert();
       dispatch(altSharingItemModalShow());
-      if (statusFont === 'free') {
+      if (isPremium === 'free') {
         dispatch(pressFreeFontItem());
-      } if (statusFont === 'premium') {
+      } if (isPremium === 'premium') {
         dispatch(pressPremiumFontItem());
       }
     }
   };
 
+  const PremiumIcon = () => {
+    return (
+      <View style={appStyles.fontIconIcon} />
+    )
+  };
+
+  const FreeIcon = () => {
+    return (
+      <View style={[appStyles.fontIconIcon, {backgroundColor: 'transparent'}]} />
+    )
+  };
+
+  const icon = isPremium === "premium" ? <PremiumIcon /> : <FreeIcon />;
+
   return (
-    <Pressable
-      style={{backgroundColor: 'transparent'}}
-      onPress={onItemPressHandler}
-      onLongPress={onLongItemPressHandler}
-    >
-      <View
-        ref={viewShotRef}
-        collapsable={false}
-        style={[
-          {
-            backgroundColor: bg,
-            opacity: opacity,
-            alignSelf: alignSelf,
-            padding: padding,
-            borderRadius: radius
-          },
-            appStyles.fontWrapper
-        ]}
+    <>
+      <Pressable
+        style={appStyles.fontButton}
+        onPress={onItemPressHandler}
+        onLongPress={onLongItemPressHandler}
+
       >
-        <Text
-          style={[
-            {
-              fontFamily: font,
-              color: fontColor,
-              fontSize: fontSize,
-              letterSpacing: letterSpacing,
-              lineHeight: choseLineHeight(),
-              textAlign: alignText
-            }
-          ]}
-        >
-          {enteredText === '' ? fontDisplayName : enteredText}
-        </Text>
-      </View>
-    </Pressable>
+        {icon}
+        <View style={appStyles.fontWrapper}>
+          <View
+            ref={viewShotRef}
+            collapsable={false}
+            style={{
+              backgroundColor: bg,
+              opacity: opacity,
+              alignSelf: alignSelf,
+              padding: padding,
+              borderRadius: radius
+            }}
+          >
+            <Text
+              style={{
+                fontFamily: font,
+                color: fontColor,
+                fontSize: fontSize,
+                letterSpacing: letterSpacing,
+                lineHeight: choseLineHeight(),
+                textAlign: alignText
+              }}
+            >
+              {enteredText === '' ? fontDisplayName : enteredText}
+            </Text>
+          </View>
+        </View>
+      </Pressable>
+      <View style={appStyles.fontItemDivider} />
+    </>
   )
 })
 
