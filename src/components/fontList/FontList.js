@@ -1,20 +1,20 @@
-import {
-  Text,
-  View,
-  FlatList,
-  SectionList,
+import { useCallback } from "react";
+import { View,
   Platform,
   Keyboard
 } from "react-native";
-
 import { useSelector } from "react-redux";
-import FontItem from "../../components/FontItem";
+// Library for maintainVisibleContentPosition for Android:
+import { FlatList } from '@stream-io/flat-list-mvcp';
+
+import FontItem from "../FontItem"
 import Notification from "../../components/Notification";
+import { fontItemHandlers } from "../../handlers/fontItemHandlers";
 
 import { appStyles } from "../../styles/appStyles";
 
 const FontList = () => {
-  const fontsList = useSelector(state => state.textInput.fontsList);
+  const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
   const familyFonts = useSelector(state => state.textInput.familyFonts);
   const notifyVisible = useSelector(state => state.alertSettings.notifyVisible);
   const notifyMessage = useSelector(state => state.alertSettings.notifyMessage);
@@ -25,10 +25,14 @@ const FontList = () => {
   const radius = useSelector(state => state.colorParametrs.currentRadius);
   const fontSize = useSelector(state => state.fontParametrs.currentFontSize);
   const letterSpacing = useSelector(state => state.fontParametrs.currentLetterSpacing);
-  const lineSpacing = useSelector(state => state.fontParametrs.currentLineSpacing);
   const alignSelf = useSelector(state => state.aligmentParametrs.currentAlignSelf);
   const alignText = useSelector(state => state.aligmentParametrs.currentAlignText);
   const enteredText = useSelector(state => state.textInput.enteredText);
+
+  const {choseLineHeight,
+    onItemPressHandler,
+    onLongItemPressHandler
+  } = fontItemHandlers();
 
   const notification = notifyVisible
   ? <Notification
@@ -36,92 +40,56 @@ const FontList = () => {
     />
   : null;
 
-  console.log('render FontList')
+  // console.log('render FontList')
 
+  const renderItem = ({item}) =>
+    <FontItem
+      fontDisplayName={item.displayName}
+      font={Platform.OS === 'android' ?
+        item.fontNameAndroid
+        : item.fontNameIos}
+      isPremium={item.isPremium}
+      fontColor={fontColor}
+      bg={bg}
+      opacity={opacity}
+      padding={padding}
+      radius={radius}
+      fontSize={fontSize}
+      letterSpacing={letterSpacing}
+      setLineHeight={choseLineHeight}
+      alignSelf={alignSelf}
+      alignText={alignText}
+      enteredText={enteredText}
+      onItemPress={onItemPressHandler}
+      onLongItemPress={onLongItemPressHandler}
+    />;
+
+  const setKeyExtractor = useCallback((item) => item.fontNameAndroid, []);
 
   return (
-    <View style={appStyles.fontsContainer}>
+    <View style={[appStyles.fontsContainer, {backgroundColor: colorsStyle.primaryBg1}]}>
       {notification}
-
 
       <FlatList
         data={familyFonts}
-        renderItem={({item}) => (
-          <FontItem
-            fontDisplayName={item.displayName}
-            font={Platform.OS === 'android' ?
-              item.fontNameAndroid
-              : item.fontNameIos}
-            isPremium={item.isPremium}
-            fontColor={fontColor}
-            bg={bg}
-            opacity={opacity}
-            padding={padding}
-            radius={radius}
-            fontSize={fontSize}
-            letterSpacing={letterSpacing}
-            lineSpacing={lineSpacing}
-            alignSelf={alignSelf}
-            alignText={alignText}
-            enteredText={enteredText}
-        />
-        )}
-        keyExtractor={(item) => item.fontNameAndroid}
-
+        renderItem={renderItem}
+        keyExtractor={setKeyExtractor}
         onScroll={() => {
           Keyboard.dismiss();
         }}
-        initialNumToRender={10}
+
+        //Оптимизация https://reactnative.dev/docs/optimizing-flatlist-configuration
+        initialNumToRender={6}
         showsVerticalScrollIndicator={false}
-        stickySectionHeadersEnabled={true}
+        maxToRenderPerBatch={7} //10 следующий фрагмент элементов, отображаемых при каждой прокрутке.
+        updateCellsBatchingPeriod={30} // 50
         removeClippedSubviews={true} //
+        windowSize={9}
+        maintainVisibleContentPosition={{
+          autoscrollToTopThreshold: 10,
+          minIndexForVisible: 1,
+      }}
       />
-
-
-
-      {/* <SectionList
-          sections={fontsList}
-          renderSectionHeader={({ section: { title } }) => (
-            <Text style={appStyles.title}>{title}</Text>
-          )}
-          renderItem={({item}) => (
-            <FontItem
-              fontDisplayName={item}
-              font={Platform.OS === 'android' ?
-                familyFonts.filter(font => font.displayName === item)[0].android
-                : familyFonts.filter(font => font.displayName === item)[0].ios}
-              fontColor={fontColor}
-              bg={bg}
-              opacity={opacity}
-              padding={padding}
-              radius={radius}
-              fontSize={fontSize}
-              letterSpacing={letterSpacing}
-              lineSpacing={lineSpacing}
-              alignSelf={alignSelf}
-              alignText={alignText}
-              fontsList={fontsList}
-              enteredText={enteredText}
-            />
-          )}
-          onScroll={() => {
-              Keyboard.dismiss();
-          }}
-          keyExtractor={(item, index) => item + index}
-          initialNumToRender={10}
-          showsVerticalScrollIndicator={false}
-          stickySectionHeadersEnabled={true}
-          removeClippedSubviews={true} //
-
-        //   maintainVisibleContentPosition={{
-        //     minIndexForVisible: 1,
-        //  }}    // only for IOS
-          // bounces={false}
-          maxToRenderPerBatch={10}
-          // progressViewOffset={1000}
-          // onEndReachedThreshold={2}
-
-        /> */}
     </View>
   )
 };

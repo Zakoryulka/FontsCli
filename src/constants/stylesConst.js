@@ -1,5 +1,12 @@
 
 export const Colors = Object.freeze({
+  btnResetText: "#027AF9",       // оставить
+  notificationText: '#666666',   // оставить
+  btnIconPressed: "#027AF9",
+  crownColor: '#FFC322'
+});
+
+export const DarkTheme = Object.freeze({
   primaryBg: "#1E1E1E",
   primaryBg1: "#000000",
   alertBG: 'rgba(0, 0, 0, .6)',
@@ -17,15 +24,45 @@ export const Colors = Object.freeze({
   btnIcon: "#FFFFFF",
   btnIconPressed: "#027AF9",
 
-  divider: "#2E2D2D"
+  colorBtnActive: '#FFFFFF',
+
+  divider: "#2E2D2D",
+  divider2: "#2E2D2D",
 });
+
+export const LightTheme = Object.freeze({
+  primaryBg: "#F5F5F5",               //+ . или E5E5E5
+  primaryBg1: "#FFFFFF",              //+
+  alertBG: 'rgba(0, 0, 0, .5)',
+
+  text: "#000000",                    //+
+  btnResetText: "#027AF9",
+
+  notificationBg: '#E5E5E5',
+  notificationText: '#666666',
+  placeholderTextColor: '#666666',
+
+  // Buttons Colors
+  btn1: '#E5E5E5',                    //+
+  btnActive: '#CCCCCC',               //+
+  btnIcon: "#000000",                 //+
+  btnIconPressed: "#027AF9",          //+
+
+  colorBtnActive: '#D0CACA',
+
+  // closeModalHandler: "#DADBDB",
+
+  divider: "#E5E5E5",
+  divider2: "#D0CACA",                        //+
+});
+
 
 export const FontItemStyles = Object.freeze({
   fontSizeDefault: 27,
   lineSpacingDefault: 1.3,
   letterSpacingDefault: 0,
   bgDefault: '#940081',
-  fontColorDefault: '#ffffff',
+  fontColorDefault: '#FFFFFF',
   opacityDefault: 1,
   paddingDefault: 15,
   radiusDefault: 8,

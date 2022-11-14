@@ -7,8 +7,12 @@ import { closeInfoModal } from "../store/modal";
 import { appStyles } from "../styles/appStyles";
 
 const InfoModal = () => {
+  const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
   const infoModalVisible = useSelector(state => state.modals.infoModalVisible);
+
   const dispatch = useDispatch();
+
+  const closeInfoModalHandler = () => dispatch(closeInfoModal());
 
   return (
     <Modal
@@ -16,15 +20,19 @@ const InfoModal = () => {
       transparent={true}
       visible={infoModalVisible}
       swipeDirection={'down'}
-      onSwipeMove = {() => dispatch(closeInfoModal())}
+      onSwipeMove = {closeInfoModalHandler}
       style={{ margin: 0}}
       customBackdrop = {
-        <TouchableWithoutFeedback onPress={() => dispatch(closeInfoModal())}>
+        <TouchableWithoutFeedback onPress={closeInfoModalHandler}>
           <View style={{flex: 1}} />
         </TouchableWithoutFeedback>
       }
     >
-      <View style={[appStyles.modalWrapper, appStyles.infoModal]}>
+      <View style={[
+        appStyles.modalWrapper,
+        appStyles.infoModal,
+        {backgroundColor: colorsStyle.primaryBg}
+      ]}>
         <View style={appStyles.modalCloseHandler} />
         <View style={appStyles.infoModalWrapper}>
           <View style={appStyles.infoModalLineWrapper}>

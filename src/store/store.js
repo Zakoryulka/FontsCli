@@ -2,10 +2,11 @@ import { configureStore } from '@reduxjs/toolkit';
 import modalReducer from './modal';
 import colorParametrsReducer from './colorParametrs';
 import fontParametrsReducer from './fontParametrs';
-import aligmentParametrsReducer from './ aligmentParametrs';
+import aligmentParametrsReducer from './aligmentParametrs';
 import textInputReducer from './textInput';
 import shareingSettingsReducer from './shareingSettings'; // test
 import alertSettingsReducer from './alertSettings';
+import colorThemeReducer from './colorTheme';
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     aligmentParametrs: aligmentParametrsReducer,
     textInput: textInputReducer,
     shareingSettings: shareingSettingsReducer, // test
-    alertSettings: alertSettingsReducer
+    alertSettings: alertSettingsReducer,
+    colorTheme: colorThemeReducer
   }
 });

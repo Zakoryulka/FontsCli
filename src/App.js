@@ -7,35 +7,18 @@
  */
 
  import React from "react";
- import { SafeAreaView,  StyleSheet, StatusBar } from "react-native";
  import { Provider } from "react-redux";
  import { store } from "./store/store";
 
 
- import MainScreen from './screens/MainScreen';
+ import MainView from './screens/MainView';
+
 
  export default function App() {
+
    return (
-     <SafeAreaView
-       style={styles.mainView}
-       // onLayout={onLayoutRootView}
-     >
-       <StatusBar
-         translucent
-         backgroundColor="#1E1E1E"
-         barStyle="light-content"
-       />
-       <Provider store={store}>
-         <MainScreen />
-       </Provider>
-     </SafeAreaView>
+    <Provider store={store}>
+      <MainView />
+    </Provider>
    );
  }
-
- const styles = StyleSheet.create({
-   mainView: {
-     flex: 1,
-     paddingTop: StatusBar.currentHeight,
-     backgroundColor: "#1E1E1E",
-   },
- });

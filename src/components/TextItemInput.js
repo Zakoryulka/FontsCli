@@ -9,11 +9,11 @@ import { inputText,
 } from "../store/textInput";
 
 import ButtonIcon from "../components/ButtonIcon";
-import { Colors } from "../constants/stylesConst";
 
 import { appStyles } from "../styles/appStyles";
 
 const TextItemInput = () => {
+  const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
   const numberOfLines = useSelector(state => state.textInput.numberOfLines);
   const enteredText = useSelector(state => state.textInput.enteredText);
   const textHeight = useSelector(state => state.textInput.textHeight);
@@ -21,9 +21,9 @@ const TextItemInput = () => {
 
   const { closeFontSettingsHandler, closeColorModalHandler } = modalsHandlers();
 
-  const onPressInputHandler = () => {
-    closeFontSettingsHandler();
-    closeColorModalHandler();
+  const onPressClearBtnHandler = () => {
+    dispatch(clearText());
+    dispatch(setFonts());
   };
 
   const renderClearBtn = () => {
@@ -31,35 +31,48 @@ const TextItemInput = () => {
       <ButtonIcon
         style={appStyles.clearTextBtn}
         icon={"clearText"}
-        onPress={() => {
-          dispatch(clearText());
-          dispatch(setFonts());
-        }}
+        onPress={onPressClearBtnHandler}
       />
     )
+  };
+
+  const onPressInputHandler = () => {
+    closeFontSettingsHandler();
+    closeColorModalHandler();
+  };
+
+  const onChangeTextHandler = (text) => {
+    dispatch(inputText({ newText: text }));
+    dispatch(setFonts());
+  };
+
+  const onContentSizeChangeHandler = (event) => {
+    dispatch(setNumberOfLines(event.nativeEvent.contentSize.height))
   };
 
   const clearBtn = enteredText !== "" ? renderClearBtn() : null;
 
   return (
-    <View style={appStyles.textInputWrapper}>
+    <View style={[appStyles.textInputWrapper, {backgroundColor: colorsStyle.primaryBg1}]}>
       <TextInput
-        style={[appStyles.textInput, {fontSize: textHeight}]}
+        style={[appStyles.textInput,
+          {
+            fontSize: textHeight,
+            backgroundColor: colorsStyle.primaryBg1,
+            color: colorsStyle.text
+          }
+        ]}
         placeholder="Enter your text"
-        placeholderTextColor={Colors.placeholderTextColor}
-        onChangeText={async(text) => {
-          dispatch(inputText({ newText: text }));
-          dispatch(setFonts());
-        }}
-        onPressIn={onPressInputHandler}
+        placeholderTextColor={colorsStyle.placeholderTextColor}
         value={enteredText}
         enablesReturnKeyAutomatically={true}
         multiline={true}
         textAlignVertical={'top'}
         numberOfLines={numberOfLines}
-        onContentSizeChange={(event) => dispatch(setNumberOfLines(event.nativeEvent.contentSize.height))}
+        onChangeText={onChangeTextHandler}
+        onPressIn={onPressInputHandler}
+        onContentSizeChange={(evt) => onContentSizeChangeHandler(evt)}
       />
-
       {clearBtn}
     </View>
   )

@@ -1,9 +1,11 @@
+import { useSelector } from 'react-redux';
 import { Modal, View } from 'react-native';
 import { TriangleColorPicker, fromHsv } from 'react-native-color-picker';
 import ButtonIcon from '../components/ButtonIcon';
 import { appStyles } from "../styles/appStyles";
 
 const ColorPickerModal = (props) => {
+  const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
   const {modalVisible,
     onChangeColor,
     onCloseModal,
@@ -17,7 +19,11 @@ const ColorPickerModal = (props) => {
       visible={modalVisible}
     >
 
-      <View style={appStyles.colorPickerModal}>
+      <View style={[
+        appStyles.colorPickerModal,
+        {backgroundColor: colorsStyle.primaryBg}
+        ]}
+      >
         <View style={appStyles.colorPickerCloseBtnContainer}>
           <ButtonIcon
             icon={'close'}

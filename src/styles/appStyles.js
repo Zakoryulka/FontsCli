@@ -2,41 +2,33 @@ import { StyleSheet } from 'react-native';
 import { Colors, FontSizes, Sizes } from '../constants/stylesConst';
 
 export const appStyles = StyleSheet.create({
+  mainView: {
+    flex: 1,
+  },
   header: {
     paddingTop: 8,
     paddingBottom: 10,
     paddingHorizontal: Sizes.mainPadding,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: Colors.primaryBg,
+  },
+  headerWrapper: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  headerRight: {
+    justifyContent: 'flex-end'
   },
   headerLabel: {
+    flex: 1,
+    textAlign: 'center',
     paddingTop: 7,
-    color: Colors.text,
     fontSize: FontSizes.main,
   },
-
   fontsContainer: {
     position: 'relative',
     flex: 1,
     alignItems: 'stretch',
-    backgroundColor: Colors.primaryBg1
-  },
-  // title: {
-  //   marginBottom: 10,
-  //   paddingVertical: 13,
-  //   paddingHorizontal: 10,
-  //   fontSize: FontSizes.main,
-  //   backgroundColor: "#262626",
-  //   opacity: 0.8,
-  //   color: Colors.text,
-  // },
-  stickyTitle: {
-    position: 'absolute',
-    width: '100%',
-    top: 0,
-    left: 0,
-    zIndex: 3,
   },
 
 
@@ -45,7 +37,6 @@ export const appStyles = StyleSheet.create({
   fontButton: {
     paddingHorizontal: Sizes.mainPadding,
     paddingVertical: 12,
-    // flexDirection: 'row',
     backgroundColor: 'transparent'
   },
   fontIconIcon: {
@@ -53,7 +44,7 @@ export const appStyles = StyleSheet.create({
     height: 18,
     marginLeft: 'auto',
     alignSelf: 'flex-end',
-    backgroundColor: 'orange'
+    fill: Colors.crownColor
   },
   fontWrapper: {
     marginTop: 12
@@ -62,10 +53,8 @@ export const appStyles = StyleSheet.create({
     alignSelf: 'center',
     width: '100%',               // исправить
     height: 1,
-    backgroundColor: Colors.divider,
     borderRadius: 1
   },
-
 
 
   footerBar: {
@@ -74,7 +63,6 @@ export const appStyles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: 12,
     paddingHorizontal: Sizes.mainPadding,
-    backgroundColor: Colors.primaryBg,
     alignItems: 'center'
   },
   textInputWrapper: {
@@ -83,14 +71,11 @@ export const appStyles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: Colors.primaryBg1,
     borderRadius: 15
   },
   textInput: {
     paddingVertical: 3,
     flex: 1,
-    color: Colors.text,
-    backgroundColor: Colors.primaryBg1,
     borderRadius: 15
   },
   clearTextBtn: {
@@ -102,7 +87,6 @@ export const appStyles = StyleSheet.create({
     height: 32
   },
   buttonStringText: {
-    color: Colors.text,
     textAlign: 'center',
     width: 32,
     height: 32,
@@ -129,13 +113,12 @@ export const appStyles = StyleSheet.create({
     marginRight: 0
   },
   buttonItemText: {
-    color: Colors.text,
   },
   buttonTextWrapper: {
     height: 30
   },
-  buttonText: {
-    color: Colors.btnResetText,
+  resetButtonText: {
+    color: Colors.btnResetText,  // оставить
     marginTop: 'auto',
     fontSize: 17,
   },
@@ -143,15 +126,10 @@ export const appStyles = StyleSheet.create({
 
  // ------modal styles------ //
 
-//  view: {
-//   backfaceVisibility: 'green',
-//   flex: 1
-//  },
   modalWrapper: {
     zIndex: 2,
     marginTop: 'auto',
     padding: Sizes.mainPadding,
-    backgroundColor: Colors.primaryBg,
   },
   modalCloseHandler: {
     marginBottom: 20,
@@ -172,24 +150,42 @@ export const appStyles = StyleSheet.create({
   settingsSection: {
     marginTop: 15,
   },
+
   settingsSectioLabel: {
-    marginBottom: 10,
-    color: Colors.text,
     fontSize: FontSizes.main,
   },
   settingsWrapper: {
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
+
+   // ------colorPickerButton styles------ //
+
   colorPickerButton: {
-    marginTop: 2.5,
-    marginRight: 20,
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    borderColor: '#ffffff',
-    borderWidth: 2
+    marginRight: 18,
   },
-  colorButtonBorder: {
+
+  colorPickerButtonBG: {
+    width: 41,
+    height: 41,
+  },
+  colorPickerColorRnd: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    width: 33,
+    height: 33,
+    borderRadius: 16,
+    borderWidth: 3
+  },
+
+
+  // ------color Button Item styles------ //
+
+  colorButtonWrapper: {
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    height: 37,
     borderRadius: 18,
     marginRight: 10,
     borderWidth: 2.5,
@@ -199,7 +195,6 @@ export const appStyles = StyleSheet.create({
     height: 32,
     borderRadius: 16,
     borderWidth: 2,
-    borderColor: Colors.primaryBg
   },
 
   transparentButton: {
@@ -233,7 +228,6 @@ export const appStyles = StyleSheet.create({
     padding: 10,
     paddingBottom: 20,
     height: Sizes.colorPickerModalHeight,
-    backgroundColor: Colors.primaryBg,
   },
   colorPickerCloseBtnContainer: {
     marginLeft: 'auto',
@@ -274,17 +268,14 @@ export const appStyles = StyleSheet.create({
     showMoreModalBtnLabel: {
       padding: 18,
       fontSize: FontSizes.main,
-      color: Colors.text
     },
     ModalBtnsContainer: {
-      backgroundColor: Colors.btn1,
       borderRadius: Sizes.mainBtnRadius,
     },
     showMoreModalBtnDivider: {
       alignSelf: 'center',
       width: '100%',               // исправить
       height: 1,
-      backgroundColor: Colors.primaryBg,
       borderRadius: 1
     },
 
@@ -295,13 +286,11 @@ export const appStyles = StyleSheet.create({
       position: 'relative',
       margin: 0,
       flex: 1,
-      backgroundColor: Colors.alertBG,
       justifyContent: 'center'
     },
     altSharingModalContainer: {
       position: 'absolute',
       width: Sizes.altSharingModalWidth,
-      // marginLeft: 30
     },
 
 
@@ -309,14 +298,12 @@ export const appStyles = StyleSheet.create({
     alertScreen: {
       margin: 0,
       flex: 1,
-      backgroundColor: Colors.alertBG,
       justifyContent: 'center'
     },
     AlertContainer: {
       marginLeft: 'auto',
       marginRight: 'auto',
       width: 250,
-      backgroundColor: Colors.btn1,
       borderRadius: Sizes.mainBtnRadius,
     },
     AlertHeader: {
@@ -325,13 +312,11 @@ export const appStyles = StyleSheet.create({
     AlertLabel: {
       textAlign: 'center',
       fontSize: FontSizes.main,
-      color: Colors.text,
     },
     AlertMessage: {
       marginTop: 5,
       textAlign: 'center',
       fontSize: FontSizes.mainSmall,
-      color: Colors.text
     },
     AlertBtnContainer: {
       flexDirection: 'row'
@@ -340,13 +325,11 @@ export const appStyles = StyleSheet.create({
       padding: 18,
       textAlign: 'center',
       fontSize: FontSizes.main,
-      color: Colors.text
     },
     AlertDivider: {
       alignSelf: 'center',
       width: 1,
       height: '100%',
-      backgroundColor: Colors.primaryBg,
       borderRadius: 1
     },
 
@@ -361,7 +344,6 @@ export const appStyles = StyleSheet.create({
     justifyContent: 'center',
     width: 200,
     height: 200,
-    backgroundColor: Colors.notificationBg,
     opacity: 0.9,
     borderRadius: 12
   },
@@ -369,10 +351,7 @@ export const appStyles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 10,
     fontSize: FontSizes.notification,
-    color: Colors.notificationText
+    color: Colors.notificationText // оставить
   },
-
-
-      // ------ Buttons styles------ //
 
 });

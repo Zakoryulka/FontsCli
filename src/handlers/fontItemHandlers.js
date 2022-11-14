@@ -30,6 +30,8 @@ const ScreenHeight = windowHeight - statusBarHeight;
 
 export const fontItemHandlers = () => {
   const pressFontItemCounter = useSelector(state => state.alertSettings.pressFontItemCounter);
+  const fontSize = useSelector(state => state.fontParametrs.currentFontSize);
+  const lineSpacing = useSelector(state => state.fontParametrs.currentLineSpacing);
 
   const dispatch = useDispatch();
 
@@ -53,16 +55,16 @@ export const fontItemHandlers = () => {
     dispatch(notifyShow({notifyText: 'copy'}));
   };
 
-  const onItemPressHandler = useCallback((ref) => {
+  const onItemPressHandler = useCallback((ref, isPremium) => {
     if (pressFontItemCounter === appConts.countOfAddRate) {
       dispatch(changeItemCounter());
       dispatch(rateAlertShow());
     } else {
       dispatch(changeItemCounter());
-      if (statusFont === 'free') {
+      if (isPremium === 'free') {
         dispatch(pressFreeFontItem());
         makeCopyToClipboard(ref);
-      } if (statusFont === 'premium') {
+      } if (isPremium === 'premium') {
         dispatch(pressPremiumFontItem());
         dispatch(premiumAlertShow());
       }
@@ -93,7 +95,7 @@ export const fontItemHandlers = () => {
     })
   };
 
-  const onLongItemPressHandler = async(ref) => {
+  const onLongItemPressHandler = useCallback( async(ref2, fontDisplayName, font, isPremium) => {
     dispatch(setActiveFontDisplayName({displayName: fontDisplayName}));
     dispatch(setActiveFont({font: font}));
     if (pressFontItemCounter === 10) {
@@ -101,19 +103,35 @@ export const fontItemHandlers = () => {
       dispatch(rateAlertShow());
     } else {
       dispatch(changeItemCounter());
-      setCoorAlert(ref);
+      setCoorAlert(ref2);
       dispatch(altSharingItemModalShow());
-      if (statusFont === 'free') {
+      if (isPremium === 'free') {
         dispatch(pressFreeFontItem());
-      } if (statusFont === 'premium') {
+        setNewImageURI(ref2);
+      } if (isPremium === 'premium') {
         dispatch(pressPremiumFontItem());
       }
     }
-  };
+  });
 
-
+  const choseLineHeight = useCallback((font) => {
+    // console.log('choseLineHeight');
+    switch (font) {
+      case 'BadScript':
+        return (fontSize + 9) * lineSpacing;
+      case 'ColorTube':
+        return (fontSize + 9) * lineSpacing;
+      case 'Storytella':
+        return (fontSize + 1.4) * lineSpacing;
+      case 'TagType':
+        return (fontSize + 5) * lineSpacing;
+      default:
+        return fontSize * lineSpacing;
+    }
+  }, [lineSpacing, fontSize]);
 
   return {
+    choseLineHeight,
     onItemPressHandler,
     onLongItemPressHandler
   }

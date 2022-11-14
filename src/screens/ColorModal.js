@@ -1,7 +1,6 @@
-
+import { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { View, Text, Pressable } from "react-native";
-import { Sizes } from "../constants/stylesConst";
+import { View } from "react-native";
 
  import { changeBg,
   changeFontColor,
@@ -13,6 +12,8 @@ import { Sizes } from "../constants/stylesConst";
 import { modalsHandlers } from "../handlers/modalsHandlers";
 
 import serverState from '../serverState.json';
+import ModalLabel from "../components/ModalLabel";
+import ResetButton from "../components/ResetButton";
 import SettingColorSlider from "../components/SettingColorSlider";
 import SliderItem from "../components/SliderItem";
 import ButtonIcon from "../components/ButtonIcon";
@@ -22,31 +23,30 @@ import { appStyles } from "../styles/appStyles";
 
 function ColorModal() {
   const colorsList = serverState.data.colors;
-
   const bg = useSelector(state => state.colorParametrs.currentBg);
   const fontColor = useSelector(state => state.colorParametrs.currentFontColor);
   const startPadding = useSelector(state => state.colorParametrs.startValueForSliderPadding);
   const startRadius = useSelector(state => state.colorParametrs.startValueForSliderRadius);
   const startOpacity = useSelector(state => state.colorParametrs.startValueForSliderOpacity);
 
+  const dispatch = useDispatch();
   const { closeColorModalHandler,
     pressOpenCPickerFontHandler,
     pressOpenCPickerBGHandler
   } = modalsHandlers();
 
-  const dispatch = useDispatch();
+  const onPressResetHandler = useCallback(() => dispatch(resetColors()), []);
+  const onPressChangeFontColorHandler = useCallback((color) => dispatch(changeFontColor({ newColor: color})), []);
+  const onPressChangeBGColorHandler = useCallback((color) => dispatch(changeBg({ newColor: color})), []);
+  const onChangePaddingHandler = useCallback((padding) => dispatch(changePadding({ padding: padding})), []);
+  const onChangeRadiusHandler = useCallback((radius) => dispatch(changeRadius({ radius: radius})), []);
+  const onChangeOpacityHandler = useCallback((opacity) => dispatch(changeOpacity({ opacity: opacity})), []);
 
   return (
     <View style={appStyles.modalWrapper}>
 
       <View style={appStyles.modalHeader}>
-        <Pressable
-          style={appStyles.buttonTextWrapper}
-          onPress={() => dispatch(resetColors())}
-          pressRetentionOffset={{ bottom: 10, left: 6, right: 6, top: 0 }}
-        >
-          <Text style={appStyles.buttonText}>Reset</Text>
-        </Pressable>
+        <ResetButton onPress={onPressResetHandler}/>
         <ButtonIcon
           icon={'close'}
           onPress={closeColorModalHandler}
@@ -54,7 +54,7 @@ function ColorModal() {
       </View>
 
       <View style={appStyles.settingsSection}>
-        <Text style={appStyles.settingsSectioLabel}>Font Color</Text>
+        <ModalLabel>Font Color:</ModalLabel>
         <View style={appStyles.settingsWrapper}>
           <ColorPickerButton
             buttonBgColor={fontColor}
@@ -63,14 +63,14 @@ function ColorModal() {
           <SettingColorSlider
             dataList={colorsList}
             currentData={fontColor}
-            onPressChangeColor={(color) => dispatch(changeFontColor({ newColor: color}))}
+            onPressChangeColor={onPressChangeFontColorHandler}
             transparent={false}
           />
         </View>
       </View>
 
       <View style={appStyles.settingsSection}>
-        <Text style={appStyles.settingsSectioLabel}>Background Color</Text>
+        <ModalLabel>Background Color:</ModalLabel>
         <View style={appStyles.settingsWrapper}>
           <ColorPickerButton
             buttonBgColor={bg}
@@ -79,7 +79,7 @@ function ColorModal() {
           <SettingColorSlider
             dataList={colorsList}
             currentData={bg}
-            onPressChangeColor={(color) => dispatch(changeBg({ newColor: color}))}
+            onPressChangeColor={onPressChangeBGColorHandler}
             transparent={true}
           />
         </View>
@@ -90,39 +90,35 @@ function ColorModal() {
           appStyles.settingsSection,
           {width: '46%'}
         ]}>
-          <Text style={[appStyles.settingsSectioLabel, {marginBottom: 0}]}>
-            Padding
-          </Text>
+          <ModalLabel sliderLabel>Padding:</ModalLabel>
           <SliderItem
             min={4}
             max={20}
             value={startPadding}
             step={1}
-            changeValue={(padding) => dispatch(changePadding({ padding: padding}))}
+            changeValue={onChangePaddingHandler}
           />
         </View>
         <View style={[appStyles.settingsSection, {width: '46%'}]}>
-          <Text style={[appStyles.settingsSectioLabel, {marginBottom: 0}]}>
-            Corner Radius
-          </Text>
+          <ModalLabel sliderLabel>Corner Radius:</ModalLabel>
           <SliderItem
             min={0}
             max={40}
             value={startRadius}
             step={1}
-            changeValue={(radius) => dispatch(changeRadius({ radius: radius}))}
+            changeValue={onChangeRadiusHandler}
           />
         </View>
       </View>
 
       <View style={appStyles.settingsSection}>
-        <Text style={[appStyles.settingsSectioLabel, {marginBottom: 0}]}>Opacity</Text>
+        <ModalLabel sliderLabel>Opacity:</ModalLabel>
         <SliderItem
           min={0}
           max={1}
           value={startOpacity}
           step={0.05}
-          changeValue={(opacity) => dispatch(changeOpacity({ opacity: opacity}))}
+          changeValue={onChangeOpacityHandler}
         />
       </View>
     </View>

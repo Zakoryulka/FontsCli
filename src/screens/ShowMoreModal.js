@@ -12,6 +12,7 @@ import { useLinks } from "../hooks/useLinks";
 import { appStyles } from "../styles/appStyles";
 
 const ShowMoreModal = () => {
+  const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
   const showMoreModalVisible = useSelector(state => state.modals.showMoreModalVisible);
   const { addRate,
     upgrateToPro,
@@ -19,6 +20,18 @@ const ShowMoreModal = () => {
     mailToUs
   } = useLinks();
   const {pressInfoBtnHandler, closeShowMoreHandler } = modalsHandlers();
+
+  const LabelBtn = ({text}) => {
+    return (
+      <Text style={[appStyles.showMoreModalBtnLabel, {color: colorsStyle.text}]}>
+        {text}
+      </Text>
+    )
+  };
+
+  const Divider = () => (
+    <View style={[appStyles.showMoreModalBtnDivider, {backgroundColor: colorsStyle.primaryBg}]} />
+  );
 
   return (
     <Modal
@@ -34,7 +47,10 @@ const ShowMoreModal = () => {
         </TouchableWithoutFeedback>
       }
     >
-      <View style={[appStyles.modalWrapper, appStyles.infoModal]}>
+      <View style={[appStyles.modalWrapper,
+        appStyles.infoModal,
+        {backgroundColor: colorsStyle.primaryBg}
+      ]}>
         <View style={appStyles.modalCloseHandler} />
 
         <View style={[appStyles.ModalBtnsContainer, {marginBottom: 35}]}>
@@ -45,9 +61,7 @@ const ShowMoreModal = () => {
             bottomLeftRadius
             bottomRightRadius
           >
-            <Text style={appStyles.showMoreModalBtnLabel}>
-              💎  Upgrate to pro
-            </Text>
+            <LabelBtn text={'💎  Upgrate to pro'} />
           </MainButton>
         </View>
 
@@ -59,9 +73,7 @@ const ShowMoreModal = () => {
             bottomLeftRadius
             bottomRightRadius
           >
-            <Text style={appStyles.showMoreModalBtnLabel}>
-              ℹ️  How it works
-            </Text>
+            <LabelBtn text={'ℹ️  How it works'} />
           </MainButton>
         </View>
 
@@ -71,32 +83,23 @@ const ShowMoreModal = () => {
             topLeftRadius
             topRightRadius
           >
-            <Text style={appStyles.showMoreModalBtnLabel}>
-              🌟  Rate App
-            </Text>
+            <LabelBtn text={'🌟  Rate App'} />
           </MainButton>
 
-          <View style={appStyles.showMoreModalBtnDivider} />
+          <Divider />
 
-          <MainButton
-            onPress={shareApp}
-
-          >
-            <Text style={appStyles.showMoreModalBtnLabel}>
-              📢  Share App
-            </Text>
+          <MainButton onPress={shareApp} >
+            <LabelBtn text={'📢  Share App'} />
           </MainButton>
 
-          <View style={appStyles.showMoreModalBtnDivider} />
+          <Divider />
 
           <MainButton
             onPress={mailToUs}
             bottomLeftRadius
             bottomRightRadius
           >
-            <Text style={appStyles.showMoreModalBtnLabel}>
-              ✉️  Write to us
-            </Text>
+            <LabelBtn text={'✉️  Write to us'} />
           </MainButton>
         </View>
       </View>

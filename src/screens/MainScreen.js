@@ -26,8 +26,6 @@ const MainScreen = () => {
   const startBg = useSelector(state => state.colorParametrs.startValueForCPickerBg);
   const startColor = useSelector(state => state.colorParametrs.startValueForCPickerColor);
   const keyboardVisible = useSelector(state => state.textInput.keyboardVisible);
-  // const bg = useSelector(state => state.colorParametrs.currentBg);
-  // const fontColor = useSelector(state => state.colorParametrs.currentFontColor);
 
   const { pressCloseCPickerFontHandler,  pressCloseCPickerBGHandler } = modalsHandlers();
 
@@ -44,8 +42,6 @@ const MainScreen = () => {
       {fontSettingsModal}
 
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}>
-      {/* {colorModal}
-      {fontSettingsModal} */}
         <Footer />
       </KeyboardAvoidingView>
 

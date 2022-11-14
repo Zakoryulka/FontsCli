@@ -2,14 +2,20 @@ import * as React from "react";
 import Svg, { Defs, Path, ClipPath, G } from "react-native-svg";
 
 const FontCenter = (props) => (
-  <Svg width={32} height={32} xmlns="http://www.w3.org/2000/svg" {...props}>
+  <Svg
+    width="28px"
+    height="28px"
+    viewBox="0 0 28.0 28.0"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <Defs>
       <ClipPath id="a">
-        <Path d="M32 29.333V32H0v-2.667h32ZM24.756 22v2.667H7.289V22h17.467ZM32 14.667v2.666H0v-2.666h32Zm-7.244-7.334V10H7.289V7.333h17.467ZM32 0v2.667H0V0h32Z" />
+        <Path d="M28 25.667V28H0v-2.333h28zm-6.339-6.417v2.333H6.378V19.25H21.66zM28 12.833v2.334H0v-2.334h28zm-6.339-6.416V8.75H6.378V6.417H21.66zM28 0v2.333H0V0h28z" />
       </ClipPath>
     </Defs>
     <G clipPath="url(#a)">
-      <Path d="M0 0h32v32H0V0z" />
+      <Path d="M0 0L28 0 28 28 0 28 0 0z" />
     </G>
   </Svg>
 )

@@ -16,8 +16,9 @@ import {  setColorsValuesForSliders,
   setColorsValuesForCPickers
 } from "../store/colorParametrs";
 import { setFontsValuesForSliders } from "../store/fontParametrs";
-import { changeAlignSelf } from "../store/ aligmentParametrs";
+import { changeAlignSelf } from "../store/aligmentParametrs";
 import { setKeyboardVisible, setKeyboardNotVisible } from "../store/textInput";
+import { changeColorTheme } from "../store/colorTheme";
 
 export const modalsHandlers = () => {
   const fontSettingsModalShow = useSelector(state => state.modals.fontSettingsModalShow);
@@ -103,6 +104,10 @@ export const modalsHandlers = () => {
     dispatch(cPickerBGHide());
   };
 
+  const pressChangeColorTheme = () => {
+    dispatch(changeColorTheme());
+  };
+
   return {
     pressInfoBtnHandler,
     pressShowMoreBtnHandler,
@@ -115,6 +120,7 @@ export const modalsHandlers = () => {
     pressOpenCPickerFontHandler,
     pressCloseCPickerFontHandler,
     pressOpenCPickerBGHandler,
-    pressCloseCPickerBGHandler
+    pressCloseCPickerBGHandler,
+    pressChangeColorTheme
   }
 }

@@ -1,7 +1,8 @@
+
 import Slider from '@react-native-community/slider';
 import { appStyles } from '../styles/appStyles';
 
-const SliderItem =({min, max, changeValue, step, value}) => {
+const SliderItem = ({min, max, changeValue, step, value}) => {
   return (
     <Slider
       style={appStyles.slider}

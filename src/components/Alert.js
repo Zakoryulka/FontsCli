@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { View,
   Text,
   TouchableWithoutFeedback,
@@ -9,6 +10,7 @@ import MainButton from './MainButton';
 import { appStyles } from "../styles/appStyles";
 
 const Alert = (props) => {
+  const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
   const { visible,
     alertLabel,
     alertMessage,
@@ -25,7 +27,10 @@ const Alert = (props) => {
       transparent={true}
       visible={visible}
       onSwipeMove = {onPressBg}
-      style={appStyles.alertScreen}
+      style={[
+        appStyles.alertScreen,
+        { backgroundColor: colorsStyle.alertBG}
+      ]}
       customBackdrop = {
         <TouchableWithoutFeedback
           onPress={onPressBg}
@@ -36,18 +41,25 @@ const Alert = (props) => {
       }
     >
       <View
-        style={appStyles.AlertContainer}
+        style={[appStyles.AlertContainer,
+        {backgroundColor: colorsStyle.btn1}]}
       >
 
         <View style={appStyles.AlertHeader}>
-          <Text style={appStyles.AlertLabel}>
+          <Text style={[appStyles.AlertLabel,
+          {color: colorsStyle.text}]}>
             {alertLabel}
           </Text>
-          <Text style={appStyles.AlertMessage}>
+          <Text style={[appStyles.AlertMessage,
+          {color: colorsStyle.text}]}>
             {alertMessage}
           </Text>
         </View>
-        <View style={appStyles.showMoreModalBtnDivider} />
+        <View
+          style={[
+            appStyles.showMoreModalBtnDivider,
+            {backgroundColor: colorsStyle.divider2}
+          ]} />
 
         <View style={appStyles.AlertBtnContainer}>
 
@@ -56,19 +68,22 @@ const Alert = (props) => {
             bottomLeftRadius
             row
           >
-            <Text style={appStyles.AlertButtonText}>
+            <Text style={[appStyles.AlertButtonText,
+          {color: colorsStyle.text}]}>
               {cancelBtnLabel}
             </Text>
           </MainButton>
 
-          <View style={appStyles.AlertDivider} />
+          <View style={[appStyles.AlertDivider,
+          {backgroundColor: colorsStyle.divider2}]} />
 
           <MainButton
             onPress={onPressAction}
             bottomRightRadius
             row
           >
-            <Text style={appStyles.AlertButtonText}>
+            <Text style={[appStyles.AlertButtonText,
+            {color: colorsStyle.text}]}>
               {actionBtnLabel}
             </Text>
           </MainButton>

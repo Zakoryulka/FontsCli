@@ -1,8 +1,6 @@
+import { useSelector } from 'react-redux';
 import { Pressable } from 'react-native';
-
-import { Sizes, Colors } from '../constants/stylesConst';
-
-import { appStyles } from "../styles/appStyles";
+import { Sizes } from '../constants/stylesConst';
 
 const MainButton = (props) => {
   const {
@@ -14,6 +12,7 @@ const MainButton = (props) => {
     bottomRightRadius,
     row
   } = props;
+  const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
 
   return (
     <Pressable
@@ -22,10 +21,9 @@ const MainButton = (props) => {
           borderTopRightRadius: topRightRadius ? Sizes.mainBtnRadius : 0,
           borderBottomLeftRadius: bottomLeftRadius ? Sizes.mainBtnRadius : 0,
           borderBottomRightRadius: bottomRightRadius ? Sizes.mainBtnRadius : 0,
-          backgroundColor: !pressed ? Colors.btn1 : Colors.btnActive,
+          backgroundColor: !pressed ? colorsStyle.btn1 : colorsStyle.btnActive,
           flex: row ? 1 : null
-        },
-        // appStyles.MainButton
+        }
       ]}
       onPress={onPress}
       hitSlop = {Sizes.hitSlopPressable}

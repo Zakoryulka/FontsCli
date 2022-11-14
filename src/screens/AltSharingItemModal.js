@@ -20,6 +20,7 @@ import MainButton from '../components/MainButton';
 import { appStyles } from "../styles/appStyles";
 
 const AltSharingItemModal = () => {
+  const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
   const altSharingItemModalVisible = useSelector(state => state.alertSettings.altSharingItemModalVisible);
   const fontPremiumItemPressed = useSelector(state => state.alertSettings.fontPremiumItemPressed)
   const currentAlignText = useSelector(state => state.aligmentParametrs.currentAlignText);
@@ -103,7 +104,9 @@ const AltSharingItemModal = () => {
       visible={altSharingItemModalVisible}
       // swipeDirection={'down'}
       onSwipeMove = {() => dispatch(altSharingItemModalHide())}
-      style={appStyles.altSharingModal}
+      style={[appStyles.altSharingModal,
+        { backgroundColor: colorsStyle.alertBG }
+      ]}
       customBackdrop = {
         <TouchableWithoutFeedback
           onPress={() => dispatch(altSharingItemModalHide())}
@@ -124,7 +127,6 @@ const AltSharingItemModal = () => {
           }
         ]}
       >
-
         <View
           style={appStyles.ModalBtnsContainer}
         >
@@ -133,17 +135,26 @@ const AltSharingItemModal = () => {
             topLeftRadius
             topRightRadius
           >
-            <Text style={appStyles.showMoreModalBtnLabel}>
+            <Text style={[
+              appStyles.showMoreModalBtnLabel,
+              {color: colorsStyle.text}
+            ]}>
               Copy
             </Text>
           </MainButton>
-          <View style={appStyles.showMoreModalBtnDivider} />
+          <View style={[
+              appStyles.showMoreModalBtnDivider,
+              {backgroundColor: colorsStyle.divider2}
+            ]} />
           <MainButton
             onPress={onPressSaveToPhotoHandler}
             bottomLeftRadius
             bottomRightRadius
           >
-            <Text style={appStyles.showMoreModalBtnLabel}>
+            <Text style={[
+              appStyles.showMoreModalBtnLabel,
+              {color: colorsStyle.text}
+            ]}>
               Save to Photo
             </Text>
           </MainButton>
