@@ -7,9 +7,9 @@ import { useSelector } from "react-redux";
 // Library for maintainVisibleContentPosition for Android:
 import { FlatList } from '@stream-io/flat-list-mvcp';
 
-import FontItem from "../FontItem"
+import FontItem from "../FontItem";
 import Notification from "../../components/Notification";
-import { fontItemHandlers } from "../../handlers/fontItemHandlers";
+import { contentItemHandlers } from "../../handlers/contentItemHandlers";
 
 import { appStyles } from "../../styles/appStyles";
 
@@ -31,8 +31,8 @@ const FontList = () => {
 
   const {choseLineHeight,
     onItemPressHandler,
-    onLongItemPressHandler
-  } = fontItemHandlers();
+    onLongFontItemPressHandler
+  } = contentItemHandlers();
 
   const notification = notifyVisible
   ? <Notification
@@ -61,7 +61,7 @@ const FontList = () => {
       alignText={alignText}
       enteredText={enteredText}
       onItemPress={onItemPressHandler}
-      onLongItemPress={onLongItemPressHandler}
+      onLongItemPress={onLongFontItemPressHandler}
     />;
 
   const setKeyExtractor = useCallback((item) => item.fontNameAndroid, []);

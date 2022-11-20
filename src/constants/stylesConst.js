@@ -74,6 +74,17 @@ export const FontSizes = Object.freeze({
   mainSmall: 12,
 });
 
+export const ScetchItemStyles = Object.freeze({
+  // fontSizeDefault: 27,
+  // lineSpacingDefault: 1.3,
+  // letterSpacingDefault: 0,
+  // bgDefault: '#940081',
+  colorDefault: '#FFFFFF',
+  opacityDefault: 1,
+  // paddingDefault: 15,
+  // radiusDefault: 8,
+});
+
 export const Sizes = Object.freeze({
   mainPadding: 15,
   altSharingModalWidth: 270,

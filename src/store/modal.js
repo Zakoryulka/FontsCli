@@ -9,6 +9,7 @@ const modalSlice = createSlice({
     fontSettingsModalShow: false,
     cPickerBGVisible: false,
     cPickerFontColorVisible: false,
+    stickersModalVisible: false,
   },
   reducers: {
     openInfoModal: (state) => {
@@ -48,6 +49,12 @@ const modalSlice = createSlice({
     },
     cPickerFontColorHide: (state) => {
       state.cPickerFontColorVisible = false;
+    },
+    openStickersModal: (state) => {
+      state.stickersModalVisible = true;
+    },
+    closeStickersModal: (state) => {
+      state.stickersModalVisible = false;
     }
   }
 });
@@ -65,5 +72,7 @@ export const {
   cPickerBGHide,
   cPickerFontColorShow,
   cPickerFontColorHide,
+  openStickersModal,
+  closeStickersModal,
 } = modalSlice.actions;
 export default modalSlice.reducer;

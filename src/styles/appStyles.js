@@ -57,6 +57,56 @@ export const appStyles = StyleSheet.create({
   },
 
 
+
+       // ------sketch list and item styles------ //
+    sketchList: {
+      flex: 1,
+      paddingVertical: Sizes.mainPadding,
+      paddingHorizontal: Sizes.mainPadding,
+    },
+    sketchListRow: {
+      // paddingVertical: Sizes.mainPadding/2,
+      // paddingHorizontal: Sizes.mainPadding,
+    },
+
+    sketchButton: {
+      flex: 1,
+      justifyContent: 'flex-start',
+      backgroundColor: 'transparent',
+      paddingBottom: Sizes.mainPadding,
+    },
+      sketchWrapper: {
+        position: 'relative',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        alignItems: 'center',
+        textAlign: 'center',
+        alignContent: 'center',
+        maxHeight: 100,
+        maxWidth: 100,
+
+        backgroundColor: 'transparent',
+        // shadowColor: 'red',
+        // elevation: 5,
+      },
+      sketchWrapperActive: {
+        position: 'relative',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        alignItems: 'center',
+        textAlign: 'center',
+        alignContent: 'center',
+        borderRadius: Sizes.mainBtnRadius,
+
+        backgroundColor: 'transparent',
+        // shadowColor: '#FFFFFF',
+        // elevation: 15,
+      },
+
+
+ // ------footer styles------ //
+
+
   footerBar: {
     flexBasis: 'auto',
     flexDirection: 'row',
@@ -65,6 +115,33 @@ export const appStyles = StyleSheet.create({
     paddingHorizontal: Sizes.mainPadding,
     alignItems: 'center'
   },
+
+  SketchsFooter: {
+    paddingVertical: 5,
+    paddingRight: 0
+  },
+
+ // ------ContentGroupsLabelsSlider styles------ //
+
+  groupLabelBtnSlider: {
+    paddingVertical: 5,
+    paddingHorizontal: Sizes.mainPadding / 2,
+    paddingRight: 20,
+    borderBottomLeftRadius: 15,
+    borderTopLeftRadius: 15
+
+  },
+  groupLabelBtn: {
+    marginRight: Sizes.mainPadding / 2,
+    borderRadius: 13
+  },
+  groupLabelBtnText: {
+    paddingVertical: 8,
+    paddingHorizontal: Sizes.mainPadding,
+    fontSize: FontSizes.main,
+  },
+
+
   textInputWrapper: {
     marginHorizontal: 10,
     paddingLeft: 5,
@@ -352,6 +429,31 @@ export const appStyles = StyleSheet.create({
     marginBottom: 10,
     fontSize: FontSizes.notification,
     color: Colors.notificationText // оставить
+  },
+
+    // ------ contentBtns styles------ //
+
+  contentSwitcherBtns: {
+    flexDirection: 'row'
+  },
+  contentSwitcherBtn: {
+    flex: 1,
+    paddingTop: 8,
+    paddingBottom: 10,
+  },
+  contentSwitcherBtnLabel: {
+    textAlign: 'center',
+    fontSize: FontSizes.main,
+  },
+
+
+
+    // ------ StickersModal styles------ //
+  stickersModalWrapper: {
+    zIndex: 2,
+    flex: 1,
+    // marginTop: 'auto',
+    // padding: Sizes.mainPadding,
   },
 
 });

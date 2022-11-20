@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 
-import {
-  Keyboard
-} from 'react-native';
+import { Keyboard } from 'react-native';
 
 import { useSelector, useDispatch } from "react-redux";
 import { openInfoModal,
@@ -10,7 +8,8 @@ import { openInfoModal,
   openColorModal, closeColorModal,
   openFontSettingsModal, closeFontSettingsModal,
   cPickerBGShow, cPickerFontColorShow,
-  cPickerBGHide, cPickerFontColorHide
+  cPickerBGHide, cPickerFontColorHide,
+  openStickersModal, closeStickersModal
 } from "../store/modal";
 import {  setColorsValuesForSliders,
   setColorsValuesForCPickers
@@ -19,11 +18,13 @@ import { setFontsValuesForSliders } from "../store/fontParametrs";
 import { changeAlignSelf } from "../store/aligmentParametrs";
 import { setKeyboardVisible, setKeyboardNotVisible } from "../store/textInput";
 import { changeColorTheme } from "../store/colorTheme";
+import { changeCurrentSketchColor, setColorValueForSketchCPicker } from "../store/sketchesScreen";
 
 export const modalsHandlers = () => {
   const fontSettingsModalShow = useSelector(state => state.modals.fontSettingsModalShow);
   const colorModalShow = useSelector(state => state.modals.colorModalShow);
   const keyboardVisible = useSelector(state => state.textInput.keyboardVisible);
+  const currentSketchColor = useSelector(state => state.sketchesScreen.currentSketchColor);
 
   const dispatch = useDispatch();
 
@@ -62,7 +63,6 @@ export const modalsHandlers = () => {
   const closeShowMoreHandler = () => {
     dispatch(closeShowMoreModal())
   };
-
 
   const pressAlignSelfBtnHandler = () => {
     dispatch(changeAlignSelf())
@@ -106,7 +106,25 @@ export const modalsHandlers = () => {
 
   const pressChangeColorTheme = () => {
     dispatch(changeColorTheme());
+
+    if (currentSketchColor === "#FFFFFF") {
+      dispatch(changeCurrentSketchColor({newColor: "#000000"}));
+      dispatch(setColorValueForSketchCPicker());
+    } else if (currentSketchColor === "#000000") {
+      dispatch(changeCurrentSketchColor({newColor: "#FFFFFF"}));
+      dispatch(setColorValueForSketchCPicker());
+    }
   };
+
+  const pressStickersBtnHandler = () => {
+    dispatch(openStickersModal());
+  };
+
+  const closeStickersModalHandler = () => {
+    dispatch(closeStickersModal())
+  };
+
+
 
   return {
     pressInfoBtnHandler,
@@ -121,6 +139,8 @@ export const modalsHandlers = () => {
     pressCloseCPickerFontHandler,
     pressOpenCPickerBGHandler,
     pressCloseCPickerBGHandler,
-    pressChangeColorTheme
+    pressChangeColorTheme,
+    pressStickersBtnHandler,
+    closeStickersModalHandler
   }
 }

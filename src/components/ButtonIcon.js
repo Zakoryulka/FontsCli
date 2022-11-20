@@ -14,13 +14,16 @@ import ListSVG from '../assets/icons/List';
 import TextIcon from '../assets/icons/TextIcon';
 import LightThemeIcon from '../assets/icons/LightTheme';
 import DarkThemeIcon from '../assets/icons/DarkTheme';
+import StickersIcon from '../assets/icons/StickersIcon';
+import StickersSettingsIcon from '../assets/icons/StickersSettingsIcon';
+import ArtsIcon from '../assets/icons/ArtsIcon';
 
 import { appStyles } from '../styles/appStyles';
 
 const ButtonIcon = ({onPress, icon, marginRifgt, visible}) => {
     const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
-    const size = 28;
-    const alignTextIconSize = 27;
+    const size = 24;
+    const alignTextIconSize = 22;
 
 
     const setIconBtnColor = useMemo(() => (!visible ? colorsStyle.btnIcon : colorsStyle.btnIconPressed), [visible, colorsStyle]);
@@ -44,11 +47,17 @@ const ButtonIcon = ({onPress, icon, marginRifgt, visible}) => {
             case "clearText":
                 return (<CloseSVG width={20} height={20} fill={'grey'} />)                  // +
             case "text":
-                return (<TextIcon width={27} height={size} fill={setIconBtnColor} />)
+                return (<TextIcon width={24} height={size} fill={setIconBtnColor} />)
             case "lightTheme":
                 return (<LightThemeIcon width={size} height={size} fill={setIconBtnColor} />)   // +
             case "darkTheme":
                 return (<DarkThemeIcon width={size} height={size} fill={setIconBtnColor} />)   // +
+            case "stickers":
+                return (<StickersIcon width={size} height={size} fill={setIconBtnColor} />)   // +
+            case "settings":
+                return (<StickersSettingsIcon width={size} height={size} fill={setIconBtnColor} />)   // +
+            case "arts":
+                    return (<ArtsIcon width={size} height={size} fill={setIconBtnColor} />)   // +
             default:
                 throw new Error();
         }

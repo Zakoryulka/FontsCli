@@ -14,8 +14,12 @@ const alertSettingsSlice = createSlice({
     y: null,
     xItem: null,
     yItem: null,
+    widthItem: null,
+    heightItem: null,
     activeFontDisplayName: '',
-    activeFont: ''
+    activeFont: '',
+    activeSvgID: null,
+
   },
   reducers: {
     notifyShow: (state, action) => {
@@ -68,16 +72,25 @@ const alertSettingsSlice = createSlice({
     },
     setXItem: (state, action) => {
       state.xItem = action.payload.xItem;
-
     },
     setYItem: (state, action) => {
       state.yItem = action.payload.yItem;
+    },
+    setWidthItem: (state, action) => {
+      state.widthItem = action.payload.width;
+    },
+    setHeightItem: (state, action) => {
+      state.heightItem = action.payload.height;
     },
     setActiveFontDisplayName: (state, action) => {
       state.activeFontDisplayName = action.payload.displayName;
     },
     setActiveFont: (state, action) => {
       state.activeFont = action.payload.font;
+    },
+    setActiveSvgID: (state, action) => {
+      state.activeSvgID = action.payload.svgID;
+      console.log(state.activeSvgID);
     },
   }
 });
@@ -97,7 +110,10 @@ export const {
   setY,
   setXItem,
   setYItem,
+  setWidthItem,
+  setHeightItem,
   setActiveFontDisplayName,
-  setActiveFont
+  setActiveFont,
+  setActiveSvgID
 } = alertSettingsSlice.actions;
 export default alertSettingsSlice.reducer;
