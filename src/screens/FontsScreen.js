@@ -2,7 +2,7 @@ import { KeyboardAvoidingView, Platform } from "react-native";
 import { lazy, Suspense } from "react";
 import { useSelector } from "react-redux";
 
-import FontList from "../components/fontList/FontList";
+import FontList from "../components/fontsElements/FontList";
 import Footer from "../components/footers/Footer";
 const ColorModal = lazy(() => import("./modals/ColorModal"));
 const FontSettingsModal = lazy(() => import("./modals/FontSettingsModal"));

@@ -18,7 +18,7 @@ const alertSettingsSlice = createSlice({
     heightItem: null,
     activeFontDisplayName: '',
     activeFont: '',
-    activeSvgID: null,
+    activeSketchID: null,
 
   },
   reducers: {
@@ -88,9 +88,9 @@ const alertSettingsSlice = createSlice({
     setActiveFont: (state, action) => {
       state.activeFont = action.payload.font;
     },
-    setActiveSvgID: (state, action) => {
-      state.activeSvgID = action.payload.svgID;
-      console.log(state.activeSvgID);
+    setActiveSketchID: (state, action) => {
+      state.activeSketchID = action.payload.sketchID;
+      console.log(state.activeSketchID);
     },
   }
 });
@@ -114,6 +114,6 @@ export const {
   setHeightItem,
   setActiveFontDisplayName,
   setActiveFont,
-  setActiveSvgID
+  setActiveSketchID
 } = alertSettingsSlice.actions;
 export default alertSettingsSlice.reducer;

@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { changeCurrentSketchColor,
+  sketchesGroupListShow,
   setColorValueForSketchCPicker,
   cPickerSketchShow,
   cPickerSketchHide,
@@ -30,10 +31,6 @@ export const sketchModalHandlers = () => {
   const closeSketchSettingsHandler = () => {
     dispatch(closeSketchSettingsModal());
   };
-
-
-
-
 
   return {
     pressOpenCPickerSketchHandler,

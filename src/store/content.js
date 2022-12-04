@@ -5,23 +5,28 @@ const contentSlice = createSlice({
   initialState: {
     fontsVisible: true,
     sketchsVisible: false,
-    artsVisible: false,
+    sketchesGroupListVisible: false,
+    sketchesGroupSelected: null,
   },
   reducers: {
     showFonts: (state) => {
       state.fontsVisible = true;
       state.sketchsVisible = false;
-      state.artsVisible = false;
+      state.sketchesGroupListVisible = false;
     },
     showSketchs: (state) => {
       state.fontsVisible = false;
       state.sketchsVisible = true;
-      state.artsVisible = false;
+      state.sketchesGroupListVisible = false;
     },
-    showArts: (state) => {
-      state.fontsVisible = false;
+    sketchesGroupListShow: (state, action) => {
+      state.sketchesGroupSelected = action.payload.newSketchGroup;
       state.sketchsVisible = false;
-      state.artsVisible = true;
+      state.sketchesGroupListVisible = true;
+    },
+    sketchesGroupListHide: (state) => {
+      state.sketchesGroupListVisible = false;
+      state.sketchesGroupSelected = null;
     },
   }
 });
@@ -29,6 +34,7 @@ const contentSlice = createSlice({
 export const {
   showFonts,
   showSketchs,
-  showArts
+  sketchesGroupListShow,
+  sketchesGroupListHide,
 } = contentSlice.actions;
 export default contentSlice.reducer;

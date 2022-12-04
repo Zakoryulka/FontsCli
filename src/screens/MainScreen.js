@@ -9,10 +9,10 @@ import Header from "../components/headers/Header";
 import ContentSwitcher from "../components/ContentSwitcher";
 
 const FontsScreen = lazy(() => import("./FontsScreen"));
-const ScetchsScreen = lazy(() => import("./SketchsScreen"));
+const SketchesGroupList = lazy(() => import("../components/sketchesElements/SketchesGroupList"));
+const SketchesListScreen = lazy(() => import("./SketchesListScreen"));
 const ColorPickerModal = lazy(() => import("./modals/ColorPickerModal"));
 const InfoModal = lazy(() => import("./modals/InfoModal"));
-const StickersModal = lazy(() => import("./StickersModal"))
 const ShowMoreModal = lazy(() => import("./modals/ShowMoreModal"));
 const AltSharingItemModal = lazy(() => import("./alerts/AltSharingItemModal"));
 const PremiumAlert = lazy(() => import("./alerts/PremiumAlert"));
@@ -21,7 +21,7 @@ const RateAlert = lazy(() => import("./alerts/RateAlert"));
 const MainScreen = () => {
   const fontsVisible = useSelector(state => state.content.fontsVisible);
   const sketchsVisible = useSelector(state => state.content.sketchsVisible);
-  const artsVisible = useSelector(state => state.content.artsVisible);
+  const sketchesGroupListVisible = useSelector(state => state.content.sketchesGroupListVisible);
   const cPickerBGVisible = useSelector(state => state.modals.cPickerBGVisible);
   const cPickerFontColorVisible = useSelector(state => state.modals.cPickerFontColorVisible);
   const startBg = useSelector(state => state.colorParametrs.startValueForCPickerBg);
@@ -35,8 +35,8 @@ const MainScreen = () => {
   const dispatch = useDispatch();
 
   const fontsScreen = fontsVisible ? <Suspense><FontsScreen/></Suspense> : null;
-  const sketchsScreen = sketchsVisible ? <Suspense><ScetchsScreen/></Suspense> : null;
-  const artsScreen = artsVisible ? <Suspense><FontsScreen/></Suspense> : null;
+  const sketchsGroupScreen = sketchsVisible ? <Suspense><SketchesGroupList/></Suspense> : null;
+  const sketchesListScreen = sketchesGroupListVisible === true ? <Suspense><SketchesListScreen/></Suspense> : null;
 
   return (
     <>
@@ -44,8 +44,8 @@ const MainScreen = () => {
       <ContentSwitcher />
 
       {fontsScreen}
-      {sketchsScreen}
-      {artsScreen}
+      {sketchsGroupScreen}
+      {sketchesListScreen}
 
       <Suspense>
         <ColorPickerModal
@@ -71,7 +71,6 @@ const MainScreen = () => {
 
         <InfoModal />
         <ShowMoreModal />
-        <StickersModal />
         <AltSharingItemModal />
         <PremiumAlert />
         <RateAlert />

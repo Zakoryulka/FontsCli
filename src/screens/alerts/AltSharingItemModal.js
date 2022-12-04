@@ -14,8 +14,8 @@ import { altSharingItemModalHide,
 import { copyToClipboard, saveToPhoto
 } from "../../store/shareingSettings";
 import { Sizes } from '../../constants/stylesConst';
-import FontItemActive from '../../components/FontItemActive';
-import SketchItemActive from '../../components/SketchItemActive';
+import FontItemActive from '../../components/fontsElements/FontItemActive';
+import SketchItemActive from '../../components/sketchesElements/SketchItemActive';
 import MainButton from '../../components/MainButton';
 
 import { appStyles } from "../../styles/appStyles";
@@ -27,8 +27,7 @@ const AltSharingItemModal = () => {
   const currentAlignText = useSelector(state => state.aligmentParametrs.currentAlignText);
   const y = useSelector(state => state.alertSettings.y);
   const fontsVisible = useSelector(state => state.content.fontsVisible);
-  const sketchsVisible = useSelector(state => state.content.sketchsVisible);
-  const artsVisible = useSelector(state => state.content.artsVisible);
+  const sketchesGroupListVisible = useSelector(state => state.content.sketchesGroupListVisible);
 
   const dispatch = useDispatch();
 
@@ -103,15 +102,13 @@ const AltSharingItemModal = () => {
   };
 
   const fontItemActive = fontsVisible ? <FontItemActive /> : null;
-  const sketchItemActive = sketchsVisible ? <SketchItemActive /> : null;
+  const sketchItemActive = sketchesGroupListVisible ? <SketchItemActive /> : null;
 
   const setYCoor = (y) => {
     if (fontsVisible) {
       return y;
-    } else if (sketchsVisible) {
+    } else if (sketchesGroupListVisible) {
       return y - 15;
-    } else if (artsVisible) {
-      return y;
     }
   };
 
@@ -139,11 +136,11 @@ const AltSharingItemModal = () => {
       {fontItemActive}
       {sketchItemActive}
 
-
       <View
         style={[
           appStyles.altSharingModalContainer,
-          { top: setYCoor(y),
+          {
+            top: setYCoor(y),
             left: setMarginLeft(),
             right: setMarginRight()
           }

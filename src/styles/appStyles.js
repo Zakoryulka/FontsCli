@@ -56,52 +56,63 @@ export const appStyles = StyleSheet.create({
     borderRadius: 1
   },
 
+       // ------SketchGroupList and SketchGroupItem styles------ //
+  sketchGroupList: {
+    paddingHorizontal: Sizes.mainPadding
+  },
+  sketchGroupItemWrapper: {
+    marginTop: Sizes.mainPadding / 2,
+    padding: 18,
+    height: 140,
+    borderRadius: Sizes.mainBtnRadius
+  },
+  sketchGroupItemLabel: {
+    // marginBottom: 10,
+    fontSize: FontSizes.main,
+  },
+  sketchGroupItemImg: {
+    flex: 1,
+    maxWidth: '100%',
+    maxHeight: '100%',
+  },
+
 
 
        // ------sketch list and item styles------ //
-    sketchList: {
-      flex: 1,
-      paddingVertical: Sizes.mainPadding,
-      paddingHorizontal: Sizes.mainPadding,
-    },
-    sketchListRow: {
-      // paddingVertical: Sizes.mainPadding/2,
-      // paddingHorizontal: Sizes.mainPadding,
-    },
 
-    sketchButton: {
-      flex: 1,
-      justifyContent: 'flex-start',
-      backgroundColor: 'transparent',
-      paddingBottom: Sizes.mainPadding,
-    },
-      sketchWrapper: {
-        position: 'relative',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        alignItems: 'center',
-        textAlign: 'center',
-        alignContent: 'center',
-        maxHeight: 100,
-        maxWidth: 100,
+  sketchList: {
+    flex: 1,
+    paddingVertical: Sizes.mainPadding,
+    paddingHorizontal: Sizes.mainPadding
+  },
+  sketchListRow: {
+    justifyContent: 'space-between',
+    paddingBottom: Sizes.mainPadding,
+  },
 
-        backgroundColor: 'transparent',
-        // shadowColor: 'red',
-        // elevation: 5,
-      },
-      sketchWrapperActive: {
-        position: 'relative',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        alignItems: 'center',
-        textAlign: 'center',
-        alignContent: 'center',
-        borderRadius: Sizes.mainBtnRadius,
+  sketchButton: {
 
-        backgroundColor: 'transparent',
-        // shadowColor: '#FFFFFF',
-        // elevation: 15,
-      },
+    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
+    backgroundColor: 'transparent',
+  },
+  sketchWrapper: {
+    flex: 1,
+    position: 'relative',
+  },
+  sketchImg: {
+    flex: 1,
+    maxWidth: '100%',
+    maxHeight: '100%'
+  },
+
+  sketchWrapperActive: {
+    position: 'relative',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    borderRadius: Sizes.mainBtnRadius,
+    backgroundColor: 'transparent',
+  },
 
 
  // ------footer styles------ //
@@ -434,12 +445,24 @@ export const appStyles = StyleSheet.create({
     // ------ contentBtns styles------ //
 
   contentSwitcherBtns: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    paddingHorizontal: Sizes.mainPadding,
+    paddingBottom: 8
   },
   contentSwitcherBtn: {
+    marginRight: 1,
     flex: 1,
     paddingTop: 8,
     paddingBottom: 10,
+    backgroundColor: 'red',
+  },
+  contentSwitcherLeftBtn: {
+    borderTopLeftRadius: Sizes.mainBtnRadius,
+    borderBottomLeftRadius: Sizes.mainBtnRadius,
+  },
+  contentSwitcherRightBtn: {
+    borderTopRightRadius: Sizes.mainBtnRadius,
+    borderBottomRightRadius: Sizes.mainBtnRadius,
   },
   contentSwitcherBtnLabel: {
     textAlign: 'center',

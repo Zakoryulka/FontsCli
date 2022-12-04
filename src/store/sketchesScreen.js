@@ -4,8 +4,7 @@ import { ScetchItemStyles } from '../constants/stylesConst';
 const sketchesScreenSlice = createSlice({
   name: 'sketchesScreen',
   initialState: {
-    sketchContentGroupVisible: "All",
-    currentSketchColor: ScetchItemStyles.colorDefault,
+    currentSketchColor: null,
     startValueForCPickerSketchColor: ScetchItemStyles.colorDefault,
     cPickerSketchVisible: false,
     sketchSettingsModalShow: false,
@@ -13,9 +12,6 @@ const sketchesScreenSlice = createSlice({
     startValueForSliderSketchOpacity: ScetchItemStyles.opacityDefault,
   },
   reducers: {
-    changeSketchContentGroupVisible: (state, action) => {
-      state.sketchContentGroupVisible = action.payload.newSketchContent;
-    },
     changeCurrentSketchColor: (state, action) => {
       state.currentSketchColor = action.payload.newColor;
     },
@@ -30,7 +26,6 @@ const sketchesScreenSlice = createSlice({
     },
     openSketchSettingsModal:  (state) => {
       state.sketchSettingsModalShow = true;
-      console.log(state.sketchSettingsModalShow);
     },
     closeSketchSettingsModal: (state) => {
       state.sketchSettingsModalShow = false;
@@ -48,7 +43,6 @@ const sketchesScreenSlice = createSlice({
 });
 
 export const {
-  changeSketchContentGroupVisible,
   changeCurrentSketchColor,
   setColorValueForSketchCPicker,
   cPickerSketchShow,

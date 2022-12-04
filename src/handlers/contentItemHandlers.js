@@ -26,7 +26,7 @@ import { setY,
   setHeightItem,
   setActiveFontDisplayName,
   setActiveFont,
-  setActiveSvgID
+  setActiveSketchID
 } from '../store/alertSettings';
 
 import { appConts } from "../constants/appConst";
@@ -40,8 +40,7 @@ export const contentItemHandlers = () => {
   const fontSize = useSelector(state => state.fontParametrs.currentFontSize);
   const lineSpacing = useSelector(state => state.fontParametrs.currentLineSpacing);
   const fontsVisible = useSelector(state => state.content.fontsVisible);
-  const sketchsVisible = useSelector(state => state.content.sketchsVisible);
-  const artsVisible = useSelector(state => state.content.artsVisible);
+  const sketchesGroupListVisible = useSelector(state => state.content.sketchesGroupListVisible);
 
   const dispatch = useDispatch();
 
@@ -86,7 +85,7 @@ export const contentItemHandlers = () => {
         if (fontsVisible) {
           newY = y + fontItemHeight + 10;
           dispatch(setY({ y: newY }));
-        } else if (sketchsVisible) {
+        } else if (sketchesGroupListVisible) {
           newY = y + fontItemHeight + 10 * 4;
           dispatch(setY({ y: newY }));
         }
@@ -147,7 +146,7 @@ export const contentItemHandlers = () => {
   }, [lineSpacing, fontSize]);
 
   const onLongSketchItemPressHandler = useCallback( async(ref2, isPremium, id) => {
-    dispatch(setActiveSvgID({svgID: id}));
+    dispatch(setActiveSketchID({sketchID: id}));
     if (pressFontItemCounter === 10) {
       dispatch(changeItemCounter());
       dispatch(rateAlertShow());
