@@ -15,23 +15,33 @@ const ContentSwitcher = () => {
 
   const ContentSwitcherBtn = ({children, onPress, visible, position}) => {
     return (
-      <Pressable
+      <View
         style={[
-          appStyles.contentSwitcherBtn,
+          appStyles.contentSwitcherOuterBtn,
           {
-            backgroundColor: visible ? colorsStyle.btnActive : colorsStyle.btn1,
             borderTopLeftRadius: position === "left" ? Sizes.mainBtnRadius : 0,
             borderBottomLeftRadius: position === "left" ? Sizes.mainBtnRadius : 0,
             borderTopRightRadius: position === "right" ? Sizes.mainBtnRadius : 0,
             borderBottomRightRadius: position === "right" ? Sizes.mainBtnRadius : 0,
+            overflow: 'hidden'
           }
         ]}
-        onPress={onPress}
       >
-        <Text style={[appStyles.contentSwitcherBtnLabel, {color: colorsStyle.text}]}>
-          {children}
-        </Text>
-      </Pressable>
+        <Pressable
+          style={[
+            appStyles.contentSwitcherInnerBtn,
+            {
+              backgroundColor: visible ? colorsStyle.btnActive : colorsStyle.btn1,
+            }
+          ]}
+          android_ripple={{color: colorsStyle.btnActive}}
+          onPress={onPress}
+        >
+          <Text style={[appStyles.contentSwitcherBtnLabel, {color: colorsStyle.text}]}>
+            {children}
+          </Text>
+        </Pressable>
+      </View>
     )
   };
 

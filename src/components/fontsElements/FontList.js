@@ -43,8 +43,8 @@ const FontList = () => {
   const renderItem = ({item}) =>
     <FontItem
       fontDisplayName={item.displayName}
-      font={Platform.OS === 'android' ?
-        item.fontNameAndroid
+      font={Platform.OS === 'android'
+        ? item.fontNameAndroid
         : item.fontNameIos}
       isPremium={item.isPremium}
       fontColor={fontColor}

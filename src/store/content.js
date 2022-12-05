@@ -21,7 +21,6 @@ const contentSlice = createSlice({
     },
     sketchesGroupListShow: (state, action) => {
       state.sketchesGroupSelected = action.payload.newSketchGroup;
-      state.sketchsVisible = false;
       state.sketchesGroupListVisible = true;
     },
     sketchesGroupListHide: (state) => {

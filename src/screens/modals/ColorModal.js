@@ -13,11 +13,11 @@ import { modalsHandlers } from "../../handlers/modalsHandlers";
 
 import serverState from '../../serverState.json';
 import ModalLabel from "../../components/ModalLabel";
-import ResetButton from "../../components/ResetButton";
+import ResetButton from "../../components/buttons/ResetButton";
 import SettingColorSlider from "../../components/SettingColorSlider";
 import SliderItem from "../../components/SliderItem";
-import ButtonIcon from "../../components/ButtonIcon";
-import ColorPickerButton from "../../components/ColorPickerButton";
+import ButtonIcon from "../../components/buttons/ButtonIcon";
+import ColorPickerButton from "../../components/buttons/ColorPickerButton";
 
 import { appStyles } from "../../styles/appStyles";
 

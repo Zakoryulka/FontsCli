@@ -8,7 +8,7 @@ import { inputText,
   setFonts,
 } from "../store/textInput";
 
-import ButtonIcon from "../components/ButtonIcon";
+import ButtonIcon from "../components/buttons/ButtonIcon";
 
 import { appStyles } from "../styles/appStyles";
 

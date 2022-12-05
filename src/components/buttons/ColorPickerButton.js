@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { Pressable, View, ImageBackground, Image } from "react-native";
-import { Sizes } from "../constants/stylesConst";
+import { Sizes } from "../../constants/stylesConst";
 
-import { appStyles } from '../styles/appStyles';
+import { appStyles } from '../../styles/appStyles';
 
 const ColorPickerButton = ({buttonBgColor, onPressAction}) => {
   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
@@ -15,7 +15,7 @@ const ColorPickerButton = ({buttonBgColor, onPressAction}) => {
       hitSlop = {Sizes.hitSlopPressable}
     >
       <ImageBackground
-        source={require('../assets/icons/colorRound.png')}
+        source={require('../../assets/icons/colorRound.png')}
         resizeMode="cover"
         style={appStyles.colorPickerButtonBG}
       >

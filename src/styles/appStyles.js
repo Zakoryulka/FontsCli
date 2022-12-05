@@ -25,6 +25,8 @@ export const appStyles = StyleSheet.create({
     paddingTop: 7,
     fontSize: FontSizes.main,
   },
+
+
   fontsContainer: {
     position: 'relative',
     flex: 1,
@@ -60,14 +62,17 @@ export const appStyles = StyleSheet.create({
   sketchGroupList: {
     paddingHorizontal: Sizes.mainPadding
   },
-  sketchGroupItemWrapper: {
+  sketchGroupItemOuterWrapper: {
     marginTop: Sizes.mainPadding / 2,
+    borderRadius: Sizes.mainBtnRadius,
+    overflow: 'hidden'
+  },
+  sketchGroupItemInnerWrapper: {
     padding: 18,
     height: 140,
-    borderRadius: Sizes.mainBtnRadius
+    // borderRadius: Sizes.mainBtnRadius,
   },
   sketchGroupItemLabel: {
-    // marginBottom: 10,
     fontSize: FontSizes.main,
   },
   sketchGroupItemImg: {
@@ -80,6 +85,9 @@ export const appStyles = StyleSheet.create({
 
        // ------sketch list and item styles------ //
 
+  sketchesListScreen: {
+    margin: 0
+  },
   sketchList: {
     flex: 1,
     paddingVertical: Sizes.mainPadding,
@@ -127,9 +135,14 @@ export const appStyles = StyleSheet.create({
     alignItems: 'center'
   },
 
-  SketchsFooter: {
+  sketchsFooter: {
     paddingVertical: 5,
-    paddingRight: 0
+    paddingRight: Sizes.mainPadding
+  },
+  sketchsFooterBtnsWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    // backgroundColor: 'red'
   },
 
  // ------ContentGroupsLabelsSlider styles------ //
@@ -170,15 +183,7 @@ export const appStyles = StyleSheet.create({
     width: 16,
     height: 16
   },
-  buttonString: {
-    width: 32,
-    height: 32
-  },
-  buttonStringText: {
-    textAlign: 'center',
-    width: 32,
-    height: 32,
-  },
+
   buttonIcon: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -206,9 +211,13 @@ export const appStyles = StyleSheet.create({
     height: 30
   },
   resetButtonText: {
-    color: Colors.btnResetText,  // оставить
+    color: Colors.btnResetText,
     marginTop: 'auto',
     fontSize: 17,
+    paddingBottom: 3,
+  },
+  resetButtonPressed: {
+    color: Colors.resetPressed
   },
 
 
@@ -231,12 +240,19 @@ export const appStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
+  modalSketchHeader: {
+    justifyContent: 'flex-end'
+  },
+
   settingsSectionContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
   settingsSection: {
     marginTop: 15,
+  },
+  settingsSketchSection: {
+    marginTop: 5,
   },
 
   settingsSectioLabel: {
@@ -449,12 +465,13 @@ export const appStyles = StyleSheet.create({
     paddingHorizontal: Sizes.mainPadding,
     paddingBottom: 8
   },
-  contentSwitcherBtn: {
+  contentSwitcherOuterBtn: {
     marginRight: 1,
     flex: 1,
+  },
+  contentSwitcherInnerBtn: {
     paddingTop: 8,
     paddingBottom: 10,
-    backgroundColor: 'red',
   },
   contentSwitcherLeftBtn: {
     borderTopLeftRadius: Sizes.mainBtnRadius,

@@ -5,34 +5,36 @@ import { sketchModalHandlers } from "../../handlers/sketchModalHandlers";
 import { changeSketchOpacity } from "../../store/sketchesScreen";
 
 import ModalLabel from "../../components/ModalLabel";
-import ResetButton from "../../components/ResetButton";
+import ResetButton from "../../components/buttons/ResetButton";
 import SliderItem from "../../components/SliderItem";
-import ButtonIcon from "../../components/ButtonIcon";
+import ButtonIcon from "../../components/buttons/ButtonIcon";
 
 import { appStyles } from "../../styles/appStyles";
 
 function SketchSettingsModal() {
   const startOpacity = useSelector(state => state.sketchesScreen.startValueForSliderSketchOpacity);
+  const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
 
   const dispatch = useDispatch();
 
-  const { closeSketchSettingsHandler } = sketchModalHandlers();
+  const { closeSketchSettingsHandler,
+    pressResetSketchSettings } = sketchModalHandlers();
   const onChangeOpacityHandler = useCallback((opacity) => dispatch(changeSketchOpacity({ opacity: opacity})), []);
 
   return (
-    <View style={appStyles.modalWrapper}>
+    <View style={[appStyles.modalWrapper, {backgroundColor: colorsStyle.primaryBg}]}>
 
-      <View style={appStyles.modalHeader}>
-        <ResetButton
-        // onPress={onPressResetHandler}
-        />
+      <View style={[appStyles.modalHeader, appStyles.modalSketchHeader]}>
+        {/* <ResetButton
+          onPress={pressResetSketchSettings}
+        /> */}
         <ButtonIcon
           icon={'close'}
           onPress={closeSketchSettingsHandler}
         />
       </View>
 
-      <View style={appStyles.settingsSection}>
+      <View>
         <ModalLabel sliderLabel>Opacity:</ModalLabel>
         <SliderItem
           min={0}

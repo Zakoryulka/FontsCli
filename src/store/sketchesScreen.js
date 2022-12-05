@@ -33,12 +33,10 @@ const sketchesScreenSlice = createSlice({
     changeSketchOpacity: (state, action) => {
       state.currentSketchOpacity = action.payload.opacity;
     },
-
-    // resetFontsSettings: (state) => {
-    //   // state.currentFontSize = FontItemStyles.fontSizeDefault;
-    //   // state.currentLineSpacing = FontItemStyles.lineSpacingDefault;
-    //   // state.currentLetterSpacing = FontItemStyles.letterSpacingDefault;
-    // }
+    resetSketchSettings: (state) => {
+      state.currentSketchColor = null;
+      state.currentSketchOpacity = ScetchItemStyles.opacityDefault;
+    }
   }
 });
 
@@ -50,6 +48,6 @@ export const {
   openSketchSettingsModal,
   closeSketchSettingsModal,
   changeSketchOpacity,
-  // resetFontsSettings
+  resetSketchSettings
 } = sketchesScreenSlice.actions;
 export default sketchesScreenSlice.reducer;

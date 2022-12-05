@@ -1,6 +1,5 @@
 import { useRef, memo } from 'react';
 import { View, Pressable, Image, Dimensions } from 'react-native';
-import { useSelector } from 'react-redux';
 
 import { Sizes } from '../../constants/stylesConst';
 import { appStyles } from '../../styles/appStyles';

@@ -1,5 +1,4 @@
 import { useSelector, } from "react-redux";
-import { useCallback } from "react";
 import { View, Image} from 'react-native';
 
 import { appStyles } from '../../styles/appStyles';

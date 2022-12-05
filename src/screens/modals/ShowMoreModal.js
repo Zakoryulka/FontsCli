@@ -5,7 +5,7 @@ import { View,
 import { useSelector } from "react-redux";
 import Modal from "react-native-modal";
 
-import MainButton from '../../components/MainButton';
+import MainButton from '../../components/buttons/MainButton';
 import { modalsHandlers } from '../../handlers/modalsHandlers';
 import { useLinks } from "../../hooks/useLinks";
 

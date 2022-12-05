@@ -5,7 +5,8 @@ import { changeCurrentSketchColor,
   cPickerSketchShow,
   cPickerSketchHide,
   openSketchSettingsModal,
-  closeSketchSettingsModal
+  closeSketchSettingsModal,
+  resetSketchSettings
 } from "../store/sketchesScreen";
 
 export const sketchModalHandlers = () => {
@@ -32,10 +33,15 @@ export const sketchModalHandlers = () => {
     dispatch(closeSketchSettingsModal());
   };
 
+  const pressResetSketchSettings = () => {
+    dispatch(resetSketchSettings());
+  };
+
   return {
     pressOpenCPickerSketchHandler,
     pressCloseCPickerSketchHandler,
     pressSketchSettingsHandler,
-    closeSketchSettingsHandler
+    closeSketchSettingsHandler,
+    pressResetSketchSettings
   }
 }

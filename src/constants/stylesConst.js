@@ -3,7 +3,8 @@ export const Colors = Object.freeze({
   btnResetText: "#027AF9",       // оставить
   notificationText: '#666666',   // оставить
   btnIconPressed: "#027AF9",
-  crownColor: '#FFC322'
+  crownColor: '#FFC322',
+  resetPressed: '#666666'
 });
 
 export const DarkTheme = Object.freeze({
@@ -31,11 +32,11 @@ export const DarkTheme = Object.freeze({
 });
 
 export const LightTheme = Object.freeze({
-  primaryBg: "#F5F5F5",               //+ . или E5E5E5
-  primaryBg1: "#FFFFFF",              //+
+  primaryBg: "#F5F5F5",
+  primaryBg1: "#FFFFFF",
   alertBG: 'rgba(0, 0, 0, .5)',
 
-  text: "#000000",                    //+
+  text: "#000000",
   btnResetText: "#027AF9",
 
   notificationBg: '#E5E5E5',
@@ -43,17 +44,17 @@ export const LightTheme = Object.freeze({
   placeholderTextColor: '#666666',
 
   // Buttons Colors
-  btn1: '#E5E5E5',                    //+
-  btnActive: '#CCCCCC',               //+
-  btnIcon: "#000000",                 //+
-  btnIconPressed: "#027AF9",          //+
+  btn1: '#E5E5E5',
+  btnActive: '#CCCCCC',
+  btnIcon: "#000000",
+  btnIconPressed: "#027AF9",
 
   colorBtnActive: '#D0CACA',
 
   // closeModalHandler: "#DADBDB",
 
   divider: "#E5E5E5",
-  divider2: "#D0CACA",                        //+
+  divider2: "#D0CACA",
 });
 
 

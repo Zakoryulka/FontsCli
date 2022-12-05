@@ -4,7 +4,7 @@ import { useSelector} from "react-redux";
 
 import { modalsHandlers } from '../../handlers/modalsHandlers';
 
-import ButtonIcon from "../../components/ButtonIcon";
+import ButtonIcon from "../../components/buttons/ButtonIcon";
 import TextItemInput from "../../components/TextItemInput";
 
 import { appStyles } from "../../styles/appStyles";
@@ -39,7 +39,6 @@ const Footer = () => {
         icon={"palette"}
         onPress={pressColorSettingsHandler}
         visible={colorModalShow}
-        // marginRifgt
       />
       {/* <ButtonIcon
         icon={"stickers"}

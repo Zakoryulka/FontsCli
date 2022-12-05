@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Modal, View } from 'react-native';
 import { TriangleColorPicker, fromHsv } from 'react-native-color-picker';
 
-import ButtonIcon from '../../components/ButtonIcon';
+import ButtonIcon from '../../components/buttons/ButtonIcon';
 import { appStyles } from "../../styles/appStyles";
 
 const ColorPickerModal = (props) => {

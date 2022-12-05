@@ -35,18 +35,9 @@ const GroupLabelBtn = memo(({item}) => {
   )
 });
 
-// paddingVertical: 3,
-// flex: 1,
-// borderRadius: 15
-
-
 const ContentGroupsLabelsSlider = ({labelsList}) => {
-
   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
-  // const labelsList = data.sketchGroupsLabels;
-
   const setKeyExtractor = useCallback((item, index) => item + index);
-
   const renderItem = ({item}) => <GroupLabelBtn item={item} />
 
   return (

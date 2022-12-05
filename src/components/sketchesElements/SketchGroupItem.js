@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Pressable, Text, Image } from "react-native";
+import { Pressable, Text, Image, View } from "react-native";
 import { useSelector } from "react-redux";
 
 
@@ -9,12 +9,13 @@ const SketchGroupItem = memo(({id, groupName, onPress, uri}) => {
   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
 
   return (
-    <>
+    <View style={appStyles.sketchGroupItemOuterWrapper}>
       <Pressable
         style={[
-          appStyles.sketchGroupItemWrapper,
+          appStyles.sketchGroupItemInnerWrapper,
           {backgroundColor: colorsStyle.btn1}
         ]}
+        android_ripple={{color: colorsStyle.btnActive}}
         onPress={() => onPress({id})}
       >
         <Text style={[
@@ -30,7 +31,7 @@ const SketchGroupItem = memo(({id, groupName, onPress, uri}) => {
           resizeMode="contain"
           style={appStyles.sketchGroupItemImg} />
       </Pressable>
-    </>
+    </View>
   )
 });
 

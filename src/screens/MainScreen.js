@@ -36,7 +36,7 @@ const MainScreen = () => {
 
   const fontsScreen = fontsVisible ? <Suspense><FontsScreen/></Suspense> : null;
   const sketchsGroupScreen = sketchsVisible ? <Suspense><SketchesGroupList/></Suspense> : null;
-  const sketchesListScreen = sketchesGroupListVisible === true ? <Suspense><SketchesListScreen/></Suspense> : null;
+  // const sketchesListScreen = sketchesGroupListVisible === true ? <Suspense><SketchesListScreen/></Suspense> : null;
 
   return (
     <>
@@ -45,7 +45,7 @@ const MainScreen = () => {
 
       {fontsScreen}
       {sketchsGroupScreen}
-      {sketchesListScreen}
+      {/* {sketchesListScreen} */}
 
       <Suspense>
         <ColorPickerModal
@@ -71,6 +71,7 @@ const MainScreen = () => {
 
         <InfoModal />
         <ShowMoreModal />
+        <SketchesListScreen />
         <AltSharingItemModal />
         <PremiumAlert />
         <RateAlert />

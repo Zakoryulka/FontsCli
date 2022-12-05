@@ -5,7 +5,7 @@ import { View,
 } from 'react-native';
 import Modal from "react-native-modal";
 
-import MainButton from './MainButton';
+import MainButton from './buttons/MainButton';
 
 import { appStyles } from "../styles/appStyles";
 

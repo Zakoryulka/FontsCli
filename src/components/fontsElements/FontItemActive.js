@@ -1,8 +1,6 @@
 import { useSelector, } from "react-redux";
 import { Text, View} from 'react-native';
 
-import { appStyles } from '../styles/appStyles';
-
 const FontItemActive = () => {
   const fontColor = useSelector(state => state.colorParametrs.currentFontColor);
   const bg = useSelector(state => state.colorParametrs.currentBg);

@@ -16,7 +16,7 @@ import { copyToClipboard, saveToPhoto
 import { Sizes } from '../../constants/stylesConst';
 import FontItemActive from '../../components/fontsElements/FontItemActive';
 import SketchItemActive from '../../components/sketchesElements/SketchItemActive';
-import MainButton from '../../components/MainButton';
+import MainButton from '../../components/buttons/MainButton';
 
 import { appStyles } from "../../styles/appStyles";
 

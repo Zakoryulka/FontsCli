@@ -9,9 +9,9 @@ import { resetFontsSettings,
 import { modalsHandlers } from "../../handlers/modalsHandlers";
 
 import ModalLabel from "../../components/ModalLabel";
-import ResetButton from "../../components/ResetButton";
+import ResetButton from "../../components/buttons/ResetButton";
 import SliderItem from "../../components/SliderItem";
-import ButtonIcon from "../../components/ButtonIcon";
+import ButtonIcon from "../../components/buttons/ButtonIcon";
 
 import { appStyles } from "../../styles/appStyles";
 

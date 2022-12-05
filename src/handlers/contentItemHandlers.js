@@ -68,8 +68,9 @@ export const contentItemHandlers = () => {
     ref.current.measure( ( fx, fy, width, height, px, py) => {
       const fontItemY = py;
       const fontItemHeight = height;
-      let y = fontItemY - statusBarHeight;
-      const topScreentRest = ScreenHeight - (ScreenHeight - y);
+      let y = sketchesGroupListVisible ? fontItemY : fontItemY - statusBarHeight;
+
+      const topScreenRest = ScreenHeight - (ScreenHeight - y);
       const bottomScreentRest = ScreenHeight - y - fontItemHeight;
       let newY;
 
@@ -78,14 +79,16 @@ export const contentItemHandlers = () => {
       dispatch(setWidthItem({ width: width }));
       dispatch(setHeightItem({ height: fontItemHeight }));
 
-      if (topScreentRest > ScreenHeight/3) {
+      if (topScreenRest > ScreenHeight/3) {
         newY = y - 125;
         dispatch(setY({ y: newY }));
       } else if (bottomScreentRest > ScreenHeight/3) {
         if (fontsVisible) {
+          console.log('fontsVisible');
           newY = y + fontItemHeight + 10;
           dispatch(setY({ y: newY }));
         } else if (sketchesGroupListVisible) {
+          console.log('sketchesGroupListVisible');
           newY = y + fontItemHeight + 10 * 4;
           dispatch(setY({ y: newY }));
         }
