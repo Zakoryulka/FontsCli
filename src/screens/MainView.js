@@ -23,11 +23,10 @@ const MainView = () => {
         <StatusBar
           translucent
           backgroundColor={colorsStyle.primaryBg}
-          barStyle={theme === "light" ? "dark-content" : "light-content"}
+          barStyle={theme === "dark" ? "light-content" : "dark-content"}
         />
 
         <MainScreen />
-
       </SafeAreaView>
    );
  }

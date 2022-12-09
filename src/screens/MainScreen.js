@@ -20,6 +20,7 @@ const RateAlert = lazy(() => import("./alerts/RateAlert"));
 
 const MainScreen = () => {
   const fontsVisible = useSelector(state => state.content.fontsVisible);
+  const favoritesVisible = useSelector(state => state.content.favoritesVisible);
   const sketchsVisible = useSelector(state => state.content.sketchsVisible);
   const sketchesGroupListVisible = useSelector(state => state.content.sketchesGroupListVisible);
   const cPickerBGVisible = useSelector(state => state.modals.cPickerBGVisible);
@@ -34,7 +35,7 @@ const MainScreen = () => {
 
   const dispatch = useDispatch();
 
-  const fontsScreen = fontsVisible ? <Suspense><FontsScreen/></Suspense> : null;
+  const fontsScreen = fontsVisible || favoritesVisible ? <Suspense><FontsScreen/></Suspense> : null;
   const sketchsGroupScreen = sketchsVisible ? <Suspense><SketchesGroupList/></Suspense> : null;
   // const sketchesListScreen = sketchesGroupListVisible === true ? <Suspense><SketchesListScreen/></Suspense> : null;
 

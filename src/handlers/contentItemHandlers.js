@@ -28,6 +28,7 @@ import { setY,
   setActiveFont,
   setActiveSketchID
 } from '../store/alertSettings';
+import { toggleFavoriteFamilyFont } from "../store/textInput";
 
 import { appConts } from "../constants/appConst";
 
@@ -68,7 +69,7 @@ export const contentItemHandlers = () => {
     ref.current.measure( ( fx, fy, width, height, px, py) => {
       const fontItemY = py;
       const fontItemHeight = height;
-      let y = sketchesGroupListVisible ? fontItemY : fontItemY - statusBarHeight;
+      let y = sketchesGroupListVisible ? fontItemY + statusBarHeight : fontItemY ;
 
       const topScreenRest = ScreenHeight - (ScreenHeight - y);
       const bottomScreentRest = ScreenHeight - y - fontItemHeight;
@@ -166,12 +167,17 @@ export const contentItemHandlers = () => {
     }
   });
 
+  const onPressFontFavoriteBtnHandler = (font) => {
+    dispatch(toggleFavoriteFamilyFont({font: font}));
+  };
+
 
 
   return {
     choseLineHeight,
     onItemPressHandler,
     onLongFontItemPressHandler,
-    onLongSketchItemPressHandler
+    onLongSketchItemPressHandler,
+    onPressFontFavoriteBtnHandler
   }
 }

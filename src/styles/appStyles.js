@@ -30,9 +30,17 @@ export const appStyles = StyleSheet.create({
   fontsContainer: {
     position: 'relative',
     flex: 1,
-    alignItems: 'stretch',
+    alignItems: 'stretch'
   },
 
+
+    // ------EmptyFavoritesFontsList styles------ //
+
+  emptyFavoritesFontsListText: {
+    marginTop: Sizes.mainPadding,
+    textAlign: 'center',
+    fontSize: 17
+  },
 
    // ------font item styles------ //
 
@@ -90,23 +98,25 @@ export const appStyles = StyleSheet.create({
   },
   sketchList: {
     flex: 1,
-    paddingVertical: Sizes.mainPadding,
-    paddingHorizontal: Sizes.mainPadding
+    paddingTop: Sizes.mainPadding/3*2,
+    paddingBottom: Sizes.mainPadding,
+    paddingHorizontal: Sizes.mainPadding,
   },
   sketchListRow: {
     justifyContent: 'space-between',
-    paddingBottom: Sizes.mainPadding,
+    paddingBottom: Sizes.mainPadding
   },
 
   sketchButton: {
-
     justifyContent: 'flex-start',
     justifyContent: 'space-between',
     backgroundColor: 'transparent',
+    // backgroundColor: 'red'
   },
   sketchWrapper: {
     flex: 1,
     position: 'relative',
+        // backgroundColor: 'red'
   },
   sketchImg: {
     flex: 1,

@@ -10,7 +10,7 @@ export const Colors = Object.freeze({
 export const DarkTheme = Object.freeze({
   primaryBg: "#1E1E1E",
   primaryBg1: "#000000",
-  alertBG: 'rgba(0, 0, 0, .6)',
+  alertBG: 'rgba(0, 0, 0, .5)',
 
   text: "#FFFFFF",
   btnResetText: "#027AF9",
@@ -34,7 +34,7 @@ export const DarkTheme = Object.freeze({
 export const LightTheme = Object.freeze({
   primaryBg: "#F5F5F5",
   primaryBg1: "#FFFFFF",
-  alertBG: 'rgba(0, 0, 0, .5)',
+  alertBG: 'rgba(1, 1, 1, .5)',
 
   text: "#000000",
   btnResetText: "#027AF9",

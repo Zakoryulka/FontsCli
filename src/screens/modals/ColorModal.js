@@ -11,7 +11,7 @@ import { View } from "react-native";
 } from "../../store/colorParametrs";
 import { modalsHandlers } from "../../handlers/modalsHandlers";
 
-import serverState from '../../serverState.json';
+import fontsData from '../../fontsData.json';
 import ModalLabel from "../../components/ModalLabel";
 import ResetButton from "../../components/buttons/ResetButton";
 import SettingColorSlider from "../../components/SettingColorSlider";
@@ -22,7 +22,7 @@ import ColorPickerButton from "../../components/buttons/ColorPickerButton";
 import { appStyles } from "../../styles/appStyles";
 
 function ColorModal() {
-  const colorsList = serverState.data.colors;
+  const colorsList = fontsData.data.colors;
   const bg = useSelector(state => state.colorParametrs.currentBg);
   const fontColor = useSelector(state => state.colorParametrs.currentFontColor);
   const startPadding = useSelector(state => state.colorParametrs.startValueForSliderPadding);

@@ -63,9 +63,9 @@ const SketchesList = () => {
         columnWrapperStyle={appStyles.sketchListRow}
 
         //Оптимизация https://reactnative.dev/docs/optimizing-flatlist-configuration
-        initialNumToRender={6}
+        initialNumToRender={15}
         showsVerticalScrollIndicator={false}
-        maxToRenderPerBatch={7} //10 следующий фрагмент элементов, отображаемых при каждой прокрутке.
+        maxToRenderPerBatch={18} //10 следующий фрагмент элементов, отображаемых при каждой прокрутке.
         updateCellsBatchingPeriod={30} // 50
         removeClippedSubviews={true} //
         windowSize={9}

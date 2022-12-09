@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Platform } from "react-native";
-import serverState from '../serverState.json';
+import fontsData from '../fontsData.json';
 
-const freeFonts = serverState.data.fonts.freeFonts;
-const premiumFonts = serverState.data.fonts.premiumFonts;
+const freeFonts = fontsData.data.fonts.freeFonts;
+const premiumFonts = fontsData.data.fonts.premiumFonts;
 const iosTextHeight = 18;
 const androidTextHeight = 18;
 const maxNumberOfLines = 3;
@@ -16,11 +16,12 @@ const textInputSlice = createSlice({
   name: 'textInput',
   initialState: {
     familyFonts: familyFonts,
+    favoritesFamilyFonts: [],
     enteredText: '',
     numberOfLines: null,
     textHeight: Platform.OS === 'ios' ? iosTextHeight : androidTextHeight,
     cyrillicFont: false,
-    keyboardVisible: false
+    keyboardVisible: false,
   },
   reducers: {
     setFonts: (state) => {
@@ -56,7 +57,21 @@ const textInputSlice = createSlice({
     },
     setKeyboardNotVisible: (state) => {
       state.keyboardVisible = false;
-    }
+    },
+    toggleFavoriteFamilyFont: (state, action) => {
+      // console.log(action.payload.font);
+      console.log(state.favoritesFamilyFonts);
+      // console.log(state.favoritesFamilyFonts.includes("Caveat"));
+      // console.log(state.favoritesFamilyFonts.includes(action.payload.font));
+      // console.log(state.favoritesFamilyFonts);
+      if (state.favoritesFamilyFonts.includes(action.payload.font)) {
+        console.log('gggg')
+        state.favoritesFamilyFonts = state.favoritesFamilyFonts.filter((item) => (item != action.payload.font))
+      } else {
+        console.log('ddddd');
+        state.favoritesFamilyFonts = [...state.favoritesFamilyFonts, action.payload.font];
+      }
+    },
   }
 });
 
@@ -65,6 +80,7 @@ export const { setFonts,
   clearText,
   setNumberOfLines,
   setKeyboardVisible,
-  setKeyboardNotVisible
+  setKeyboardNotVisible,
+  toggleFavoriteFamilyFont
 } = textInputSlice.actions;
 export default textInputSlice.reducer;

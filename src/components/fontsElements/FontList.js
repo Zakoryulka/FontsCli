@@ -13,9 +13,8 @@ import { contentItemHandlers } from "../../handlers/contentItemHandlers";
 
 import { appStyles } from "../../styles/appStyles";
 
-const FontList = () => {
+const FontList = ({data}) => {
   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
-  const familyFonts = useSelector(state => state.textInput.familyFonts);
   const notifyVisible = useSelector(state => state.alertSettings.notifyVisible);
   const notifyMessage = useSelector(state => state.alertSettings.notifyMessage);
   const fontColor = useSelector(state => state.colorParametrs.currentFontColor);
@@ -28,10 +27,14 @@ const FontList = () => {
   const alignSelf = useSelector(state => state.aligmentParametrs.currentAlignSelf);
   const alignText = useSelector(state => state.aligmentParametrs.currentAlignText);
   const enteredText = useSelector(state => state.textInput.enteredText);
+  const appIsPremium = useSelector(state => state.content.appIsPremium);
+  const favoritesFamilyFonts = useSelector(state => state.textInput.favoritesFamilyFonts);
+
 
   const {choseLineHeight,
     onItemPressHandler,
-    onLongFontItemPressHandler
+    onLongFontItemPressHandler,
+    onPressFontFavoriteBtnHandler
   } = contentItemHandlers();
 
   const notification = notifyVisible
@@ -47,6 +50,9 @@ const FontList = () => {
         ? item.fontNameAndroid
         : item.fontNameIos}
       isPremium={item.isPremium}
+      // isFavorite={item.isFavorite}
+      isFavorite={favoritesFamilyFonts.includes(item.fontNameAndroid)}
+      appIsPremium={appIsPremium}
       fontColor={fontColor}
       bg={bg}
       opacity={opacity}
@@ -60,6 +66,7 @@ const FontList = () => {
       enteredText={enteredText}
       onItemPress={onItemPressHandler}
       onLongItemPress={onLongFontItemPressHandler}
+      onPressFavoriteBtn={onPressFontFavoriteBtnHandler}
     />;
 
   const setKeyExtractor = useCallback((item) => item.fontNameAndroid, []);
@@ -69,7 +76,8 @@ const FontList = () => {
       {notification}
 
       <FlatList
-        data={familyFonts}
+        // data={familyFonts}
+        data={data}
         renderItem={renderItem}
         keyExtractor={setKeyExtractor}
         onScroll={() => {

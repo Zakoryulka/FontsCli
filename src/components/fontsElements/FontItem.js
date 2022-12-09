@@ -2,7 +2,10 @@ import { useRef, memo } from 'react';
 import { Text, View, Pressable } from 'react-native';
 import { useSelector } from 'react-redux';
 
+import { Sizes } from '../../constants/stylesConst';
 import CrownSVG from '../../assets/icons/Crown';
+import StarFillSVG from '../../assets/icons/StarFill';
+import StarNotFillSVG from '../../assets/icons/StarNotFill';
 
 import { appStyles } from '../../styles/appStyles';
 
@@ -10,6 +13,8 @@ const FontItem = memo((props) => {
   const { fontDisplayName,
     font,
     isPremium,
+    isFavorite,
+    appIsPremium,
     fontColor,
     bg,
     opacity,
@@ -22,7 +27,8 @@ const FontItem = memo((props) => {
     alignText,
     enteredText,
     onItemPress,
-    onLongItemPress
+    onLongItemPress,
+    onPressFavoriteBtn
   } = props;
 
   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
@@ -41,7 +47,26 @@ const FontItem = memo((props) => {
     )
   };
 
-  const icon = isPremium === "premium" ? <PremiumIcon /> : <FreeIcon />;
+
+  const favoriteIcon = isFavorite
+    ? <StarFillSVG width={20} height={18} style={appStyles.fontIconIcon}/>
+    : <StarNotFillSVG width={20} height={18} style={appStyles.fontIconIcon}/>
+
+  const FavoriteIconBtn = () => {
+
+    return (
+      <Pressable
+          onPress={() => onPressFavoriteBtn(font)}
+          hitSlop = {Sizes.hitSlopPressable}
+      >
+          {favoriteIcon}
+      </Pressable>
+    )
+  };
+
+
+  const premiumIcon = isPremium === "premium" && !appIsPremium ? <PremiumIcon /> : <FreeIcon />;
+  const favoriteIconBtn = appIsPremium  ? <FavoriteIconBtn /> : null;
 
   return (
     <>
@@ -50,7 +75,8 @@ const FontItem = memo((props) => {
         onPress={() => onItemPress(viewShotRef, isPremium)}
         onLongPress={() => onLongItemPress(viewShotRef, fontDisplayName, font, isPremium)}
       >
-        {icon}
+        {premiumIcon}
+        {favoriteIconBtn}
         <View style={appStyles.fontWrapper}>
           <View
             ref={viewShotRef}

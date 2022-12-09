@@ -2,14 +2,12 @@ import { View, Text, Pressable } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { Sizes } from '../constants/stylesConst';
 
-import { showFonts, showSketchs, showFavorites } from "../store/content";
+import { showFonts, showSketchs } from "../store/content";
 
 import { appStyles } from "../styles/appStyles";
 
 const ContentSwitcher = () => {
   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
-  const appIsPremium = useSelector(state => state.content.appIsPremium);
-  const favoritesVisible = useSelector(state => state.content.favoritesVisible);
   const fontsVisible = useSelector(state => state.content.fontsVisible);
   const sketchsVisible = useSelector(state => state.content.sketchsVisible);
 
@@ -47,10 +45,6 @@ const ContentSwitcher = () => {
     )
   };
 
-  const onPressFavoritesBtnHandler = () => {
-    dispatch(showFavorites());
-  };
-
   const onPressFontsBtnHandler = () => {
     dispatch(showFonts());
   };
@@ -59,25 +53,11 @@ const ContentSwitcher = () => {
     dispatch(showSketchs());
   };
 
-  const contentSwitcherFavoritesBtn = appIsPremium
-    ? <>
-        <ContentSwitcherBtn
-          onPress={onPressFavoritesBtnHandler}
-          position={"left"}
-          visible={favoritesVisible}
-        >
-          Favorites
-        </ContentSwitcherBtn>
-        <View />
-      </>
-    : null;
-
   return (
     <View style={appStyles.contentSwitcherBtns}>
-      {contentSwitcherFavoritesBtn}
       <ContentSwitcherBtn
         onPress={onPressFontsBtnHandler}
-        position={appIsPremium ? "center" : 'left'}
+        position={"left"}
         visible={fontsVisible}
       >
         Fonts

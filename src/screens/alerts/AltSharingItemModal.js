@@ -130,7 +130,12 @@ const AltSharingItemModal = () => {
           <View style={{flex: 1}} />
         </TouchableWithoutFeedback>
       }
-      backdropColor={'black'}
+      // backdropColor={'transparent'}
+      backdropColor='#ffffff'
+      // transparent={false}
+      statusBarTranslucent
+      // statusBarTranslucent
+      // deviceHeight={Dimensions.get('screen').height}
     >
 
       {fontItemActive}

@@ -1,6 +1,8 @@
 import { lazy, Suspense } from "react";
 import { useSelector } from "react-redux";
 import { Modal } from "react-native";
+import { Dimensions } from "react-native";
+// import Modal from 'react-native-translucent-modal';
 
 import SketchesHeader from "../components/headers/SketchesHeader";
 import SketchesList from "../components/sketchesElements/SketchesList";
@@ -21,6 +23,9 @@ const SketchesListScreen = () => {
       transparent={true}
       visible={sketchesGroupListVisible}
       style={appStyles.sketchesListScreen}
+      // coverScreen={false}
+      // deviceHeight={Dimensions.get('screen').height}
+      // // statusBarTranslucent={true}
     >
       <SketchesHeader />
       <SketchesList />

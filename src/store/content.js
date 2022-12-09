@@ -3,8 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const contentSlice = createSlice({
   name: 'content',
   initialState: {
+    appIsPremium: true,
     fontsVisible: true,
     sketchsVisible: false,
+    favoritesVisible: false,
     sketchesGroupListVisible: false,
     sketchesGroupSelected: null,
   },
@@ -12,12 +14,20 @@ const contentSlice = createSlice({
     showFonts: (state) => {
       state.fontsVisible = true;
       state.sketchsVisible = false;
+      state.favoritesVisible = false;
       state.sketchesGroupListVisible = false;
     },
     showSketchs: (state) => {
       state.fontsVisible = false;
+      state.favoritesVisible = false;
       state.sketchsVisible = true;
       state.sketchesGroupListVisible = false;
+    },
+    showFavorites: (state) => {
+      state.fontsVisible = false;
+      state.sketchsVisible = false;
+      state.sketchesGroupListVisible = false;
+      state.favoritesVisible = true;
     },
     sketchesGroupListShow: (state, action) => {
       state.sketchesGroupSelected = action.payload.newSketchGroup;
@@ -33,6 +43,7 @@ const contentSlice = createSlice({
 export const {
   showFonts,
   showSketchs,
+  showFavorites,
   sketchesGroupListShow,
   sketchesGroupListHide,
 } = contentSlice.actions;
