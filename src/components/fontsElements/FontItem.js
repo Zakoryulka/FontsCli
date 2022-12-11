@@ -2,12 +2,22 @@ import { useRef, memo } from 'react';
 import { Text, View, Pressable } from 'react-native';
 import { useSelector } from 'react-redux';
 
-import { Sizes } from '../../constants/stylesConst';
+import FavoriteBtn from './FavoriteBtn';
 import CrownSVG from '../../assets/icons/Crown';
-import StarFillSVG from '../../assets/icons/StarFill';
-import StarNotFillSVG from '../../assets/icons/StarNotFill';
 
 import { appStyles } from '../../styles/appStyles';
+
+const PremiumIcon = () => {
+  return (
+    <CrownSVG width={20} height={18} style={appStyles.fontIconIcon}/>
+  )
+};
+
+const FreeIcon = () => {
+  return (
+    <View style={[appStyles.fontIconIcon, {backgroundColor: 'transparent'}]} />
+  )
+};
 
 const FontItem = memo((props) => {
   const { fontDisplayName,
@@ -32,41 +42,10 @@ const FontItem = memo((props) => {
   } = props;
 
   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
-
   const viewShotRef = useRef();
 
-  const PremiumIcon = () => {
-    return (
-      <CrownSVG width={20} height={18} style={appStyles.fontIconIcon}/>
-    )
-  };
-
-  const FreeIcon = () => {
-    return (
-      <View style={[appStyles.fontIconIcon, {backgroundColor: 'transparent'}]} />
-    )
-  };
-
-
-  const favoriteIcon = isFavorite
-    ? <StarFillSVG width={20} height={18} style={appStyles.fontIconIcon}/>
-    : <StarNotFillSVG width={20} height={18} style={appStyles.fontIconIcon}/>
-
-  const FavoriteIconBtn = () => {
-
-    return (
-      <Pressable
-          onPress={() => onPressFavoriteBtn(font)}
-          hitSlop = {Sizes.hitSlopPressable}
-      >
-          {favoriteIcon}
-      </Pressable>
-    )
-  };
-
-
-  const premiumIcon = isPremium === "premium" && !appIsPremium ? <PremiumIcon /> : <FreeIcon />;
-  const favoriteIconBtn = appIsPremium  ? <FavoriteIconBtn /> : null;
+  const renderPremiumIcon = isPremium === "premium" && !appIsPremium ? <PremiumIcon /> : <FreeIcon />;
+  const renderFavoriteBtn = appIsPremium  ? <FavoriteBtn isFavorite={isFavorite} onPressFavoriteBtn={onPressFavoriteBtn} font={font} /> : null;
 
   return (
     <>
@@ -75,8 +54,8 @@ const FontItem = memo((props) => {
         onPress={() => onItemPress(viewShotRef, isPremium)}
         onLongPress={() => onLongItemPress(viewShotRef, fontDisplayName, font, isPremium)}
       >
-        {premiumIcon}
-        {favoriteIconBtn}
+        {renderPremiumIcon}
+        {renderFavoriteBtn}
         <View style={appStyles.fontWrapper}>
           <View
             ref={viewShotRef}

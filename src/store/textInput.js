@@ -11,7 +11,6 @@ const maxNumberOfLines = 3;
 const familyFonts = [...freeFonts, ...premiumFonts];
 const familyFontsRU = familyFonts.filter((item) => (item.cyrillicFont === 'true'));
 
-
 const textInputSlice = createSlice({
   name: 'textInput',
   initialState: {
@@ -59,16 +58,9 @@ const textInputSlice = createSlice({
       state.keyboardVisible = false;
     },
     toggleFavoriteFamilyFont: (state, action) => {
-      // console.log(action.payload.font);
-      console.log(state.favoritesFamilyFonts);
-      // console.log(state.favoritesFamilyFonts.includes("Caveat"));
-      // console.log(state.favoritesFamilyFonts.includes(action.payload.font));
-      // console.log(state.favoritesFamilyFonts);
       if (state.favoritesFamilyFonts.includes(action.payload.font)) {
-        console.log('gggg')
-        state.favoritesFamilyFonts = state.favoritesFamilyFonts.filter((item) => (item != action.payload.font))
+        state.favoritesFamilyFonts = state.favoritesFamilyFonts.filter((item) => (item != action.payload.font));
       } else {
-        console.log('ddddd');
         state.favoritesFamilyFonts = [...state.favoritesFamilyFonts, action.payload.font];
       }
     },

@@ -6,10 +6,7 @@ import { sketchModalHandlers } from "../handlers/sketchModalHandlers";
 import { lazy, Suspense } from "react";
 
 import Header from "../components/headers/Header";
-import ContentSwitcher from "../components/ContentSwitcher";
 
-const FontsScreen = lazy(() => import("./FontsScreen"));
-const SketchesGroupList = lazy(() => import("../components/sketchesElements/SketchesGroupList"));
 const SketchesListScreen = lazy(() => import("./SketchesListScreen"));
 const ColorPickerModal = lazy(() => import("./modals/ColorPickerModal"));
 const InfoModal = lazy(() => import("./modals/InfoModal"));
@@ -18,11 +15,9 @@ const AltSharingItemModal = lazy(() => import("./alerts/AltSharingItemModal"));
 const PremiumAlert = lazy(() => import("./alerts/PremiumAlert"));
 const RateAlert = lazy(() => import("./alerts/RateAlert"));
 
+import ContentNavigator from "./ContentNavigator";
+
 const MainScreen = () => {
-  const fontsVisible = useSelector(state => state.content.fontsVisible);
-  const favoritesVisible = useSelector(state => state.content.favoritesVisible);
-  const sketchsVisible = useSelector(state => state.content.sketchsVisible);
-  const sketchesGroupListVisible = useSelector(state => state.content.sketchesGroupListVisible);
   const cPickerBGVisible = useSelector(state => state.modals.cPickerBGVisible);
   const cPickerFontColorVisible = useSelector(state => state.modals.cPickerFontColorVisible);
   const startBg = useSelector(state => state.colorParametrs.startValueForCPickerBg);
@@ -35,18 +30,11 @@ const MainScreen = () => {
 
   const dispatch = useDispatch();
 
-  const fontsScreen = fontsVisible || favoritesVisible ? <Suspense><FontsScreen/></Suspense> : null;
-  const sketchsGroupScreen = sketchsVisible ? <Suspense><SketchesGroupList/></Suspense> : null;
-  // const sketchesListScreen = sketchesGroupListVisible === true ? <Suspense><SketchesListScreen/></Suspense> : null;
 
   return (
     <>
       <Header />
-      <ContentSwitcher />
-
-      {fontsScreen}
-      {sketchsGroupScreen}
-      {/* {sketchesListScreen} */}
+      <ContentNavigator />
 
       <Suspense>
         <ColorPickerModal

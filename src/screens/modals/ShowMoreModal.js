@@ -61,7 +61,7 @@ const ShowMoreModal = () => {
             bottomLeftRadius
             bottomRightRadius
           >
-            <LabelBtn text={'💎  Upgrate to pro'} />
+            <LabelBtn text={'💎   Upgrate to pro'} />
           </MainButton>
         </View>
 
@@ -73,7 +73,7 @@ const ShowMoreModal = () => {
             bottomLeftRadius
             bottomRightRadius
           >
-            <LabelBtn text={'ℹ️  How it works'} />
+            <LabelBtn text={'ℹ️   How it works'} />
           </MainButton>
         </View>
 
@@ -83,13 +83,13 @@ const ShowMoreModal = () => {
             topLeftRadius
             topRightRadius
           >
-            <LabelBtn text={'🌟  Rate App'} />
+            <LabelBtn text={'🌟   Rate App'} />
           </MainButton>
 
           <Divider />
 
           <MainButton onPress={shareApp} >
-            <LabelBtn text={'📢  Share App'} />
+            <LabelBtn text={'📢   Share App'} />
           </MainButton>
 
           <Divider />
@@ -99,7 +99,7 @@ const ShowMoreModal = () => {
             bottomLeftRadius
             bottomRightRadius
           >
-            <LabelBtn text={'✉️  Write to us'} />
+            <LabelBtn text={'✉️   Write to us'} />
           </MainButton>
         </View>
       </View>

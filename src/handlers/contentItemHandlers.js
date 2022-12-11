@@ -29,6 +29,7 @@ import { setY,
   setActiveSketchID
 } from '../store/alertSettings';
 import { toggleFavoriteFamilyFont } from "../store/textInput";
+import { sketchesGroupListShow } from "../store/content";
 
 import { appConts } from "../constants/appConst";
 
@@ -40,8 +41,7 @@ export const contentItemHandlers = () => {
   const pressFontItemCounter = useSelector(state => state.alertSettings.pressFontItemCounter);
   const fontSize = useSelector(state => state.fontParametrs.currentFontSize);
   const lineSpacing = useSelector(state => state.fontParametrs.currentLineSpacing);
-  const fontsVisible = useSelector(state => state.content.fontsVisible);
-  const sketchesGroupListVisible = useSelector(state => state.content.sketchesGroupListVisible);
+  const currentContent = useSelector(state => state.content.currentContent);
 
   const dispatch = useDispatch();
 
@@ -69,7 +69,7 @@ export const contentItemHandlers = () => {
     ref.current.measure( ( fx, fy, width, height, px, py) => {
       const fontItemY = py;
       const fontItemHeight = height;
-      let y = sketchesGroupListVisible ? fontItemY + statusBarHeight : fontItemY ;
+      let y = currentContent === "Sketches" ? fontItemY + statusBarHeight : fontItemY ;
 
       const topScreenRest = ScreenHeight - (ScreenHeight - y);
       const bottomScreentRest = ScreenHeight - y - fontItemHeight;
@@ -84,12 +84,10 @@ export const contentItemHandlers = () => {
         newY = y - 125;
         dispatch(setY({ y: newY }));
       } else if (bottomScreentRest > ScreenHeight/3) {
-        if (fontsVisible) {
-          console.log('fontsVisible');
+        if (currentContent === 'Fonts') {
           newY = y + fontItemHeight + 10;
           dispatch(setY({ y: newY }));
-        } else if (sketchesGroupListVisible) {
-          console.log('sketchesGroupListVisible');
+        } else if (currentContent === 'Sketches') {
           newY = y + fontItemHeight + 10 * 4;
           dispatch(setY({ y: newY }));
         }
@@ -167,17 +165,21 @@ export const contentItemHandlers = () => {
     }
   });
 
-  const onPressFontFavoriteBtnHandler = (font) => {
+  const onPressFontFavoriteBtnHandler = useCallback((font) => {
     dispatch(toggleFavoriteFamilyFont({font: font}));
-  };
+  });
 
-
+  const pressSketchGroupItemHandler = useCallback((id) => {
+    console.log(id);                                            // Delete
+    dispatch(sketchesGroupListShow({newSketchGroup: id}));
+  });
 
   return {
     choseLineHeight,
     onItemPressHandler,
     onLongFontItemPressHandler,
     onLongSketchItemPressHandler,
-    onPressFontFavoriteBtnHandler
+    onPressFontFavoriteBtnHandler,
+    pressSketchGroupItemHandler
   }
 }

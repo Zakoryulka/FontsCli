@@ -23,6 +23,5 @@ export const store = configureStore({
     alertSettings: alertSettingsReducer,
     colorTheme: colorThemeReducer,
     sketchesScreen: sketchesScreenReducer
-
   }
 });

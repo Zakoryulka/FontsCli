@@ -26,8 +26,7 @@ const AltSharingItemModal = () => {
   const fontPremiumItemPressed = useSelector(state => state.alertSettings.fontPremiumItemPressed)
   const currentAlignText = useSelector(state => state.aligmentParametrs.currentAlignText);
   const y = useSelector(state => state.alertSettings.y);
-  const fontsVisible = useSelector(state => state.content.fontsVisible);
-  const sketchesGroupListVisible = useSelector(state => state.content.sketchesGroupListVisible);
+  const currentContent = useSelector(state => state.content.currentContent);
 
   const dispatch = useDispatch();
 
@@ -101,13 +100,13 @@ const AltSharingItemModal = () => {
     }
   };
 
-  const fontItemActive = fontsVisible ? <FontItemActive /> : null;
-  const sketchItemActive = sketchesGroupListVisible ? <SketchItemActive /> : null;
+  const fontItemActive = currentContent === "Fonts" ? <FontItemActive /> : null;
+  const sketchItemActive = currentContent === "Sketches" ? <SketchItemActive /> : null;
 
   const setYCoor = (y) => {
-    if (fontsVisible) {
+    if (currentContent === "Fonts") {
       return y;
-    } else if (sketchesGroupListVisible) {
+    } else if (currentContent === "Sketches") {
       return y - 15;
     }
   };

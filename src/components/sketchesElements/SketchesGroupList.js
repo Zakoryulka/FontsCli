@@ -1,10 +1,10 @@
 import { useCallback } from "react";
 import { View, FlatList } from "react-native";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
-import { sketchesGroupListShow } from "../../store/content";
 import sketchesData from '../../sketchesData.json';
 import SketchGroupItem from "./SketchGroupItem";
+import { contentItemHandlers } from "../../handlers/contentItemHandlers";
 
 import { appStyles } from "../../styles/appStyles";
 
@@ -17,27 +17,23 @@ const data = sketchesData.data.sketches.map((item) => {
   }
 });
 
+
+
 const SketchesGroupList = () => {
   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
 
-  const dispatch = useDispatch();
-
-  const pressSketchGroupItemHandler = ({id}) => {
-    console.log(id);
-    dispatch(sketchesGroupListShow({newSketchGroup: id}));
-  };
+  const { pressSketchGroupItemHandler } = contentItemHandlers();
 
   const renderItem = ({item}) => {
     return (
       <SketchGroupItem
         id={item.id}
         groupName={item.groupName}
-        onPress={pressSketchGroupItemHandler}
+        onPress={() => pressSketchGroupItemHandler(item.id)}
         uri={`asset:/images/sketches/${item.folderName}/${item.cover}.png`}
       />
     )
   };
-
 
   const setKeyExtractor = useCallback((item ) => item.id, []);
 

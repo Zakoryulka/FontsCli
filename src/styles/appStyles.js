@@ -23,6 +23,7 @@ export const appStyles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     paddingTop: 7,
+    fontWeight: '600',
     fontSize: FontSizes.main,
   },
 
@@ -39,7 +40,9 @@ export const appStyles = StyleSheet.create({
   emptyFavoritesFontsListText: {
     marginTop: Sizes.mainPadding,
     textAlign: 'center',
-    fontSize: 17
+    fontSize: FontSizes.main,
+    // fontWeight: '500'
+
   },
 
    // ------font item styles------ //
@@ -76,12 +79,13 @@ export const appStyles = StyleSheet.create({
     overflow: 'hidden'
   },
   sketchGroupItemInnerWrapper: {
-    padding: 18,
+    padding: Sizes.mainPadding,
     height: 140,
     // borderRadius: Sizes.mainBtnRadius,
   },
   sketchGroupItemLabel: {
-    fontSize: FontSizes.main,
+    fontSize: FontSizes.main*1.1,
+    fontWeight: '500'
   },
   sketchGroupItemImg: {
     flex: 1,
@@ -111,7 +115,7 @@ export const appStyles = StyleSheet.create({
     justifyContent: 'flex-start',
     justifyContent: 'space-between',
     backgroundColor: 'transparent',
-    // backgroundColor: 'red'
+    // backgroundColor: 'blue'
   },
   sketchWrapper: {
     flex: 1,
@@ -172,7 +176,7 @@ export const appStyles = StyleSheet.create({
   groupLabelBtnText: {
     paddingVertical: 8,
     paddingHorizontal: Sizes.mainPadding,
-    fontSize: FontSizes.main,
+    fontSize: FontSizes.main
   },
 
 
@@ -382,6 +386,7 @@ export const appStyles = StyleSheet.create({
     showMoreModalBtnLabel: {
       padding: 18,
       fontSize: FontSizes.main,
+      fontWeight: '500'
     },
     ModalBtnsContainer: {
       borderRadius: Sizes.mainBtnRadius,
@@ -426,11 +431,13 @@ export const appStyles = StyleSheet.create({
     AlertLabel: {
       textAlign: 'center',
       fontSize: FontSizes.main,
+      fontWeight: '600'
     },
     AlertMessage: {
       marginTop: 5,
       textAlign: 'center',
       fontSize: FontSizes.mainSmall,
+      fontWeight: '500'
     },
     AlertBtnContainer: {
       flexDirection: 'row'
@@ -439,6 +446,7 @@ export const appStyles = StyleSheet.create({
       padding: 18,
       textAlign: 'center',
       fontSize: FontSizes.main,
+      fontWeight: '500'
     },
     AlertDivider: {
       alignSelf: 'center',
@@ -465,15 +473,18 @@ export const appStyles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 10,
     fontSize: FontSizes.notification,
-    color: Colors.notificationText // оставить
+    color: Colors.notificationText, // оставить
+    // fontWeight: '500'
   },
 
     // ------ contentBtns styles------ //
 
   contentSwitcherBtns: {
+    // position: 'relative',
     flexDirection: 'row',
     paddingHorizontal: Sizes.mainPadding,
-    paddingBottom: 8
+    paddingBottom: 8,
+    // backgroundColor: 'red'
   },
   contentSwitcherOuterBtn: {
     marginRight: 1,
@@ -495,8 +506,6 @@ export const appStyles = StyleSheet.create({
     textAlign: 'center',
     fontSize: FontSizes.main,
   },
-
-
 
     // ------ StickersModal styles------ //
   stickersModalWrapper: {

@@ -4,30 +4,13 @@ const contentSlice = createSlice({
   name: 'content',
   initialState: {
     appIsPremium: true,
-    fontsVisible: true,
-    sketchsVisible: false,
-    favoritesVisible: false,
+    currentContent: 'Fonts',
     sketchesGroupListVisible: false,
     sketchesGroupSelected: null,
   },
   reducers: {
-    showFonts: (state) => {
-      state.fontsVisible = true;
-      state.sketchsVisible = false;
-      state.favoritesVisible = false;
-      state.sketchesGroupListVisible = false;
-    },
-    showSketchs: (state) => {
-      state.fontsVisible = false;
-      state.favoritesVisible = false;
-      state.sketchsVisible = true;
-      state.sketchesGroupListVisible = false;
-    },
-    showFavorites: (state) => {
-      state.fontsVisible = false;
-      state.sketchsVisible = false;
-      state.sketchesGroupListVisible = false;
-      state.favoritesVisible = true;
+    setCurrentContent: (state, action) => {
+      state.currentContent = action.payload.currentContent;
     },
     sketchesGroupListShow: (state, action) => {
       state.sketchesGroupSelected = action.payload.newSketchGroup;
@@ -41,9 +24,7 @@ const contentSlice = createSlice({
 });
 
 export const {
-  showFonts,
-  showSketchs,
-  showFavorites,
+  setCurrentContent,
   sketchesGroupListShow,
   sketchesGroupListHide,
 } = contentSlice.actions;

@@ -50,7 +50,6 @@ const FontList = ({data}) => {
         ? item.fontNameAndroid
         : item.fontNameIos}
       isPremium={item.isPremium}
-      // isFavorite={item.isFavorite}
       isFavorite={favoritesFamilyFonts.includes(item.fontNameAndroid)}
       appIsPremium={appIsPremium}
       fontColor={fontColor}

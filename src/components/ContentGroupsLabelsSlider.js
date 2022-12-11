@@ -1,4 +1,4 @@
-import { FlatList, View, Text, Pressable } from "react-native";
+import { FlatList, Text, Pressable } from "react-native";
 import { useCallback, memo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
