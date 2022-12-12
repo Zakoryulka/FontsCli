@@ -17,6 +17,7 @@ import DarkThemeIcon from '../../assets/icons/DarkTheme';
 import StickersIcon from '../../assets/icons/StickersIcon';
 import StickersSettingsIcon from '../../assets/icons/StickersSettingsIcon';
 import ArtsIcon from '../../assets/icons/ArtsIcon';
+import GoBackIcon from '../../assets/icons/GoBack';
 
 import { appStyles } from '../../styles/appStyles';
 
@@ -60,7 +61,9 @@ const ButtonIcon = ({onPress, icon, marginRifgt, visible}) => {
             case "settings":
                 return (<StickersSettingsIcon width={size} height={size} fill={setIconBtnColor} />)
             case "arts":
-                    return (<ArtsIcon width={size} height={size} fill={setIconBtnColor} />)
+                return (<ArtsIcon width={size} height={size} fill={setIconBtnColor} />)
+            case "goBack":
+                return (<GoBackIcon width={size} height={size} fill={setIconBtnColor} />)
             default:
                 throw new Error();
         }

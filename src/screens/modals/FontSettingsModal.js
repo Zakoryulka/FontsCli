@@ -1,12 +1,8 @@
-import { useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { View } from "react-native";
-import { resetFontsSettings,
-  changeFontSize,
-  changeLineSpacing,
-  changeLetterSpacing
-} from "../../store/fontParametrs";
+
 import { modalsHandlers } from "../../handlers/modalsHandlers";
+import { fontSettingsHandlers }  from "../../handlers/fontSettingsHandlers";
 
 import ModalLabel from "../../components/ModalLabel";
 import ResetButton from "../../components/buttons/ResetButton";
@@ -19,17 +15,16 @@ function FontSettingsModal() {
   const startFontSize = useSelector(state => state.fontParametrs.startValueForSliderFontSize);
   const startLineSpacing = useSelector(state => state.fontParametrs.startValueForSliderLineSpacing);
   const startLetterSpacing = useSelector(state => state.fontParametrs.startValueForSliderLetterSpacing);
+  const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
 
-  const dispatch = useDispatch();
   const { closeFontSettingsHandler } = modalsHandlers();
-
-  const onPressResetHandler = useCallback(() => dispatch(resetFontsSettings()), []);
-  const onChangeFontSizeHandler = useCallback((value) => dispatch(changeFontSize({ fontSize: value })), []);
-  const onChangeLetterSpacingHandler = useCallback((value) => dispatch(changeLetterSpacing({ letterSpacing: value })), []);
-  const onChangeLineSpacingHandler = useCallback((value) => dispatch(changeLineSpacing({ lineSpacing: value })), []);
+  const { onPressResetHandler,
+    onChangeFontSizeHandler,
+    onChangeLetterSpacingHandler,
+    onChangeLineSpacingHandler } = fontSettingsHandlers();
 
   return (
-    <View style={appStyles.modalWrapper}>
+    <View style={[appStyles.modalWrapper, {backgroundColor: colorsStyle.primaryBg}]}>
 
       <View style={appStyles.modalHeader}>
         <ResetButton onPress={onPressResetHandler}/>

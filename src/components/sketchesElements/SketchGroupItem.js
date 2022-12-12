@@ -2,7 +2,6 @@ import { memo } from "react";
 import { Pressable, Text, Image, View } from "react-native";
 import { useSelector } from "react-redux";
 
-
 import { appStyles } from "../../styles/appStyles";
 
 const SketchGroupItem = memo(({id, groupName, onPress, uri}) => {

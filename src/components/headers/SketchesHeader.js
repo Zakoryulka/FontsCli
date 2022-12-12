@@ -1,27 +1,36 @@
 import { Text, View } from "react-native";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { modalsHandlers } from '../../handlers/modalsHandlers';
+import { sketchModalHandlers } from '../../handlers/sketchModalHandlers';
 
-import { sketchesGroupListHide } from "../../store/content";
 import ButtonIcon from "../buttons/ButtonIcon";
 
 import { appStyles } from "../../styles/appStyles";
 
-const SketchesHeader = () => {
+const SketchesHeader = ({navigation}) => {
   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
   const theme = useSelector(state => state.colorTheme.theme);
 
-  const dispatch = useDispatch();
-
   const { pressChangeColorTheme } = modalsHandlers();
+  const { deleteSketchesGroupItemHandler,
+    closeSketchSettingsHandler,
+    pressResetSketchSettings
+  } = sketchModalHandlers();
+
+  const goBackHandler = () => {
+    deleteSketchesGroupItemHandler();
+    closeSketchSettingsHandler();
+    pressResetSketchSettings();       // оставить или удалить???
+    navigation.goBack();
+  };
 
   return (
     <View style={[appStyles.header, appStyles.sketchesHeader, {backgroundColor: colorsStyle.primaryBg}]}>
       <View style={appStyles.headerWrapper}>
         <ButtonIcon
-          icon={'close'}
-          onPress={() => dispatch(sketchesGroupListHide())}
+          icon={'goBack'}
+          onPress={goBackHandler}
         />
       </View>
       <View style={appStyles.headerWrapper}>

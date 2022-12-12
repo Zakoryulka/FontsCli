@@ -1,15 +1,13 @@
-import { useEffect } from "react";
-
+import { useEffect, useCallback } from "react";
 import { Keyboard } from 'react-native';
-
 import { useSelector, useDispatch } from "react-redux";
-import { openInfoModal,
+
+import { openInfoModal, closeInfoModal,
   openShowMoreModal, closeShowMoreModal,
   openColorModal, closeColorModal,
   openFontSettingsModal, closeFontSettingsModal,
   cPickerBGShow, cPickerFontColorShow,
   cPickerBGHide, cPickerFontColorHide,
-  openStickersModal, closeStickersModal
 } from "../store/modal";
 import {  setColorsValuesForSliders,
   setColorsValuesForCPickers
@@ -19,6 +17,7 @@ import { changeAlignSelf } from "../store/aligmentParametrs";
 import { setKeyboardVisible, setKeyboardNotVisible } from "../store/textInput";
 import { changeColorTheme } from "../store/colorTheme";
 import { changeCurrentSketchColor, setColorValueForSketchCPicker } from "../store/sketchesScreen";
+import { setCurrentContent } from "../store/content";
 
 export const modalsHandlers = () => {
   const fontSettingsModalShow = useSelector(state => state.modals.fontSettingsModalShow);
@@ -42,69 +41,73 @@ export const modalsHandlers = () => {
     };
   }, [keyboardVisible]);
 
-  const closeFontSettingsHandler = () => {
+  const closeFontSettingsHandler = useCallback(() => {
     dispatch(closeFontSettingsModal());
     dispatch(setFontsValuesForSliders());
-  };
+  }, []);
 
-  const closeColorModalHandler = () => {
+  const closeColorModalHandler = useCallback(() => {
     dispatch(closeColorModal())
     dispatch(setColorsValuesForSliders())
-  };
+  }, []);
 
-  const pressInfoBtnHandler = () => {
+  const pressInfoBtnHandler = useCallback(() => {
     dispatch(openInfoModal());
+  }, []);
+
+  const closeInfoModalHandler = () => {    // не передается в дочерний компонент
+    dispatch(closeInfoModal());
   };
 
-  const pressShowMoreBtnHandler = () => {
+  const pressShowMoreBtnHandler = useCallback(() => {
     dispatch(openShowMoreModal())
-  };
+  }, []);
 
-  const closeShowMoreHandler = () => {
+  const closeShowMoreHandler = () => {    // не передается в дочерний компонент
     dispatch(closeShowMoreModal())
   };
 
-  const pressAlignSelfBtnHandler = () => {
+  const pressAlignSelfBtnHandler = useCallback(() => {
     dispatch(changeAlignSelf())
-  };
+  }, []);
 
-  const pressTextSettingsHandler = () => {
+  const pressTextSettingsHandler = useCallback(() => {
     if (fontSettingsModalShow) {
       closeFontSettingsHandler();
     } else {
       Keyboard.dismiss();
       dispatch(openFontSettingsModal());
     }
-  };
+  }, []);
 
-  const pressColorSettingsHandler = () => {
+  const pressColorSettingsHandler = useCallback(() => {
     if (colorModalShow) {
       closeColorModalHandler();
     } else {
       Keyboard.dismiss();
       dispatch(openColorModal());
     }
-  };
+  }, []);
 
-  const pressOpenCPickerFontHandler = () => {
+  const pressOpenCPickerFontHandler = useCallback(() => {
     dispatch(cPickerFontColorShow());
     dispatch(setColorsValuesForCPickers());
-  };
+  }, []);
 
-  const pressCloseCPickerFontHandler = () => {
+  const pressCloseCPickerFontHandler = useCallback(() => {
     dispatch(cPickerFontColorHide());
-  };
+  }, []);
 
-  const pressOpenCPickerBGHandler = () => {
+  const pressOpenCPickerBGHandler = useCallback(() => {
     dispatch(cPickerBGShow());
     dispatch(setColorsValuesForCPickers());
-  };
+  }, []);
 
-  const pressCloseCPickerBGHandler = () => {
+  const pressCloseCPickerBGHandler = useCallback(() => {
     dispatch(cPickerBGHide());
-  };
+  }, []);
 
-  const pressChangeColorTheme = () => {
+  const pressChangeColorTheme = useCallback(() => {
     dispatch(changeColorTheme());
 
     if (currentSketchColor === "#FFFFFF") {
@@ -114,20 +117,18 @@ export const modalsHandlers = () => {
       dispatch(changeCurrentSketchColor({newColor: "#FFFFFF"}));
       dispatch(setColorValueForSketchCPicker());
     }
-  };
+  }, []);
 
-  const pressStickersBtnHandler = () => {
-    dispatch(openStickersModal());
+  const changeContentBtnHandler = (name) => {           // не передается в дочерний компонент
+    dispatch(setCurrentContent({currentContent: name === "Favorites" ? "Fonts" : name}));
+    closeFontSettingsHandler();
+    closeColorModalHandler();
   };
-
-  const closeStickersModalHandler = () => {
-    dispatch(closeStickersModal())
-  };
-
 
 
   return {
     pressInfoBtnHandler,
+    closeInfoModalHandler,
     pressShowMoreBtnHandler,
     closeShowMoreHandler,
     pressAlignSelfBtnHandler,
@@ -140,7 +141,6 @@ export const modalsHandlers = () => {
     pressOpenCPickerBGHandler,
     pressCloseCPickerBGHandler,
     pressChangeColorTheme,
-    pressStickersBtnHandler,
-    closeStickersModalHandler
+    changeContentBtnHandler
   }
-}
+};

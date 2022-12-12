@@ -98,7 +98,7 @@ export const appStyles = StyleSheet.create({
        // ------sketch list and item styles------ //
 
   sketchesListScreen: {
-    margin: 0
+    flex: 1
   },
   sketchList: {
     flex: 1,
@@ -157,26 +157,6 @@ export const appStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     // backgroundColor: 'red'
-  },
-
- // ------ContentGroupsLabelsSlider styles------ //
-
-  groupLabelBtnSlider: {
-    paddingVertical: 5,
-    paddingHorizontal: Sizes.mainPadding / 2,
-    paddingRight: 20,
-    borderBottomLeftRadius: 15,
-    borderTopLeftRadius: 15
-
-  },
-  groupLabelBtn: {
-    marginRight: Sizes.mainPadding / 2,
-    borderRadius: 13
-  },
-  groupLabelBtnText: {
-    paddingVertical: 8,
-    paddingHorizontal: Sizes.mainPadding,
-    fontSize: FontSizes.main
   },
 
 
@@ -370,11 +350,34 @@ export const appStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center'
   },
-  infoModalItem: {
+  infoModalOuterBtn: {
     margin: 12,
-    width: 150,
-    height: 150,
-    backgroundColor: 'red',
+    width: Sizes.infoBtn,
+    height: Sizes.infoBtn,
+    flex: 1,
+    overflow: 'hidden',
+    borderRadius: Sizes.mainBtnRadius,
+  },
+  infoModalGradient: {
+    flex: 1
+  },
+  infoModalBtn: {
+    padding: Sizes.mainPadding,
+    flex: 1
+  },
+  infoModalInnerBtn: {
+    marginTop: 'auto',
+    marginBottom: 'auto'
+  },
+  infoModalBtnIcon: {
+    alignSelf: 'center'
+  },
+  infoModalBtnText: {
+    marginTop: Sizes.mainPadding,
+    textAlign: 'center',
+    fontWeight: '500',
+    fontSize: FontSizes.main,
+    color: "#FFFFFF"
   },
 
 

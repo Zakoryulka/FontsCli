@@ -29,7 +29,6 @@ import { setY,
   setActiveSketchID
 } from '../store/alertSettings';
 import { toggleFavoriteFamilyFont } from "../store/textInput";
-import { sketchesGroupListShow } from "../store/content";
 
 import { appConts } from "../constants/appConst";
 
@@ -169,17 +168,11 @@ export const contentItemHandlers = () => {
     dispatch(toggleFavoriteFamilyFont({font: font}));
   });
 
-  const pressSketchGroupItemHandler = useCallback((id) => {
-    console.log(id);                                            // Delete
-    dispatch(sketchesGroupListShow({newSketchGroup: id}));
-  });
-
   return {
     choseLineHeight,
     onItemPressHandler,
     onLongFontItemPressHandler,
     onLongSketchItemPressHandler,
-    onPressFontFavoriteBtnHandler,
-    pressSketchGroupItemHandler
+    onPressFontFavoriteBtnHandler
   }
 }

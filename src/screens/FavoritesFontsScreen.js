@@ -7,7 +7,6 @@ import Footer from "../components/footers/Footer";
 const ColorModal = lazy(() => import("./modals/ColorModal"));
 const FontSettingsModal = lazy(() => import("./modals/FontSettingsModal"));
 import EmptyFavoritesFontsList from "./../components/fontsElements/EmptyFavoritesFontsList";
-// const EmptyFavoritesFontsList = lazy(() => import("./../components/fontsElements/EmptyFavoritesFontsList"));
 
 const FavoritesFontsScreen = () => {
   const colorModalShow = useSelector(state => state.modals.colorModalShow);

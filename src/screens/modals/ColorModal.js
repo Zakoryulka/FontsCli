@@ -1,15 +1,8 @@
-import { useCallback } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { View } from "react-native";
 
- import { changeBg,
-  changeFontColor,
-  changeOpacity,
-  resetColors,
-  changePadding,
-  changeRadius
-} from "../../store/colorParametrs";
 import { modalsHandlers } from "../../handlers/modalsHandlers";
+import { fontColorModalSettingsHandlers } from "../../handlers/fontColorModalSettingsHandlers";
 
 import fontsData from '../../fontsData.json';
 import ModalLabel from "../../components/ModalLabel";
@@ -28,22 +21,22 @@ function ColorModal() {
   const startPadding = useSelector(state => state.colorParametrs.startValueForSliderPadding);
   const startRadius = useSelector(state => state.colorParametrs.startValueForSliderRadius);
   const startOpacity = useSelector(state => state.colorParametrs.startValueForSliderOpacity);
+  const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
 
-  const dispatch = useDispatch();
   const { closeColorModalHandler,
     pressOpenCPickerFontHandler,
     pressOpenCPickerBGHandler
   } = modalsHandlers();
-
-  const onPressResetHandler = useCallback(() => dispatch(resetColors()), []);
-  const onPressChangeFontColorHandler = useCallback((color) => dispatch(changeFontColor({ newColor: color})), []);
-  const onPressChangeBGColorHandler = useCallback((color) => dispatch(changeBg({ newColor: color})), []);
-  const onChangePaddingHandler = useCallback((padding) => dispatch(changePadding({ padding: padding})), []);
-  const onChangeRadiusHandler = useCallback((radius) => dispatch(changeRadius({ radius: radius})), []);
-  const onChangeOpacityHandler = useCallback((opacity) => dispatch(changeOpacity({ opacity: opacity})), []);
+  const { onPressResetHandler,
+    onPressChangeFontColorHandler,
+    onPressChangeBGColorHandler,
+    onChangePaddingHandler,
+    onChangeRadiusHandler,
+    onChangeOpacityHandler
+  } = fontColorModalSettingsHandlers();
 
   return (
-    <View style={appStyles.modalWrapper}>
+    <View style={[appStyles.modalWrapper, {backgroundColor: colorsStyle.primaryBg}]}>
 
       <View style={appStyles.modalHeader}>
         <ResetButton onPress={onPressResetHandler}/>

@@ -38,9 +38,6 @@ const SketchesFooter = () => {
           onPress={pressResetSketchSettings}
         />
       </View>
-
-
-      {/* <ContentGroupsLabelsSlider labelsList={data.sketchGroupsLabels}/> */}
     </View>
   )
 };

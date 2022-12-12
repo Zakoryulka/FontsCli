@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import sketchesData from '../../sketchesData.json';
 import SketchGroupItem from "./SketchGroupItem";
-import { contentItemHandlers } from "../../handlers/contentItemHandlers";
+import { sketchModalHandlers } from "../../handlers/sketchModalHandlers";
 
 import { appStyles } from "../../styles/appStyles";
 
@@ -18,18 +18,22 @@ const data = sketchesData.data.sketches.map((item) => {
 });
 
 
-
-const SketchesGroupList = () => {
+const SketchesGroupList = ({navigation}) => {
   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
 
-  const { pressSketchGroupItemHandler } = contentItemHandlers();
+  const { setSketchGroupItemHandler } = sketchModalHandlers();
+
+  const onPressHandler = (item) => {
+    setSketchGroupItemHandler(item.id);
+    navigation.navigate("SketchesList");
+  }
 
   const renderItem = ({item}) => {
     return (
       <SketchGroupItem
         id={item.id}
         groupName={item.groupName}
-        onPress={() => pressSketchGroupItemHandler(item.id)}
+        onPress={onPressHandler}
         uri={`asset:/images/sketches/${item.folderName}/${item.cover}.png`}
       />
     )

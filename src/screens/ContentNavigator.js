@@ -1,13 +1,13 @@
 import { View, Text, Pressable } from "react-native";
-import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Sizes } from '../constants/stylesConst';
 
+import Header from "../components/headers/Header";
 import FontsScreen from './FontsScreen';
 import FavoritesFontsScreen from "./FavoritesFontsScreen";
 import SketchesGroupList from "../components/sketchesElements/SketchesGroupList";
-import { setCurrentContent } from "../store/content";
+import { modalsHandlers } from "../handlers/modalsHandlers";
 
 import { appStyles } from "../styles/appStyles";
 
@@ -17,7 +17,7 @@ const MyNavigationBar = ({ state, descriptors, navigation}) => {
   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
   const appIsPremium = useSelector(state => state.content.appIsPremium);
 
-  const dispatch = useDispatch();
+  const { changeContentBtnHandler } = modalsHandlers();
 
   const renderMyNavigationBarTab = state.routes.map((route, index) => {
         if (appIsPremium || !appIsPremium && route.name !== "Favorites") {
@@ -32,7 +32,7 @@ const MyNavigationBar = ({ state, descriptors, navigation}) => {
           const isFocused = state.index === index;
 
           const onPress = () => {
-            dispatch(setCurrentContent({currentContent: route.name === "Favorites" ? "Fonts" : route.name}));
+            changeContentBtnHandler(route.name);
 
             const event = navigation.emit({
               type: 'tabPress',
@@ -89,17 +89,18 @@ const MyNavigationBar = ({ state, descriptors, navigation}) => {
       });
 
   return (
-    <View style={appStyles.contentSwitcherBtns}>
-      {renderMyNavigationBarTab}
+    <View style={{backgroundColor: colorsStyle.primaryBg}}
+    >
+      <Header navigation={navigation}/>
+      <View style={appStyles.contentSwitcherBtns}>
+        {renderMyNavigationBarTab}
+      </View>
     </View>
   )
 };
 
-
 const ContentNavigator = () => {
-
   return (
-    <NavigationContainer>
       <Tab.Navigator
         tabBar={props => <MyNavigationBar {...props} />}
         initialRouteName="Fonts"
@@ -122,7 +123,6 @@ const ContentNavigator = () => {
           options={{ tabBarLabel: 'Sketches' }}
         />
       </Tab.Navigator>
-    </NavigationContainer>
   )
 }
 

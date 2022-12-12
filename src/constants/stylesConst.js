@@ -4,7 +4,8 @@ export const Colors = Object.freeze({
   notificationText: '#666666',   // оставить
   btnIconPressed: "#027AF9",
   crownColor: '#FFC322',
-  resetPressed: '#666666'
+  resetPressed: '#666666',
+  infoBtnIcon: "#FFFFFF"
 });
 
 export const DarkTheme = Object.freeze({
@@ -76,14 +77,8 @@ export const FontSizes = Object.freeze({
 });
 
 export const ScetchItemStyles = Object.freeze({
-  // fontSizeDefault: 27,
-  // lineSpacingDefault: 1.3,
-  // letterSpacingDefault: 0,
-  // bgDefault: '#940081',
   colorDefault: '#FFFFFF',
   opacityDefault: 1,
-  // paddingDefault: 15,
-  // radiusDefault: 8,
 });
 
 export const Sizes = Object.freeze({
@@ -94,5 +89,14 @@ export const Sizes = Object.freeze({
   showMoreModalHeight: '60%',
   colorPickerModalHeight: '57%',
 
-  mainBtnRadius: 10
+  mainBtnRadius: 10,
+  infoBtn: 150,
+  infoIcon: 40
+});
+
+export const Gradients = Object.freeze({
+  instagram: ["#F58529", "#DD2A7B", "#8134AF", "#515BD4"],
+  tiktok: ["#F72655", "#69C9D0", "#000000"],
+  vk: ["#4173A1", "#1A4974"],
+  infoPalet: ["#EC937D", "#DB5D3D", "#9F3515"]
 });

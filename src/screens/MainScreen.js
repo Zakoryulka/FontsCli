@@ -1,13 +1,14 @@
-import { useSelector, useDispatch } from "react-redux";
-import { changeBg, changeFontColor } from "../store/colorParametrs";
-import { changeCurrentSketchColor } from "../store/sketchesScreen";
+import { useSelector } from "react-redux";
+import { lazy, Suspense } from "react";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import { modalsHandlers } from '../handlers/modalsHandlers';
 import { sketchModalHandlers } from "../handlers/sketchModalHandlers";
-import { lazy, Suspense } from "react";
+import { fontColorModalSettingsHandlers } from "../handlers/fontColorModalSettingsHandlers";
 
-import Header from "../components/headers/Header";
-
-const SketchesListScreen = lazy(() => import("./SketchesListScreen"));
+import ContentNavigator from "./ContentNavigator";
+import SketchesListScreen from "./SketchesListScreen";
 const ColorPickerModal = lazy(() => import("./modals/ColorPickerModal"));
 const InfoModal = lazy(() => import("./modals/InfoModal"));
 const ShowMoreModal = lazy(() => import("./modals/ShowMoreModal"));
@@ -15,7 +16,7 @@ const AltSharingItemModal = lazy(() => import("./alerts/AltSharingItemModal"));
 const PremiumAlert = lazy(() => import("./alerts/PremiumAlert"));
 const RateAlert = lazy(() => import("./alerts/RateAlert"));
 
-import ContentNavigator from "./ContentNavigator";
+const Stack = createNativeStackNavigator();
 
 const MainScreen = () => {
   const cPickerBGVisible = useSelector(state => state.modals.cPickerBGVisible);
@@ -26,41 +27,46 @@ const MainScreen = () => {
   const startSketchColor = useSelector(state => state.sketchesScreen.startValueForCPickerSketchColor);
 
   const { pressCloseCPickerFontHandler, pressCloseCPickerBGHandler } = modalsHandlers();
-  const { pressCloseCPickerSketchHandler } = sketchModalHandlers();
-
-  const dispatch = useDispatch();
-
+  const { pressCloseCPickerSketchHandler, changeCurrentSketchColorHandler } = sketchModalHandlers();
+  const { onPressChangeBGColorHandler, onPressChangeFontColorHandler } = fontColorModalSettingsHandlers();
 
   return (
     <>
-      <Header />
-      <ContentNavigator />
+      <NavigationContainer >
+          <Stack.Navigator
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen name="MainPage" component={ContentNavigator} />
+            <Stack.Screen name="SketchesList" component={SketchesListScreen} />
+          </Stack.Navigator>
+      </NavigationContainer>
 
       <Suspense>
         <ColorPickerModal
           modalVisible={cPickerFontColorVisible}
           onCloseModal={pressCloseCPickerFontHandler}
-          onChangeColor={(color) => dispatch(changeFontColor({ newColor: color }))}
+          onChangeColor={onPressChangeFontColorHandler}
           startColor={startColor}
         />
 
         <ColorPickerModal
           modalVisible={cPickerBGVisible}
           onCloseModal={pressCloseCPickerBGHandler}
-          onChangeColor={(color) => dispatch(changeBg({ newColor: color }))}
+          onChangeColor={onPressChangeBGColorHandler}
           startColor={startBg}
         />
 
         <ColorPickerModal
           modalVisible={cPickerSketchVisible}
           onCloseModal={pressCloseCPickerSketchHandler}
-          onChangeColor={(color) => dispatch(changeCurrentSketchColor({ newColor: color }))}
+          onChangeColor={changeCurrentSketchColorHandler}
           startColor={startSketchColor}
         />
 
         <InfoModal />
         <ShowMoreModal />
-        <SketchesListScreen />
         <AltSharingItemModal />
         <PremiumAlert />
         <RateAlert />

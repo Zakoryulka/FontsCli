@@ -14,12 +14,10 @@ const Footer = () => {
   const fontSettingsModalShow = useSelector(state => state.modals.fontSettingsModalShow);
   const alignSelf = useSelector(state => state.aligmentParametrs.currentAlignSelf);
   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
-  const stickersModalVisible = useSelector(state => state.modals.stickersModalVisible);
 
   const { pressAlignSelfBtnHandler,
     pressTextSettingsHandler,
-    pressColorSettingsHandler,
-    pressStickersBtnHandler
+    pressColorSettingsHandler
   } = modalsHandlers();
 
   return (
@@ -40,12 +38,6 @@ const Footer = () => {
         onPress={pressColorSettingsHandler}
         visible={colorModalShow}
       />
-      {/* <ButtonIcon
-        icon={"stickers"}
-        onPress={pressStickersBtnHandler}
-        visible={stickersModalVisible}
-        last={true}
-      /> */}
     </View>
   )
 };

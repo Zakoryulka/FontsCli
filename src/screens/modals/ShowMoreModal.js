@@ -19,7 +19,7 @@ const ShowMoreModal = () => {
     shareApp,
     mailToUs
   } = useLinks();
-  const {pressInfoBtnHandler, closeShowMoreHandler } = modalsHandlers();
+  const { pressInfoBtnHandler, closeShowMoreHandler } = modalsHandlers();
 
   const LabelBtn = ({text}) => {
     return (

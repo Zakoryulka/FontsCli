@@ -7,7 +7,7 @@ import ButtonIcon from "../buttons/ButtonIcon";
 
 import { appStyles } from "../../styles/appStyles";
 
-const Header = () => {
+const Header = ({navigation}) => {
   const infoModalVisible = useSelector(state => state.modals.infoModalVisible);
   const showMoreModalVisible = useSelector(state => state.modals.showMoreModalVisible);
   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);
