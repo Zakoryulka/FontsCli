@@ -1,14 +1,8 @@
-import { useCallback } from "react";
-
-import {
-  Platform,
-  StatusBar,
-  Dimensions
-} from 'react-native';
-
+import { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
 import { captureRef } from 'react-native-view-shot';
+import { Platform, StatusBar, Dimensions } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { notifyShow,
   altSharingItemModalShow,
@@ -18,7 +12,6 @@ import { notifyShow,
   changeItemCounter,
   rateAlertShow
 } from "../store/alertSettings";
-import { setImageURI, copyToClipboard } from "../store/shareingSettings";
 import { setY,
   setXItem,
   setYItem,
@@ -28,7 +21,8 @@ import { setY,
   setActiveFont,
   setActiveSketchID
 } from '../store/alertSettings';
-import { toggleFavoriteFamilyFont } from "../store/textInput";
+import { setImageURI, copyToClipboard } from "../store/shareingSettings";
+import { setfavoritesFamilyFonts } from "../store/textInput";
 
 import { appConts } from "../constants/appConst";
 
@@ -41,6 +35,7 @@ export const contentItemHandlers = () => {
   const fontSize = useSelector(state => state.fontParametrs.currentFontSize);
   const lineSpacing = useSelector(state => state.fontParametrs.currentLineSpacing);
   const currentContent = useSelector(state => state.content.currentContent);
+  const favoritesFamilyFonts = useSelector(state => state.textInput.favoritesFamilyFonts);
 
   const dispatch = useDispatch();
 
@@ -164,9 +159,20 @@ export const contentItemHandlers = () => {
     }
   });
 
-  const onPressFontFavoriteBtnHandler = useCallback((font) => {
-    dispatch(toggleFavoriteFamilyFont({font: font}));
-  });
+  const onPressFontFavoriteBtnHandler = useCallback( async(font) => {
+    const addFavoriteFont = () => {
+      if (favoritesFamilyFonts.includes(font)) {
+        return favoritesFamilyFonts.filter((item) => (item != font));
+      } else {
+        return [...favoritesFamilyFonts, font];
+      }
+    };
+    const jsonFavorites = JSON.stringify(addFavoriteFont());
+
+    dispatch(setfavoritesFamilyFonts({favoritesFonts: addFavoriteFont()}));
+
+    await AsyncStorage.setItem('favorites', jsonFavorites);
+  }, [favoritesFamilyFonts]);
 
   return {
     choseLineHeight,

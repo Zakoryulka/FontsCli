@@ -14,7 +14,6 @@ const FavoritesFontsScreen = () => {
   const keyboardVisible = useSelector(state => state.textInput.keyboardVisible);
   const familyFonts = useSelector(state => state.textInput.familyFonts);
   const favoritesFamilyFonts = useSelector(state => state.textInput.favoritesFamilyFonts);
-  console.log(favoritesFamilyFonts);
 
   const renderFavoritesFontsList = favoritesFamilyFonts.length === 0
     ? <EmptyFavoritesFontsList />

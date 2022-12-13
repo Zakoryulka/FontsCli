@@ -27,6 +27,3 @@ export const {
   changeColorTheme
 } = colorThemeSlice.actions;
 export default colorThemeSlice.reducer;
-
-
-//   const colorsStyle = useSelector(state => state.colorTheme.colorsStyle);

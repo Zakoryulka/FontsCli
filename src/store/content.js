@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const contentSlice = createSlice({
   name: 'content',
   initialState: {
-    appIsPremium: true,
+    appIsPremium: false,
     currentContent: 'Fonts',
     sketchesGroupSelected: null,
   },
@@ -17,12 +17,16 @@ const contentSlice = createSlice({
     deleteSketchesGroupList: (state) => {
       state.sketchesGroupSelected = null;
     },
+    setPremiumStatus: (state, action) => {
+      state.appIsPremium = action.payload.status;
+    },
   }
 });
 
 export const {
   setCurrentContent,
   setSketchesGroupList,
-  deleteSketchesGroupList
+  deleteSketchesGroupList,
+  setPremiumStatus
 } = contentSlice.actions;
 export default contentSlice.reducer;

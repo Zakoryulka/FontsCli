@@ -59,9 +59,9 @@ const MyNavigationBar = ({ state, descriptors, navigation}) => {
               style={[
                 appStyles.contentSwitcherOuterBtn,
                 {
-                  borderTopLeftRadius: route.name === "All Fonts" && !appIsPremium
+                  borderTopLeftRadius: route.name === "Fonts" && !appIsPremium
                     || route.name === "Favorites" && appIsPremium ? Sizes.mainBtnRadius : 0,
-                  borderBottomLeftRadius: route.name === "All Fonts" && !appIsPremium
+                  borderBottomLeftRadius: route.name === "Fonts" && !appIsPremium
                     || route.name === "Favorites" && appIsPremium ? Sizes.mainBtnRadius : 0,
                   borderTopRightRadius: route.name === "Sketches" ? Sizes.mainBtnRadius : 0,
                   borderBottomRightRadius: route.name === "Sketches" ? Sizes.mainBtnRadius : 0,

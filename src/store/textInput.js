@@ -57,12 +57,8 @@ const textInputSlice = createSlice({
     setKeyboardNotVisible: (state) => {
       state.keyboardVisible = false;
     },
-    toggleFavoriteFamilyFont: (state, action) => {
-      if (state.favoritesFamilyFonts.includes(action.payload.font)) {
-        state.favoritesFamilyFonts = state.favoritesFamilyFonts.filter((item) => (item != action.payload.font));
-      } else {
-        state.favoritesFamilyFonts = [...state.favoritesFamilyFonts, action.payload.font];
-      }
+    setfavoritesFamilyFonts: (state, action) => {
+      state.favoritesFamilyFonts = action.payload.favoritesFonts;
     },
   }
 });
@@ -73,6 +69,6 @@ export const { setFonts,
   setNumberOfLines,
   setKeyboardVisible,
   setKeyboardNotVisible,
-  toggleFavoriteFamilyFont
+  setfavoritesFamilyFonts
 } = textInputSlice.actions;
 export default textInputSlice.reducer;

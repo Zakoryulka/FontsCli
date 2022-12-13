@@ -487,7 +487,6 @@ export const appStyles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: Sizes.mainPadding,
     paddingBottom: 8,
-    // backgroundColor: 'red'
   },
   contentSwitcherOuterBtn: {
     marginRight: 1,
@@ -517,5 +516,110 @@ export const appStyles = StyleSheet.create({
     // marginTop: 'auto',
     // padding: Sizes.mainPadding,
   },
+
+  // ------ frw styles------ //
+
+  frwScreen: {
+    padding: Sizes.mainPadding,
+    flex: 1,
+    backgroundColor: Colors.frwBG
+  },
+  frwCloseBtnContainer: {
+    alignSelf: 'flex-end',
+  },
+  frwImgContainer: {
+    width: 250,
+    height: 300,
+    backgroundColor: "grey",
+    alignSelf: 'center',
+  },
+  frwScreenInfoWrapper: {
+    flex: 1,
+    paddingTop: "20%",
+    alignItems: 'center',
+  },
+  frwScreenLabel: {
+    marginTop: 20,
+    marginHorizontal: 20,
+    color: Colors.text,
+    textAlign: 'center',
+    fontSize: FontSizes.frwLabel
+  },
+  frwScreenDotsContainer: {
+    marginTop: 'auto',
+    marginBottom: 20,
+    flexDirection: 'row',
+  },
+  frwScreenDotItem: {
+    backgroundColor: 'white',
+    width: Sizes.dotSize,
+    height: Sizes.dotSize,
+    borderRadius: Sizes.dotSize / 2
+
+  },
+  frwScreenOuterBtn: {
+    marginBottom: '10%',
+    alignSelf: 'center',
+    overflow: 'hidden',
+    borderRadius: Sizes.mainBtnRadius,
+    width: '40%'
+  },
+  frwScreenBtn: {
+    backgroundColor: Colors.frwBtn,
+  },
+  frwScreenBtnText: {
+    padding: 18,
+    textAlign: 'center',
+    fontSize: FontSizes.main,
+    fontWeight: '500',
+    color: Colors.frwBG
+  },
+
+  frwBuyPremiumScreenWrapper: {
+    paddingTop: "5%",
+    flex: 1,
+  },
+  frwBuyPremiumIcon: {
+    fontSize: 30,
+    textAlign: 'center',
+    color: Colors.frwBtn,
+  },
+  frwBuyPremiumLabel: {
+    marginBottom: 15
+  },
+  frwUnlockScheduleItemWrapper: {
+    marginTop: Sizes.mainPadding,
+    flexDirection: 'row',
+  },
+  frwUnlockScheduleItemImg: {
+    marginRight: Sizes.mainPadding * 1.5,
+    fontSize: FontSizes.frwUnlockScheduleImg,
+    color: Colors.frwBtn
+  },
+  frwUnlockScheduleItemTextContainer: {
+    flex: 1
+  },
+  frwUnlockScheduleItemLabel: {
+    fontSize: FontSizes.frwUnlockScheduleLabel,
+    fontWeight: '900',
+    color: Colors.frwBtn,
+
+  },
+  frwUnlockScheduleItemText: {
+    marginTop: Sizes.mainPadding / 3,
+    fontSize: 17,
+    color: Colors.text,
+  },
+  frwBuyPremiumOuterBtn: {
+    marginBottom: 30,
+    width: '70%'
+  },
+  frwBuyPremiumCancelText: {
+    marginBottom: 40,
+    textAlign: 'center',
+    color: "#7F7C7C",
+    fontSize: FontSizes.main,
+  }
+
 
 });

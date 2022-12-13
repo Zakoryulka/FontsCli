@@ -7,6 +7,7 @@ import { modalsHandlers } from '../handlers/modalsHandlers';
 import { sketchModalHandlers } from "../handlers/sketchModalHandlers";
 import { fontColorModalSettingsHandlers } from "../handlers/fontColorModalSettingsHandlers";
 
+import FRWStack from "./frwScreens/FRWStack";
 import ContentNavigator from "./ContentNavigator";
 import SketchesListScreen from "./SketchesListScreen";
 const ColorPickerModal = lazy(() => import("./modals/ColorPickerModal"));
@@ -30,17 +31,21 @@ const MainScreen = () => {
   const { pressCloseCPickerSketchHandler, changeCurrentSketchColorHandler } = sketchModalHandlers();
   const { onPressChangeBGColorHandler, onPressChangeFontColorHandler } = fontColorModalSettingsHandlers();
 
+  const isFirstOpen = true;
+  const frwScreen = isFirstOpen ? <Stack.Screen name="frw" component={FRWStack} />  : null;
+
   return (
     <>
       <NavigationContainer >
-          <Stack.Navigator
-            screenOptions={{
-              headerShown: false,
-            }}
-          >
-            <Stack.Screen name="MainPage" component={ContentNavigator} />
-            <Stack.Screen name="SketchesList" component={SketchesListScreen} />
-          </Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          {frwScreen}
+          <Stack.Screen name="MainPage" component={ContentNavigator} />
+          <Stack.Screen name="SketchesList" component={SketchesListScreen} />
+        </Stack.Navigator>
       </NavigationContainer>
 
       <Suspense>

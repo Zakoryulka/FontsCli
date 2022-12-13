@@ -5,12 +5,21 @@ export const Colors = Object.freeze({
   btnIconPressed: "#027AF9",
   crownColor: '#FFC322',
   resetPressed: '#666666',
-  infoBtnIcon: "#FFFFFF"
+  infoBtnIcon: "#FFFFFF",
+  text: "#FFFFFF",
+  frwBG: "#000000",
+  frwBtn: "#FFD50A",
+  frwBtnRipple: "#B6930F",
+  dotNotActive: '#666666',
+  dotActive: "#FFFFFF",
+
 });
 
 export const DarkTheme = Object.freeze({
-  primaryBg: "#1E1E1E",
-  primaryBg1: "#000000",
+  // primaryBg: "#1E1E1E",
+  // primaryBg1: "#000000",
+  primaryBg: "#000000",
+  primaryBg1: "#1E1E1E",
   alertBG: 'rgba(0, 0, 0, .5)',
 
   text: "#FFFFFF",
@@ -74,6 +83,10 @@ export const FontSizes = Object.freeze({
   main: 16,
   notification: 24,
   mainSmall: 12,
+  frwLabel: 27,
+  frwUnlockScheduleImg: 35,
+  frwUnlockScheduleLabel: 23
+
 });
 
 export const ScetchItemStyles = Object.freeze({
@@ -91,7 +104,9 @@ export const Sizes = Object.freeze({
 
   mainBtnRadius: 10,
   infoBtn: 150,
-  infoIcon: 40
+  infoIcon: 40,
+
+  dotSize: 10,
 });
 
 export const Gradients = Object.freeze({
